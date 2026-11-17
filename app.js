@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.1.0';
+  var APP_VERSION = '1.2.0';
 
   /* ======================================================================
      Yardımcılar
@@ -112,13 +112,15 @@
      Depolama (sürümlü şema, bozuk veriye dayanıklı)
      ====================================================================== */
   var STORE_KEY = 'zayifla.data';
-  var SCHEMA = 1;
+  var SCHEMA = 2; // 2: elle kalori hedefi (manual)
+  var MANUAL_MIN = 500, MANUAL_MAX = 6000;
+  var LOW_KCAL_MSG = 'Bu hedef önerilen alt sınırın altında. Uzun süre çok düşük kalori kas kaybı ve halsizlik yapabilir; doktor/diyetisyen kontrolünde uygulaman önerilir.';
   var storageOK = true;
   var pendingNotice = null;
 
   function defaults() {
     return {
-      v: SCHEMA, createdAt: Date.now(), profile: null, targets: null,
+      v: SCHEMA, createdAt: Date.now(), profile: null, targets: null, manual: { on: false, kcal: null },
       settings: { theme: 'system', wUnit: 'kg', glassMl: 250, waterGoal: 8 },
       days: {}, weights: [], waists: [], custom: [], favs: [], recents: [], meals: [],
       reminders: NC ? NC.merge({}) : {}, remLog: {}, adaptive: { dismissedAt: 0 },
@@ -150,7 +152,7 @@
   function sanitize(d) {
     var s = defaults();
     if (!d || typeof d !== 'object') return s;
-    // gelecekteki sürüm geçişleri burada: if (d.v < 2) {...}
+    // gelecekteki sürüm geçişleri burada: if (d.v < 3) {...}
     s.createdAt = num(d.createdAt, s.createdAt);
     var pr = d.profile;
     if (pr && typeof pr === 'object' && num(pr.weight) > 20 && num(pr.height) > 80 && num(pr.age) > 5) {
@@ -162,7 +164,15 @@
         startDate: isValidKey(pr.startDate) ? pr.startDate : todayKey()
       };
     }
-    if (d.targets && num(d.targets.kcal) >= 800) {
+    // v1 -> v2: elle hedef. Eski sürümde elle ayarlanmış hedef (targets.manual) varsa korunur; diğer herkes için kapalı.
+    var mn = d.manual;
+    if (mn && typeof mn === 'object') {
+      var mk = Math.round(num(mn.kcal));
+      if (mk >= MANUAL_MIN && mk <= MANUAL_MAX) s.manual = { on: !!mn.on, kcal: mk };
+    } else if (d.targets && d.targets.manual && num(d.targets.kcal) >= MANUAL_MIN && num(d.targets.kcal) <= MANUAL_MAX) {
+      s.manual = { on: true, kcal: Math.round(num(d.targets.kcal)) };
+    }
+    if (d.targets && num(d.targets.kcal) >= MANUAL_MIN) {
       s.targets = { kcal: Math.round(num(d.targets.kcal)), p: num(d.targets.p), c: num(d.targets.c), f: num(d.targets.f), manual: !!d.targets.manual, bmr: num(d.targets.bmr), tdee: num(d.targets.tdee), floorApplied: !!d.targets.floorApplied, deficit: num(d.targets.deficit) };
     }
     if (d.settings && typeof d.settings === 'object') {
@@ -202,7 +212,9 @@
       s.ui.wRange = ['1H', '1A', '3A', 'T'].indexOf(d.ui.wRange) >= 0 ? d.ui.wRange : '1A';
       s.ui.calRange = d.ui.calRange === 30 ? 30 : 7;
     }
-    if (s.profile && !s.targets) s.targets = calcTargets(s.profile, null);
+    if (s.profile && s.manual.on) s.targets = computeTargets(s.profile, s.profile.weight, s.manual);
+    else if (s.profile && !s.targets) s.targets = calcTargets(s.profile, null);
+    if (s.targets) s.targets.manual = !!(s.manual.on && s.profile);
     return s;
   }
 
@@ -248,9 +260,30 @@
     var c = Math.max(50, Math.round((kcal - p * 4 - f * 9) / 4));
     return { p: p, c: c, f: f };
   }
-  function refreshTargets() {
-    if (!state.profile || (state.targets && state.targets.manual)) return;
-    state.targets = calcTargets(state.profile, currentWeight());
+  function kcalFloor(sex) { return sex === 'e' ? 1500 : 1200; }
+  /** Elle hedefte makrolar kaloriyle orantılı: protein ~1,6 g/kg (en çok kalorinin %40'ı), yağ %30, kalanı karbonhidrat */
+  function manualMacros(kcal, w) {
+    var p = Math.round(Math.min(1.6 * w, kcal * 0.4 / 4));
+    var f = Math.round(kcal * 0.3 / 9);
+    var c = Math.max(0, Math.round((kcal - p * 4 - f * 9) / 4));
+    return { p: p, c: c, f: f };
+  }
+  /** Geçerli hedef: elle hedef açıksa o, değilse hesaplanan öneri. */
+  function computeTargets(pr, w, manual) {
+    var calc = calcTargets(pr, w);
+    if (!(manual && manual.on && manual.kcal >= MANUAL_MIN)) return calc;
+    return Object.assign({}, calc, { manual: true, kcal: manual.kcal, floorApplied: false, deficit: Math.round(Math.max(0, calc.tdee - manual.kcal)) }, manualMacros(manual.kcal, w || pr.weight));
+  }
+  function applyTargets() {
+    if (state.profile) state.targets = computeTargets(state.profile, currentWeight(), state.manual);
+  }
+  function refreshTargets() { applyTargets(); }
+  function recommendedKcal() { return state.profile ? calcTargets(state.profile, currentWeight()).kcal : 0; }
+  function manualHint(v, sex) {
+    if (!isFinite(v)) return { warn: false, html: '' };
+    if (v < MANUAL_MIN || v > MANUAL_MAX) return { warn: true, html: 'Hedef ' + fmt(MANUAL_MIN) + '–' + fmt(MANUAL_MAX) + ' kcal arasında olmalı.' };
+    if (v < kcalFloor(sex)) return { warn: true, html: LOW_KCAL_MSG };
+    return { warn: false, html: '' };
   }
 
   // Besinler
@@ -545,7 +578,7 @@
   }
 
   /* ---------------------------- Onboarding ---------------------------- */
-  var ob = { step: 0, sex: null, age: '', height: '', weight: '', goal: '', activity: 'hafif', pace: 0.5 };
+  var ob = { step: 0, sex: null, age: '', height: '', weight: '', goal: '', activity: 'hafif', pace: 0.5, manualOn: false, manualKcal: '' };
   function obProfile() {
     return { sex: ob.sex, age: parseNum(ob.age), height: parseNum(ob.height), weight: fromDisp(parseNum(ob.weight)), goal: fromDisp(parseNum(ob.goal)), activity: ob.activity, pace: ob.pace, startDate: todayKey() };
   }
@@ -554,6 +587,7 @@
     if (step === 0) return !!ob.sex;
     if (step === 1) return p.age >= 14 && p.age <= 100 && p.height >= 120 && p.height <= 230;
     if (step === 2) return p.weight >= 35 && p.weight <= 300 && p.goal >= 35 && p.goal <= 300;
+    if (step === 5 && ob.manualOn) { var mv = parseNum(ob.manualKcal); return mv >= MANUAL_MIN && mv <= MANUAL_MAX; }
     return true;
   }
   function renderOnboarding() {
@@ -589,11 +623,15 @@
       var p2 = obProfile(), t = calcTargets(p2, null);
       var weeks = p2.goal < p2.weight - 0.2 ? Math.ceil((p2.weight - p2.goal) / p2.pace) : 0;
       body = '<h1>Hedefin hazır 🎉</h1><p class="lead">İstediğin zaman Ayarlar\'dan değiştirebilirsin.</p>' +
-        '<div class="result-hero"><span>Günlük kalori hedefi</span><b class="num">' + fmt(t.kcal) + '</b><span>kcal</span></div>' +
+        '<div class="result-hero"><span>' + (ob.manualOn ? 'Önerilen günlük kalori' : 'Günlük kalori hedefi') + '</span><b class="num">' + fmt(t.kcal) + '</b><span>kcal</span></div>' +
         '<div class="card flat"><div class="settings-row"><div class="grow"><b>Bazal metabolizma (BMR)</b><small>Dinlenirken harcadığın</small></div><b class="num">' + fmt(t.bmr) + ' kcal</b></div>' +
         '<div class="settings-row"><div class="grow"><b>Günlük harcama (TDEE)</b><small>' + activityOf(p2.activity).label + '</small></div><b class="num">' + fmt(t.tdee) + ' kcal</b></div>' +
         '<div class="settings-row"><div class="grow"><b>Makro hedefleri</b><small>Protein · Karbonhidrat · Yağ</small></div><b class="num">' + t.p + ' · ' + t.c + ' · ' + t.f + ' g</b></div>' +
         (weeks ? '<div class="settings-row"><div class="grow"><b>Tahmini süre</b><small>' + fmtW(p2.weight) + ' → ' + fmtW(p2.goal) + '</small></div><b class="num">~' + weeks + ' hafta</b></div>' : '') + '</div>' +
+        '<div class="card flat" style="margin-top:12px"><div class="settings-row"><div class="grow"><b>Hedefi kendim belirleyeceğim</b><small>İstersen kendi günlük kalori hedefini gir (isteğe bağlı)</small></div>' +
+        '<label class="switch"><input type="checkbox" data-ob="manual" ' + (ob.manualOn ? 'checked' : '') + ' aria-label="Hedefi kendim belirleyeceğim"><i></i></label></div>' +
+        (ob.manualOn ? '<label class="field" style="margin-top:10px"><span>Günlük kalori hedefim</span><div class="input-unit"><input class="input big-input" data-obi="manualKcal" inputmode="numeric" pattern="[0-9]*" value="' + esc(ob.manualKcal) + '" placeholder="' + t.kcal + '"><em>kcal</em></div></label>' +
+          '<div id="ob-mwarn" class="hint warn" hidden></div>' : '') + '</div>' +
         (t.floorApplied ? '<div class="hint warn">Güvenlik için günlük hedef ' + (p2.sex === 'e' ? '1500' : '1200') + ' kcal\'nin altına indirilmedi. Bu yüzden kilo verme hızın seçtiğinden biraz yavaş olabilir.</div>' : '') +
         '<p class="tiny faint">Bu hesaplamalar tahminidir ve tıbbi tavsiye değildir. Sağlık sorunun varsa diyetisyen ya da hekimine danış.</p>';
     }
@@ -601,7 +639,12 @@
     view.innerHTML = '<div class="onb"><div class="onb-top">' + (s > 0 ? '<button type="button" class="icon-btn" data-ob="back" aria-label="Geri">' + icon('left') + '</button>' : '') + '<div class="onb-dots">' + dots + '</div></div>' +
       '<div class="onb-body">' + body + '</div>' +
       '<button type="button" class="btn btn-primary btn-lg btn-block" data-ob="next" ' + (obValid(s) ? '' : 'disabled') + '>' + (s === total - 1 ? 'Başlayalım' : 'Devam') + '</button></div>';
-    updateObBmi();
+    updateObBmi(); updateObManual();
+  }
+  function updateObManual() {
+    var el = $('#ob-mwarn'); if (!el) return;
+    var h = manualHint(parseNum(ob.manualKcal), ob.sex);
+    el.hidden = !h.html; el.innerHTML = h.html;
   }
   function updateObBmi() {
     var el = $('#ob-bmi'); if (!el) return;
@@ -616,6 +659,7 @@
     if (act === 'sex') { ob.sex = v; }
     else if (act === 'activity') { ob.activity = v; }
     else if (act === 'pace') { ob.pace = parseFloat(v); }
+    else if (act === 'manual') { ob.manualOn = !ob.manualOn; }
     else if (act === 'back') { ob.step = Math.max(0, ob.step - 1); }
     else if (act === 'next') {
       if (!obValid(ob.step)) return;
@@ -623,7 +667,7 @@
       ob.step++;
     }
     renderOnboarding();
-    if (act === 'next' || act === 'back') { var f = $('.onb input'); if (f) setTimeout(function () { try { f.focus(); } catch (e) { /* */ } }, 50); }
+    if (act === 'next' || act === 'back' || (act === 'manual' && ob.manualOn)) { var f = $('.onb input[data-obi]'); if (f) setTimeout(function () { try { f.focus(); } catch (e) { /* */ } }, 50); }
   }
   function finishOnboarding() {
     var p = obProfile();
@@ -633,7 +677,9 @@
     state.weights = state.weights.filter(function (w) { return w.date !== k; });
     state.weights.push({ date: k, kg: p.weight });
     state.weights.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    state.targets = calcTargets(p, null);
+    var mv = Math.round(parseNum(ob.manualKcal));
+    state.manual = ob.manualOn && mv >= MANUAL_MIN && mv <= MANUAL_MAX ? { on: true, kcal: mv } : { on: false, kcal: null };
+    state.targets = computeTargets(p, null, state.manual);
     save();
     location.hash = '#bugun';
     route = 'bugun';
@@ -742,7 +788,8 @@
     if (Date.now() - state.adaptive.dismissedAt < 7 * 864e5) return '';
     return '<section class="card tint"><div class="row" style="align-items:flex-start"><div class="n-ic" style="width:36px;height:36px;border-radius:12px;background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--primary-600)">' + icon('sparkle', 'ic-sm') + '</div>' +
       '<div class="grow"><b>Akıllı hedef önerisi</b><p class="small" style="margin:4px 0 10px">Son ' + a.days + ' kayıtlı günde ortalama <b>' + fmt(a.avgIn) + ' kcal</b> yedin ve trend kilon ' + (a.change <= 0 ? fmt(-a.change, 1) + ' kg azaldı' : fmt(a.change, 1) + ' kg arttı') +
-      '. Buna göre gerçek harcaman ~<b>' + fmt(a.tdee) + ' kcal</b>. Günlük hedefini <b>' + fmt(a.suggested) + ' kcal</b> yapalım mı?</p>' +
+      '. Buna göre gerçek harcaman ~<b>' + fmt(a.tdee) + ' kcal</b>. Günlük hedefini <b>' + fmt(a.suggested) + ' kcal</b> yapalım mı?' +
+      (state.manual.on ? ' <span class="muted">Şu an kendi belirlediğin ' + fmt(state.manual.kcal) + ' kcal geçerli; sen onaylamadıkça değişmez.</span>' : '') + '</p>' +
       '<div class="btn-row"><button type="button" class="btn btn-sm" data-action="adaptive-no">Şimdi değil</button><button type="button" class="btn btn-primary btn-sm" data-action="adaptive-yes" data-v="' + a.suggested + '">Uygula</button></div></div></div></section>';
   }
 
@@ -937,7 +984,7 @@
     return {
       simdi: today + ' ' + DAYS[now.getDay()] + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes()),
       profil: { cinsiyet: pr.sex === 'e' ? 'erkek' : 'kadın', yas: pr.age, boy_cm: pr.height, baslangic_kg: pr.weight, hedef_kg: pr.goal, aktivite: activityOf(pr.activity).label, hedef_hiz_kg_hafta: pr.pace, baslangic_tarihi: pr.startDate },
-      gunluk_hedef: { kcal: tg.kcal, protein_g: tg.p, karb_g: tg.c, yag_g: tg.f },
+      gunluk_hedef: Object.assign({ kcal: tg.kcal, protein_g: tg.p, karb_g: tg.c, yag_g: tg.f }, tg.manual ? { kullanici_belirledi: true, onerilen_kcal: recommendedKcal(), onerilen_alt_sinirin_altinda: tg.kcal < kcalFloor(pr.sex) } : {}),
       bugun: {
         alinan: { kcal: r0(t.kcal), protein_g: r0(t.p), karb_g: r0(t.c), yag_g: r0(t.f) },
         kalan_kcal: r0(tg.kcal - t.kcal), su_bardak: day.water || 0,
@@ -1176,7 +1223,17 @@
     html += '<div class="section-title">Profil ve hedef</div><section class="card">' +
       '<div class="settings-row"><div class="grow"><b>' + (pr.sex === 'e' ? 'Erkek' : 'Kadın') + ', ' + pr.age + ' yaş, ' + pr.height + ' cm</b><small>' + activityOf(pr.activity).label + ' · haftada ' + fmt(pr.pace, 2) + ' kg</small></div><button type="button" class="btn btn-soft btn-sm" data-action="edit-profile">Düzenle</button></div>' +
       '<div class="settings-row"><div class="grow"><b>' + fmtW(pr.weight) + ' → ' + fmtW(pr.goal) + '</b><small>Başlangıç → hedef kilo</small></div></div>' +
-      '<div class="settings-row"><div class="grow"><b>Günlük ' + fmt(tg.kcal) + ' kcal' + (tg.manual ? ' <span class="badge ok">elle</span>' : '') + '</b><small>Protein ' + tg.p + ' g · Karbonhidrat ' + tg.c + ' g · Yağ ' + tg.f + ' g' + (tg.tdee && !tg.manual ? ' · TDEE ' + fmt(tg.tdee) : '') + '</small></div><button type="button" class="btn btn-sm" data-action="edit-targets">Ayarla</button></div></section>';
+      '<div class="settings-row"><div class="grow"><b>Günlük ' + fmt(tg.kcal) + ' kcal' + (tg.manual ? ' <span class="badge ok">elle</span>' : '') + '</b><small>Protein ' + tg.p + ' g · Karbonhidrat ' + tg.c + ' g · Yağ ' + tg.f + ' g' + (tg.tdee && !tg.manual ? ' · TDEE ' + fmt(tg.tdee) : '') + '</small></div></div>' +
+      '<div class="settings-row"><div class="grow"><b>Hedefi kendim belirleyeceğim</b><small id="rec-kcal">Önerilen: ' + fmt(recommendedKcal()) + ' kcal</small></div>' +
+      '<label class="switch"><input type="checkbox" data-manual="on" ' + (state.manual.on ? 'checked' : '') + ' aria-label="Hedefi kendim belirleyeceğim"><i></i></label></div>';
+    if (state.manual.on) {
+      var mh = manualHint(state.manual.kcal, pr.sex);
+      html += '<div class="manual-box"><label class="field"><span>Günlük kalori hedefim</span><div class="input-unit"><input class="input big-input" id="manual-kcal" data-manual="kcal" inputmode="numeric" pattern="[0-9]*" value="' + state.manual.kcal + '"><em>kcal</em></div></label>' +
+        '<div id="manual-warn" class="hint warn" ' + (mh.html ? '' : 'hidden') + '>' + mh.html + '</div>' +
+        '<button type="button" class="btn btn-primary btn-block" style="margin-top:10px" data-action="manual-save">Hedefi kaydet</button>' +
+        '<p class="tiny faint" style="margin:8px 2px 0">' + fmt(MANUAL_MIN) + '–' + fmt(MANUAL_MAX) + ' kcal arası girebilirsin. Protein, karbonhidrat ve yağ hedefleri bu değere göre otomatik hesaplanır.</p></div>';
+    }
+    html += '</section>';
 
     // Yükleme
     var standalone = N && N.isStandalone();
@@ -1229,6 +1286,8 @@
       '<input type="file" id="import-file" accept="application/json,.json" hidden>' +
       '<button type="button" class="btn btn-block" style="margin-top:10px;color:var(--danger)" data-action="reset">' + icon('trash', 'ic-sm') + 'Tüm verileri sil</button>' +
       '<p class="tiny faint" style="margin:12px 2px 0">Verilerin yalnızca bu cihazda, tarayıcı depolamasında saklanır. Düzenli olarak dışa aktarıp yedeklemeni öneririz.</p></section>';
+    html += '<div class="section-title">Sürüm</div><section class="card"><div class="settings-row"><div class="grow"><b>Sürüm ' + APP_VERSION + '</b><small id="upd-status">Uygulama yeni sürümleri kendiliğinden alır.</small></div>' +
+      '<button type="button" class="btn btn-sm" data-action="check-update">Güncellemeleri denetle</button></div></section>';
     html += '<p class="center tiny faint" style="margin:18px 0 8px">Zayıfla v' + APP_VERSION + ' · ' + FOODS.length + ' besin · ' + (storageOK ? 'çevrimdışı hazır' : 'depolama kapalı!') + '</p>';
     view.innerHTML = html;
   }
@@ -1797,7 +1856,7 @@
       '<div class="grid-2"><label class="field"><span>Başlangıç kilosu (' + wU() + ')</span><input class="input" name="weight" inputmode="decimal" value="' + fmt(toDisp(pr.weight), 1) + '"></label><label class="field"><span>Hedef kilo (' + wU() + ')</span><input class="input" name="goal" inputmode="decimal" value="' + fmt(toDisp(pr.goal), 1) + '"></label></div>' +
       '<label class="field"><span>Aktivite düzeyi</span><select class="select" name="activity">' + ACTIVITY.map(function (a) { return '<option value="' + a.id + '"' + (pr.activity === a.id ? ' selected' : '') + '>' + a.label + ' — ' + a.desc + '</option>'; }).join('') + '</select></label>' +
       '<div class="field"><span>Haftalık tempo</span><div class="seg">' + PACES.map(function (p) { return '<button type="button" data-pace="' + p.v + '" class="' + (pr.pace === p.v ? 'on' : '') + '">' + fmt(p.v, 2) + ' kg</button>'; }).join('') + '</div></div>' +
-      '<div class="hint js-prev"></div><p class="tiny faint">Hesaplama güncel trend kilonla (' + fmtW(cw) + ') yapılır. Elle ayarlanmış hedef varsa otomatiğe döner.</p>');
+      '<div class="hint js-prev"></div><p class="tiny faint">Hesaplama güncel trend kilonla (' + fmtW(cw) + ') yapılır. Elle belirlediğin kalori hedefi varsa korunur.</p>');
     s.setFoot('<button type="button" class="btn btn-primary btn-lg btn-block" data-ok>Kaydet</button>');
     function read() {
       var g = function (n) { return parseNum(s.body.querySelector('[name="' + n + '"]').value); };
@@ -1808,6 +1867,7 @@
       var p = read(), el = s.body.querySelector('.js-prev');
       if (!valid(p)) { el.textContent = 'Değerleri kontrol et.'; return; }
       var t = calcTargets(p, cw);
+      if (state.manual.on) { el.innerHTML = 'Önerilen günlük hedef: <b>' + fmt(t.kcal) + ' kcal</b><br>Elle belirlediğin <b>' + fmt(state.manual.kcal) + ' kcal</b> hedefi geçerli kalır.'; return; }
       el.innerHTML = 'Yeni günlük hedef: <b>' + fmt(t.kcal) + ' kcal</b> · P ' + t.p + ' · K ' + t.c + ' · Y ' + t.f + ' g' + (t.floorApplied ? '<br>Güvenlik alt sınırı uygulandı.' : '');
     }
     s.body.addEventListener('click', function (e) {
@@ -1821,47 +1881,36 @@
       var p = read();
       if (!valid(p)) { toast('Değerleri kontrol et.'); return; }
       p.weight = Math.round(p.weight * 10) / 10; p.goal = Math.round(p.goal * 10) / 10;
-      state.profile = p; state.targets = calcTargets(p, currentWeight());
+      state.profile = p; applyTargets();
       save(); s.close(); render(); toast('Profil güncellendi · hedef ' + fmt(state.targets.kcal) + ' kcal');
     });
     prev();
   }
 
-  function openTargetsEdit() {
-    var tg = state.targets;
-    var s = openSheet({ title: 'Günlük hedef' });
-    s.setBody('<label class="field"><span>Kalori hedefi</span><div class="input-unit"><input class="input big-input" name="kcal" inputmode="numeric" value="' + tg.kcal + '"><em>kcal</em></div></label>' +
-      '<div class="grid-3"><label class="field"><span>Protein</span><div class="input-unit"><input class="input" name="p" inputmode="numeric" value="' + tg.p + '"><em>g</em></div></label>' +
-      '<label class="field"><span>Karb.</span><div class="input-unit"><input class="input" name="c" inputmode="numeric" value="' + tg.c + '"><em>g</em></div></label>' +
-      '<label class="field"><span>Yağ</span><div class="input-unit"><input class="input" name="f" inputmode="numeric" value="' + tg.f + '"><em>g</em></div></label></div>' +
-      '<div class="hint js-sum"></div>' +
-      (tg.manual ? '<button type="button" class="btn btn-ghost btn-block" data-auto style="margin-top:8px">Otomatik hesaplamaya dön</button>' : ''));
-    s.setFoot('<button type="button" class="btn btn-primary btn-lg btn-block" data-ok>Kaydet</button>');
-    var g = function (n) { return parseNum(s.body.querySelector('[name="' + n + '"]').value); };
-    var lastK = tg.kcal;
-    function sum() {
-      var kc = g('kcal');
-      if (isFinite(kc) && kc !== lastK && kc >= 800) { // kalori değişince makroları oranla güncelle
-        var m = macroSplit(kc, currentWeight(), state.profile.goal);
-        s.body.querySelector('[name="p"]').value = m.p; s.body.querySelector('[name="c"]').value = m.c; s.body.querySelector('[name="f"]').value = m.f;
-        lastK = kc;
-      }
-      var mk = g('p') * 4 + g('c') * 4 + g('f') * 9;
-      s.body.querySelector('.js-sum').innerHTML = 'Makrolardan gelen: <b>' + fmt(mk) + ' kcal</b>' + (isFinite(kc) && Math.abs(mk - kc) > 60 ? ' (hedeften ' + fmt(mk - kc) + ' farklı)' : '');
+  /* ------------------------ Elle kalori hedefi ------------------------ */
+  function setManualOn(on) {
+    if (on) {
+      var k = state.manual.kcal >= MANUAL_MIN ? state.manual.kcal : recommendedKcal();
+      state.manual = { on: true, kcal: clamp(Math.round(k), MANUAL_MIN, MANUAL_MAX) };
+    } else {
+      state.manual = { on: false, kcal: state.manual.kcal }; // değer hatırlanır, hesaplanan hedefe dönülür
     }
-    s.body.addEventListener('input', sum);
-    s.body.addEventListener('click', function (e) {
-      if (e.target.closest('[data-auto]')) { state.targets = calcTargets(state.profile, currentWeight()); save(); s.close(); render(); toast('Otomatik hedef: ' + fmt(state.targets.kcal) + ' kcal'); }
-    });
-    s.foot.querySelector('[data-ok]').addEventListener('click', function () {
-      var kc = Math.round(g('kcal'));
-      if (!(kc >= 800 && kc <= 6000)) { toast('800–6000 kcal arasında bir değer gir.'); return; }
-      var floor = state.profile.sex === 'e' ? 1500 : 1200;
-      state.targets = Object.assign({}, state.targets, { kcal: kc, p: Math.max(0, Math.round(g('p')) || 0), c: Math.max(0, Math.round(g('c')) || 0), f: Math.max(0, Math.round(g('f')) || 0), manual: true });
-      save(); s.close(); render();
-      toast(kc < floor ? 'Kaydedildi. Not: ' + floor + ' kcal altı uzun süre önerilmez.' : 'Hedef kaydedildi');
-    });
-    sum();
+    applyTargets(); save(); render();
+    toast(on ? 'Kendi hedefin etkin' : 'Hesaplanan hedefe dönüldü: ' + fmt(state.targets.kcal) + ' kcal');
+  }
+  function saveManualTarget() {
+    var inp = $('#manual-kcal'); if (!inp) return;
+    var v = parseNum(inp.value);
+    if (!(v >= MANUAL_MIN && v <= MANUAL_MAX)) { toast(fmt(MANUAL_MIN) + '–' + fmt(MANUAL_MAX) + ' kcal arasında bir değer gir.'); return; }
+    v = Math.round(v);
+    state.manual = { on: true, kcal: v };
+    applyTargets(); save(); render();
+    toast(v < kcalFloor(state.profile.sex) ? 'Hedef kaydedildi: ' + fmt(v) + ' kcal. Önerilen alt sınırın altında; dikkatli ol.' : 'Hedef kaydedildi: ' + fmt(v) + ' kcal');
+  }
+  function updateManualWarn() {
+    var inp = $('#manual-kcal'), el = $('#manual-warn'); if (!inp || !el) return;
+    var h = manualHint(parseNum(inp.value), state.profile.sex);
+    el.hidden = !h.html; el.innerHTML = h.html;
   }
 
   /* ======================================================================
@@ -1884,7 +1933,7 @@
       var clean = sanitize(d), nd = Object.keys(clean.days).length;
       confirmSheet('Yedek geri yüklensin mi?', 'Yedekte ' + nd + ' günlük kayıt ve ' + clean.weights.length + ' tartı var. <b>Bu cihazdaki mevcut verilerin yerini alacak.</b>', 'Geri yükle', true).then(function (ok) {
         if (!ok) return;
-        state = clean; invalidateFoods(); save(); applyTheme(); viewDate = todayKey(); render(); notifySync(); toast('Yedek geri yüklendi');
+        state = clean; invalidateFoods(); applyTargets(); save(); applyTheme(); viewDate = todayKey(); render(); notifySync(); toast('Yedek geri yüklendi');
       });
     };
     r.onerror = function () { toast('Dosya okunamadı.'); };
@@ -1895,7 +1944,7 @@
       if (!ok) return;
       try { localStorage.removeItem(STORE_KEY); } catch (e) { /* */ }
       if (Z) { Z.clearAll(); coach = Z.loadSettings(); coachChat = []; coachDraft = ''; }
-      state = defaults(); invalidateFoods(); ob = { step: 0, sex: null, age: '', height: '', weight: '', goal: '', activity: 'hafif', pace: 0.5 };
+      state = defaults(); invalidateFoods(); ob = { step: 0, sex: null, age: '', height: '', weight: '', goal: '', activity: 'hafif', pace: 0.5, manualOn: false, manualKcal: '' };
       save(); applyTheme(); viewDate = todayKey(); notifySync(); render(); toast('Tüm veriler silindi');
     });
   }
@@ -1974,7 +2023,10 @@
     'install-dismiss': function () { state.ui.installDismissed = true; save(); render(); },
     'adaptive-yes': function (el) {
       var v = +el.getAttribute('data-v');
-      state.targets = Object.assign({}, state.targets, { kcal: v }, macroSplit(v, currentWeight(), state.profile.goal), { manual: true });
+      // Yalnızca kullanıcı "Uygula" dediğinde (açık onay) hedef değişir; elle hedefi hiçbir şey sessizce ezmez.
+      if (!(v >= MANUAL_MIN && v <= MANUAL_MAX)) return;
+      state.manual = { on: true, kcal: Math.round(v) };
+      applyTargets();
       state.adaptive.dismissedAt = Date.now(); save(); render(); toast('Yeni hedef: ' + fmt(v) + ' kcal');
     },
     'adaptive-no': function () { state.adaptive.dismissedAt = Date.now(); save(); render(); },
@@ -1988,7 +2040,8 @@
       toast('Tartı silindi', { action: 'Geri al', onAction: function () { if (old) { addWeight(old.date, old.kg); render(); } } });
     },
     'edit-profile': openProfileEdit,
-    'edit-targets': openTargetsEdit,
+    'manual-save': saveManualTarget,
+    'check-update': function () { checkForUpdate(true); },
     'notif-perm': function () { N.request().then(function () { render(); notifySync(); }); },
     'notif-test': function () {
       N.test().then(function (r) {
@@ -2047,20 +2100,23 @@
   document.addEventListener('input', function (e) {
     var t = e.target;
     if (t.id === 'coach-q-app') { coachDraft = t.value; return; }
+    if (t.id === 'manual-kcal') { updateManualWarn(); return; }
     if (t.hasAttribute('data-obi')) {
       ob[t.getAttribute('data-obi')] = t.value;
       var btn = $('[data-ob="next"]'); if (btn) btn.disabled = !obValid(ob.step);
-      updateObBmi();
+      updateObBmi(); updateObManual();
     }
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && e.target.hasAttribute && e.target.hasAttribute('data-obi')) { e.preventDefault(); obHandle('next'); }
+    if (e.key === 'Enter' && e.target.id === 'manual-kcal') { e.preventDefault(); saveManualTarget(); }
     if (e.key === 'Enter' && e.target.id === 'coach-key') { e.preventDefault(); coachSaveKey(); }
   });
   document.addEventListener('change', function (e) {
     var t = e.target;
     if (t.closest('.sheet')) return;
     if (t.getAttribute('data-action-change') === 'day-pick') { if (isValidKey(t.value) && t.value <= todayKey()) { viewDate = t.value; render(); } return; }
+    if (t.getAttribute('data-manual') === 'on') { setManualOn(t.checked); return; }
     if (t.hasAttribute('data-rem')) { setReminder(t.getAttribute('data-rem'), t.getAttribute('data-field'), t.type === 'checkbox' ? t.checked : t.value); return; }
     if (t.getAttribute('data-setting') === 'glassMl') { state.settings.glassMl = +t.value; save(); render(); return; }
     if (t.id === 'import-file' && t.files && t.files[0]) { importData(t.files[0]); t.value = ''; }
@@ -2158,22 +2214,68 @@
   window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferredPrompt = e; if (state.profile) render(); });
   window.addEventListener('appinstalled', function () { deferredPrompt = null; toast('Zayıfla ana ekrana eklendi 🎉'); render(); });
   window.addEventListener('storage', function (e) {
-    if (e.key === STORE_KEY) { state = load(); invalidateFoods(); render(); }
+    if (e.key === STORE_KEY) { state = load(); invalidateFoods(); if (state.profile && state.manual.on) applyTargets(); render(); }
     else if (Z && e.key && e.key.indexOf('zayifla.coach') === 0 && !coachBusy) { coach = Z.loadSettings(); coachChat = Z.loadChat(); render(); }
   });
 
-  // Service worker
-  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  // Service worker ve otomatik güncelleme
+  // Yeni sürüm: sw.js değişince tarayıcı yeni SW'yi kurar (skipWaiting + clients.claim), controllerchange tetiklenir,
+  // sayfa bir kez yenilenir. Veriler localStorage'dadır; yenileme onları silmez. Açık form/sohbet varken yenileme ertelenir.
+  var swReg = null, lastUpdateCheck = 0, UPDATE_EVERY = 30 * 60 * 1000, reloading = false, updateWaiters = [];
+  var swSupported = 'serviceWorker' in navigator && /^https?:$/.test(location.protocol);
+  function setUpdStatus(t) { var el = $('#upd-status'); if (el) el.textContent = t; }
+  function checkForUpdate(manual) {
+    if (!swSupported || !swReg) { if (manual) { toast('Bu tarayıcıda otomatik güncelleme desteklenmiyor.'); setUpdStatus('Otomatik güncelleme bu tarayıcıda desteklenmiyor.'); } return Promise.resolve(false); }
+    lastUpdateCheck = Date.now();
+    if (manual) { setUpdStatus('Denetleniyor…'); }
+    return swReg.update().then(function () {
+      if (swReg.installing || swReg.waiting) { if (manual) { toast('Yeni sürüm bulundu, güncelleniyor…'); setUpdStatus('Yeni sürüm bulundu, güncelleniyor…'); } return true; }
+      if (manual) { toast('Uygulama güncel ✓ (Sürüm ' + APP_VERSION + ')'); setUpdStatus('Uygulama güncel. Son denetim: şimdi.'); }
+      return false;
+    }).catch(function () {
+      if (manual) { toast('Güncelleme denetlenemedi. İnternet bağlantını kontrol et.'); setUpdStatus('Denetlenemedi (çevrimdışı olabilirsin).'); }
+      return false;
+    });
+  }
+  function reloadGuardOK() {
+    // Döngü koruması: son 60 sn içinde zaten güncelleme yenilemesi yapıldıysa tekrar yenileme
+    try {
+      var last = +sessionStorage.getItem('zayifla.reloadAt') || 0;
+      if (Date.now() - last < 60000) return false;
+      sessionStorage.setItem('zayifla.reloadAt', String(Date.now()));
+    } catch (e) { /* sessionStorage yoksa tek seferlik bayrak yeterli (reloading) */ }
+    return true;
+  }
+  function busyNow() { // yenileme, kaydedilmemiş bir şeyi silmesin
+    if (sheetStack.length || coachBusy || coachDraft) return true;
+    if (!state.profile && (ob.step > 0 || ob.age)) return true;
+    var q = $('#qb-input'), c = $('#coach-input'), m = $('#manual-kcal');
+    return !!((q && q.value.trim()) || (c && c.value.trim()) || (m && document.activeElement === m));
+  }
+  function applyUpdate(tries) {
+    if (busyNow() && tries < 20) { setTimeout(function () { applyUpdate(tries + 1); }, 3000); return; }
+    if (busyNow() || !reloadGuardOK()) { toast('Uygulama güncellendi ✓', { action: 'Yenile', onAction: function () { location.reload(); }, ms: 8000 }); return; }
+    setTimeout(function () { location.reload(); }, 1400);
+  }
+  if (swSupported) {
     var hadController = !!navigator.serviceWorker.controller;
-    navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(function (err) { console.warn('SW kaydı başarısız', err); });
+    navigator.serviceWorker.register('./sw.js', { scope: './', updateViaCache: 'none' }).then(function (reg) {
+      swReg = reg; checkForUpdate(false);
+    }).catch(function (err) { console.warn('SW kaydı başarısız', err); });
     navigator.serviceWorker.addEventListener('controllerchange', function () {
-      if (hadController) toast('Uygulama güncellendi', { action: 'Yenile', onAction: function () { location.reload(); }, ms: 8000 });
-      hadController = true;
       notifySync();
+      if (!hadController) { hadController = true; return; } // ilk kurulum: sayfa zaten güncel, yenileme gerekmez
+      if (reloading) return;
+      reloading = true;
+      toast('Uygulama güncellendi ✓', { ms: 1600 });
+      applyUpdate(0);
     });
     navigator.serviceWorker.addEventListener('message', function (e) {
       var d = e.data || {};
       if (d.type === 'navigate' && d.url) { var h = d.url.split('#')[1]; if (h) location.hash = '#' + h; }
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible' && Date.now() - lastUpdateCheck > UPDATE_EVERY) checkForUpdate(false);
     });
   }
 
@@ -2181,6 +2283,7 @@
      Başlat
      ====================================================================== */
   applyTheme();
+  if (state.profile && state.manual.on) applyTargets(); // elle hedefin makroları güncel kiloya göre
   var startHash = (location.hash || '').replace('#', '');
   route = routeFromHash();
   render();
@@ -2189,5 +2292,5 @@
   if (!storageOK) toast('Tarayıcı depolaması kapalı; veriler kaydedilemeyecek.');
 
   // Test ve hata ayıklama için
-  window.Zayifla = { state: function () { return state; }, parse: parseText, version: APP_VERSION };
+  window.Zayifla = { state: function () { return state; }, parse: parseText, version: APP_VERSION, coachContext: coachContext };
 })();

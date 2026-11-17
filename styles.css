@@ -565,3 +565,5 @@ hr.sep { border: 0; border-top: 1px solid var(--border); margin: 14px 0; }
 @media (max-width: 370px) { .tab { font-size: 10.5px; } .tab-fab { margin-left: 4px; margin-right: 4px; width: 54px; } }
 .coach-head > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .coach-head .link-btn { flex: none; white-space: nowrap; }
+.manual-box { padding: 8px 0 4px; }
+.manual-box .hint { margin-top: 8px; }

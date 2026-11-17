@@ -478,17 +478,14 @@ function check(cond, msg) { console.log((cond ? '  ✓ ' : '  ✗ ') + msg); if 
   await page.click(sheetOpen + ' [data-ok]');
   await page.waitForTimeout(400);
   check((await S(page)).profile.age === 46, 'profil güncellendi');
-  await page.click('[data-action="edit-targets"]');
-  await page.waitForSelector(sheetOpen + ' [name="kcal"]');
-  await page.waitForTimeout(300);
-  await page.fill(sheetOpen + ' [name="kcal"]', '1800');
-  await page.waitForTimeout(100);
-  const mk = await page.textContent(sheetOpen + ' .js-sum');
-  check(!/farklı/.test(mk), 'makrolar kaloriye uyarlandı: ' + mk);
-  await page.click(sheetOpen + ' [data-ok]');
+  await page.click('[data-manual="on"]');
+  await page.waitForSelector('#manual-kcal');
+  await page.fill('#manual-kcal', '1800');
+  await page.click('[data-action="manual-save"]');
   await page.waitForTimeout(400);
   st = await S(page);
-  check(st.targets.kcal === 1800 && st.targets.manual, 'elle hedef 1800');
+  check(st.targets.kcal === 1800 && st.targets.manual && st.manual.on && st.manual.kcal === 1800, 'elle hedef 1800');
+  check(Math.abs(st.targets.p * 4 + st.targets.c * 4 + st.targets.f * 9 - 1800) < 40, 'makrolar elle hedefe orantılı');
   // hatırlatıcılar
   await page.click('[data-rem="breakfast"][data-field="on"]', { force: true });
   await page.waitForTimeout(500);

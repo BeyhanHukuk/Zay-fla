@@ -1,6 +1,6 @@
-/* Zayıfla service worker: çevrimdışı önbellek + hatırlatıcılar */
+/* Zayıfla service worker: çevrimdışı önbellek, otomatik güncelleme (skipWaiting + clients.claim) + hatırlatıcılar */
 'use strict';
-var VERSION = 'zayifla-v1.1.0';
+var VERSION = 'zayifla-v1.2.0';
 var CONFIG_CACHE = 'zayifla-config';
 var CONFIG_URL = './__reminders.json';
 var ASSETS = [
@@ -24,10 +24,66 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (keys) {
-      return Promise.all(keys.filter(function (k) { return k !== VERSION && k !== CONFIG_CACHE; }).map(function (k) { return caches.delete(k); }));
+      // Yalnızca bu uygulamanın eski önbellekleri silinir (github.io alanı başka sitelerle ortak olabilir). Kullanıcı verisi localStorage'dadır, etkilenmez.
+      return Promise.all(keys.filter(function (k) { return k.indexOf('zayifla-v') === 0 && k !== VERSION; }).map(function (k) { return caches.delete(k); }));
     }).then(function () { return self.clients.claim(); })
   );
 });
+
+// Uygulama kabuğu (sayfa, kod, stil, manifest): ağ öncelikli, çevrimdışıysa ya da ağ yavaşsa önbellek.
+// Simgeler ve besin veritabanı: önbellek öncelikli; her sürümde önbellek adı değiştiği için yeni sürümle yenilenir.
+var NETWORK_TIMEOUT = 5000;
+function isShell(req, url) {
+  if (req.mode === 'navigate') return true;
+  return /\.(?:html|js|css|json)$/.test(url.pathname) && !/\/foods\.js$/.test(url.pathname);
+}
+// Sunucunun "max-age=600" başlığı tarayıcının bellek önbelleğinin kabuğu 10 dakika SW'ye sormadan kullanmasına yol açar;
+// yanıtı "no-cache" ile ilet ki her açılışta yine bu SW (ağ öncelikli) karar versin.
+function fresh(res) {
+  if (!res || res.type !== 'basic' || res.status !== 200) return res;
+  var h = new Headers(res.headers);
+  h.set('Cache-Control', 'no-cache');
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers: h });
+}
+function networkFirst(event, req, key) {
+  var cacheKey = key || req, stored = null, noop = function () { };
+  var fromCache = function () {
+    return caches.open(VERSION).then(function (c) {
+      return c.match(cacheKey, { ignoreSearch: true }).then(function (r) { return r || (key ? c.match('./') : undefined); });
+    }).catch(function () { return undefined; });
+  };
+  // HTTP önbelleğini atlayarak sor: GitHub Pages dosyaları birkaç dakika önbelleğe aldırabilir
+  var net = fetch(req.url, { cache: 'no-cache' }).then(function (res) {
+    if (res && res.ok && res.type === 'basic') {
+      var copy = res.clone();
+      stored = caches.open(VERSION).then(function (c) { return c.put(cacheKey, copy); }).catch(noop);
+    }
+    return res;
+  });
+  event.waitUntil(net.then(function () { return stored; }, noop));
+  return new Promise(function (resolve) {
+    var done = false, timer;
+    function finish(r) { if (done || !r) return false; done = true; clearTimeout(timer); resolve(fresh(r)); return true; }
+    timer = setTimeout(function () { fromCache().then(finish); }, NETWORK_TIMEOUT); // ağ çok yavaşsa önbellek
+    net.then(function (res) {
+      if (res && res.ok) finish(res);
+      else fromCache().then(function (r) { finish(r || res); }); // sunucu hatası: önbellek, o da yoksa yanıtın kendisi
+    }, function () {
+      fromCache().then(function (r) { if (!finish(r)) { done = true; clearTimeout(timer); resolve(Response.error()); } }); // çevrimdışı
+    });
+  });
+}
+function cacheFirst(event, req) {
+  return caches.open(VERSION).then(function (cache) {
+    return cache.match(req, { ignoreSearch: true }).then(function (cached) {
+      if (cached) return cached;
+      return fetch(req).then(function (res) {
+        if (res && res.ok && res.type === 'basic') cache.put(req, res.clone());
+        return res;
+      });
+    });
+  });
+}
 
 self.addEventListener('fetch', function (event) {
   var req = event.request;
@@ -36,31 +92,9 @@ self.addEventListener('fetch', function (event) {
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
-  if (req.mode === 'navigate') {
-    // Ağ öncelikli (güncel sürüm), çevrimdışıysa önbellek
-    event.respondWith(
-      fetch(req).then(function (res) {
-        if (res && res.ok) { var copy = res.clone(); caches.open(VERSION).then(function (c) { c.put('./index.html', copy); }); }
-        return res;
-      }).catch(function () {
-        return caches.match('./index.html', { ignoreSearch: true }).then(function (r) { return r || caches.match('./'); });
-      })
-    );
-    return;
-  }
-  // Varlıklar: önbellekten hemen ver, arkada güncelle (stale-while-revalidate)
-  event.respondWith(
-    caches.open(VERSION).then(function (cache) {
-      return cache.match(req, { ignoreSearch: true }).then(function (cached) {
-        var net = fetch(req).then(function (res) {
-          if (res && res.ok && res.type === 'basic') cache.put(req, res.clone());
-          return res;
-        }).catch(function () { return cached; });
-        if (cached) { event.waitUntil(net.catch(function () { })); return cached; }
-        return net;
-      });
-    })
-  );
+  if (req.mode === 'navigate') { event.respondWith(networkFirst(event, req, './index.html')); return; }
+  if (isShell(req, url)) { event.respondWith(networkFirst(event, req, null)); return; }
+  event.respondWith(cacheFirst(event, req));
 });
 
 /* ---------------- Hatırlatıcılar ---------------- */
