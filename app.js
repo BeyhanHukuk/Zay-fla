@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.0.1';
+  var APP_VERSION = '1.1.0';
 
   /* ======================================================================
      Yardımcılar
@@ -70,7 +70,9 @@
     phone: '<rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/>',
     trend: '<path d="m22 17-8.5-8.5-5 5L2 7"/><path d="M16 17h6v-6"/>',
     sparkle: '<path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M19 17v4"/><path d="M17 19h4"/>',
-    calendar: '<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>'
+    calendar: '<rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/>',
+    chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01"/><path d="M12 12h.01"/><path d="M15.5 12h.01"/>',
+    key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8"/><path d="m16 7 3 3"/><path d="m19 4 2 2"/>'
   };
   function icon(name, cls) { return '<svg class="ic ' + (cls || '') + '" viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[name] || '') + '</svg>'; }
 
@@ -516,7 +518,7 @@
   /* ======================================================================
      Yönlendirme ve görünüm
      ====================================================================== */
-  var TABS = ['bugun', 'ilerleme', 'kilo', 'ayarlar'];
+  var TABS = ['bugun', 'ilerleme', 'kilo', 'koc', 'ayarlar'];
   var route = 'bugun';
   var viewDate = todayKey();
   var lastToday = todayKey();
@@ -529,13 +531,16 @@
     var view = $('#view');
     var onboarding = !state.profile;
     $('#tabbar').hidden = onboarding;
+    var coachBar = !onboarding && route === 'koc' && coachChatReady();
     $('#quickbar').hidden = onboarding || route !== 'bugun';
-    view.className = 'view' + (onboarding ? ' no-tabs' : '') + (!onboarding && route === 'bugun' ? ' has-quickbar' : '');
+    $('#coachbar').hidden = !coachBar;
+    view.className = 'view' + (onboarding ? ' no-tabs' : '') + (!onboarding && (route === 'bugun' || coachBar) ? ' has-quickbar' : '');
     if (onboarding) { renderOnboarding(); return; }
     $$('#tabbar .tab').forEach(function (t) { t.classList.toggle('on', t.getAttribute('data-tab') === route); });
     if (route === 'bugun') renderToday();
     else if (route === 'ilerleme') renderProgress();
     else if (route === 'kilo') renderWeight();
+    else if (route === 'koc') renderCoach();
     else renderSettings();
   }
 
@@ -907,6 +912,262 @@
     refreshTargets(); save(); notifySync();
   }
 
+  /* ------------------------------- Koç -------------------------------- */
+  var Z = window.ZCoach || null;
+  var coach = Z ? Z.loadSettings() : { provider: 'anthropic', key: '', model: 'fast', mode: '' };
+  var coachChat = Z ? Z.loadChat() : [];
+  var coachBusy = false, coachDraft = '';
+  var COACH_QS = ['Bugün nasıl gidiyorum?', 'Akşam ne yesem?', 'Bu hafta neden kilo vermedim?', 'Bana motivasyon ver'];
+
+  function coachMode() { return coach.mode || (coach.key ? 'chat' : 'app'); }
+  function coachChatReady() { return !!(Z && coach.key && coachMode() === 'chat'); }
+  function coachProvider() { return Z.provider(coach.provider); }
+  function coachModelId() { var pv = coachProvider(); return (pv.models[coach.model] || pv.models.fast).id; }
+
+  /** Koça giden kısa veri özeti (token tasarrufu için sıkıştırılmış) */
+  function coachContext() {
+    var pr = state.profile, tg = state.targets, today = todayKey(), now = new Date();
+    var day = dayOf(today), t = totalsOf(day.entries);
+    var r0 = function (x) { return Math.round(x); };
+    var last14 = [], start14 = addDays(today, -14);
+    for (var i = 0; i < 14; i++) { var k = addDays(start14, i); last14.push(hasLog(k) ? r0(dayTotals(k).kcal) : null); }
+    var from30 = addDays(today, -30);
+    var tr = trendSeries().filter(function (p) { return p.date >= from30; });
+    var rate = trendRate(), fc = goalForecast(), cw = currentWeight();
+    return {
+      simdi: today + ' ' + DAYS[now.getDay()] + ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes()),
+      profil: { cinsiyet: pr.sex === 'e' ? 'erkek' : 'kadın', yas: pr.age, boy_cm: pr.height, baslangic_kg: pr.weight, hedef_kg: pr.goal, aktivite: activityOf(pr.activity).label, hedef_hiz_kg_hafta: pr.pace, baslangic_tarihi: pr.startDate },
+      gunluk_hedef: { kcal: tg.kcal, protein_g: tg.p, karb_g: tg.c, yag_g: tg.f },
+      bugun: {
+        alinan: { kcal: r0(t.kcal), protein_g: r0(t.p), karb_g: r0(t.c), yag_g: r0(t.f) },
+        kalan_kcal: r0(tg.kcal - t.kcal), su_bardak: day.water || 0,
+        kayitlar: day.entries.slice(0, 30).map(function (e) { return [MEAL_BY[e.meal] ? MEAL_BY[e.meal].label : e.meal, e.name, e.grams ? r0(e.grams) + ' g' : portionText(e), e.kcal]; })
+      },
+      son_14_gun_kcal: { ilk_gun: start14, degerler: last14, not: 'null = kayıt yok' },
+      kilo: {
+        son_30_gun: tr.map(function (p) { return [p.date.slice(5), round1(p.y)]; }),
+        trend_kg: cw == null ? null : round1(cw),
+        haftalik_degisim_kg: rate == null ? null : Math.round(rate * 7 * 100) / 100,
+        hedefe_tahmini_tarih: fc && fc.date ? keyOf(fc.date) : null
+      },
+      seri_gun: streak()
+    };
+  }
+
+  function coachFmt(text) {
+    return esc(text).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+  }
+
+  function coachCardHtml(m, c) {
+    var it = c.item, meal = MEAL_BY[it.meal] ? MEAL_BY[it.meal].label : 'Ara öğün';
+    var foot = c.status === 'added' ? '<span class="badge ok">' + icon('check', 'ic-sm') + 'Eklendi</span>'
+      : c.status === 'skipped' ? '<span class="tiny faint">Vazgeçildi</span>'
+        : '<div class="btn-row"><button type="button" class="btn btn-sm" data-action="coach-skip" data-m="' + esc(m.id) + '" data-c="' + esc(c.id) + '">Vazgeç</button>' +
+        '<button type="button" class="btn btn-primary btn-sm" data-action="coach-add" data-m="' + esc(m.id) + '" data-c="' + esc(c.id) + '">' + icon('plus', 'ic-sm') + 'Ekle</button></div>';
+    return '<div class="coach-card' + (c.status ? ' ' + c.status : '') + '"><div class="cc-top"><div class="grow"><b>' + esc(it.name) + '</b><small>' +
+      (it.grams ? fmt(it.grams) + ' g · ' : '') + meal + (it.day === 'dun' ? ' · dün' : '') + '</small>' +
+      '<small>P ' + fmt(it.p) + ' g · K ' + fmt(it.c) + ' g · Y ' + fmt(it.f) + ' g</small></div><div class="cc-kcal">' + fmt(it.kcal) + '<small>kcal</small></div></div>' + foot + '</div>';
+  }
+
+  function coachMsgHtml(m) {
+    if (m.role === 'user') return '<div class="msg user"><div class="bubble">' + coachFmt(m.text) + '</div></div>';
+    if (m.error) {
+      return '<div class="msg bot err" role="alert"><div class="bubble">' + coachFmt(m.text) + '</div><div class="msg-actions">' +
+        '<button type="button" class="link-btn" data-action="coach-retry">Tekrar dene</button>' +
+        (m.code === 'auth' || m.code === 'credit' || m.code === 'forbidden' || m.code === 'model' ? '<button type="button" class="link-btn" data-action="coach-settings">Ayarlar</button>' : '') + '</div></div>';
+    }
+    return '<div class="msg bot"><div class="bubble">' + coachFmt(m.text) + '</div>' + (m.cards || []).map(function (c) { return coachCardHtml(m, c); }).join('') + '</div>';
+  }
+
+  function renderCoach() {
+    var view = $('#view'), mode = coachMode();
+    var html = '<h1 class="page-title">Koç</h1>';
+    if (!Z) { view.innerHTML = html + '<div class="card warn small">Koç modülü yüklenemedi. Sayfayı yenilemeyi dene.</div>'; return; }
+    html += '<div class="seg coach-seg" role="tablist">' + [['app', 'Claude uygulaması'], ['chat', 'Uygulama içi sohbet']].map(function (x) {
+      return '<button type="button" role="tab" aria-selected="' + (mode === x[0]) + '" class="' + (mode === x[0] ? 'on' : '') + '" data-action="coach-mode" data-v="' + x[0] + '">' + x[1] + '</button>';
+    }).join('') + '</div>';
+    var chips = '<div class="chips coach-chips">' + COACH_QS.map(function (q) { return '<button type="button" class="chip soft" data-action="coach-chip" data-q="' + esc(q) + '">' + esc(q) + '</button>'; }).join('') + '</div>';
+
+    if (mode === 'app') {
+      html += '<section class="card coach-app"><div class="banner" style="margin-bottom:12px"><div class="n-ic">' + icon('sparkle') + '</div><div class="grow"><b>Claude aboneliğinle ücretsiz sor</b>' +
+        '<small>Sorun ve verilerinin kısa özeti hazırlanır. Claude uygulaması açılınca gönder ya da yapıştır.</small></div></div>' +
+        '<label class="field" style="margin-bottom:8px"><span>Sorun (isteğe bağlı)</span><textarea id="coach-q-app" class="input" rows="2" placeholder="örn. Akşam ne yesem?">' + esc(coachDraft) + '</textarea></label>' +
+        chips +
+        '<button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:8px" data-action="coach-ask-app">' + icon('sparkle') + 'Claude uygulamasında sor</button></section>' +
+        '<div class="hint">Paylaş menüsü açılırsa <b>Claude</b>\'u seç. Menü açılmazsa claude.ai açılır; mesaj kutusuna uzun basıp <b>Yapıştır</b> de ve gönder.</div>' +
+        '<div class="hint">Bu modda koç yemekleri senin yerine ekleyemez. Koçun uygulama içinde cevap vermesini ve yediklerini kaydetmesini istersen <b>Uygulama içi sohbet</b>\'i kullan (API anahtarı gerekir).</div>';
+      view.innerHTML = html;
+      return;
+    }
+
+    if (!coach.key) {
+      html += '<div class="card"><div class="empty-state"><div class="es-ic">' + icon('key') + '</div><b>Uygulama içi sohbet için API anahtarı gerekli</b>' +
+        '<div class="small">Koç, Anthropic API anahtarınla çalışır; kullandıkça az bir ücret kesilir. Anahtarı Ayarlar → Yapay Zeka Koçu bölümüne yapıştırman yeterli.</div></div>' +
+        '<button type="button" class="btn btn-primary btn-block" data-action="coach-settings">Ayarlara git</button>' +
+        '<button type="button" class="btn btn-soft btn-block" style="margin-top:10px" data-action="coach-mode" data-v="app">Claude aboneliğimle ücretsiz sor</button></div>';
+      view.innerHTML = html;
+      return;
+    }
+
+    var pv = coachProvider(), md = pv.models[coach.model] || pv.models.fast;
+    html += '<div class="row-between coach-head"><span class="tiny faint">' + esc(md.label) + ' · ' + esc(md.id) + '</span>' +
+      (coachChat.length ? '<button type="button" class="link-btn" data-action="coach-clear">' + icon('trash', 'ic-sm') + 'Sohbeti temizle</button>' : '') + '</div>';
+    html += '<div class="coach-log" id="coach-log" aria-live="polite">';
+    if (!coachChat.length) {
+      html += '<div class="msg bot"><div class="bubble">Merhaba! Ben koçun. Bugünkü kayıtlarına, son günlerine ve kilo trendine bakarak cevap veririm. Yediğini yazarsan (ör. “öğlen bir tabak karnıyarık yedim”) kaydetmeyi de önerebilirim.</div></div>';
+    }
+    html += coachChat.map(coachMsgHtml).join('');
+    if (coachBusy) html += '<div class="msg bot"><div class="bubble typing" aria-label="Koç yazıyor"><i></i><i></i><i></i></div></div>';
+    html += '</div>' + chips;
+    view.innerHTML = html;
+    requestAnimationFrame(function () { window.scrollTo(0, document.documentElement.scrollHeight); });
+  }
+
+  function coachSend(text) {
+    text = String(text || '').trim();
+    if (!text || coachBusy || !Z) return;
+    if (!coach.key) { toast(esc(Z.MESSAGES.nokey)); return; }
+    coachChat.push({ id: uid(), role: 'user', text: text.slice(0, 2000), ts: Date.now() });
+    Z.saveChat(coachChat);
+    coachRequest();
+  }
+
+  function coachRequest() {
+    var msgs = Z.toApiMessages(coachChat, 14);
+    if (!msgs.length || msgs[msgs.length - 1].role !== 'user') return;
+    var last = msgs[msgs.length - 1];
+    var ctx = '';
+    try { ctx = JSON.stringify(coachContext()); } catch (e) { ctx = '{}'; }
+    last.text = '<veriler>\n' + ctx + '\n</veriler>\n\n' + last.text;
+    coachBusy = true; render();
+    var pv = coachProvider();
+    var p;
+    try {
+      p = pv.chat({ key: coach.key, model: coachModelId(), system: Z.systemPrompt(true), messages: msgs, tools: Z.TOOLS, maxTokens: 2048 });
+    } catch (e) { p = Promise.reject(e); }
+    p.then(function (res) {
+      var cards = [];
+      res.toolCalls.forEach(function (tc) {
+        if (tc.name !== 'log_food') return;
+        var item = Z.cleanFoodCall(tc.input, guessMeal());
+        if (item) cards.push({ id: uid(), item: item, status: '' });
+      });
+      var text = res.text || (cards.length ? (cards.length > 1 ? 'Bunları günlüğüne ekleyeyim mi?' : 'Bunu günlüğüne ekleyeyim mi?') : 'Şu an bir cevap üretemedim, soruyu biraz farklı sorar mısın?');
+      if (res.stop === 'length') text += ' …';
+      coachChat.push({ id: uid(), role: 'assistant', text: text, ts: Date.now(), cards: cards });
+    }).catch(function (err) {
+      if (err && err.code === 'aborted') return;
+      if (!(err && err.name === 'CoachError')) console.error(err);
+      var code = (err && err.code) || 'unknown';
+      coachChat.push({ id: uid(), role: 'assistant', error: true, code: code, text: (Z.MESSAGES[code] || Z.MESSAGES.unknown), ts: Date.now() });
+    }).then(function () {
+      coachBusy = false;
+      Z.saveChat(coachChat);
+      if (route === 'koc') render();
+    });
+  }
+
+  function coachRetry() {
+    if (coachBusy) return;
+    while (coachChat.length && coachChat[coachChat.length - 1].error) coachChat.pop();
+    Z.saveChat(coachChat);
+    if (coachChat.length && coachChat[coachChat.length - 1].role === 'user') coachRequest(); else render();
+  }
+
+  function coachCard(el, add) {
+    var mid = el.getAttribute('data-m'), cid = el.getAttribute('data-c');
+    var m = coachChat.filter(function (x) { return x.id === mid; })[0];
+    var c = m && (m.cards || []).filter(function (x) { return x.id === cid; })[0];
+    if (!c || c.status) return;
+    c.status = add ? 'added' : 'skipped';
+    Z.saveChat(coachChat);
+    if (!add) { render(); return; }
+    var it = c.item, g = it.grams;
+    var k = it.day === 'dun' ? addDays(todayKey(), -1) : todayKey();
+    addItems(k, it.meal, [{ foodId: null, name: it.name, qty: g || 1, unit: g ? 'g' : 'porsiyon', unitG: g ? 1 : 0, grams: g, kcal: it.kcal, p: it.p, c: it.c, f: it.f, quick: !g }]);
+  }
+
+  /** Ücretsiz yol: istemi kopyala, Android paylaşım menüsünü aç (Claude uygulaması), yoksa claude.ai */
+  function copyTextSync(text) {
+    var ok = false, ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+    document.body.appendChild(ta);
+    try { ta.select(); ta.setSelectionRange(0, text.length); ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+    return ok;
+  }
+  function coachAskApp() {
+    if (!Z) return;
+    var ta = $('#coach-q-app'); if (ta) coachDraft = ta.value;
+    var text;
+    try { text = Z.clipboardPrompt(JSON.stringify(coachContext()), coachDraft); } catch (e) { console.error(e); toast('Özet hazırlanamadı.'); return; }
+    var copied = copyTextSync(text);
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { copied = true; }, function () { /* eşzamanlı kopya yeterli */ }); } catch (e) { /* yok */ }
+    function openWeb() {
+      var w = null;
+      try { w = window.open('https://claude.ai/new', '_blank', 'noopener'); } catch (e) { w = null; }
+      if (copied || (navigator.clipboard && navigator.clipboard.writeText)) toast('Kopyalandı, Claude\'a yapıştır', { ms: 5000 });
+      else showCopySheet(text);
+      return w;
+    }
+    if (navigator.share) {
+      navigator.share({ text: text }).then(function () { toast('Gönderildi. Claude\'da gönder tuşuna bas.'); }, function (err) {
+        if (err && err.name === 'AbortError') { if (copied) toast('Kopyalandı. İstersen Claude\'a yapıştırabilirsin.'); return; }
+        openWeb();
+      });
+    } else openWeb();
+  }
+  function showCopySheet(text) {
+    var s = openSheet({ title: 'Metni kopyala' });
+    s.setBody('<p class="small muted" style="margin:0 0 8px">Otomatik kopyalanamadı. Metne uzun basıp tümünü seç, kopyala ve Claude\'a yapıştır.</p><textarea class="input" rows="10" readonly>' + esc(text) + '</textarea>');
+  }
+
+  /* Ayarlar bölümü */
+  function coachSettingsHtml() {
+    if (!Z) return '';
+    var pv = coachProvider();
+    var html = '<div class="section-title" id="coach-settings">Yapay Zeka Koçu</div><section class="card">';
+    if (coach.key) {
+      html += '<div class="settings-row"><div class="grow"><b>API anahtarı</b><small class="num" id="coach-key-mask">' + esc(Z.maskKey(coach.key)) + ' · yalnızca bu telefonda</small></div>' +
+        '<button type="button" class="btn btn-sm" style="color:var(--danger)" data-action="coach-key-del">' + icon('trash', 'ic-sm') + 'Sil</button></div>' +
+        '<button type="button" class="btn btn-block" style="margin:10px 0 4px" data-action="coach-test" id="coach-test">' + icon('check', 'ic-sm') + 'Bağlantıyı test et</button>';
+    } else {
+      html += '<label class="field" style="margin-bottom:8px"><span>Anthropic API anahtarı</span><div class="row"><input id="coach-key" class="input grow" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="' + esc(pv.keyHint) + '" aria-label="API anahtarı">' +
+        '<button type="button" class="btn btn-primary" data-action="coach-key-save">Kaydet</button></div></label>';
+    }
+    html += '<div class="settings-row"><div class="grow"><b>Model</b><small>' + esc((pv.models[coach.model] || pv.models.fast).sub) + '</small></div></div>' +
+      '<div class="seg" style="margin-bottom:12px">' + [['fast', pv.models.fast.label], ['smart', pv.models.smart.label]].map(function (x) {
+        return '<button type="button" class="' + (coach.model === x[0] ? 'on' : '') + '" data-action="coach-model" data-v="' + x[0] + '">' + esc(x[1]) + '</button>';
+      }).join('') + '</div>';
+    html += '<div class="hint"><b>Anahtar nasıl alınır?</b><ol class="coach-steps"><li><b>console.anthropic.com</b> adresine gir, hesap aç.</li><li><b>Billing</b> bölümünden kredi yükle (5$ uzun süre yeter).</li><li><b>API Keys</b> → <b>Create Key</b>\'e dokun.</li><li>Anahtarı kopyala, buraya yapıştır ve Kaydet\'e bas.</li></ol></div>' +
+      '<div class="hint">🔒 Anahtar yalnızca bu telefonda saklanır, yedek dosyasına eklenmez ve sadece Anthropic\'e gönderilir. Koçla konuşurken bugünkü kayıtların, son 14 günün kalorileri ve kilo özetin de cevap için Anthropic\'e gönderilir.</div>' +
+      '<div class="hint">Claude aboneliği (claude.ai) API anahtarı yerine geçmez. Aboneliğinle ücretsiz kullanmak için Koç sekmesindeki <b>Claude uygulamasında sor</b> düğmesini kullan.</div></section>';
+    return html;
+  }
+
+  function coachSaveKey() {
+    var i = $('#coach-key'); if (!i) return;
+    var v = i.value.replace(/\s+/g, '');
+    if (!v) { toast('Önce anahtarı yapıştır.'); i.focus(); return; }
+    if (!/^sk-/.test(v)) { toast('Bu bir API anahtarına benzemiyor; “sk-ant-” ile başlamalı.', { ms: 5000 }); return; }
+    coach.key = v; coach.mode = 'chat';
+    if (!Z.saveSettings(coach)) { toast('Anahtar kaydedilemedi: tarayıcı depolaması kapalı.'); return; }
+    render();
+    toast('Anahtar kaydedildi. “Bağlantıyı test et” ile deneyebilirsin.', { ms: 4500 });
+  }
+
+  function coachTestKey() {
+    if (!coach.key || coachBusy) return;
+    var b = $('#coach-test');
+    if (b) { b.disabled = true; b.textContent = 'Test ediliyor…'; }
+    var p;
+    try { p = coachProvider().chat({ key: coach.key, model: coachModelId(), system: 'Kısa cevap ver.', messages: [{ role: 'user', text: 'Merhaba, tek kelimeyle cevap ver.' }], maxTokens: 64 }); }
+    catch (e) { p = Promise.reject(e); }
+    p.then(function () { toast('Bağlantı başarılı ✓ Koç hazır.'); }, function (err) {
+      toast(esc((err && err.name === 'CoachError' && err.message) || Z.MESSAGES.unknown), { ms: 7000 });
+    }).then(function () { if (route === 'ayarlar') render(); });
+  }
+
   /* ------------------------------ Ayarlar ----------------------------- */
   function renderSettings() {
     var view = $('#view'), pr = state.profile, tg = state.targets, rm = state.reminders, s = state.settings;
@@ -947,6 +1208,8 @@
       '<div style="margin-top:12px"><div class="hint">Telefonlar, uygulama tamamen kapalıyken bildirimleri geciktirebilir ya da pil tasarrufu nedeniyle göstermeyebilir. Kaçırılan hatırlatmalar uygulamayı açtığında gösterilir.' +
       (N && N.triggersSupported() ? ' Bu cihazda zamanlanmış bildirimler destekleniyor.' : '') + '</div>' +
       (N && N.isIOS() ? '<div class="hint">iPhone\'da bildirimler yalnızca uygulama Ana Ekrana eklendiğinde çalışır (iOS 16.4 ve üzeri).</div>' : '<div class="hint">Android\'de en iyi sonuç için uygulamayı yükle ve Chrome için pil optimizasyonunu kapat.</div>') + '</div></section>';
+
+    html += coachSettingsHtml();
 
     // Görünüm ve birimler
     html += '<div class="section-title">Görünüm ve birimler</div><section class="card">' +
@@ -1424,6 +1687,14 @@
 
   /** Sesle ekleme */
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var SR_ERRORS = {
+    'not-allowed': 'Mikrofon izni verilmedi. Adres çubuğundaki kilit simgesinden mikrofona izin ver.',
+    'service-not-allowed': 'Konuşma tanıma bu cihazda kullanılamıyor. Klavyedeki 🎤 dikte tuşuyla yazdırabilirsin.',
+    'no-speech': 'Ses algılanamadı. Mikrofona dokunup tekrar dene.',
+    'audio-capture': 'Mikrofon bulunamadı.',
+    'network': 'Sesli giriş için internet gerekiyor (tarayıcının konuşma tanıma servisi). Çevrimdışıyken yazarak ekleyebilirsin.',
+    'language-not-supported': 'Türkçe konuşma tanıma bu cihazda desteklenmiyor.'
+  };
   function openVoice(o) {
     o = o || {};
     var rec = null, listening = false, finalText = '', interim = '', autoGo = true, done = false;
@@ -1460,14 +1731,7 @@
         };
         rec.onerror = function (e) {
           autoGo = false;
-          var m = {
-            'not-allowed': 'Mikrofon izni verilmedi. Adres çubuğundaki kilit simgesinden mikrofona izin ver.',
-            'service-not-allowed': 'Konuşma tanıma bu cihazda kullanılamıyor. Klavyedeki 🎤 dikte tuşuyla yazdırabilirsin.',
-            'no-speech': 'Ses algılanamadı. Mikrofona dokunup tekrar dene.',
-            'audio-capture': 'Mikrofon bulunamadı.',
-            'network': 'Sesli giriş için internet gerekiyor (tarayıcının konuşma tanıma servisi). Çevrimdışıyken yazarak ekleyebilirsin.',
-            'language-not-supported': 'Türkçe konuşma tanıma bu cihazda desteklenmiyor.'
-          }[e.error];
+          var m = SR_ERRORS[e.error];
           if (e.error !== 'aborted') setStatus(m || 'Bir sorun oldu (' + esc(e.error) + '). Tekrar dene ya da yaz.');
         };
         rec.onend = function () {
@@ -1630,6 +1894,7 @@
     confirmSheet('Tüm veriler silinsin mi?', 'Profilin, tüm öğün ve kilo kayıtların, özel besinlerin ve ayarların <b>kalıcı olarak</b> silinecek. Bu işlem geri alınamaz. İstersen önce dışa aktar.', 'Her şeyi sil', true).then(function (ok) {
       if (!ok) return;
       try { localStorage.removeItem(STORE_KEY); } catch (e) { /* */ }
+      if (Z) { Z.clearAll(); coach = Z.loadSettings(); coachChat = []; coachDraft = ''; }
       state = defaults(); invalidateFoods(); ob = { step: 0, sex: null, age: '', height: '', weight: '', goal: '', activity: 'hafif', pace: 0.5 };
       save(); applyTheme(); viewDate = todayKey(); notifySync(); render(); toast('Tüm veriler silindi');
     });
@@ -1741,7 +2006,34 @@
     'my-foods': openMyFoods,
     'export': exportData,
     'import': function () { var i = $('#import-file'); if (i) i.click(); },
-    'reset': resetAll
+    'reset': resetAll,
+    'coach-mode': function (el) { coach.mode = el.getAttribute('data-v'); Z.saveSettings(coach); render(); },
+    'coach-chip': function (el) {
+      var q = el.getAttribute('data-q');
+      if (coachMode() === 'chat' && coach.key) coachSend(q);
+      else { coachDraft = q; var ta = $('#coach-q-app'); if (ta) ta.value = q; }
+    },
+    'coach-ask-app': coachAskApp,
+    'coach-clear': function () {
+      confirmSheet('Sohbet temizlensin mi?', 'Koçla olan tüm mesajlar bu cihazdan silinecek. Öğün ve kilo kayıtların etkilenmez.', 'Temizle', true).then(function (ok) {
+        if (!ok) return; coachChat = []; Z.clearChat(); render(); toast('Sohbet temizlendi');
+      });
+    },
+    'coach-retry': coachRetry,
+    'coach-add': function (el) { coachCard(el, true); },
+    'coach-skip': function (el) { coachCard(el, false); },
+    'coach-settings': function () {
+      location.hash = '#ayarlar';
+      setTimeout(function () { var c = $('#coach-settings'); if (c) c.scrollIntoView({ block: 'start' }); var i = $('#coach-key'); if (i) i.focus({ preventScroll: true }); }, 60);
+    },
+    'coach-key-save': coachSaveKey,
+    'coach-key-del': function () {
+      confirmSheet('API anahtarı silinsin mi?', 'Anahtar bu telefondan silinecek. Uygulama içi sohbet kapanır; “Claude uygulamasında sor” ücretsiz modu çalışmaya devam eder.', 'Sil', true).then(function (ok) {
+        if (!ok) return; coach.key = ''; coach.mode = ''; Z.saveSettings(coach); render(); toast('API anahtarı silindi');
+      });
+    },
+    'coach-test': coachTestKey,
+    'coach-model': function (el) { coach.model = el.getAttribute('data-v') === 'smart' ? 'smart' : 'fast'; Z.saveSettings(coach); render(); }
   };
 
   document.addEventListener('click', function (e) {
@@ -1754,6 +2046,7 @@
   });
   document.addEventListener('input', function (e) {
     var t = e.target;
+    if (t.id === 'coach-q-app') { coachDraft = t.value; return; }
     if (t.hasAttribute('data-obi')) {
       ob[t.getAttribute('data-obi')] = t.value;
       var btn = $('[data-ob="next"]'); if (btn) btn.disabled = !obValid(ob.step);
@@ -1762,6 +2055,7 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' && e.target.hasAttribute && e.target.hasAttribute('data-obi')) { e.preventDefault(); obHandle('next'); }
+    if (e.key === 'Enter' && e.target.id === 'coach-key') { e.preventDefault(); coachSaveKey(); }
   });
   document.addEventListener('change', function (e) {
     var t = e.target;
@@ -1771,6 +2065,53 @@
     if (t.getAttribute('data-setting') === 'glassMl') { state.settings.glassMl = +t.value; save(); render(); return; }
     if (t.id === 'import-file' && t.files && t.files[0]) { importData(t.files[0]); t.value = ''; }
   });
+
+  // Koç mesaj çubuğu (yazı + mikrofon; konuşma tanıma openVoice ile aynı tr-TR ayarlarını kullanır)
+  (function initCoachbar() {
+    var form = $('#coachbar'); if (!form) return;
+    var input = $('#coach-input'), mic = $('.qb-mic', form), send = $('.qb-send', form), rec = null, listening = false;
+    mic.innerHTML = icon('mic');
+    send.innerHTML = icon('send');
+    function sync() { var has = !!input.value.trim(); mic.hidden = has && !listening; send.hidden = !has || listening; }
+    input.addEventListener('input', sync);
+    function submit() {
+      var v = input.value.trim(); if (!v) return;
+      if (coachBusy) { toast('Koç hâlâ cevap yazıyor…'); return; }
+      input.value = ''; sync(); input.blur();
+      coachSend(v);
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+    mic.addEventListener('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
+      if (!SR) { toast('Bu tarayıcı sesli girişi desteklemiyor. Klavyedeki 🎤 tuşuyla dikte edebilirsin.', { ms: 4500 }); input.focus(); return; }
+      if (listening) { try { rec.stop(); } catch (er) { /* */ } return; }
+      var finalText = '', interim = '', failed = false;
+      try {
+        rec = new SR();
+        rec.lang = 'tr-TR'; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+        rec.onstart = function () { listening = true; mic.classList.add('listening'); input.placeholder = 'Dinliyorum…'; sync(); };
+        rec.onresult = function (ev) {
+          interim = '';
+          for (var i = ev.resultIndex; i < ev.results.length; i++) {
+            var r = ev.results[i];
+            if (r.isFinal) finalText += (finalText ? ' ' : '') + r[0].transcript.trim(); else interim += r[0].transcript;
+          }
+          input.value = (finalText + ' ' + interim).trim();
+        };
+        rec.onerror = function (ev) { failed = true; if (ev.error !== 'aborted') toast(esc(SR_ERRORS[ev.error] || 'Sesli giriş başarısız oldu. Yazarak devam edebilirsin.'), { ms: 4500 }); };
+        rec.onend = function () {
+          listening = false; mic.classList.remove('listening'); input.placeholder = 'Koça sor ya da ne yediğini yaz…';
+          var t = (finalText || interim).trim();
+          if (t) input.value = t;
+          sync();
+          if (t && !failed) setTimeout(submit, 350);
+        };
+        rec.start();
+      } catch (er) { toast('Sesli giriş başlatılamadı. Yazarak devam edebilirsin.'); }
+    });
+    sync();
+  })();
+
 
   // Hızlı giriş çubuğu
   (function initQuickbar() {
@@ -1816,7 +2157,10 @@
   }
   window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferredPrompt = e; if (state.profile) render(); });
   window.addEventListener('appinstalled', function () { deferredPrompt = null; toast('Zayıfla ana ekrana eklendi 🎉'); render(); });
-  window.addEventListener('storage', function (e) { if (e.key === STORE_KEY) { state = load(); invalidateFoods(); render(); } });
+  window.addEventListener('storage', function (e) {
+    if (e.key === STORE_KEY) { state = load(); invalidateFoods(); render(); }
+    else if (Z && e.key && e.key.indexOf('zayifla.coach') === 0 && !coachBusy) { coach = Z.loadSettings(); coachChat = Z.loadChat(); render(); }
+  });
 
   // Service worker
   if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {

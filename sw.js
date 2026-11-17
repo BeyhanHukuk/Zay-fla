@@ -1,10 +1,10 @@
 /* Zayıfla service worker: çevrimdışı önbellek + hatırlatıcılar */
 'use strict';
-var VERSION = 'zayifla-v1.0.1';
+var VERSION = 'zayifla-v1.1.0';
 var CONFIG_CACHE = 'zayifla-config';
 var CONFIG_URL = './__reminders.json';
 var ASSETS = [
-  './', './index.html', './styles.css', './app.js', './parser.js', './charts.js', './notify.js', './foods.js',
+  './', './index.html', './styles.css', './app.js', './parser.js', './charts.js', './notify.js', './coach.js', './foods.js',
   './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-192.png',
   './icons/maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'
 ];
@@ -31,6 +31,7 @@ self.addEventListener('activate', function (event) {
 
 self.addEventListener('fetch', function (event) {
   var req = event.request;
+  // Yapay zeka API çağrıları (POST, başka alan adı) asla önbelleğe alınmaz: aşağıdaki iki kontrol onları doğrudan ağa bırakır.
   if (req.method !== 'GET') return;
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return;

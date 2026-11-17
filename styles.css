@@ -528,3 +528,40 @@ hr.sep { border: 0; border-top: 1px solid var(--border); margin: 14px 0; }
 @media (min-width: 680px) {
   .sheet { border-radius: 24px; bottom: 16px; }
 }
+
+/* ---------- Koç ---------- */
+.coach-seg { margin: 0 0 12px; }
+.coach-seg button { font-size: 13px; padding: 0 6px; }
+.coach-head { margin: 0 2px 6px; min-height: 36px; }
+.coach-log { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+.msg { display: flex; flex-direction: column; max-width: 88%; }
+.msg.user { align-self: flex-end; align-items: flex-end; }
+.msg.bot { align-self: flex-start; align-items: stretch; }
+.msg .bubble { padding: 10px 14px; border-radius: 18px; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.msg.user .bubble { background: var(--primary); color: var(--primary-ink); border-bottom-right-radius: 6px; }
+.msg.bot .bubble { background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); border-bottom-left-radius: 6px; }
+.msg.err .bubble { background: var(--warn-soft); border-color: transparent; box-shadow: none; }
+.msg-actions { display: flex; gap: 8px; padding-left: 6px; }
+.bubble.typing { display: inline-flex; gap: 5px; align-items: center; width: max-content; padding: 14px 16px; }
+.bubble.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--text-3); animation: coachDot 1.2s infinite ease-in-out; }
+.bubble.typing i:nth-child(2) { animation-delay: .15s; } .bubble.typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes coachDot { 0%, 80%, 100% { opacity: .3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+.coach-card { margin-top: 8px; background: var(--surface); border: 1.5px solid var(--primary-soft); border-radius: 16px; padding: 12px; box-shadow: var(--shadow); }
+.coach-card.added { border-color: var(--primary); }
+.coach-card.skipped { opacity: .6; }
+.coach-card .cc-top { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+.coach-card .cc-top b { display: block; font-size: 15px; overflow-wrap: anywhere; }
+.coach-card .cc-top small { display: block; color: var(--text-2); font-size: 13px; }
+.coach-card .cc-kcal { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; line-height: 1.1; }
+.coach-card .cc-kcal small { display: block; font-size: 12px; color: var(--text-2); font-weight: 650; }
+.coach-card .badge .ic { margin-right: 4px; }
+.coach-chips { margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.coach-app .chips { margin-bottom: 4px; }
+.coach-steps { margin: 6px 0 0; padding-left: 20px; }
+.coach-steps li + li { margin-top: 3px; }
+.coachbar .qb-input { margin-left: 4px; }
+.qb-mic.listening { background: var(--danger); color: #fff; animation: coachPulse 1.2s infinite; }
+@keyframes coachPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, .45); } 50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } }
+@media (max-width: 370px) { .tab { font-size: 10.5px; } .tab-fab { margin-left: 4px; margin-right: 4px; width: 54px; } }
+.coach-head > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.coach-head .link-btn { flex: none; white-space: nowrap; }

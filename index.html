@@ -30,11 +30,19 @@
       <button type="submit" class="qb-send" aria-label="Gönder" hidden></button>
     </form>
 
+    <form id="coachbar" class="quickbar coachbar" autocomplete="off" hidden>
+      <input id="coach-input" class="qb-input" type="text" enterkeyhint="send" inputmode="text" maxlength="2000"
+             placeholder="Koça sor ya da ne yediğini yaz…" aria-label="Koça mesaj">
+      <button type="button" class="qb-mic" aria-label="Sesle sor"></button>
+      <button type="submit" class="qb-send" aria-label="Gönder" hidden></button>
+    </form>
+
     <nav id="tabbar" class="tabbar" aria-label="Ana menü" hidden>
       <a href="#bugun" data-tab="bugun" class="tab"><span class="tab-ic" data-icon="home"></span><span>Bugün</span></a>
       <a href="#ilerleme" data-tab="ilerleme" class="tab"><span class="tab-ic" data-icon="chart"></span><span>İlerleme</span></a>
       <button type="button" class="tab-fab" data-action="addhub" aria-label="Ekle"><span data-icon="plus"></span></button>
       <a href="#kilo" data-tab="kilo" class="tab"><span class="tab-ic" data-icon="scale"></span><span>Kilo</span></a>
+      <a href="#koc" data-tab="koc" class="tab"><span class="tab-ic" data-icon="chat"></span><span>Koç</span></a>
       <a href="#ayarlar" data-tab="ayarlar" class="tab"><span class="tab-ic" data-icon="settings"></span><span>Ayarlar</span></a>
     </nav>
   </div>
@@ -48,6 +56,7 @@
   <script src="parser.js"></script>
   <script src="charts.js"></script>
   <script src="notify.js"></script>
+  <script src="coach.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
