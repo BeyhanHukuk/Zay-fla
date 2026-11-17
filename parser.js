@@ -18,20 +18,18 @@
   /* ------------------------------------------------------------------ */
   var FOLD = { 'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u', 'â': 'a', 'î': 'i', 'û': 'u', 'é': 'e', 'è': 'e', 'ä': 'a' };
 
+  var HAS_UPPER = /[A-ZÇĞİÖŞÜÂÎÛÉÈÄ]/, NON_ASCII = /[^\x00-\x7f]/, FOLD_RE = /[çğıöşüâîûéèä]/g;
   function lower(s) {
     s = String(s == null ? '' : s);
-    var out;
-    try { out = s.toLocaleLowerCase('tr-TR'); } catch (e) { out = s.toLowerCase(); }
-    return out.replace(/̇/g, '');
+    if (!HAS_UPPER.test(s) && !NON_ASCII.test(s.replace(FOLD_RE, ''))) return s; // hızlı yol: zaten küçük harf
+    // Türkçe kuralı: I -> ı, İ -> i (toLocaleLowerCase('tr-TR') ile aynı, ama çok daha hızlı)
+    return s.replace(/I/g, 'ı').replace(/İ/g, 'i').toLowerCase().replace(/̇/g, '');
   }
 
+  function foldCh(ch) { return FOLD[ch]; }
   function fold(s) {
-    var l = lower(s), out = '';
-    for (var i = 0; i < l.length; i++) {
-      var ch = l[i];
-      out += FOLD[ch] !== undefined ? FOLD[ch] : ch;
-    }
-    try { out = out.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) { /* eski motor */ }
+    var out = lower(s).replace(FOLD_RE, foldCh);
+    if (NON_ASCII.test(out)) { try { out = out.normalize('NFD').replace(/[̀-ͯ]/g, ''); } catch (e) { /* eski motor */ } }
     return out;
   }
 
@@ -180,17 +178,78 @@
   // pişirme yöntemleri -> pişmiş durum
   defDesc('pismis haslanmis haslama haslanmisi izgara izgarada firinda firin firinlanmis kizarmis kizartma kizartilmis tava tavada bugulama bugulanmis sote kavrulmis', { state: 'cooked' });
   // yalnızca nitelik
-  defDesc('kemiksiz kemikli derisiz derili yagsiz yagli light sekersiz sekerli taze organik orta', {});
+  defDesc('kemiksiz kemikli derisiz derili yagli sekerli taze organik orta', {});
   defDesc('buyuk', { scale: 1.3 });
   defDesc('kucuk', { scale: 0.7 });
   defDesc('kocaman', { scale: 1.5 });
-  var DESC2 = { 'az yagli': {}, 'tam yagli': {}, 'ev yapimi': {}, 'yari yagli': {} };
+  var DESC2 = { 'tam yagli': {}, 'ev yapimi': {} };
   var STATE_ALIAS_TOKS = { cig: 'raw', pismemis: 'raw', kuru: 'raw', pismis: 'cooked', haslanmis: 'cooked', haslama: 'cooked', izgara: 'cooked', firinda: 'cooked', kizarmis: 'cooked', bugulama: 'cooked' };
+
+  /* ---- Varyant niteleyicileri: light / diyet / yağsız / şekersiz / zero ... ----
+   * Sıfat besinden önce ("light mayonez") ya da sonra ("mayonez light") gelebilir.
+   * Varyant besin varsa o seçilir; yoksa temel besin düşük güvenle (onay ekranında "kontrol et") eklenir. */
+  var VARIANT_PHRASES = [
+    ['kalorisi azaltilmis', 'light'], ['kalori azaltilmis', 'light'], ['kalorisi azaltilmistir', 'light'], ['azaltilmis kalorili', 'light'],
+    ['az kalorili', 'light'], ['dusuk kalorili', 'light'], ['kalorisi dusuk', 'light'], ['dusuk kalori', 'light'],
+    ['light', 'light'], ['lait', 'light'], ['layt', 'light'], ['lite', 'light'], ['diyet', 'light'], ['diet', 'light'], ['fit', 'light'],
+    ['yarim yagli', 'lowfat'], ['yari yagli', 'lowfat'], ['az yagli', 'lowfat'], ['dusuk yagli', 'lowfat'], ['yagi azaltilmis', 'lowfat'],
+    ['yag orani azaltilmis', 'lowfat'], ['yag orani dusuk', 'lowfat'],
+    ['yagsiz', 'nofat'], ['sifir yagli', 'nofat'], ['yagi alinmis', 'nofat'],
+    ['sekersiz', 'sugarfree'], ['seker ilavesiz', 'sugarfree'], ['ilave sekersiz', 'sugarfree'], ['ilave seker icermeyen', 'sugarfree'],
+    ['seker ilavesi olmayan', 'sugarfree'], ['sekeri azaltilmis', 'sugarfree'], ['tatlandiricili', 'sugarfree'],
+    ['zero', 'zero'], ['sifir', 'zero'], ['sifir seker', 'zero'], ['sifir sekerli', 'zero'],
+    ['protein', 'protein'], ['proteinli', 'protein'], ['yuksek proteinli', 'protein'], ['high protein', 'protein'],
+    ['laktozsuz', 'lactosefree'], ['laktozu alinmis', 'lactosefree'], ['laktoz free', 'lactosefree'],
+    ['tam bugday', 'whole'], ['tam bugdayli', 'whole'], ['kepekli', 'whole'], ['tam tahilli', 'whole'], ['tam tahil', 'whole'],
+    ['glutensiz', 'glutenfree'], ['gluten free', 'glutenfree'], ['glutensizdir', 'glutenfree']
+  ].map(function (x) { return { toks: x[0].split(' '), key: x[0], cls: x[1] }; })
+    .sort(function (a, b) { return b.toks.length - a.toks.length; });
+  // istenen varyant yoksa yakın akrabası da kabul edilir (diyet kola ~ şekersiz kola)
+  var VARIANT_NEAR = {
+    light: ['zero', 'sugarfree', 'lowfat', 'nofat'], zero: ['sugarfree', 'light'], sugarfree: ['zero', 'light'],
+    lowfat: ['light', 'nofat'], nofat: ['lowfat', 'light'], protein: [], lactosefree: [], whole: [], glutenfree: []
+  };
+  var VARIANT_FIRST = Object.create(null);
+  VARIANT_PHRASES.forEach(function (v) { (VARIANT_FIRST[v.toks[0]] = VARIANT_FIRST[v.toks[0]] || []).push(v); });
+
+  /** toks (dize dizisi veya {f} dizisi) içinde i konumunda varyant ifadesi -> {len, key, cls} */
+  function variantAt(toks, i) {
+    var t = toks[i];
+    if (!t) return null;
+    var f = typeof t === 'string' ? t : t.f;
+    var list = VARIANT_FIRST[f];
+    if (!list) return null;
+    for (var k = 0; k < list.length; k++) {
+      var v = list[k], ok = true;
+      for (var j = 1; j < v.toks.length; j++) {
+        var u = toks[i + j];
+        if (!u || (typeof u === 'string' ? u : u.f) !== v.toks[j]) { ok = false; break; }
+      }
+      if (ok) return { len: v.toks.length, key: v.key, cls: v.cls };
+    }
+    return null;
+  }
+
+  /** Bir alias'taki varyant sınıfları ve niteleyicisiz temel dize. "mayonez light %30" -> {cls:{light}, base:"mayonez"} */
+  function variantInfo(toks) {
+    var cls = null, rest = [];
+    for (var i = 0; i < toks.length;) {
+      var v = variantAt(toks, i);
+      // "sifir" yalnızca kendi başına değil "sifir seker/yagli" ya da sondaysa niteleyici; "protein tozu" gibi ad başı da sayılır
+      if (v) { (cls = cls || {})[v.cls] = 1; i += v.len; continue; }
+      if (!/^[0-9.%]+$/.test(toks[i])) rest.push(toks[i]);
+      i++;
+    }
+    if (!cls) return null;
+    return { cls: cls, base: rest.join(' ') };
+  }
 
   /** i konumunda bir niteleyici var mı? -> {len, key, info} */
   function readDesc(toks, i) {
     var t = toks[i];
     if (!t || t.f === ',') return null;
+    var v = variantAt(toks, i);
+    if (v) return { len: v.len, key: v.key, info: { variant: v.cls }, toks: toks.slice(i, i + v.len) };
     var nx = toks[i + 1];
     if (nx) {
       var k2 = t.f + ' ' + nx.f;
@@ -230,6 +289,7 @@
     s = s.replace(/(\d+)\s*\/\s*(\d+)/g, function (m, a, b) { return (Number(b) ? String(+(a / b).toFixed(3)) : a); });
     s = s.replace(/(\d),(\d)/g, '$1.$2');
     s = s.replace(/(\d)\.(?!\d)/g, '$1 , ');
+    s = s.replace(/[^\x00-\x7fçğıöşüâîûéèä]/g, function (ch) { try { return ch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) { return ch; } }); // piña -> pina
     s = s.replace(/['’`][a-zçğıöşüâî]+/g, '');        // Nutella'yı -> nutella
     s = s.replace(/(\d)([a-zçğıöşüâîû%])/g, '$1 $2');  // 200gr -> 200 gr
     s = s.replace(/([a-zçğıöşüâîû])(\d)/g, '$1 $2');
@@ -292,7 +352,7 @@
     // ekler: buçuk / yarım / çeyrek
     var n = toks[i + len];
     if (n && n.f === 'bucuk') { value += 0.5; len++; }
-    else if (n && n.f === 'yarim' && !fracWord) { value += 0.5; len++; }
+    else if (n && n.f === 'yarim' && !fracWord && !(toks[i + len + 1] && toks[i + len + 1].f === 'yagli')) { value += 0.5; len++; }
     else if (n && n.f === 'ceyrek' && !fracWord && value <= 3) { value = value * 0.25; len++; fracWord = true; }
     // "10 tane" gibi sayı sonrası "tane"yi birim olarak bırak
     return { value: value, len: len, fracWord: fracWord, fuzzy: fuzzy };
@@ -372,34 +432,125 @@
   /* ------------------------------------------------------------------ */
   var indexCache = { foods: null, len: -1, idx: null };
 
+  /**
+   * Besin indeksi (bir kez kurulur, foods dizisi değişmedikçe önbellekten gelir).
+   *  - entries: her ad/alias için katlanmış kelimeler
+   *  - byFirst: ilk kelime -> entries, byStr: tam dize -> entry (her dize tek besine ait)
+   *  - variants: niteleyicisiz temel dize -> varyant besinler (light, yağsız, şekersiz ...)
+   * Önce açık ad ve alias'lar eklenir; addan türetilen dizeler ("Mayonez (light)" -> "mayonez")
+   * yalnızca başka bir besine ait değilse eklenir. Böylece her dize tek bir besine çıkar.
+   */
   function buildIndex(foods) {
     foods = foods || [];
     if (indexCache.foods === foods && indexCache.len === foods.length && indexCache.idx) return indexCache.idx;
     var entries = [], byFirst = Object.create(null), byId = Object.create(null), byStr = Object.create(null);
+    var foodEntries = new Map(), variants = Object.create(null), foodCls = new Map();
+    function add(food, order, alias, primary, derived) {
+      var toks = foldTokens(alias);
+      if (!toks.length) return;
+      var str = toks.join(' ');
+      var prev = byStr[str];
+      if (prev && (prev.food === food || derived)) return;
+      var e = { food: food, toks: toks, str: str, primary: primary, order: order, i: entries.length };
+      entries.push(e);
+      if (!prev) byStr[str] = e;
+      (byFirst[toks[0]] = byFirst[toks[0]] || []).push(e);
+      var fe = foodEntries.get(food);
+      if (!fe) foodEntries.set(food, fe = []);
+      fe.push(e);
+    }
+    // 1) adlar ve açık alias'lar
     foods.forEach(function (food, order) {
       if (!food || !food.name) return;
       byId[food.id] = food;
-      var names = [food.name].concat(Array.isArray(food.aliases) ? food.aliases : []);
-      var noParen = String(food.name).replace(/\([^)]*\)/g, ' ').trim();
-      if (noParen && noParen !== food.name) names.push(noParen);
-      var paren = String(food.name).match(/\(([^)]*)\)/);
-      if (paren) names.push(noParen + ' ' + paren[1]);
-      var seen = {};
-      names.forEach(function (alias, ai) {
-        var toks = foldTokens(alias);
-        if (!toks.length) return;
-        var str = toks.join(' ');
-        if (seen[str]) return;
-        seen[str] = 1;
-        var e = { food: food, toks: toks, str: str, primary: ai === 0, order: order };
-        entries.push(e);
-        if (!byStr[str]) byStr[str] = e;
-        (byFirst[toks[0]] = byFirst[toks[0]] || []).push(e);
-      });
+      add(food, order, food.name, true, false);
+      if (Array.isArray(food.aliases)) for (var a = 0; a < food.aliases.length; a++) add(food, order, food.aliases[a], false, false);
     });
-    var idx = { entries: entries, byFirst: byFirst, byId: byId, byStr: byStr, foods: foods };
+    // 2) addan türetilenler (parantezsiz ad, "ad + parantez içi")
+    foods.forEach(function (food, order) {
+      if (!food || !food.name) return;
+      var noParen = String(food.name).replace(/\([^)]*\)/g, ' ').trim();
+      if (noParen && noParen !== food.name) add(food, order, noParen, false, true);
+      var paren = String(food.name).match(/\(([^)]*)\)/);
+      if (paren) add(food, order, noParen + ' ' + paren[1], false, true);
+    });
+    // 3) varyant niteleyicileri
+    for (var i = 0; i < entries.length; i++) {
+      var e = entries[i], vr = variantInfo(e.toks);
+      if (!vr) continue;
+      e.cls = vr.cls;
+      if (e.primary) foodCls.set(e.food, vr.cls);
+      if (!vr.base) continue;
+      (variants[vr.base] = variants[vr.base] || []).push(e);
+    }
+    var idx = { entries: entries, byFirst: byFirst, byId: byId, byStr: byStr, foods: foods, foodEntries: foodEntries, variants: variants, foodCls: foodCls, tri: null };
     indexCache = { foods: foods, len: foods.length, idx: idx };
     return idx;
+  }
+
+  /* ---- Trigram indeksi (bulanık arama için, ilk gerektiğinde kurulur) ----
+   * Trigramlar tamsayıya kodlanır (41^3) ve CSR biçiminde Int32Array'lerde tutulur: hızlı ve az bellek. */
+  var TRI_N = 41 * 41 * 41;
+  function triCode(ch) {
+    var c = ch.charCodeAt(0);
+    if (c === 32) return 0;
+    if (c >= 97 && c <= 122) return c - 96;
+    if (c >= 48 && c <= 57) return c - 21;
+    return c === 37 ? 37 : c === 46 ? 38 : 39;
+  }
+  function triCodes(str) {
+    var s = '  ' + str + ' ', out = [], a = triCode(s[0]), b = triCode(s[1]);
+    for (var k = 2; k < s.length; k++) {
+      var c = triCode(s[k]);
+      out.push(a * 1681 + b * 41 + c);
+      a = b; b = c;
+    }
+    return out;
+  }
+  function ensureTri(idx) {
+    if (idx.tri) return idx.tri;
+    var ents = idx.entries, n = ents.length, counts = new Int32Array(TRI_N + 1), stamp = new Int32Array(TRI_N), codes = new Array(n);
+    for (var i = 0; i < n; i++) {
+      var cs = triCodes(ents[i].str), u = [];
+      for (var k = 0; k < cs.length; k++) if (stamp[cs[k]] !== i + 1) { stamp[cs[k]] = i + 1; u.push(cs[k]); counts[cs[k] + 1]++; }
+      codes[i] = u;
+    }
+    for (var g = 1; g <= TRI_N; g++) counts[g] += counts[g - 1];
+    var post = new Int32Array(counts[TRI_N]), fill = counts.slice(0, TRI_N);
+    for (i = 0; i < n; i++) { var uc = codes[i]; for (k = 0; k < uc.length; k++) post[fill[uc[k]]++] = i; }
+    idx.tri = { off: counts, post: post, counts: new Uint16Array(n), vocab: null, vocabList: null };
+    return idx.tri;
+  }
+  /** kelime -> entry listesi (arama için, ilk gerektiğinde) */
+  function ensureVocab(idx) {
+    var tri = ensureTri(idx);
+    if (tri.vocab) return tri;
+    var vocab = new Map();
+    idx.entries.forEach(function (e, i) {
+      for (var t = 0; t < e.toks.length; t++) { var l = vocab.get(e.toks[t]); if (!l) vocab.set(e.toks[t], l = []); if (l[l.length - 1] !== i) l.push(i); }
+    });
+    tri.vocab = vocab; tri.vocabList = Array.from(vocab.keys());
+    return tri;
+  }
+
+  /** text ile en çok trigram paylaşan entry indeksleri (en fazla max tane, artan sırada). */
+  function triCandidates(idx, texts, max) {
+    var tri = ensureTri(idx), counts = tri.counts, touched = [], off = tri.off, post = tri.post;
+    texts.forEach(function (text) {
+      var cs = triCodes(text), seen = Object.create(null);
+      for (var k = 0; k < cs.length; k++) {
+        var g = cs[k];
+        if (seen[g]) continue;
+        seen[g] = 1;
+        for (var j = off[g], e = off[g + 1]; j < e; j++) { var x = post[j]; if (!counts[x]) touched.push(x); counts[x]++; }
+      }
+    });
+    var out = touched;
+    if (touched.length > max) {
+      out = touched.slice().sort(function (a, b) { return counts[b] - counts[a] || a - b; }).slice(0, max);
+    }
+    for (var c = 0; c < touched.length; c++) counts[touched[c]] = 0;
+    return out.sort(function (a, b) { return a - b; });
   }
 
   function isBlockingTok(t) { return !t || t.f === ','; }
@@ -421,7 +572,7 @@
       for (var j = 0; j < e.toks.length; j++) {
         var qt = toks[i + j];
         if (isBlockingTok(qt)) { ok = false; break; }
-        var sc = tokenScore(qt.f, e.toks[j]);
+        var sc = qt.f === e.toks[j] ? 1 : (isNumWord(qt.f) ? 0 : tokenScore(qt.f, e.toks[j]));
         if (!sc) { ok = false; break; }
         score = Math.min(score, sc);
       }
@@ -487,12 +638,15 @@
     return best;
   }
 
+  var FUZZY_MAX = 400; // trigram ön elemesinden sonra tam benzerliği hesaplanan en fazla entry
+
   function fuzzyFind(text, idx, boost) {
     if (!text || text.length < 3) return null;
     var stemmed = text.split(' ').map(shortestStem).join(' ');
-    var best = null;
-    for (var i = 0; i < idx.entries.length; i++) {
-      var e = idx.entries[i];
+    var best = null, ents = idx.entries;
+    var cand = triCandidates(idx, stemmed !== text ? [text, stemmed] : [text], FUZZY_MAX);
+    for (var ci = 0; ci < cand.length; ci++) {
+      var e = ents[cand[ci]];
       var dl = Math.abs(e.str.length - text.length);
       if (dl > Math.max(4, text.length * 0.6)) continue;
       var sc = similarity(text, e.str);
@@ -508,9 +662,10 @@
   function suggestFoods(text, idx, boost, limit) {
     var words = String(text || '').split(' ').filter(function (w) { return w.length >= 3 && !readDescWord(w); });
     if (!words.length) return [];
-    var full = words.join(' '), bestBy = new Map();
-    for (var i = 0; i < idx.entries.length; i++) {
-      var e = idx.entries[i], hit = 0, matchedToks = {};
+    var full = words.join(' '), bestBy = new Map(), ents = idx.entries;
+    var cand = triCandidates(idx, words.length > 1 ? [full].concat(words) : [full], FUZZY_MAX * 2);
+    for (var ci = 0; ci < cand.length; ci++) {
+      var e = ents[cand[ci]], hit = 0, matchedToks = {};
       for (var a = 0; a < words.length; a++) {
         for (var b = 0; b < e.toks.length; b++) {
           if (e.toks[b].length < 3) continue;
@@ -530,7 +685,7 @@
     arr.sort(function (x, y) { return y.score - x.score || String(x.food.name).length - String(y.food.name).length; });
     return arr.slice(0, limit || 3).map(function (x) { return { id: x.food.id, name: x.food.name }; });
   }
-  function readDescWord(w) { return Object.prototype.hasOwnProperty.call(DESC, w); }
+  function readDescWord(w) { return Object.prototype.hasOwnProperty.call(DESC, w) || !!variantAt([w], 0); }
 
   /* ------------------------------------------------------------------ */
   /* Miktar -> gram                                                       */
@@ -629,6 +784,74 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Varyant seçimi (light, yağsız, şekersiz, zero ...)                   */
+  /* ------------------------------------------------------------------ */
+  function baseStrsOf(idx, food, entry) {
+    var out = [], seen = Object.create(null);
+    function addE(e) {
+      if (!e) return;
+      var vi = e.cls ? variantInfo(e.toks) : null, b = vi ? vi.base : e.str;
+      if (b && !seen[b]) { seen[b] = 1; out.push(b); }
+    }
+    addE(entry);
+    (idx.foodEntries.get(food) || []).forEach(addE);
+    return out;
+  }
+
+  /** food'un istenen sınıflardaki (want) çeşidini bulur -> {food, entry, exact} */
+  function findVariant(idx, food, entry, want) {
+    var bases = baseStrsOf(idx, food, entry), best = null;
+    for (var b = 0; b < bases.length; b++) {
+      var list = idx.variants[bases[b]];
+      if (!list) continue;
+      for (var k = 0; k < list.length; k++) {
+        var ve = list[k];
+        if (ve.food === food) continue;
+        var exact = 0, near = 0, extra = 0;
+        for (var w = 0; w < want.length; w++) {
+          if (ve.cls[want[w]]) exact++;
+          else if ((VARIANT_NEAR[want[w]] || []).some(function (n) { return ve.cls[n]; })) near++;
+        }
+        if (exact + near < want.length) continue;
+        for (var c in ve.cls) if (want.indexOf(c) < 0) extra++;
+        var sc = exact * 10 + near * 3 - extra * 2 + (ve.primary ? 1 : 0) - b * 0.5;
+        if (!best || sc > best.sc || (sc === best.sc && ve.order < best.entry.order)) best = { food: ve.food, entry: ve, exact: exact === want.length, sc: sc };
+      }
+    }
+    return best;
+  }
+
+  /** Besin zaten o özellikte mi? (çay zaten şekersiz, tavuk göğsü zaten yağsız sayılır) */
+  function inherent(idx, food, want) {
+    var own = idx.foodCls.get(food) || {};
+    var k = Number(food.kcal) || 0, c = Number(food.c) || 0, f = Number(food.f) || 0;
+    return want.every(function (w) {
+      if (own[w]) return true;
+      if (w === 'light' || w === 'zero') return k <= 25;
+      if (w === 'sugarfree') return c <= 3 || k <= 25;
+      if (w === 'nofat') return f <= 1;
+      if (w === 'lowfat') return f <= 3;
+      return false;
+    });
+  }
+
+  /** Çeşit bulunamadığında onay ekranında gösterilecek öneriler (aynı besinin diğer çeşitleri + benzerleri). */
+  function variantSuggestions(idx, food, rawToks, boost) {
+    var out = [], seen = new Set([food]);
+    baseStrsOf(idx, food, null).forEach(function (b) {
+      (idx.variants[b] || []).forEach(function (ve) { if (!seen.has(ve.food) && out.length < 3) { seen.add(ve.food); out.push({ id: ve.food.id, name: ve.food.name }); } });
+    });
+    if (out.length < 3) {
+      var words = rawToks.map(function (t) { return t.f; }).filter(function (w) { return !/^[0-9.]+$/.test(w) && !isNumWord(w); });
+      suggestFoods(words.join(' '), idx, boost, 6).forEach(function (sg) {
+        var f = idx.byId[sg.id];
+        if (out.length < 3 && f && !seen.has(f)) { seen.add(f); out.push(sg); }
+      });
+    }
+    return out;
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Ana ayrıştırıcı                                                     */
   /* ------------------------------------------------------------------ */
   var FUZZY_ACCEPT = 0.72;
@@ -649,10 +872,12 @@
 
     /** Niteleyicileri çözer: varyant besin, çiğ/pişmiş durumu, boyut çarpanı. */
     function resolveMods(food, entry, ml) {
-      var res = { food: food, state: null, scale: 1 };
+      var res = { food: food, state: null, scale: 1, conf: 1 };
+      var want = [];
       ml.forEach(function (m) {
         if (m.info.state) res.state = m.info.state;
         if (m.info.scale) res.scale = m.info.scale;
+        if (m.info.variant && want.indexOf(m.info.variant) < 0) want.push(m.info.variant);
       });
       var ent = entry || null;
       if (ml.length && entry) {
@@ -662,6 +887,16 @@
         for (var c = 0; c < cands.length; c++) {
           var e2 = idx.byStr[cands[c]];
           if (e2 && e2.food !== food) { res.food = e2.food; ent = e2; break; }
+        }
+      }
+      // et/balık gibi çiğ/pişmiş değerli besinlerde "yağsız / az yağlı" bir tarif sıfatıdır, ayrı ürün aranmaz
+      if (want.length && hasStates(food) && res.food === food && want.every(function (w) { return w === 'nofat' || w === 'lowfat'; })) want = [];
+      if (want.length) {
+        var have = res.food !== food ? (ent && ent.cls) || idx.foodCls.get(res.food) : null;
+        if (!have || !want.every(function (w) { return have[w]; })) {
+          var v = findVariant(idx, food, ent || entry, want);
+          if (v) { res.food = v.food; ent = v.entry; res.conf = v.exact ? 1 : 0.85; }
+          else if (!inherent(idx, food, want)) { res.conf = 0.6; res.noVariant = want; }
         }
       }
       if (ent && !res.state) {
@@ -676,9 +911,15 @@
     function makeItem(food, q, rawToks, conf, res) {
       var r = resolveUnit(food, q ? q.qty : null, q ? q.unit : null, q && q.fracWord);
       var it = computeItem(food, r.qty, r.unit, r.unitG, res ? { state: res.state, scale: res.scale } : null);
-      it.confidence = Math.max(0.05, Math.min(1, Math.round(conf * r.conf * (q && q.fuzzy ? 0.8 : 1) * 100) / 100));
+      var vc = res && res.conf != null ? res.conf : 1;
+      it.confidence = Math.max(0.05, Math.min(1, Math.round(conf * vc * r.conf * (q && q.fuzzy ? 0.8 : 1) * 100) / 100));
       if (r.fallback) it.unitFallback = true;
       it.raw = rawToks.map(function (t) { return t.r; }).join(' ');
+      if (res && res.noVariant) {
+        // istenen light/şekersiz... çeşidi veritabanında yok: temel besin + benzer öneriler
+        it.variantMissing = res.noVariant.slice();
+        it.suggestions = variantSuggestions(idx, food, rawToks, boost);
+      }
       return it;
     }
 
@@ -807,12 +1048,18 @@
       }
 
       // miktar
-      var q = parseQuantity(toks, i);
+      // "yarım yağlı süt", "sıfır kola": miktar değil niteleyici
+      var vq = variantAt(toks, i);
+      var q = vq && (vq.len > 1 || t.f === 'sifir') ? null : parseQuantity(toks, i);
       if (q && q.len === 1 && toks[i].f === 'yedi' && onlyFillersUntilBoundary(i + 1)) q = null; // "yedi" = fiil
       // "yarım ekmek döner", "çeyrek ekmek arası köfte": ekmek boyunu anlatır, 1 adet sandviçtir
       if (q && q.fracWord && q.len === 1 && toks[i + 1] && toks[i + 1].f === 'ekmek') {
-        var sw = matchFoodAt(toks, i + 1, idx, boost);
-        if (sw && sw.len > 1) q = { value: 1, len: 1, fracWord: false, fuzzy: false };
+        var whole = matchFoodAt(toks, i, idx, boost);
+        if (whole && whole.len >= 3 && !pending) { q = null; } // "yarım ekmek kokoreç" adlı ayrı bir besin var
+        else {
+          var sw = matchFoodAt(toks, i + 1, idx, boost);
+          if (sw && sw.len > 1) q = { value: 1, len: 1, fracWord: false, fuzzy: false };
+        }
       }
       // "iki yumurtalı menemen": sayı sıfatı niteler, menemen 1 porsiyondur
       if (q && !q.fracWord && toks[i + q.len] && /l(i|u)$/.test(toks[i + q.len].f) && !parseUnit(toks, i + q.len, true) &&
@@ -825,6 +1072,8 @@
         var u = parseUnit(toks, j, true);
         if (u) j += u.len;
         var qraw = toks.slice(i, j);
+        // "yağsız tavuk göğsü 150 gram": önce besinin devamı olan kelimeleri ("göğsü") bağla
+        if (last && !lastExplicit && unknown.length && unknown[0].__afterFood && onlyFillersUntilBoundary(j)) flushUnknown(false);
         // sondaki miktar: "ekmek iki dilim"
         if (last && !lastExplicit && unknown.length === 0 && onlyFillersUntilBoundary(j)) {
           pending = { qty: q.value, unit: u ? u.unit : null, fracWord: q.fracWord, fuzzy: q.fuzzy, raw: qraw };
@@ -867,8 +1116,20 @@
         }
         var nextFood = dj < n && !isSepAt(toks, dj) && !matchMealAt(toks, dj) && (parseQuantity(toks, dj) || parseUnit(toks, dj, false) || matchFoodAt(toks, dj, idx, boost));
         var asFood = fm0 && (fm0.len >= 2 || !nextFood);
+        // "yağsız tavuk pirzola": niteleyiciden sonraki ad ("tavuk pirzola"), niteleyicili alias'tan ("yağsız tavuk") daha uzunsa niteleyici say
+        if (asFood && fm0.len >= 2 && dj < n) {
+          var fmN = matchFoodAt(toks, dj, idx, boost);
+          if (fmN && dj + fmN.len > i + fm0.len) asFood = false;
+        }
         if (!asFood) {
           var atEnd = dj >= n || isSepAt(toks, dj) || !!matchMealAt(toks, dj) || FILLERS[toks[dj].f] || looksLikeVerb(toks[dj].f);
+          if (!atEnd && last && !pending && !mods.length) {
+            // "süt light bir bardak": niteleyiciden sonra yalnızca miktar geliyorsa önceki besine aittir
+            var qa = parseQuantity(toks, dj), ka = dj;
+            if (qa) { ka += qa.len; var ua = parseUnit(toks, ka, true); if (ua) ka += ua.len; }
+            else { var ub = parseUnit(toks, ka, false); if (ub) ka += ub.len; }
+            if (ka > dj && onlyFillersUntilBoundary(ka)) atEnd = true;
+          }
           if (unknown.length) flushUnknown(false);
           if (last && !pending && atEnd && !mods.length) modifyLast(dl);
           else mods = mods.concat(dl);
@@ -942,25 +1203,48 @@
     var qt = foldTokens(query);
     if (!qt.length) return [];
     var q = qt.join(' ');
+    var tri = ensureVocab(idx), ents = idx.entries;
     var bestBy = new Map();
-    for (var i = 0; i < idx.entries.length; i++) {
-      var e = idx.entries[i], s = 0;
-      if (e.str === q) s = 100;
-      else if (e.str.indexOf(q) === 0) s = 90 - Math.min(10, (e.str.length - q.length) / 3);
-      else if (e.toks.some(function (t) { return t.indexOf(q) === 0; })) s = 78 - Math.min(8, (e.str.length - q.length) / 4);
-      else if (qt.every(function (w) { return e.toks.some(function (t) { return t.indexOf(w) === 0 || tokenScore(w, t) > 0; }); })) s = 72;
-      else if (e.str.indexOf(q) >= 0) s = 60;
-      else if (q.length >= 3) {
-        var sim = similarity(q, e.str);
-        // sorgu, alias'ın bir kelimesine yakınsa
-        e.toks.forEach(function (t) { sim = Math.max(sim, similarity(q, t) * 0.95); });
-        if (sim >= 0.6) s = sim * 55;
-      }
-      if (!s) continue;
+    function put(e, s) {
       if (e.primary) s += 2;
       if (boost && boost[e.food.id]) s += Math.min(8, boost[e.food.id]);
       var prev = bestBy.get(e.food);
       if (prev == null || s > prev) bestBy.set(e.food, s);
+    }
+    // 1) dize eşleşmeleri (ucuz, tüm liste)
+    var done = new Uint8Array(ents.length);
+    for (var i = 0; i < ents.length; i++) {
+      var e = ents[i], str = e.str, s = 0;
+      if (str === q) s = 100;
+      else if (str.lastIndexOf(q, 0) === 0) s = 90 - Math.min(10, (str.length - q.length) / 3);
+      else if (str.indexOf(q) > 0) {
+        s = str.indexOf(' ' + q) >= 0 ? 78 - Math.min(8, (str.length - q.length) / 4) : 60;
+      }
+      if (s) { if (s > 60) done[i] = 1; put(e, s); }
+    }
+    // 2) her kelime bir alias kelimesiyle (ön ek / ek atarak) eşleşiyor: "tavuk göğüs" -> "tavuk göğsü ızgara"
+    var perWord = qt.map(function (w) {
+      var hit = new Set(), v = tri.vocabList;
+      for (var k = 0; k < v.length; k++) {
+        var t = v[k];
+        if (t.lastIndexOf(w, 0) === 0 || (w.length >= 3 && t.length >= 2 && tokenScore(w, t) > 0)) tri.vocab.get(t).forEach(function (x) { hit.add(x); });
+      }
+      return hit;
+    });
+    perWord[0].forEach(function (x) {
+      if (done[x]) return;
+      for (var w = 1; w < perWord.length; w++) if (!perWord[w].has(x)) return;
+      done[x] = 1; put(ents[x], 72);
+    });
+    // 3) yazım hatası: trigram ön elemesiyle bulanık benzerlik
+    if (q.length >= 3) {
+      var cand = triCandidates(idx, [q], FUZZY_MAX);
+      for (var c = 0; c < cand.length; c++) {
+        if (done[cand[c]]) continue;
+        var e2 = ents[cand[c]], sim = similarity(q, e2.str);
+        e2.toks.forEach(function (t) { sim = Math.max(sim, similarity(q, t) * 0.95); });
+        if (sim >= 0.6) put(e2, sim * 55);
+      }
     }
     var arr = [];
     bestBy.forEach(function (s, food) { arr.push({ food: food, score: s }); });
@@ -978,7 +1262,7 @@
   }
 
   return {
-    version: '1.1.0',
+    version: '1.2.0',
     lower: lower, fold: fold, foldTokens: foldTokens, tokenize: tokenize, stems: stems,
     wordsToNumber: wordsToNumber, parseNumberText: parseNumberText,
     levenshtein: levenshtein, similarity: similarity,

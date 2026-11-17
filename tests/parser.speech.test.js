@@ -87,8 +87,9 @@ FOODS.forEach(f => {
   const errs = [];
   ['kcal', 'p', 'c', 'f'].forEach(k => { if (!(Number.isFinite(f[k]) && f[k] >= 0)) errs.push(k); });
   if (f.kcal > 900) errs.push('kcal>900');
-  const FIBER_OK = { limon: 1, 'limon-suyu': 1, kakao: 1 }; // lif ağırlıklı, USDA değerleri doğru
-  const macro = f.p * 4 + f.c * 4 + f.f * 9;
+  const FIBER_OK = { limon: 1, 'limon-suyu': 1, kakao: 1, 'd-lime': 1, 'd-toz-biber': 1, 'd-psyllium': 1, 'd-bugday-kepegi': 1, 'a-tatlandirici-ksilitol': 1, 'a-sekerleme-sekersiz': 1 }; // lif / şeker alkolü ağırlıklı, USDA değerleri doğru
+  const macro = f.p * 4 + f.c * 4 + f.f * 9 + (f.alc || 0) * 7; // alc: 100 ml'deki alkol (g)
+  if (f.alc != null && !(f.alc >= 0 && f.alc <= 45)) errs.push('alc ' + f.alc);
   if (!FIBER_OK[f.id] && f.kcal > 20 && Math.abs(macro - f.kcal) / f.kcal > 0.35 && !/alkol|bira|şarap|rakı|viski|votka/i.test(f.name + f.cat)) errs.push(`makro ${Math.round(macro)} vs kcal ${f.kcal}`);
   Object.entries(f.units || {}).forEach(([u, g]) => { if (!(g > 0)) errs.push('birim ' + u); });
   if (f.def && f.def !== 'g' && f.def !== 'ml' && !(f.units || {})[f.def]) errs.push('def birimi yok: ' + f.def);

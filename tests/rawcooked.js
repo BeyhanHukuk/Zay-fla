@@ -141,6 +141,29 @@ function serve() {
     check((await page.$$(sheet + ' .pitem')).length >= 1, 'öneri çipine basınca kalem eklenir');
   }
 
+  // light / diyet çeşidi: varsa doğrudan, yoksa "kontrol et" + öneri çipleri
+  console.log('Light / diyet çeşitleri');
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.fill('#qb-input', 'bir yemek kaşığı kalorisi azaltılmış mayonez ve bir kutu kola zero');
+  await page.press('#qb-input', 'Enter');
+  await page.waitForSelector(sheet + ' .pitem');
+  const lightNames = await page.$$eval(sheet + ' .pitem-name b', els => els.map(e => e.textContent));
+  const lowBadges = await page.$$(sheet + ' .pitem.low');
+  check(lightNames.length === 2 && /light|azaltılmış/i.test(lightNames[0]) && /şekersiz/i.test(lightNames[1]) && !lowBadges.length, 'light mayonez + kola zero doğrudan anlaşıldı: ' + lightNames.join(' | '));
+  await page.goto(BASE, { waitUntil: 'load' });
+  await page.fill('#qb-input', 'light simit');
+  await page.press('#qb-input', 'Enter');
+  await page.waitForSelector(sheet + ' .pitem');
+  const lowItem = await page.$(sheet + ' .pitem.low');
+  const swapChips = await page.$$(sheet + ' .pitem [data-act="swap"]');
+  check(!!lowItem && swapChips.length >= 1, 'çeşidi olmayan "light simit": uyarı + ' + swapChips.length + ' öneri çipi');
+  if (swapChips.length) {
+    const chipName = await swapChips[0].textContent();
+    await swapChips[0].click();
+    const after = await page.$$eval(sheet + ' .pitem-name b', els => els.map(e => e.textContent));
+    check(after.length === 1 && after[0] === chipName, 'öneri çipine basınca kalem değişir: ' + after.join('|'));
+  }
+
   check(!errors.length, 'konsol/sayfa hatası yok' + (errors.length ? ': ' + errors.join(' | ') : ''));
   await browser.close(); srv.close();
   console.log(ok ? '\nTAMAM' : '\nBAŞARISIZ');

@@ -319,9 +319,9 @@ function check(cond, msg) { console.log((cond ? '  ✓ ' : '  ✗ ') + msg); if 
 
   console.log('Service worker');
   const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
-  check(/'\.\/coach\.js'/.test(sw) && /zayifla-v1\.3\.0/.test(sw), 'sw: coach.js önbellek listesinde, sürüm 1.3.0');
+  check(/'\.\/coach\.js'/.test(sw) && /zayifla-v1\.4\.0/.test(sw), 'sw: coach.js önbellek listesinde, sürüm 1.4.0');
   check(/if \(url\.origin !== self\.location\.origin\) return;/.test(sw) && /if \(req\.method !== 'GET'\) return;/.test(sw), 'sw: API (POST, başka alan adı) önbelleğe alınmıyor');
-  check(await pA.evaluate(() => window.Zayifla.version) === '1.3.0', 'uygulama sürümü 1.3.0');
+  check(await pA.evaluate(() => window.Zayifla.version) === '1.4.0', 'uygulama sürümü 1.4.0');
   await ctxA.close();
 
   /* ------------------------------ 360 px ------------------------------ */

@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.3.0';
+  var APP_VERSION = '1.4.0';
 
   /* ======================================================================
      Yardımcılar
@@ -1374,7 +1374,16 @@
         '<div class="pitem-ctl"><div class="stepper"><button type="button" data-act="dec" aria-label="Azalt">−</button><input data-act="qty" inputmode="decimal" value="' + fmtQty(it.qty) + '" aria-label="Miktar"><button type="button" data-act="inc" aria-label="Artır">+</button></div>' +
         '<select class="select" data-act="unit" aria-label="Birim"' + (food ? '' : ' disabled') + '>' + opts.map(function (u) { return '<option value="' + esc(u.v) + '"' + (u.v === it.unit ? ' selected' : '') + '>' + esc(u.label) + '</option>'; }).join('') + '</select></div>' +
         stateSeg(food, it.state) +
+        lowSugHtml(it, low) +
         '<div class="pitem-actions"><button type="button" class="link-btn" data-act="change">' + icon('search', 'ic-sm') + ' Değiştir</button><button type="button" class="link-btn" data-act="remove" style="color:var(--danger)">Kaldır</button></div></div>';
+    }
+    /** Düşük güvenli kalemde (ör. "light simit" yok) önerilen benzer besinler */
+    function lowSugHtml(it, low) {
+      var sug = low ? (it.suggestions || []).filter(function (x) { return x.id !== it.foodId && foodById(x.id); }) : [];
+      if (!sug.length) return '';
+      var note = it.variantMissing ? 'Bu çeşidi bulamadım, normalini yazdım. Bunlardan biri mi?' : 'Bunlardan biri mi?';
+      return '<div class="small muted" style="margin-top:8px">' + note + '</div><div class="chips sug-chips" style="flex-wrap:wrap;overflow:visible">' +
+        sug.map(function (x) { return '<button type="button" class="chip soft" data-act="swap" data-fid="' + esc(x.id) + '">' + esc(x.name) + '</button>'; }).join('') + '</div>';
     }
     function unmatchedHtml(u, i) {
       var sug = (u.suggestions || []).filter(function (x) { return foodById(x.id); });
@@ -1432,6 +1441,14 @@
           row.querySelector('[data-act="qty"]').value = fmtQty(it.qty);
           recalcItem(it); updateRow(i);
         } else if (act === 'remove') { items.splice(i, 1); draw(); }
+        else if (act === 'swap') {
+          var sw = foodById(a.getAttribute('data-fid'));
+          if (sw) {
+            var su = P.foodUnits(sw), keep = it.unit === 'g' || it.unit === 'ml' || su[it.unit];
+            var ns = withBase(itemFromFood(sw, keep ? it.qty : null, keep ? it.unit : null));
+            ns.raw = it.raw; items[i] = ns; draw();
+          }
+        }
         else if (act === 'change') {
           openSearch({
             mode: 'pick', query: it.raw || it.name, onPick: function (food) {
@@ -2315,6 +2332,11 @@
   if (startHash === 'ses' && state.profile) { history.replaceState(null, '', '#bugun'); setTimeout(function () { openVoice({ autostart: false }); }, 200); }
   initNotify();
   if (!storageOK) toast('Tarayıcı depolaması kapalı; veriler kaydedilemeyecek.');
+  // ~2.700 besinin arama dizinini boşta kur: ilk yazışta / ilk sesli girişte bekleme olmasın
+  (function prebuildIndex() {
+    var run = function () { try { P.buildIndex(allFoods()); P.searchFoods('a', allFoods(), { limit: 1 }); } catch (e) { /* yoksay */ } };
+    if (window.requestIdleCallback) window.requestIdleCallback(run, { timeout: 3000 }); else setTimeout(run, 600);
+  })();
 
   // Test ve hata ayıklama için
   window.Zayifla = { state: function () { return state; }, parse: parseText, version: APP_VERSION, coachContext: coachContext };
