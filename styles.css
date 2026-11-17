@@ -141,6 +141,9 @@ svg { display: block; }
   flex: 1; min-height: 38px; border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--text-2);
   padding: 0 8px; white-space: nowrap; transition: background .2s, color .2s;
 }
+.seg-sm { margin-top: 10px; }
+.seg-sm button { min-height: 32px; font-size: 13px; }
+.state-seg { max-width: 220px; }
 .seg button.on { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, .1); }
 .chips { display: flex; gap: 8px; overflow-x: auto; padding: 2px 0 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .chips::-webkit-scrollbar { display: none; }

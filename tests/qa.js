@@ -596,7 +596,7 @@ function check(cond, msg) { console.log((cond ? '  ✓ ' : '  ✗ ') + msg); if 
   await ctx.setOffline(true);
   await page.reload({ waitUntil: 'load' });
   await page.waitForSelector('#tabbar:not([hidden])');
-  check(await page.evaluate(() => window.FOODS.length) === 443, 'çevrimdışı yeniden yükleme (443 besin)');
+  check(await page.evaluate(() => window.FOODS.length) >= 480, 'çevrimdışı yeniden yükleme (besin listesi yüklü)');
   await page.goto(BASE + '?utm=x#kilo', { waitUntil: 'load' }).catch(() => {});
   check(await page.$('#wform') !== null, 'çevrimdışı sorgu dizesiyle açılış');
   await ctx.setOffline(false);

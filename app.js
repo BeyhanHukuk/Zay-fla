@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.2.0';
+  var APP_VERSION = '1.3.0';
 
   /* ======================================================================
      Yardımcılar
@@ -132,12 +132,16 @@
     if (!e || typeof e !== 'object') return null;
     var kcal = num(e.kcal, NaN);
     if (!isFinite(kcal) || kcal < 0 || kcal > 20000) return null;
-    return {
+    var out = {
       id: String(e.id || uid()), foodId: e.foodId == null ? null : String(e.foodId), name: String(e.name || 'Besin').slice(0, 120),
       qty: num(e.qty, 1), unit: String(e.unit || 'porsiyon'), unitG: num(e.unitG, 0), grams: num(e.grams, 0),
       kcal: Math.round(kcal), p: round1(num(e.p)), c: round1(num(e.c)), f: round1(num(e.f)),
       meal: MEAL_BY[e.meal] ? e.meal : 'ara', ts: num(e.ts, Date.now()), quick: !!e.quick
     };
+    if (e.state === 'raw' || e.state === 'cooked') out.state = e.state;   // çiğ / pişmiş tartı
+    var sc = num(e.scale, 1);
+    if (sc > 0 && sc !== 1 && sc <= 3) out.scale = sc;                    // büyük / küçük boy çarpanı
+    return out;
   }
   function cleanFood(f) {
     if (!f || typeof f !== 'object' || !f.name || !isFinite(Number(f.kcal))) return null;
@@ -331,12 +335,12 @@
   function hasLog(k) { var d = state.days[k]; return !!(d && d.entries.length); }
 
   function toEntry(it, meal) {
-    return cleanEntry({ id: uid(), foodId: it.foodId, name: it.name, qty: it.qty, unit: it.unit, unitG: it.unitG, grams: it.grams, kcal: it.kcal, p: it.p, c: it.c, f: it.f, meal: meal, ts: Date.now(), quick: it.quick });
+    return cleanEntry({ id: uid(), foodId: it.foodId, name: it.name, qty: it.qty, unit: it.unit, unitG: it.unitG, grams: it.grams, kcal: it.kcal, p: it.p, c: it.c, f: it.f, meal: meal, ts: Date.now(), quick: it.quick, state: it.state, scale: it.scale });
   }
   function pushRecent(it) {
     if (!it.foodId) return;
     state.recents = state.recents.filter(function (r) { return r.id !== it.foodId; });
-    state.recents.unshift({ id: it.foodId, qty: it.qty, unit: it.unit, ts: Date.now() });
+    state.recents.unshift({ id: it.foodId, qty: it.qty, unit: it.unit, state: it.state, ts: Date.now() });
     state.recents = state.recents.slice(0, 30);
   }
   function addItems(k, meal, items, silent) {
@@ -1325,8 +1329,8 @@
     var food = foodById(it.foodId);
     var q = isFinite(it.qty) && it.qty > 0 ? it.qty : 0;
     if (food) {
-      var c = P.computeItem(food, q, it.unit, it.unitG);
-      ['grams', 'kcal', 'p', 'c', 'f', 'unitG'].forEach(function (k) { it[k] = c[k]; });
+      var c = P.computeItem(food, q, it.unit, it.unitG, { state: it.state, scale: it.scale });
+      ['grams', 'kcal', 'p', 'c', 'f', 'unitG', 'name'].forEach(function (k) { it[k] = c[k]; });
     } else if (it.base) {
       ['kcal', 'p', 'c', 'f', 'grams'].forEach(function (k) { it[k] = k === 'kcal' ? Math.round(it.base[k] * q) : round1(it.base[k] * q); });
     }
@@ -1336,15 +1340,22 @@
     if (!it.base) { var q = it.qty || 1; it.base = { kcal: it.kcal / q, p: it.p / q, c: it.c / q, f: it.f / q, grams: (it.grams || 0) / q }; }
     return it;
   }
-  function itemFromFood(food, qty, unit, unitG) {
+  function itemFromFood(food, qty, unit, state) {
     var r = P.resolveUnit(food, qty, unit, false);
-    var it = P.computeItem(food, r.qty, r.unit, r.unitG);
+    var it = P.computeItem(food, r.qty, r.unit, r.unitG, { state: state });
     it.confidence = 1;
     return it;
   }
 
   function mealSeg(sel, attr) {
     return '<div class="seg" role="tablist">' + MEALS.map(function (m) { return '<button type="button" class="' + (sel === m.id ? 'on' : '') + '" ' + attr + '="' + m.id + '">' + m.label + '</button>'; }).join('') + '</div>';
+  }
+
+  /** Çiğ / pişmiş geçişi (yalnızca iki değeri olan besinlerde) */
+  function stateSeg(food, st) {
+    if (!food || !P.hasStates(food)) return '';
+    st = st || P.baseState(food);
+    return '<div class="seg seg-sm state-seg" role="group" aria-label="Çiğ veya pişmiş tartı"><button type="button" data-act="state" data-state="cooked" class="' + (st === 'cooked' ? 'on' : '') + '">Pişmiş</button><button type="button" data-act="state" data-state="raw" class="' + (st === 'raw' ? 'on' : '') + '">Çiğ</button></div>';
   }
 
   /** Ayrıştırma sonrası onay sayfası */
@@ -1362,11 +1373,14 @@
         (low ? ' <span class="badge warn">Emin değilim — kontrol et</span>' : '') + '</div><div class="pitem-kcal js-kcal">' + fmt(it.kcal) + ' kcal</div></div>' +
         '<div class="pitem-ctl"><div class="stepper"><button type="button" data-act="dec" aria-label="Azalt">−</button><input data-act="qty" inputmode="decimal" value="' + fmtQty(it.qty) + '" aria-label="Miktar"><button type="button" data-act="inc" aria-label="Artır">+</button></div>' +
         '<select class="select" data-act="unit" aria-label="Birim"' + (food ? '' : ' disabled') + '>' + opts.map(function (u) { return '<option value="' + esc(u.v) + '"' + (u.v === it.unit ? ' selected' : '') + '>' + esc(u.label) + '</option>'; }).join('') + '</select></div>' +
+        stateSeg(food, it.state) +
         '<div class="pitem-actions"><button type="button" class="link-btn" data-act="change">' + icon('search', 'ic-sm') + ' Değiştir</button><button type="button" class="link-btn" data-act="remove" style="color:var(--danger)">Kaldır</button></div></div>';
     }
     function unmatchedHtml(u, i) {
+      var sug = (u.suggestions || []).filter(function (x) { return foodById(x.id); });
       return '<div class="unmatched" data-u="' + i + '"><div class="row-between"><div class="grow"><b>“' + esc(u.text) + '”</b><div class="small muted">Veritabanında bulunamadı' + (u.qty != null ? ' · ' + fmtQty(u.qty) + (u.unit ? ' ' + u.unit : '') : '') + '</div></div>' +
         '<button type="button" class="icon-btn" data-uact="ignore" aria-label="Yoksay">' + icon('x', 'ic-sm') + '</button></div>' +
+        (sug.length ? '<div class="small muted" style="margin-top:8px">Bunlardan biri mi?</div><div class="chips sug-chips" style="flex-wrap:wrap;overflow:visible">' + sug.map(function (x) { return '<button type="button" class="chip soft" data-uact="sug" data-fid="' + esc(x.id) + '">' + esc(x.name) + '</button>'; }).join('') + '</div>' : '') +
         '<div class="btn-row" style="margin-top:8px"><button type="button" class="btn btn-sm" data-uact="search">' + icon('search', 'ic-sm') + 'Ara</button><button type="button" class="btn btn-soft btn-sm" data-uact="create">' + icon('plus', 'ic-sm') + 'Yeni besin</button></div></div>';
     }
     function draw() {
@@ -1388,6 +1402,7 @@
       var row = s.body.querySelector('.pitem[data-i="' + i + '"]'); if (!row) return;
       var it = items[i];
       row.querySelector('.js-kcal').textContent = fmt(it.kcal) + ' kcal';
+      var nb = row.querySelector('.pitem-name b'); if (nb) nb.textContent = it.name;
       row.querySelector('.js-sub').textContent = (it.raw ? '“' + it.raw + '” · ' : '') + (it.grams ? fmt(it.grams) + ' g' : '');
       drawFoot();
     }
@@ -1406,7 +1421,11 @@
         if (act === 'add-more') { openSearch({ mode: 'pick', onPick: function (food) { addFoodItem(food, null, null); } }); return; }
         var row = a.closest('.pitem'); if (!row) return;
         var i = +row.getAttribute('data-i'), it = items[i];
-        if (act === 'inc' || act === 'dec') {
+        if (act === 'state') {
+          it.state = a.getAttribute('data-state'); recalcItem(it);
+          $$('[data-act="state"]', row).forEach(function (b) { b.classList.toggle('on', b === a); });
+          updateRow(i);
+        } else if (act === 'inc' || act === 'dec') {
           var st = stepFor(it), nq = act === 'inc' ? it.qty + st : it.qty - st;
           if (act === 'dec' && it.qty <= st) nq = st === 0.5 ? (it.qty > 0.25 ? 0.25 : it.qty) : Math.max(1, it.qty / 2);
           it.qty = Math.round(nq * 100) / 100;
@@ -1428,6 +1447,7 @@
       if (u) {
         var ui = +u.closest('.unmatched').getAttribute('data-u'), um = unmatched[ui], uact = u.getAttribute('data-uact');
         if (uact === 'ignore') { unmatched.splice(ui, 1); draw(); }
+        else if (uact === 'sug') { var sf = foodById(u.getAttribute('data-fid')); if (sf) { unmatched.splice(ui, 1); addFoodItem(sf, um.qty, um.unit); } }
         else if (uact === 'search') openSearch({ mode: 'pick', query: um.text, onPick: function (food) { unmatched.splice(ui, 1); addFoodItem(food, um.qty, um.unit); } });
         else if (uact === 'create') openCustomFood({ name: um.text, onSave: function (food) { unmatched.splice(ui, 1); addFoodItem(food, um.qty, um.unit); } });
       }
@@ -1515,7 +1535,7 @@
       if (qa) {
         var food = foodById(qa.getAttribute('data-quickadd'));
         var rec = state.recents.filter(function (r) { return r.id === food.id; })[0];
-        var it = rec ? itemFromFood(food, rec.qty, rec.unit) : itemFromFood(food, null, null);
+        var it = rec ? itemFromFood(food, rec.qty, rec.unit, rec.state) : itemFromFood(food, null, null);
         addItems(viewDate, meal, [it]);
         return;
       }
@@ -1543,23 +1563,26 @@
     var entry = o.entry, k = o.date || viewDate;
     var meal = entry ? entry.meal : (o.meal || defaultMeal());
     var rec = state.recents.filter(function (r) { return r.id === food.id; })[0];
-    var it = entry ? Object.assign({}, entry) : (rec ? itemFromFood(food, rec.qty, rec.unit) : itemFromFood(food, null, null));
+    var it = entry ? Object.assign({}, entry) : (rec ? itemFromFood(food, rec.qty, rec.unit, rec.state) : itemFromFood(food, null, null));
     var fav = state.favs.indexOf(food.id) >= 0;
     var s = openSheet({ title: food.name, headExtra: '<button type="button" class="icon-btn' + (fav ? ' on' : '') + '" data-fav aria-label="Favori">' + '<svg class="ic" viewBox="0 0 24 24" style="fill:' + (fav ? 'currentColor' : 'none') + '">' + ICONS.star + '</svg></button>' });
     var opts = unitOpts(food, it.unit, it.unitG);
     s.setBody('<div class="food-hero"><div><div class="fh-kcal js-k">' + fmt(it.kcal) + '<small> kcal</small></div><div class="small muted js-g"></div></div>' +
-      '<div class="small muted" style="text-align:right">' + esc(food.cat || '') + '<br>100 ' + (isLiquid(food) ? 'ml' : 'g') + ': ' + fmt(food.kcal) + ' kcal</div></div>' +
+      '<div class="small muted" style="text-align:right">' + esc(food.cat || '') + '<br><span class="js-100"></span></div></div>' +
       '<div class="macro-tiles"><div class="p"><b class="js-p"></b><span>Protein</span></div><div class="c"><b class="js-c"></b><span>Karbonhidrat</span></div><div class="f"><b class="js-f"></b><span>Yağ</span></div></div>' +
       '<div class="pitem-ctl" style="margin:0 0 14px"><div class="stepper"><button type="button" data-st="-1" aria-label="Azalt">−</button><input class="js-q" inputmode="decimal" value="' + fmtQty(it.qty) + '" aria-label="Miktar"><button type="button" data-st="1" aria-label="Artır">+</button></div>' +
       '<select class="select js-u" aria-label="Birim">' + opts.map(function (u) { return '<option value="' + esc(u.v) + '"' + (u.v === it.unit ? ' selected' : '') + '>' + esc(u.label) + '</option>'; }).join('') + '</select></div>' +
+      (P.hasStates(food) ? '<div style="margin:0 0 14px">' + stateSeg(food, it.state) + '<div class="tiny faint" style="margin-top:6px">Tartıyı çiğ mi pişmiş mi yaptığına göre seç; kalori buna göre hesaplanır.</div></div>' : '') +
       mealSeg(meal, 'data-meal') +
       (food.custom ? '<div class="row" style="margin-top:12px"><button type="button" class="link-btn" data-editcustom>' + icon('edit', 'ic-sm') + ' Özel besini düzenle</button></div>' : ''));
     s.setFoot(entry ? '<div class="btn-row"><button type="button" class="btn" style="color:var(--danger);flex:0 0 auto" data-del aria-label="Sil">' + icon('trash') + '</button><button type="button" class="btn btn-primary" data-ok>' + icon('check') + 'Kaydet</button></div>'
       : '<button type="button" class="btn btn-primary btn-lg btn-block" data-ok>' + icon('plus') + 'Ekle</button>');
     var qIn = s.body.querySelector('.js-q'), uSel = s.body.querySelector('.js-u');
     function upd() {
-      var c = P.computeItem(food, it.qty > 0 ? it.qty : 0, it.unit, it.unitG);
-      ['grams', 'kcal', 'p', 'c', 'f', 'unitG'].forEach(function (x) { it[x] = c[x]; });
+      var c = P.computeItem(food, it.qty > 0 ? it.qty : 0, it.unit, it.unitG, { state: it.state, scale: it.scale });
+      ['grams', 'kcal', 'p', 'c', 'f', 'unitG', 'name', 'state'].forEach(function (x) { if (c[x] !== undefined) it[x] = c[x]; });
+      var sv = P.stateValues(food, c.state || P.baseState(food));
+      s.body.querySelector('.js-100').textContent = '100 ' + (isLiquid(food) ? 'ml' : 'g') + (c.state ? (c.state === 'raw' ? ' çiğ' : ' pişmiş') : '') + ': ' + fmt(sv.kcal) + ' kcal';
       s.body.querySelector('.js-k').innerHTML = fmt(it.kcal) + '<small> kcal</small>';
       s.body.querySelector('.js-g').textContent = it.unit === 'g' || it.unit === 'ml' ? '' : fmt(it.grams) + ' ' + (isLiquid(food) ? 'ml/g' : 'g');
       s.body.querySelector('.js-p').textContent = fmt(it.p, 1) + ' g';
@@ -1567,6 +1590,8 @@
       s.body.querySelector('.js-f').textContent = fmt(it.f, 1) + ' g';
     }
     s.body.addEventListener('click', function (e) {
+      var stb = e.target.closest('[data-act="state"]');
+      if (stb) { it.state = stb.getAttribute('data-state'); $$('[data-act="state"]', s.body).forEach(function (b) { b.classList.toggle('on', b === stb); }); upd(); return; }
       var st = e.target.closest('[data-st]');
       if (st) {
         var step = it.unit === 'g' || it.unit === 'ml' ? (it.qty >= 100 ? 25 : 10) : 0.5, dir = +st.getAttribute('data-st');

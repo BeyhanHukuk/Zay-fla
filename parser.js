@@ -158,7 +158,7 @@
   ('yedi icti aldi yedim yedik yiyorum yiyecegim yemistim yemisim yerim ye yemek yemegi yedin ictim ictik iciyorum icecegim icmistim icmisim ' +
     'icerim ic aldim aldik aliyorum tukettim tuketiyorum tuketim atistirdim ekle ekleyin ekler misin mi mu mısın ' +
     'kaydet yaz bugun ben biz da de ta te olarak icin kadar yaklasik civari civarinda asagi yukari falan filan felan ' +
-    'sey seyler ee eee eh hmm sadece tamam evet ama ise dolusu biraz azicik kocaman buyuk kucuk orta boy boyutunda ' +
+    'sey seyler ee eee eh hmm sadece tamam evet ama ise dolusu biraz azicik boy boyutunda ' +
     'dun evde disarida iste galiba sanirim bence bugunku dunku tabii yani artik hepsi toplam toplamda su an simdi tam olarak bi sure gibi kadarini kadar yarisi').split(/\s+/)
     .forEach(function (w) { FILLERS[w] = 1; });
   delete FILLERS['tam'];
@@ -168,6 +168,58 @@
     if (f.length < 4) return false;
     return /(d|t)(i|u|a|e)(m|k)$/.test(f) && /[aeiou]/.test(f.slice(0, -3)) ||
       /(iyor|uyor)(um|uz|sun|)$/.test(f) || /(acag|eceg)(im|iz)$/.test(f) || /mis(tim|im)$/.test(f);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Niteleyici (descriptor) sözcükler ve çiğ/pişmiş durumu               */
+  /* ------------------------------------------------------------------ */
+  var DESC = {};
+  function defDesc(words, info) { words.split(' ').forEach(function (w) { DESC[w] = info; }); }
+  // çiğ (pişmemiş) durum
+  defDesc('cig cigi pismemis pismeden kuru', { state: 'raw' });
+  // pişirme yöntemleri -> pişmiş durum
+  defDesc('pismis haslanmis haslama haslanmisi izgara izgarada firinda firin firinlanmis kizarmis kizartma kizartilmis tava tavada bugulama bugulanmis sote kavrulmis', { state: 'cooked' });
+  // yalnızca nitelik
+  defDesc('kemiksiz kemikli derisiz derili yagsiz yagli light sekersiz sekerli taze organik orta', {});
+  defDesc('buyuk', { scale: 1.3 });
+  defDesc('kucuk', { scale: 0.7 });
+  defDesc('kocaman', { scale: 1.5 });
+  var DESC2 = { 'az yagli': {}, 'tam yagli': {}, 'ev yapimi': {}, 'yari yagli': {} };
+  var STATE_ALIAS_TOKS = { cig: 'raw', pismemis: 'raw', kuru: 'raw', pismis: 'cooked', haslanmis: 'cooked', haslama: 'cooked', izgara: 'cooked', firinda: 'cooked', kizarmis: 'cooked', bugulama: 'cooked' };
+
+  /** i konumunda bir niteleyici var mı? -> {len, key, info} */
+  function readDesc(toks, i) {
+    var t = toks[i];
+    if (!t || t.f === ',') return null;
+    var nx = toks[i + 1];
+    if (nx) {
+      var k2 = t.f + ' ' + nx.f;
+      if (DESC2[k2]) return { len: 2, key: k2, info: DESC2[k2], toks: [t, nx] };
+    }
+    if (Object.prototype.hasOwnProperty.call(DESC, t.f)) return { len: 1, key: t.f, info: DESC[t.f], toks: [t] };
+    return null;
+  }
+
+  /* ---- çiğ / pişmiş değerleri ---------------------------------------- */
+  // Besin: kcal/p/c/f (temel durum) + isteğe bağlı raw:{kcal,p,c,f} (çiğ, 100 g) veya cooked:{...} (pişmiş, 100 g).
+  function hasStates(food) { return !!(food && (food.raw || food.cooked)); }
+  function baseState(food) { return food && food.raw ? 'cooked' : 'raw'; }
+  function stateValues(food, state) {
+    if (!hasStates(food) || !state || state === baseState(food)) return food;
+    var alt = state === 'raw' ? food.raw : food.cooked;
+    return alt || food;
+  }
+  function isStateWordText(w) {
+    var f = fold(w).replace(/[^a-z]/g, '');
+    return /^(cig|pismis|haslanmis|haslama|izgara|firin|firinda|kizarmis|tava|bugulama)$/.test(f);
+  }
+  /** Kayıt adı: durumu gösterir, örn. "Tavuk göğsü (çiğ)" */
+  function itemName(food, state) {
+    if (!hasStates(food) || !state) return food.name;
+    var m = String(food.name).match(/^(.*?)\s*\(([^)]*)\)\s*$/), base = food.name, parts = [];
+    if (m) { base = m[1]; parts = m[2].split(',').map(function (x) { return x.trim(); }).filter(function (x) { return x && !isStateWordText(x); }); }
+    parts.push(state === 'raw' ? 'çiğ' : 'pişmiş');
+    return base + ' (' + parts.join(', ') + ')';
   }
 
   /* ------------------------------------------------------------------ */
@@ -323,7 +375,7 @@
   function buildIndex(foods) {
     foods = foods || [];
     if (indexCache.foods === foods && indexCache.len === foods.length && indexCache.idx) return indexCache.idx;
-    var entries = [], byFirst = Object.create(null), byId = Object.create(null);
+    var entries = [], byFirst = Object.create(null), byId = Object.create(null), byStr = Object.create(null);
     foods.forEach(function (food, order) {
       if (!food || !food.name) return;
       byId[food.id] = food;
@@ -341,10 +393,11 @@
         seen[str] = 1;
         var e = { food: food, toks: toks, str: str, primary: ai === 0, order: order };
         entries.push(e);
+        if (!byStr[str]) byStr[str] = e;
         (byFirst[toks[0]] = byFirst[toks[0]] || []).push(e);
       });
     });
-    var idx = { entries: entries, byFirst: byFirst, byId: byId, foods: foods };
+    var idx = { entries: entries, byFirst: byFirst, byId: byId, byStr: byStr, foods: foods };
     indexCache = { foods: foods, len: foods.length, idx: idx };
     return idx;
   }
@@ -451,6 +504,34 @@
     return best;
   }
 
+  /** Eşleşmeyen metin için en yakın 3 besin önerisi (bulanık + kelime örtüşmesi). */
+  function suggestFoods(text, idx, boost, limit) {
+    var words = String(text || '').split(' ').filter(function (w) { return w.length >= 3 && !readDescWord(w); });
+    if (!words.length) return [];
+    var full = words.join(' '), bestBy = new Map();
+    for (var i = 0; i < idx.entries.length; i++) {
+      var e = idx.entries[i], hit = 0, matchedToks = {};
+      for (var a = 0; a < words.length; a++) {
+        for (var b = 0; b < e.toks.length; b++) {
+          if (e.toks[b].length < 3) continue;
+          if (tokenScore(words[a], e.toks[b]) > 0 || similarity(words[a], e.toks[b]) >= 0.8) { hit++; matchedToks[b] = 1; break; }
+        }
+      }
+      var s = similarity(full, e.str) * 0.9;
+      if (hit) s = Math.max(s, 0.35 + 0.35 * (hit / words.length) + 0.25 * (Object.keys(matchedToks).length / e.toks.length));
+      if (s < 0.5) continue;
+      if (e.primary) s += 0.01;
+      if (boost && boost[e.food.id]) s += Math.min(0.05, boost[e.food.id] / 100);
+      var prev = bestBy.get(e.food);
+      if (prev == null || s > prev) bestBy.set(e.food, s);
+    }
+    var arr = [];
+    bestBy.forEach(function (sc, food) { arr.push({ food: food, score: sc }); });
+    arr.sort(function (x, y) { return y.score - x.score || String(x.food.name).length - String(y.food.name).length; });
+    return arr.slice(0, limit || 3).map(function (x) { return { id: x.food.id, name: x.food.name }; });
+  }
+  function readDescWord(w) { return Object.prototype.hasOwnProperty.call(DESC, w); }
+
   /* ------------------------------------------------------------------ */
   /* Miktar -> gram                                                       */
   /* ------------------------------------------------------------------ */
@@ -519,22 +600,32 @@
 
   function round1(x) { return Math.round(x * 10) / 10; }
 
-  /** Besin + miktar + birimden kalori/makro hesaplar. */
-  function computeItem(food, qty, unit, unitG) {
-    var g;
-    if (unit === 'g' || unit === 'ml') g = qty;
+  /**
+   * Besin + miktar + birimden kalori/makro hesaplar.
+   * opts.state: 'raw' | 'cooked' (yalnızca çiğ/pişmiş değeri olan besinlerde), opts.scale: adet boyu çarpanı (büyük/küçük)
+   */
+  function computeItem(food, qty, unit, unitG, opts) {
+    opts = opts || {};
+    var g, mass = (unit === 'g' || unit === 'ml');
+    var scale = !mass && opts.scale > 0 && opts.scale !== 1 ? opts.scale : 1;
+    if (mass) g = qty;
     else {
       var units = foodUnits(food);
       var ug = units[unit] || unitG || GENERIC_UNIT_G[unit] || 100;
-      g = qty * ug;
+      g = qty * ug * scale;
       unitG = ug;
     }
-    var k = (Number(food.kcal) || 0) * g / 100;
-    return {
-      foodId: food.id, name: food.name, qty: qty, unit: unit, unitG: (unit === 'g' || unit === 'ml') ? 1 : unitG,
+    var st = hasStates(food) ? (opts.state === 'raw' || opts.state === 'cooked' ? opts.state : baseState(food)) : null;
+    var v = st ? stateValues(food, st) : food;
+    var k = (Number(v.kcal) || 0) * g / 100;
+    var out = {
+      foodId: food.id, name: st ? itemName(food, st) : food.name, qty: qty, unit: unit, unitG: mass ? 1 : unitG,
       grams: round1(g), kcal: Math.round(k),
-      p: round1((Number(food.p) || 0) * g / 100), c: round1((Number(food.c) || 0) * g / 100), f: round1((Number(food.f) || 0) * g / 100)
+      p: round1((Number(v.p) || 0) * g / 100), c: round1((Number(v.c) || 0) * g / 100), f: round1((Number(v.f) || 0) * g / 100)
     };
+    if (st) out.state = st;
+    if (scale !== 1) out.scale = scale;
+    return out;
   }
 
   /* ------------------------------------------------------------------ */
@@ -552,24 +643,65 @@
     var unknown = [];             // bilinmeyen kelimeler
     var last = null;              // son eklenen kalem (aynı grup içinde)
     var lastExplicit = false;
+    var mods = [];                // sıradaki besine ait niteleyiciler (kemiksiz, çiğ, ızgara...)
+    var modEnd = -1;              // son niteleyici dizisinin bittiği konum
     var n = toks.length;
 
-    function makeItem(food, q, rawToks, conf) {
+    /** Niteleyicileri çözer: varyant besin, çiğ/pişmiş durumu, boyut çarpanı. */
+    function resolveMods(food, entry, ml) {
+      var res = { food: food, state: null, scale: 1 };
+      ml.forEach(function (m) {
+        if (m.info.state) res.state = m.info.state;
+        if (m.info.scale) res.scale = m.info.scale;
+      });
+      var ent = entry || null;
+      if (ml.length && entry) {
+        var cands = [], keys = ml.map(function (m) { return m.key; });
+        cands.push(keys.join(' ') + ' ' + entry.str);
+        for (var a = keys.length - 1; a >= 0; a--) { cands.push(keys[a] + ' ' + entry.str); cands.push(entry.str + ' ' + keys[a]); }
+        for (var c = 0; c < cands.length; c++) {
+          var e2 = idx.byStr[cands[c]];
+          if (e2 && e2.food !== food) { res.food = e2.food; ent = e2; break; }
+        }
+      }
+      if (ent && !res.state) {
+        for (var q = 0; q < ent.toks.length; q++) if (STATE_ALIAS_TOKS[ent.toks[q]]) res.state = STATE_ALIAS_TOKS[ent.toks[q]];
+      }
+      if (!hasStates(res.food)) res.state = null;
+      else if (!res.state) res.state = baseState(res.food);
+      return res;
+    }
+    function modToks(ml) { var o = []; ml.forEach(function (m) { o = o.concat(m.toks); }); return o; }
+
+    function makeItem(food, q, rawToks, conf, res) {
       var r = resolveUnit(food, q ? q.qty : null, q ? q.unit : null, q && q.fracWord);
-      var it = computeItem(food, r.qty, r.unit, r.unitG);
+      var it = computeItem(food, r.qty, r.unit, r.unitG, res ? { state: res.state, scale: res.scale } : null);
       it.confidence = Math.max(0.05, Math.min(1, Math.round(conf * r.conf * (q && q.fuzzy ? 0.8 : 1) * 100) / 100));
       if (r.fallback) it.unitFallback = true;
       it.raw = rawToks.map(function (t) { return t.r; }).join(' ');
       return it;
     }
 
-    function pushItem(food, rawToks, conf) {
-      var q = pending;
-      var it = makeItem(food, q, (q ? q.raw : []).concat(rawToks), conf);
+    function pushItem(food, rawToks, conf, entry) {
+      var q = pending, ml = mods;
+      var res = resolveMods(food, entry, ml);
+      var allRaw = (q ? q.raw : []).concat(modToks(ml), rawToks);
+      var it = makeItem(res.food, q, allRaw, conf, res);
       items.push(it);
-      last = { item: it, food: food, rawToks: (q ? q.raw : []).concat(rawToks), conf: conf, q: q };
+      last = { item: it, food: res.food, baseFood: food, entry: entry, mods: ml.slice(), res: res, rawToks: allRaw, conf: conf, q: q };
       lastExplicit = !!q;
       pending = null;
+      mods = [];
+    }
+
+    /** Besinden sonra gelen niteleyiciyi ("tavuk göğsü çiğ") son kaleme uygular. */
+    function modifyLast(newMods) {
+      var ml = last.mods.concat(newMods);
+      var res = resolveMods(last.baseFood, last.entry, ml);
+      var allRaw = last.rawToks.concat(modToks(newMods));
+      var it = makeItem(res.food, last.q, allRaw, last.conf, res);
+      items[items.indexOf(last.item)] = it;
+      last.item = it; last.food = res.food; last.mods = ml; last.res = res; last.rawToks = allRaw;
     }
 
     function flushUnknown(atBoundary) {
@@ -613,8 +745,19 @@
           return;
         }
       }
-      // 3) Eşleşmedi
+      // baş isim (ilk kelime) için bulanık dene: "tavukk pirzolaa" -> tavuk (düşük güvenle)
+      if (unknown.length > 1) {
+        var firstW = unknown[0];
+        var fz4 = fuzzyFind(firstW.f, idx, boost);
+        if (fz4 && fz4.score >= 0.88) {
+          pushItem(fz4.food, unknown, fz4.score * 0.55);
+          unknown = [];
+          return;
+        }
+      }
+      // 3) Eşleşmedi: en yakın 3 öneriyle birlikte
       unmatched.push({
+        suggestions: suggestFoods(text, idx, boost, 3),
         text: unknown.map(function (t) { return t.r; }).join(' '),
         qty: pending ? pending.qty : null, unit: pending ? pending.unit : null,
         raw: (pending ? pending.raw : []).concat(unknown).map(function (t) { return t.r; }).join(' ')
@@ -648,7 +791,9 @@
 
       // ayırıcı
       var sep = isSepAt(toks, i);
+      if (sep && t.f === 've' && i === modEnd && readDesc(toks, i + 1)) { i++; continue; } // "kemiksiz ve derisiz tavuk pirzola"
       if (sep) {
+        mods = [];
         // ayırıcı kelime bir besin adının parçası mı? ("tavuk ve pilav" gibi alias)
         flushUnknown(true);
         if (pending && pending.raw.length) {
@@ -711,6 +856,28 @@
         }
       }
 
+      // niteleyici sözcükler (kemiksiz, çiğ, ızgara, büyük ...)
+      var d0 = readDesc(toks, i);
+      if (d0) {
+        var fm0 = matchFoodAt(toks, i, idx, boost);
+        var dl = [], dj = i, d1;
+        while ((d1 = readDesc(toks, dj))) {
+          if (dj > i) { var fmx = matchFoodAt(toks, dj, idx, boost); if (fmx && fmx.len >= 2) break; }
+          dl.push(d1); dj += d1.len;
+        }
+        var nextFood = dj < n && !isSepAt(toks, dj) && !matchMealAt(toks, dj) && (parseQuantity(toks, dj) || parseUnit(toks, dj, false) || matchFoodAt(toks, dj, idx, boost));
+        var asFood = fm0 && (fm0.len >= 2 || !nextFood);
+        if (!asFood) {
+          var atEnd = dj >= n || isSepAt(toks, dj) || !!matchMealAt(toks, dj) || FILLERS[toks[dj].f] || looksLikeVerb(toks[dj].f);
+          if (unknown.length) flushUnknown(false);
+          if (last && !pending && atEnd && !mods.length) modifyLast(dl);
+          else mods = mods.concat(dl);
+          modEnd = dj;
+          i = dj;
+          continue;
+        }
+      }
+
       // besin
       var fm = matchFoodAt(toks, i, idx, boost);
       if (fm) {
@@ -726,14 +893,14 @@
             var keepPending = pending; pending = null;
             flushUnknown(true);
             pending = keepPending;
-            pushItem(fm.food, span, fm.score);
+            pushItem(fm.food, span, fm.score, fm.entry);
           } else {
             var modConf = fm.score * (unknown.length > 2 ? 0.75 : 0.9);
-            pushItem(fm.food, unknown.concat(span), modConf);
+            pushItem(fm.food, unknown.concat(span), modConf, fm.entry);
           }
           unknown = [];
         } else {
-          pushItem(fm.food, span, fm.score);
+          pushItem(fm.food, span, fm.score, fm.entry);
         }
         i += fm.len;
         continue;
@@ -755,7 +922,7 @@
     function applyTrailing() {
       if (!last || !pending) { pending = null; return; }
       var q2 = pending;
-      var it = makeItem(last.food, q2, last.rawToks.concat(q2.raw), last.conf);
+      var it = makeItem(last.food, q2, last.rawToks.concat(q2.raw), last.conf, last.res);
       items[items.indexOf(last.item)] = it;
       last.item = it;
       lastExplicit = true;
@@ -811,11 +978,12 @@
   }
 
   return {
-    version: '1.0.0',
+    version: '1.1.0',
     lower: lower, fold: fold, foldTokens: foldTokens, tokenize: tokenize, stems: stems,
     wordsToNumber: wordsToNumber, parseNumberText: parseNumberText,
     levenshtein: levenshtein, similarity: similarity,
     buildIndex: buildIndex, parse: parse, searchFoods: searchFoods, fuzzyFind: function (t, foods) { return fuzzyFind(foldTokens(t).join(' '), buildIndex(foods)); },
+    hasStates: hasStates, baseState: baseState, stateValues: stateValues, itemName: itemName, suggestFoods: function (t, foods, n) { return suggestFoods(foldTokens(t).join(' '), buildIndex(foods), null, n || 3); },
     resolveUnit: resolveUnit, computeItem: computeItem, foodUnits: foodUnits, unitOptions: unitOptions,
     UNIT_LABELS: UNIT_LABELS, GENERIC_UNIT_G: GENERIC_UNIT_G
   };
