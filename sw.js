@@ -1,6 +1,6 @@
 /* Zayıfla service worker: çevrimdışı önbellek, otomatik güncelleme (skipWaiting + clients.claim) + hatırlatıcılar */
 'use strict';
-var VERSION = 'zayifla-v1.4.1';
+var VERSION = 'zayifla-v1.5.0';
 var CONFIG_CACHE = 'zayifla-config';
 var CONFIG_URL = './__reminders.json';
 var ASSETS = [

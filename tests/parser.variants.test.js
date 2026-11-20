@@ -64,7 +64,7 @@ expect('light kaşar iki dilim', 'a-peynir-kasar-light', it => it.qty === 2 && i
 expect('az yağlı yoğurt bir kase', 'yogurt-yarim', it => it.qty === 1 && it.unit === 'kase');
 expect('şekersiz ketçap', 'a-ketcap-sekersiz');
 expect('bir big mac', 'c-mcd-big-mac', it => it.qty === 1 && it.unit === 'adet');
-expect('whopper menü', 'c-bk-whopper');
+expect('whopper menü', 'z-menu-bk-whopper');
 expect('ülker albeni', 'b-ulker-albeni');
 expect('eti burçak 3 tane', 'b-eti-burcak', it => it.qty === 3 && it.unit === 'adet');
 expect('yarım yağlı süt bir bardak', 'sut-yarim', it => it.qty === 1 && it.unit === 'bardak', 'yarım = niteleyici');

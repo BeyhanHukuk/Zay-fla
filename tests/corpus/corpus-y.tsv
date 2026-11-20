@@ -1,0 +1,1743 @@
+dana kıyma	dana-kiyma-pismis
+200 gram çiğ dana kıyma	dana-kiyma-cig
+çiğ kıyma	dana-kiyma-cig
+pişmiş kıyma	dana-kiyma-pismis
+100 gr kıyma	dana-kiyma-pismis
+kıyma kavurma	dana-kiyma-pismis
+az yağlı kıyma	kiyma-az-yagli
+yağsız dana kıyma	kiyma-az-yagli
+yağlı kıyma	kiyma-yagli
+kuzu kıyma	kiyma-yagli
+iki yemek kaşığı kıyma	dana-kiyma-pismis
+150 gram dana biftek	dana-biftek
+biftek	dana-biftek
+antrikot	dana-biftek
+bonfile 200 gram	dana-biftek
+bir porsiyon steak	dana-biftek
+dana eti	dana-biftek
+dana kuşbaşı	dana-kusbasi
+250 gram dana kuşbaşı	dana-kusbasi
+kuşbaşı et	dana-kusbasi
+kuzu kuşbaşı	kuzu-eti
+kuzu eti	kuzu-eti
+200 gr kuzu eti	kuzu-eti
+koyun eti	kuzu-eti
+dana pirzola	dana-pirzola
+dana pirzola ızgara	dana-pirzola
+üç adet kuzu pirzola	kuzu-pirzola
+kuzu pirzola	kuzu-pirzola
+pirzola	kuzu-pirzola
+kuzu kaburga	kuzu-kaburga
+dana kaburga	dana-kaburga
+kuzu incik	c-kuzu-incik
+kuzu tandır	kuzu-tandir
+bir porsiyon kuzu tandır	kuzu-tandir
+haşlama et	haslama-et
+et haşlama	haslama-et
+haşlanmış et 150 gram	haslama-et
+dana rosto	dana-rosto
+et sote	et-sote
+bir tabak et sote	et-sote
+tas kebabı	tas-kebabi
+kavurma	kavurma
+bir porsiyon kavurma	kavurma
+saç kavurma	sac-kavurma
+tavuk saç kavurma	sac-kavurma
+kontrfile	kontrfile
+çiğ tavuk göğsü	tavuk-gogsu:raw
+tavuk göğsü	tavuk-gogsu
+200 gram tavuk göğsü	tavuk-gogsu
+haşlanmış tavuk göğsü	tavuk-gogsu-haslanmis
+ızgara tavuk göğsü	tavuk-gogsu
+fırın tavuk göğsü	tavuk-gogsu
+tavuk göğüs	tavuk-gogsu
+piliç göğsü	tavuk-gogsu
+beyaz et	tavuk-gogsu
+haşlama tavuk	tavuk-gogsu-haslanmis
+tavuk haşlama	tavuk-haslama
+tavuk but	tavuk-but
+tavuk but derisiz	tavuk-but-derisiz
+derisiz tavuk but	tavuk-but-derisiz
+derili tavuk but	tavuk-but
+fırın tavuk but	tavuk-but
+iki tavuk but	tavuk-but
+bir adet tavuk baget	tavuk-baget
+tavuk baget	tavuk-baget
+tavuk davul	tavuk-baget
+tavuk kanat	tavuk-kanat
+altı tavuk kanat	tavuk-kanat
+ızgara tavuk kanat	tavuk-kanat-izgara
+barbekü tavuk kanat	tavuk-kanat-izgara
+buffalo wings	c-bc-buffalo-wings|tavuk-kanat
+tavuk pirzola	tavuk-pirzola
+tavuk pirzola derili	tavuk-pirzola-derili
+kemikli tavuk pirzola	tavuk-pirzola-derili
+tavuk kalça	tavuk-kalca
+tavuk incik	tavuk-incik
+tavuk ciğeri	tavuk-ciger
+tavuk ciğer tava	tavuk-ciger
+fırın piliç	firin-pilic
+bütün piliç	firin-pilic
+yarım piliç	firin-pilic
+çeyrek piliç	firin-pilic
+çevirme tavuk	firin-pilic
+tavuk şiş	tavuk-sis
+tavuk şiş kebap	tavuk-sis
+tavuk but şiş	tavuk-but-sis
+tavuk köfte	tavuk-koftesi
+tavuk sote	tavuk-sote
+bir porsiyon tavuk sote	tavuk-sote
+tavuk güveç	tavuk-guvec
+tavuk çökertme	tavuk-cokertme
+tavuk döner	doner-tavuk
+iki porsiyon tavuk döner	doner-tavuk|c-td-tavuk-doner-porsiyon
+hindi göğsü	hindi-gogus
+hindi eti	hindi-gogus
+tavuk nugget	tavuk-nugget
+beş adet nugget	tavuk-nugget
+tavuk şnitzel	tavuk-snitzel
+kızarmış tavuk	kizarmis-tavuk
+çıtır tavuk	kizarmis-tavuk
+kfc tavuk	kizarmis-tavuk|c-kfc-tavuk-parca
+tavuk kızartma	kizarmis-tavuk
+Çerkez tavuğu	c-cerkez-tavugu
+tavuk dolma	c-tavuk-dolma
+tavuklu pilav	tavuklu-pilav
+körili tavuk	c-tavuk-kori
+tavuk köri	c-tavuk-kori
+mantarlı tavuk	c-bc-mantarli-tavuk-krema
+barbekü soslu tavuk	c-tavuk-bbq
+adana kebap	adana-kebap
+iki adana	adana-kebap
+bir porsiyon adana kebap	adana-kebap
+urfa kebap	urfa-kebap
+şiş kebap	sis-kebap
+kuzu şiş	sis-kebap
+et şiş	sis-kebap
+çöp şiş	cop-sis
+beyti	beyti
+iskender	iskender
+bir porsiyon iskender	iskender
+iskender kebap	iskender
+bursa kebabı	c-bursa-kebabi
+cağ kebabı	c-cag-kebabi
+patlıcan kebabı	patlican-kebabi
+külbastı	c-kulbasti
+ciğer şiş	ciger-sis
+ciğer kebabı	ciger-sis
+arnavut ciğeri	c-arnavut-cigeri
+dana ciğer	dana-ciger
+ciğer tava	dana-ciger
+kuzu ciğeri	dana-ciger
+kokoreç	kokorec
+yarım ekmek kokoreç	kokorec|c-kokorec-yarim
+çeyrek kokoreç	kokorec|c-kokorec-ceyrek
+et döner	doner-et
+döner	doner-et
+bir porsiyon et döner	doner-et
+pilav üstü döner	pilav-ustu-doner
+yaprak döner	doner-et
+döner dürüm	doner-durum-et
+tavuk döner dürüm	doner-durum-tavuk
+et döner dürüm	doner-durum-et
+tantuni	tantuni
+tavuk tantuni	c-tantuni-tavuk
+ızgara köfte	kofte
+köfte	kofte
+altı köfte	kofte
+8 adet ızgara köfte	kofte
+kasap köfte	kofte
+inegöl köfte	kofte
+akçaabat köfte	akcaabat-kofte
+hamburger köftesi	hamburger-koftesi
+dalyan köfte	c-dalyan-kofte
+kaşarlı köfte	c-kasarli-kofte
+şiş köfte	c-sis-kofte
+kadınbudu köfte	kadinbudu-kofte
+izmir köfte	izmir-kofte
+terbiyeli köfte	terbiyeli-kofte
+sulu köfte	c-sulu-kofte
+ekşili köfte	c-eksili-kofte
+tava köfte	c-tava-kofte
+içli köfte	ic-kofte
+iki içli köfte	ic-kofte
+çiğ köfte	cig-kofte
+bir porsiyon çiğ köfte	cig-kofte
+çiğ köfte dürüm	cig-kofte-durum
+mercimek köftesi	mercimek-koftesi
+on tane mercimek köftesi	mercimek-koftesi
+bulgur köftesi	bulgur-koftesi
+balık köftesi	balik-koftesi
+sosis	sosis
+iki sosis	sosis
+piliç sosis	b-sosis-tavuk
+dana sosis	b-sosis-dana|sosis
+sucuk	sucuk
+iki dilim sucuk	sucuk
+sucuk ızgara	sucuk-izgara
+ızgara sucuk	sucuk-izgara
+kayseri sucuğu	b-sucuk-kayseri
+tavuk sucuk	b-sucuk-tavuk
+az yağlı sucuk	b-sucuk-az-yagli
+sucuk tava	c-sucuk-tava
+pastırma	pastirma
+üç dilim pastırma	pastirma
+dilimli pastırma	b-pastirma-dilimli
+salam	salam
+iki dilim salam	salam
+hindi salam	b-salam-hindi
+piliç salam	b-salam-tavuk
+macar salamı	b-salam-macar
+mortadella	b-mortadella
+jambon	jambon
+hindi jambon	jambon
+tavuk jambon	b-jambon-pilic
+dana jambon	b-jambon-dana|jambon
+hindi füme	b-jambon-hindi-fume|jambon
+bacon	b-bacon-pismis
+iki dilim bacon	b-bacon-pismis
+pastrami	d-pastrami
+levrek	levrek
+ızgara levrek	levrek
+çiğ levrek	levrek:raw
+levrek buğulama	levrek
+levrek fırın	levrek
+300 gram levrek	levrek
+çipura	cipura
+çipura ızgara	cipura
+çupra	cipura
+somon	somon
+ızgara somon	somon
+fırında somon	somon
+çiğ somon	somon:raw
+dilim somon	somon
+füme somon	y-somon-fume
+somon füme	y-somon-fume
+hamsi	hamsi-tava
+hamsi tava	hamsi-tava
+on tane hamsi	hamsi-tava
+hamsi buğulama	hamsi-bugulama
+hamsi pilavı	hamsi-bugulama
+hamsili pilav	hamsi-bugulama
+hamsi ekmek	c-hamsi-ekmek
+hamsi kızartması	hamsi-tava
+çiğ hamsi	hamsi-tava:raw
+taze hamsi	hamsi-tava
+lüfer	lufer
+ızgara lüfer	lufer
+palamut	lufer
+palamut ızgara	lufer
+uskumru	uskumru
+ızgara uskumru	uskumru
+uskumru dolması	uskumru
+sardalya	sardalya
+ızgara sardalya	sardalya
+konserve sardalya	sardalya-konserve
+sardalya konservesi	sardalya-konserve
+ton balığı	ton-baligi-suda
+ton balığı konserve	ton-baligi-suda
+yağlı ton balığı	ton-baligi-yagda
+bir kutu ton balığı	ton-baligi-suda
+bir kutu ton balığı yağlı	ton-baligi-yagda
+alabalık	alabalik
+ızgara alabalık	alabalik
+istavrit	istavrit
+istavrit tava	istavrit
+mezgit	mezgit
+mezgit tava	mezgit
+kalkan	kalkan
+kalkan tava	kalkan
+karides	karides
+karides güveç	karides
+karides tava	y-karides-tava
+kalamar	kalamar-tava
+kalamar tava	kalamar-tava
+calamari	kalamar-tava
+ahtapot	ahtapot
+ahtapot salatası	ahtapot
+midye dolma	midye-dolma
+on tane midye dolma	midye-dolma
+midye tava	midye-tava
+midye	midye-dolma
+balık ekmek	balik-ekmek
+balık tava	y-balik-tava
+balık çorbası	c-balik-corbasi
+somon burger	d-sandvic-balik-burger
+sashimi	d-sushi-sashimi-somon
+sushi	sushi
+sushi maki	sushi
+bir porsiyon sushi	sushi
+dil balığı	y-dil-baligi
+mercan balığı	y-mercan
+barbunya balığı	y-barbun
+barbun	y-barbun
+kefal	y-kefal
+ızgara kefal	y-kefal
+tekir	y-barbun
+turbot	kalkan
+orfoz	y-orfoz
+sazan	y-sazan
+yılan balığı	y-yilan-baligi
+morina	y-morina
+fish and chips	d-fish-and-chips
+balık dürüm	c-balik-durum
+istakoz	y-istakoz
+yengeç	y-yengec
+kalamar dolma	y-kalamar-dolma
+deniz mahsulleri	y-deniz-mahsulleri
+karışık deniz mahsulleri	y-deniz-mahsulleri
+deniz mahsulü	y-deniz-mahsulleri
+yengeç çubuğu	y-surimi
+surimi	y-surimi
+yengeç stick	y-surimi
+somon fileto	somon
+levrek fileto	levrek
+tuzlu hamsi	b-hamsi-konserve
+ançüez	b-hamsi-konserve
+lakerda	y-lakerda
+balık yumurtası	y-havyar
+havyar	y-havyar
+böbrek	y-bobrek
+kuzu böbrek	y-bobrek
+ızgara böbrek	y-bobrek
+işkembe	iskembe-corbasi
+haşlanmış işkembe	y-iskembe
+işkembe çorbası	iskembe-corbasi
+bir kase işkembe çorbası	iskembe-corbasi
+kelle paça	paca-corbasi
+paça çorbası	paca-corbasi
+paça	paca-corbasi
+beyin	y-beyin
+beyin tava	y-beyin
+beyin salatası	y-beyin
+dana dil	y-dil
+dil haşlama	y-dil
+kuzu dil	y-dil
+yürek	y-yurek
+kuzu yüreği	y-yurek
+koç yumurtası	y-koc-yumurtasi
+koç yumurtası tava	y-koc-yumurtasi
+bumbar	y-bumbar
+kuzu çevirme	kuzu-eti
+kelle	y-kelle
+kelle söğüş	y-kelle
+ciğer	ciger-sis|dana-ciger
+yumurta	yumurta
+iki yumurta	yumurta
+üç yumurta	yumurta
+haşlanmış yumurta	yumurta
+haşlanmış iki yumurta	yumurta
+katı yumurta	yumurta
+rafadan yumurta	yumurta-rafadan
+sahanda yumurta	yumurta-sahanda
+göz yumurta	yumurta-sahanda
+yağda yumurta	yumurta-sahanda
+çiğ yumurta	d-yumurta-cig
+omlet	omlet
+iki yumurtalı omlet	omlet
+peynirli omlet	peynirli-omlet
+mantarlı omlet	mantarli-omlet
+ıspanaklı omlet	d-omlet-ispanakli
+jambonlu omlet	d-omlet-jambonlu
+sucuklu omlet	d-omlet-sucuklu
+sebzeli omlet	d-omlet-sebzeli
+domatesli omlet	d-omlet-domatesli
+yumurta akı	yumurta-beyazi
+iki yumurta akı	yumurta-beyazi
+yumurta beyazı	yumurta-beyazi
+yumurta sarısı	yumurta-sarisi
+yumurta sarısı iki adet	yumurta-sarisi
+menemen	menemen
+bir porsiyon menemen	menemen
+soğanlı menemen	c-menemen-sogani|menemen
+soğansız menemen	c-menemen-sogansiz
+peynirli menemen	c-menemen-peynirli
+sucuklu menemen	c-menemen-sucuklu
+kaşarlı menemen	c-menemen-peynirli
+sucuklu yumurta	sucuklu-yumurta
+pastırmalı yumurta	pastirmali-yumurta
+kavurmalı yumurta	pastirmali-yumurta
+kıymalı yumurta	kiymali-yumurta
+peynirli yumurta	c-peynirli-yumurta
+patatesli yumurta	c-patatesli-yumurta
+çırpılmış yumurta	d-yumurta-cirpilmis
+scrambled egg	d-yumurta-cirpilmis
+poşe yumurta	d-yumurta-poshe
+bıldırcın yumurtası	d-yumurta-bildircin
+on tane bıldırcın yumurtası	d-yumurta-bildircin
+çılbır	d-cilbir
+yoğurtlu yumurta	d-cilbir
+kaygana	c-kaygana
+yumurtalı ekmek	c-yumurtali-ekmek
+yumurta tozu	d-yumurta-tozu
+şakşuka yumurtalı	d-shakshuka
+shakshuka	d-shakshuka
+fırında yumurta	d-yumurta-firinda
+kahvaltıda iki haşlanmış yumurta yedim	yumurta
+bir yumurta bir dilim peynir	yumurta,beyaz-peynir
+yumurta salatası	d-yumurta-salatasi
+frittata	d-frittata
+süt	sut
+bir bardak süt	sut
+tam yağlı süt	sut
+yarım yağlı süt	sut-yarim
+yağsız süt	sut-yagsiz
+az yağlı süt	a-sut-light-az-yagli
+laktozsuz süt	a-sut-laktozsuz|b-laktozsuz-sut
+günlük süt	a-sut-gunluk
+çiğ süt	a-sut-gunluk|sut
+keçi sütü	a-sut-keci
+koyun sütü	a-sut-koyun
+soya sütü	soya-sutu
+badem sütü	badem-sutu
+şekersiz badem sütü	a-sut-badem-sekersiz
+yulaf sütü	yulaf-sutu
+pirinç sütü	a-sut-pirinc
+hindistan cevizi sütü	a-sut-hindistan-cevizi|d-hindistan-cevizi-sutu
+çilekli süt	a-sut-cilekli
+kakaolu süt	kakaolu-sut
+süt tozu	sut-tozu
+kondanse süt	a-sut-kondanse
+yoğurt	yogurt
+bir kase yoğurt	yogurt
+iki yemek kaşığı yoğurt	yogurt
+tam yağlı yoğurt	yogurt
+yarım yağlı yoğurt	yogurt-yarim
+light yoğurt	yogurt-light
+az yağlı yoğurt	yogurt-yarim
+yağsız yoğurt	a-yogurt-yagsiz
+süzme yoğurt	suzme-yogurt
+yunan yoğurdu	a-yunan-yogurdu
+meyveli yoğurt	meyveli-yogurt
+çilekli yoğurt	a-yogurt-cilekli
+ballı yoğurt	a-yogurt-bali
+ev yapımı yoğurt	a-yogurt-ev
+kaymaklı yoğurt	a-yogurt-kaymakli
+köy yoğurdu	a-yogurt-ev
+manda yoğurdu	a-yogurt-manda
+keçi yoğurdu	a-yogurt-keci
+protein yoğurt	a-yogurt-protein
+skyr	a-skyr
+laktozsuz yoğurt	a-yogurt-laktozsuz
+ayran	ayran
+bir bardak ayran	ayran
+iki bardak ayran	ayran
+bir şişe ayran	ayran
+light ayran	a-ayran-light
+yağsız ayran	a-ayran-yagsiz
+ev ayranı	a-ayran-ev
+büyük şişe ayran	a-ayran-buyuk-sise
+kefir	kefir
+bir bardak kefir	kefir
+meyveli kefir	a-kefir-meyveli
+şekersiz kefir	a-kefir-sekersiz
+cacık	cacik
+bir kase cacık	cacik
+haydari	haydari
+bir porsiyon haydari	haydari
+yoğurt içeceği	a-yogurt-icecegi
+kaymak	kaymak
+iki yemek kaşığı kaymak	kaymak
+krema	a-krema-yemeklik
+yemeklik krema	a-krema-yemeklik
+krem şanti	a-krem-santi
+çırpılmış krema	a-krema-yuksek-yagli|b-krem-santi-sekerli
+ekşi krema	a-eksi-krema
+tereyağı	tereyagi
+bir yemek kaşığı tereyağı	tereyagi
+beyaz peynir	beyaz-peynir
+peynir	beyaz-peynir
+iki dilim beyaz peynir	beyaz-peynir
+bir dilim peynir	beyaz-peynir
+tam yağlı beyaz peynir	beyaz-peynir
+yarım yağlı beyaz peynir	a-peynir-beyaz-yarim
+az yağlı beyaz peynir	a-peynir-beyaz-yarim
+light beyaz peynir	beyaz-peynir-light
+yağsız beyaz peynir	a-peynir-beyaz-yagsiz
+az tuzlu beyaz peynir	a-peynir-beyaz-az-tuzlu
+tuzsuz peynir	a-peynir-beyaz-az-tuzlu
+salamura beyaz peynir	a-peynir-beyaz-salamura
+koyun peyniri	a-peynir-beyaz-koyun
+inek peyniri	a-peynir-beyaz-inek
+ezine peyniri	a-peynir-ezine
+keçi peyniri	a-peynir-keci
+köy peyniri	a-peynir-koy
+örgü peyniri	a-peynir-orgu
+çeçil peyniri	a-peynir-cecil
+dil peyniri	dil-peyniri
+lor peyniri	lor
+lor	lor
+yağsız lor	a-peynir-lor-light
+light lor	a-peynir-lor-light
+çökelek	cokelek
+köy çökeleği	a-peynir-cokelek-tam
+light çökelek	a-peynir-cokelek-light
+kaşar	kasar
+kaşar peyniri	kasar
+bir dilim kaşar	kasar
+iki dilim kaşar peyniri	kasar
+taze kaşar	a-peynir-kasar-taze
+eski kaşar	a-peynir-kasar-eski
+olgun kaşar	a-peynir-kasar-eski
+light kaşar	a-peynir-kasar-light
+az yağlı kaşar	a-peynir-kasar-az-yagli|a-peynir-kasar-light
+dilimli kaşar	a-peynir-kasar-dilimli
+rendelenmiş kaşar	a-peynir-kasar-rendelenmis
+tost kaşarı	a-peynir-kasar-dilimli
+tulum peyniri	tulum
+tulum	tulum
+erzincan tulum	a-peynir-tulum-erzincan
+hellim	hellim
+ızgara hellim	a-peynir-hellim-izgara
+light hellim	a-peynir-hellim-light
+mozzarella	mozzarella
+taze mozzarella	a-peynir-mozzarella-taze
+light mozzarella	a-peynir-mozzarella-light
+parmesan	parmesan
+rendelenmiş parmesan	a-peynir-parmesan-rendelenmis
+krem peynir	krem-peynir
+light krem peynir	a-krem-peynir-light
+labne	a-labne-peyniri|c-labne
+labne peyniri	a-labne-peyniri
+üçgen peynir	ucgen-peynir
+iki adet üçgen peynir	ucgen-peynir
+eritme peynir	a-peynir-eritme-dilimli
+dilimli peynir	a-peynir-eritme-dilimli
+sürülebilir peynir	a-peynir-surulebilir
+cottage cheese	a-peynir-cottage
+cottage peynir	a-peynir-cottage
+lor peyniri light	a-peynir-lor-light
+gravyer	a-peynir-gravyer
+emmental	a-peynir-emmental
+cheddar	a-peynir-cheddar
+edam	a-peynir-edam
+gouda	a-peynir-gouda
+ricotta	a-peynir-ricotta
+mascarpone	a-peynir-mascarpone
+rokfor	a-peynir-rokfor
+brie	a-peynir-brie
+camembert	a-peynir-camembert
+feta	beyaz-peynir
+burrata	a-peynir-burrata
+otlu peynir	a-peynir-otlu
+van otlu peyniri	a-peynir-otlu
+mihaliç peyniri	a-peynir-mihalic
+sürk peyniri	a-peynir-surk
+ayvalık peyniri	a-peynir-ayvalik
+lokum peynir	a-peynir-lokum
+çubuk peynir	a-peynir-cubuk
+lif peynir	a-peynir-cubuk
+peynir tabağı	c-peynir-tabagi
+paneer	d-paneer
+tel peyniri	a-peynir-orgu
+cheddar light	a-peynir-cheddar-light
+ekmek	ekmek
+bir dilim ekmek	ekmek
+iki dilim ekmek	ekmek
+üç dilim beyaz ekmek	ekmek
+beyaz ekmek	ekmek
+yarım ekmek	ekmek
+bir ekmek	ekmek
+çeyrek ekmek	ekmek
+tam buğday ekmeği	tam-bugday-ekmegi
+iki dilim tam buğday ekmeği	tam-bugday-ekmegi
+tam buğdaylı ekmek	tam-bugday-ekmegi
+kepekli ekmek	tam-bugday-ekmegi|b-ekmek-kepekli
+kepek ekmeği	tam-bugday-ekmegi
+çavdar ekmeği	cavdar-ekmegi
+çavdarlı ekmek	cavdar-ekmegi
+tam çavdar ekmeği	d-ekmek-cavdar-tam
+çok tahıllı ekmek	cok-tahilli-ekmek
+çok tahıllı iki dilim	cok-tahilli-ekmek
+tohumlu ekmek	d-ekmek-tam-tahilli
+tost ekmeği	tost-ekmegi
+iki dilim tost ekmeği	tost-ekmegi
+kepekli tost ekmeği	d-ekmek-tost-kepekli
+light tost ekmeği	a-ekmek-tost-light
+diyet ekmek	a-ekmek-diyet
+light ekmek	a-ekmek-diyet
+glutensiz ekmek	a-ekmek-glutensiz
+köy ekmeği	d-ekmek-koy
+ramazan pidesi	d-ekmek-ramazan-pidesi
+ekşi mayalı ekmek	d-ekmek-eksi-maya
+sourdough	d-ekmek-eksi-maya
+mısır ekmeği	d-ekmek-misir
+arpa ekmeği	d-ekmek-arpa
+yulaf ekmeği	d-ekmek-yulaf
+protein ekmeği	d-ekmek-protein
+sandviç ekmeği	d-ekmek-sandvic
+lavaş	lavas
+bir lavaş	lavas
+pide ekmeği	pide-ekmegi
+bazlama	bazlama
+bir bazlama	bazlama
+yufka	yufka-ekmegi
+yufka ekmeği	yufka-ekmegi
+tortilla	tortilla
+dürüm lavaşı	b-ekmek-wrap
+baget	baget
+bir baget ekmek	baget
+hamburger ekmeği	hamburger-ekmegi
+simit	simit
+bir simit	simit
+iki simit	simit
+yarım simit	simit
+susamlı simit	simit
+gevrek	d-simit-susamsiz|misir-gevregi
+kuru simit	d-simit-susamsiz|c-ss-susamli-halka|b-simit-kraker
+çıtır simit	b-simit-kraker
+peynirli simit	c-ss-peynirli-simit
+kaşarlı simit	c-ss-kasarli-simit
+poğaça	pogaca|y-pogaca-sade
+bir poğaça	pogaca|y-pogaca-sade
+iki peynirli poğaça	pogaca
+peynirli poğaça	pogaca
+zeytinli poğaça	c-ss-zeytinli-pogaca
+patatesli poğaça	c-ss-patatesli-pogaca
+çikolatalı poğaça	c-ss-cikolatali-pogaca
+sade poğaça	y-pogaca-sade
+kıymalı poğaça	y-pogaca-kiymali
+tahinli çörek	y-corek-tahinli
+sosisli poğaça	c-sosisli-borek
+açma	acma
+bir açma	acma
+çörek	corek
+kruvasan	kruvasan
+bir kruvasan	kruvasan
+çikolatalı kruvasan	d-kruvasan-cikolatali
+peynirli kruvasan	d-kruvasan-peynirli
+bademli kruvasan	d-kruvasan-badem
+börek	borek-su|borek-peynirli
+su böreği	borek-su
+bir dilim su böreği	borek-su
+peynirli börek	borek-peynirli
+ıspanaklı börek	borek-ispanakli
+kıymalı börek	borek-kiymali
+patatesli börek	c-ss-patatesli-borek|c-patatesli-borek-ev
+mantarlı börek	c-mantarli-borek
+sigara böreği	sigara-boregi
+üç sigara böreği	sigara-boregi
+beş adet sigara böreği	sigara-boregi
+kol böreği	y-kol-boregi
+kol böreği peynirli	y-kol-boregi
+çiğ börek	c-cig-borek
+paçanga böreği	c-pacanga-boregi
+gül böreği	gul-boregi
+tepsi böreği	c-tepsi-boregi
+muska böreği	y-muska-boregi
+talaş böreği	c-talas-boregi
+pırasalı börek	y-pirasali-borek
+ıspanaklı rulo börek	c-ispanakli-boregi-pirinclisi
+gözleme	gozleme-peynirli
+peynirli gözleme	gozleme-peynirli
+patatesli gözleme	gozleme-patatesli
+kıymalı gözleme	gozleme-kiymali
+ıspanaklı gözleme	c-gozleme-ispanakli
+kaşarlı gözleme	c-gozleme-kasarli
+sucuklu gözleme	c-gozleme-sucuklu
+mantarlı gözleme	c-gozleme-mantarli
+muzlu gözleme	c-gozleme-muzlu
+iki gözleme	gozleme-peynirli
+lahmacun	lahmacun
+bir lahmacun	lahmacun
+iki lahmacun	lahmacun
+üç lahmacun	lahmacun
+lahmacun dürüm	c-lahmacun-durum
+kaşarlı lahmacun	c-kasarli-lahmacun
+fıstıklı lahmacun	c-fistikli-lahmacun
+pide	-
+kıymalı pide	pide-kiymali
+kuşbaşılı pide	c-kusbasili-pide
+kaşarlı pide	pide-kasarli
+peynirli pide	c-peynirli-pide
+sucuklu pide	pide-sucuklu
+karışık pide	c-karisik-pide
+ıspanaklı pide	c-ispanakli-pide
+yumurtalı pide	c-yumurtali-pide
+kavurmalı pide	c-kavurmali-pide
+tavuklu pide	c-tavuklu-pide
+karadeniz pidesi	c-karadeniz-pidesi
+bafra pidesi	c-bafra-pidesi
+kıymalı yumurtalı pide	c-kiymali-yumurtali-pide
+kıymalı kaşarlı pide	pide-kiymali
+yarım kıymalı pide	pide-kiymali
+tost	tost-kasarli
+kaşarlı tost	tost-kasarli
+karışık tost	tost-karisik
+sucuklu tost	tost-sucuklu
+ayvalık tostu	c-misc-ayvalik-tostu
+iki tost	tost-kasarli
+sandviç	-
+sosisli sandviç	sosisli-sandvic
+ton balıklı sandviç	sandvic-ton
+tavuklu sandviç	tavuklu-sandvic
+jambonlu sandviç	sandvic-jambon
+salamlı sandviç	d-sandvic-salam
+köfte ekmek	kofte-ekmek
+sucuk ekmek	sucuk-ekmek
+döner ekmek	doner-ekmek
+mantı	manti
+yoğurtlu mantı	c-manti-yogurtlu
+bir porsiyon mantı	manti
+kayseri mantısı	b-manti-kayseri-cig|manti
+su mantısı	c-manti-su
+fırın mantı	c-manti-firin
+ıspanaklı mantı	c-manti-ispanakli
+tavuklu mantı	c-manti-tavuklu
+hazır mantı	c-manti-hazir
+katmer	c-katmer-antep|c-katmer-salgam
+antep katmeri	c-katmer-antep
+kurabiye	kurabiye
+iki kurabiye	kurabiye
+un kurabiyesi	c-kurabiye-un|kurabiye
+pişi	pisi
+iki pişi	pisi
+sade pişi	c-pisi-sade
+bagel	d-bagel
+pizza hamuru	d-pizza-hamuru
+pita ekmeği	d-pita-ekmek
+naan	d-naan
+çapati	d-chapati
+ciabatta	d-ciabatta
+focaccia	d-focaccia
+brioche	d-brioche
+pilav	pirinc-pilavi
+pirinç pilavı	pirinc-pilavi
+bir porsiyon pilav	pirinc-pilavi
+bir tabak pilav	pirinc-pilavi
+iki kaşık pilav	pirinc-pilavi
+bir kase pilav	pirinc-pilavi
+tereyağlı pilav	c-tereyagli-pilav
+şehriyeli pilav	sehriyeli-pilav
+arpa şehriyeli pilav	c-arpa-sehriye-pilavi
+sade pilav	c-tereyagli-pilav|pirinc-pilavi
+beyaz pilav	pirinc-pilavi
+az yağlı pilav	c-pirinc-pilavi-az-yagli
+domatesli pilav	c-domatesli-pilav
+sarı pilav	c-sari-pilav
+nohutlu pilav	nohutlu-pilav
+iç pilav	ic-pilav
+kıymalı pilav	c-kiymali-pilav
+mantarlı pilav	d-pilav-mantarli
+limonlu pilav	d-pilav-limonlu
+bademli pilav	d-pilav-pirinc-bademli
+perde pilavı	c-perde-pilavi
+çiğ pirinç	pirinc-cig
+pirinç	pirinc-cig
+100 gram çiğ pirinç	pirinc-cig
+pişmiş pirinç	pirinc-pilavi|pirinc-cig:cooked
+basmati pirinç	d-pirinc-basmati
+yasemin pirinci	d-pirinc-jasmin
+esmer pirinç	esmer-pirinc
+esmer pirinç pilavı	esmer-pirinc
+yabani pirinç	d-pirinc-yabani
+baldo pirinç	d-pirinc-baldo
+bulgur pilavı	bulgur-pilavi
+bir tabak bulgur pilavı	bulgur-pilavi
+bulgur	bulgur-cig|bulgur-pilavi
+çiğ bulgur	bulgur-cig
+domatesli bulgur pilavı	domatesli-bulgur
+nohutlu bulgur pilavı	c-nohutlu-bulgur
+sade bulgur pilavı	c-bulgur-pilavi-sade|bulgur-pilavi
+esmer bulgur	d-bulgur-esmer
+ince bulgur	d-bulgur-kofteli-ince
+iri bulgur	d-bulgur-pilavlik-iri
+firik pilavı	d-firik-pilavi
+makarna	makarna
+bir tabak makarna	makarna
+bir porsiyon makarna	makarna
+haşlanmış makarna	makarna
+çiğ makarna	makarna-cig
+100 gram çiğ makarna	makarna-cig
+spagetti	makarna
+spagetti haşlanmış	d-makarna-spagetti-haslanmis|makarna
+penne	makarna
+tam buğday makarna	d-makarna-tam-bugday
+glutensiz makarna	d-makarna-glutensiz
+mercimek makarnası	d-makarna-mercimek
+nohut makarnası	d-makarna-nohut
+fusilli	d-makarna-fusilli
+burgu makarna	d-makarna-fusilli
+domates soslu makarna	makarna-domates-soslu
+kremalı makarna	kremali-makarna
+fırın makarna	firin-makarna
+peynirli makarna	c-makarna-peynirli
+kıymalı makarna	c-makarna-kiymali
+sebzeli makarna	c-makarna-sebzeli
+mantarlı makarna	c-makarna-mantar
+salçalı makarna	c-makarna-salcali
+yoğurtlu makarna	yogurtlu-makarna
+tavuklu makarna	tavuklu-makarna
+ton balıklı makarna	d-makarna-ton-balikli
+makarna salatası	makarna-salatasi
+spagetti bolonez	spagetti-bolonez
+bolonez	spagetti-bolonez|a-bolonez-sos
+spagetti napoliten	d-makarna-bolonez-tam
+karbonara	c-bc-carbonara
+spagetti carbonara	c-bc-carbonara
+penne arrabbiata	d-penne-arrabbiata
+pesto makarna	d-penne-pesto
+alfredo	d-fettuccine-alfredo
+mac and cheese	d-makarna-peynirli-mac
+lazanya	lazanya
+bir porsiyon lazanya	lazanya
+erişte	eriste
+ev eriştesi	c-eriste-ev
+yoğurtlu erişte	c-eriste-yogurtlu
+kuskus	kuskus
+kuskus salatası	d-kuskus-salatasi
+ramen	d-ramen-tavuk
+ravioli	d-ravioli
+gnocchi	d-gnocchi
+risotto	d-risotto-mantar
+paella	d-paella
+kinoa	kinoa
+kinoa salatası	c-kinoa-salata
+karabuğday	d-karabugday
+inci arpa	d-arpa-inci
+arpa şehriye	d-arpa-sehriye
+yulaf ezmesi	yulaf-ezmesi
+yulaf	yulaf-ezmesi
+50 gram yulaf ezmesi	yulaf-ezmesi
+yulaf lapası	yulaf-lapasi
+sütlü yulaf lapası	d-yulaf-pismis-sutlu
+sulu yulaf lapası	d-yulaf-pismis-sulu
+overnight oats	d-overnight-oats
+mısır gevreği	misir-gevregi
+bir kase mısır gevreği	misir-gevregi
+granola	granola
+müsli	musli
+buğday unu	un
+un	un
+irmik	irmik
+mısır unu	b-misir-unu
+tam buğday unu	b-tam-bugday-unu-kepekli
+çavdar unu	b-cavdar-unu
+yulaf unu	b-yulaf-unu
+badem unu	b-badem-unu
+nohut unu	d-nohut-unu
+nişasta	nisasta
+buğday kepeği	d-bugday-kepegi
+mercimek	d-mercimek-kirmizi|mercimek-haslanmis|mercimek-corbasi
+kırmızı mercimek	d-mercimek-kirmizi|mercimek-haslanmis
+yeşil mercimek	d-mercimek-yesil
+haşlanmış mercimek	mercimek-haslanmis
+siyah mercimek	d-mercimek-siyah
+yeşil mercimek yemeği	yesil-mercimek-yemegi
+nohut	nohut-haslanmis|nohut-yemegi
+haşlanmış nohut	nohut-haslanmis
+nohut yemeği	nohut-yemegi
+bir tabak nohut yemeği	nohut-yemegi
+etli nohut	c-etli-nohut
+nohut konserve	b-nohut-konserve
+konserve nohut	b-nohut-konserve
+kuru fasulye	kuru-fasulye
+bir porsiyon kuru fasulye	kuru-fasulye
+bir tabak kuru fasulye	kuru-fasulye
+bir kase etli kuru fasulye	c-etli-kuru-fasulye
+etli kuru fasulye	c-etli-kuru-fasulye
+az yağlı kuru fasulye	c-light-kuru-fasulye
+haşlanmış kuru fasulye	fasulye-haslanmis:cooked|kuru-fasulye
+fasulye	kuru-fasulye
+beyaz fasulye	d-fasulye-ak-dermason
+dermason fasulye	d-fasulye-ak-dermason
+barbunya	d-barbunya|barbunya-pilaki
+barbunya pilaki	barbunya-pilaki
+barbunya pilakisi	barbunya-pilaki
+zeytinyağlı barbunya	c-zy-barbunya
+börülce	d-borulce
+bakla	d-taze-bakla|d-bakla-haslanmis-taze|d-bakla-kuru
+kuru bakla	d-bakla-kuru|d-kuru-bakla
+kuru bezelye	d-bezelye-kuru
+soya fasulyesi	d-soya-fasulyesi
+maş fasulyesi	d-mas-fasulyesi
+kırmızı fasulye	d-kirmizi-fasulye
+siyah fasulye	d-siyah-fasulye
+acı bakla	d-aci-bakla
+fasulye konserve	d-fasulye-konserve
+barbunya konserve	d-barbunya-konserve
+baked beans	b-baked-beans-domates
+humus	humus
+bir porsiyon humus	humus
+fava	fava
+fava ezmesi	fava|d-bakla-ezmesi
+falafel	falafel
+beş falafel	falafel
+bezelye yemeği	bezelye-yemegi
+nohutlu salata	d-nohut-salata
+tofu	d-tofu-sert|tofu
+mercimek çorbası	mercimek-corbasi
+bir kase mercimek çorbası	mercimek-corbasi
+iki kase mercimek çorbası	mercimek-corbasi
+bir kepçe mercimek çorbası	mercimek-corbasi
+az yağlı mercimek çorbası	c-light-mercimek-corbasi
+ezogelin çorbası	ezogelin-corbasi
+ezogelin	ezogelin-corbasi
+yayla çorbası	yayla-corbasi
+yayla	yayla-corbasi
+tavuk çorbası	tavuk-corbasi
+tavuk suyu çorbası	tavuk-corbasi
+kremalı tavuk çorbası	c-tavuk-krema-corbasi
+domates çorbası	domates-corbasi
+tarhana çorbası	tarhana-corbasi
+tarhana	tarhana-corbasi
+yoğurtlu tarhana	c-tarhana-corbasi-yogurtlu
+düğün çorbası	dugun-corbasi
+mantar çorbası	mantar-corbasi
+kremalı mantar çorbası	mantar-corbasi
+sebze çorbası	sebze-corbasi
+brokoli çorbası	brokoli-corbasi
+balkabağı çorbası	balkabagi-corbasi
+bal kabağı çorbası	balkabagi-corbasi
+kabak çorbası	balkabagi-corbasi
+toyga çorbası	c-toyga-corbasi
+beyran	c-beyran-corbasi
+beyran çorbası	c-beyran-corbasi
+analı kızlı	c-anali-kizli-corbasi
+lahana çorbası	c-lahana-corbasi
+un çorbası	c-un-corbasi
+arabaşı çorbası	c-arabasi-corbasi
+mısır çorbası	c-misir-corbasi
+patates çorbası	c-patates-corbasi
+havuç çorbası	c-havuc-corbasi
+ıspanak çorbası	c-ispanak-corbasi
+bulgur çorbası	c-bulgur-corbasi
+tutmaç çorbası	c-tutmac-corbasi
+şehriye çorbası	y-sehriye-corbasi
+karalahana çorbası	d-karalahana-corbasi
+nohut çorbası	d-nohut-corbasi
+bezelye çorbası	d-bezelye-corbasi
+fasulye çorbası	d-fasulye-sebze-corba
+miso çorbası	d-miso-corbasi
+minestrone	d-minestrone
+çorba	-
+bir kase çorba	-
+hazır çorba	b-corba-hazir-bardak
+knorr mercimek çorbası	b-knorr-mercimek
+karnıyarık	karniyarik
+bir porsiyon karnıyarık	karniyarik
+iki karnıyarık	karniyarik
+imam bayıldı	imam-bayildi
+imambayıldı	imam-bayildi
+biber dolması	dolma-biber
+etli biber dolması	dolma-biber-etli
+zeytinyağlı biber dolması	dolma-biber
+beş biber dolması	dolma-biber
+domates dolması	dolma-domates
+patlıcan dolması	dolma-patlican
+kabak dolması	y-kabak-dolmasi
+kabak çiçeği dolması	d-kabak-cicegi-dolmasi
+yaprak sarma	yaprak-sarma
+yaprak sarması	yaprak-sarma
+sarma	yaprak-sarma
+on adet yaprak sarma	yaprak-sarma
+zeytinyağlı yaprak sarma	yaprak-sarma
+etli yaprak sarma	yaprak-sarma-etli
+etli sarma	yaprak-sarma-etli
+lahana sarması	lahana-sarmasi
+pazı sarması	d-pazi-sarmasi
+dolma	dolma-biber|yaprak-sarma
+etli dolma	dolma-biber-etli
+taze fasulye	d-taze-fasulye-cig|taze-fasulye-yemegi
+zeytinyağlı taze fasulye	taze-fasulye-yemegi
+etli taze fasulye	c-etli-taze-fasulye
+ıspanak yemeği	ispanak-yemegi
+etli ıspanak	c-etli-ispanak
+türlü	turlu
+etli türlü	turlu
+musakka	musakka
+bamya yemeği	bamya-yemegi
+etli bamya	c-etli-bamya
+zeytinyağlı enginar	enginar-zeytinyagli
+zeytinyağlı pırasa	pirasa-zeytinyagli
+etli pırasa	c-etli-pirasa
+zeytinyağlı kereviz	c-zy-kereviz
+etli kereviz	c-etli-kereviz
+kıymalı patates	kiymali-patates
+etli patates	c-etli-patates|kiymali-patates
+patates yemeği	c-etli-patates|kiymali-patates
+patlıcan kızartması	patlican-kizartmasi
+kızarmış patlıcan	patlican-kizartmasi
+patlıcan musakka	musakka
+mücver	mucver
+kabak mücver	mucver|d-kabak-mucver-firin
+kabak kızartması	d-kabak-kizartma
+etli güveç	etli-guvec
+sebze güveç	etli-guvec|turlu
+kuzu güveç	c-kuzu-guvec
+hünkar beğendi	hunkar-begendi
+ali nazik	c-ali-nazik
+çömlek kebabı	c-comlek-kebabi
+testi kebabı	c-testi-kebabi
+kuzu kapama	c-kuzu-kapama
+orman kebabı	orman-kebabi
+tepsi kebabı	c-tepsi-kebabi
+tokat kebabı	c-tokat-kebabi
+kağıt kebabı	c-kagit-kebabi
+sultan kebabı	c-sultan-kebabi
+semizotu yemeği	semizotu
+kapuska	kapuska
+lahana kapuska	kapuska
+etli lahana	c-etli-lahana
+etli karnabahar	c-etli-karnabahar
+karnabahar kızartması	d-karnabahar-kizartma
+etli patlıcan	c-etli-patlican
+kabak yemeği	c-zy-kabak|kabak
+etli kabak	c-etli-kabak
+etli bezelye	c-etli-bezelye
+zeytinyağlı bezelye	c-zy-bezelye
+zeytinyağlı bakla	c-zy-bakla
+ayşe kadın fasulye	c-zy-ayse-kadin
+zeytinyağlı patates	c-zy-patates
+mantar sote	d-mantar-sote
+patlıcan sote	d-patlican-sote
+sebze sote	d-sebze-sote
+fırın sebze	d-sebze-firin-zeytinyagli|firin-sebze
+ızgara sebze	d-sebze-firin-zeytinyagli|firin-sebze
+çoban salatası	coban-salatasi
+çoban salata	coban-salatasi|c-coban-salata-zeytinyagli
+bir porsiyon çoban salatası	coban-salatasi
+bir kase salata	mevsim-salata
+mevsim salata	mevsim-salata
+salata	mevsim-salata
+yeşil salata	c-yesil-salata
+marul salatası	c-yesil-salata
+gavurdağı salatası	gavurdagi-salatasi
+gavurdağı	gavurdagi-salatasi
+piyaz	piyaz
+fasulye piyazı	d-fasulye-piyazi-b
+tavuklu salata	c-karisik-salata-tavuk|tavuk-salata
+tavuk salata	tavuk-salata
+tavuk salatası	tavuk-salata
+ton balıklı salata	ton-balikli-salata
+sezar salata	sezar-salata
+tavuklu sezar	c-bc-tavuklu-sezar
+rus salatası	rus-salatasi
+kısır	kisir
+bir porsiyon kısır	kisir
+bulgur salatası	d-bulgur-salatasi
+patates salatası	c-patates-salata|d-patates-salatasi
+havuç salatası	c-havuc-salata
+roka salatası	c-roka-salata
+pancar salatası	c-pancar-salata
+turp salatası	c-turp-salata
+nohut salatası	d-nohut-salata
+mercimek salatası	d-mercimek-salata
+hellimli salata	c-hellimli-salata
+avokado salatası	c-avokado-salata
+yunan salatası	d-greek-salata
+greek salad	d-greek-salata
+caprese	d-caprese
+lahana salatası	d-lahana-salata-yogurtlu|d-coleslaw-fast
+coleslaw	d-coleslaw-fast
+semizotu salatası	c-semizotu-salata
+ezme	c-ezme-salata|acili-ezme
+acılı ezme	acili-ezme
+domates ezmesi	d-aci-ezme-domates|acili-ezme
+patlıcan salatası	patlican-salatasi
+közlenmiş patlıcan	d-kozlenmis-patlican|c-kozlenmis-patlican
+babagannuş	c-babagannus
+baba ganuş	c-babagannus
+tarama	tarama
+bir porsiyon tarama	tarama
+atom	c-atom
+muhammara	c-muhammara
+acuka	c-acuka
+girit ezmesi	c-girit-ezmesi
+zeytin ezmesi	c-zeytin-ezmesi
+şakşuka	c-saksuka
+sumaklı soğan	c-sumakli-sogan
+yoğurtlu havuç	c-yogurtlu-havuc
+yoğurtlu kabak	c-yogurtlu-kabak
+pastırmalı humus	c-pastirmali-humus
+topik	c-topik
+cevizli ezme	c-cevizli-ezme
+kızarmış hellim	c-hellim-kizartma
+tzatziki	d-tzatziki
+guacamole	d-guacamole
+salsa	d-salsa
+bruschetta	d-bruschetta
+fattoush	d-fattoush
+turşu	tursu
+karışık turşu	tursu
+salatalık turşusu	salatalik-tursusu
+lahana turşusu	b-tursu-lahana
+havuç turşusu	b-tursu-havuc
+pancar turşusu	b-tursu-pancar
+biber turşusu	d-tursu-biber
+sarımsak turşusu	b-tursu-sarimsak
+kapari	b-capari
+siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+beş adet siyah zeytin	siyah-zeytin
+yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+on tane zeytin	siyah-zeytin
+zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+kalamata zeytin	b-zeytin-kalamata
+çizik zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+gemlik zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+yağlı sele zeytin	b-zeytin-sele-yagli
+dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+çekirdeksiz zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+kahvaltılık zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+kahvaltıda iki yumurta bir dilim peynir ve üç zeytin yedim	yumurta,beyaz-peynir,siyah-zeytin
+iki dilim ekmek ve bir bardak çay	ekmek,cay
+öğlen tavuk göğsü ve bir tabak pilav yedim	tavuk-gogsu,pirinc-pilavi
+akşam mercimek çorbası ve bir porsiyon karnıyarık	mercimek-corbasi,karniyarik
+bir kase mercimek çorbası iki dilim ekmek	mercimek-corbasi,ekmek
+mercimek çorbası, pilav, ayran	mercimek-corbasi,pirinc-pilavi,ayran
+kuru fasulye pilav ve cacık	kuru-fasulye,pirinc-pilavi,cacik
+kuru fasulye, pilav, turşu	kuru-fasulye,pirinc-pilavi,tursu
+bir porsiyon adana kebap ve bir ayran	adana-kebap,ayran
+iki lahmacun ve ayran	lahmacun,ayran
+bir lahmacun bir ayran	lahmacun,ayran
+kıymalı pide ve ayran	pide-kiymali,ayran
+bir kaşarlı tost ve bir ayran	tost-kasarli,ayran
+iki dilim sucuk ve bir yumurta	sucuk,yumurta
+sucuklu yumurta ve iki dilim ekmek	sucuklu-yumurta,ekmek
+menemen ve simit	menemen,simit
+bir simit ve bir dilim kaşar	simit,kasar
+peynir, zeytin, domates, salatalık	beyaz-peynir,siyah-zeytin,domates,salatalik
+beyaz peynir ve zeytin	beyaz-peynir,siyah-zeytin
+iki dilim beyaz peynir ve bir yumurta	beyaz-peynir,yumurta
+yulaf ezmesi ve süt	yulaf-ezmesi,sut
+bir kase yoğurt ve bir muz	yogurt,muz
+bir kase yoğurt iki yemek kaşığı bal	yogurt,bal
+tavuk göğsü brokoli ve pirinç	tavuk-gogsu,brokoli,pirinc-pilavi|pirinc-cig
+200 gram ızgara tavuk göğsü ve 150 gram pilav	tavuk-gogsu,pirinc-pilavi
+150 gram haşlanmış tavuk göğsü, 100 gram bulgur pilavı	tavuk-gogsu-haslanmis,bulgur-pilavi
+200 gr çiğ dana kıyma ve 100 gr makarna	dana-kiyma-cig,makarna
+bir tabak makarna ve bir kase yoğurt	makarna,yogurt
+bir porsiyon çiğ köfte ve ayran	cig-kofte,ayran
+beş köfte bir pilav	kofte,pirinc-pilavi
+altı köfte ve salata	kofte,mevsim-salata
+döner ve ayran	doner-et,ayran
+iki porsiyon et döner ve cacık	doner-et,cacik
+tavuk döner dürüm ve kola	doner-durum-tavuk,kola
+iskender ve ayran	iskender,ayran
+bir porsiyon iskender yarım porsiyon pilav	iskender,pirinc-pilavi
+karnıyarık ve pilav	karniyarik,pirinc-pilavi
+etli nohut, pilav ve cacık	c-etli-nohut,pirinc-pilavi,cacik
+etli kuru fasulye ve pilav	c-etli-kuru-fasulye,pirinc-pilavi
+taze fasulye ve bulgur pilavı	taze-fasulye-yemegi,bulgur-pilavi
+yaprak sarma ve yoğurt	yaprak-sarma,yogurt
+beş yaprak sarma bir kase yoğurt	yaprak-sarma,yogurt
+balık ekmek ve şalgam	balik-ekmek,salgam
+levrek ızgara ve roka salatası	levrek,c-roka-salata|roka
+hamsi tava ve mısır ekmeği	hamsi-tava,d-ekmek-misir
+bir porsiyon hamsi tava ve salata	hamsi-tava,mevsim-salata
+somon ızgara ve haşlanmış brokoli	somon,brokoli
+uskumru ekmek	balik-ekmek
+ton balığı ve salata	ton-baligi-suda,mevsim-salata
+bir kutu ton balığı ve iki dilim ekmek	ton-baligi-suda,ekmek
+kahvaltı iki yumurta üç zeytin bir dilim ekmek	yumurta,siyah-zeytin,ekmek
+sabah bir bardak süt ve iki dilim tam buğday ekmeği	sut,tam-bugday-ekmegi
+iki dilim tam buğday ekmeği üç dilim hindi jambon bir dilim kaşar	tam-bugday-ekmegi,jambon,kasar
+bir poğaça ve bir bardak çay	pogaca|y-pogaca-sade,cay
+iki poğaça bir çay	pogaca|y-pogaca-sade,cay
+sigara böreği ve çay	sigara-boregi,cay
+su böreği ve ayran	borek-su,ayran
+ıspanaklı börek ve yoğurt	borek-ispanakli,yogurt
+gözleme ve ayran	gozleme-peynirli,ayran
+peynirli gözleme ve çay	gozleme-peynirli,cay
+mantı ve cacık	manti,cacik
+mantı ve ayran	manti,ayran
+bir porsiyon mantı ve bir bardak ayran	manti,ayran
+kayseri mantısı yoğurt	manti,yogurt
+lahmacun çiğ köfte ayran	lahmacun,cig-kofte,ayran
+mercimek köftesi ve kısır	mercimek-koftesi,kisir
+humus ve lavaş	humus,lavas
+haydari ve pide ekmeği	haydari,pide-ekmegi
+beyaz peynir domates salatalık ve iki dilim ekmek	beyaz-peynir,domates,salatalik,ekmek
+iki yumurta ve menemen	yumurta,menemen
+kaşarlı tost ve ayran	tost-kasarli,ayran
+bir adet kaşarlı tost iki dilim domates	tost-kasarli,domates
+yoğurt ve bal	yogurt,bal
+süt ve bal	sut,bal
+yulaf, süt, muz	yulaf-ezmesi,sut,muz
+lor peyniri ve domates	lor,domates
+çökelek ve ekmek	cokelek,ekmek
+tulum peyniri ve ceviz	tulum,ceviz
+beş ceviz ve bir dilim peynir	ceviz,beyaz-peynir
+kuzu pirzola ve pilav	kuzu-pirzola,pirinc-pilavi
+üç kuzu pirzola ve salata	kuzu-pirzola,mevsim-salata
+biftek ve patates	dana-biftek,patates-kizartmasi|patates-haslama
+kıymalı makarna ve cacık	c-makarna-kiymali,cacik
+bir kase çorba ve iki dilim ekmek	mercimek-corbasi,ekmek
+tavuk sote ve pilav	tavuk-sote,pirinc-pilavi
+tavuk şiş ve bulgur pilavı	tavuk-sis,bulgur-pilavi
+tavuk but ve patates	tavuk-but,patates-kizartmasi|patates-haslama
+fırın tavuk ve pilav	tavuk-but,pirinc-pilavi
+etli güveç ve pilav	etli-guvec,pirinc-pilavi
+musakka ve pilav	musakka,pirinc-pilavi
+kadınbudu köfte ve cacık	kadinbudu-kofte,cacik
+izmir köfte ve pilav	izmir-kofte,pirinc-pilavi
+hünkar beğendi ve ayran	hunkar-begendi,ayran
+bir porsiyon kavurma ve bir ekmek	kavurma,ekmek
+sucuk ekmek ve ayran	sucuk-ekmek,ayran
+köfte ekmek ve ayran	kofte-ekmek,ayran
+iki tane yumurta yedim	yumurta
+bir tane haşlanmış yumurta	yumurta
+ben bugün iki dilim ekmek yedim	ekmek
+öğle yemeğinde bir kase mercimek çorbası içtim	mercimek-corbasi
+akşam yemeğinde tavuk göğsü yedim	tavuk-gogsu
+kahvaltıda peynir yedim	beyaz-peynir
+sabah bir dilim kaşar peyniri yedim	kasar
+bi tabak pilav yedim	pirinc-pilavi
+bi dilim ekmek	ekmek
+bi kase yoğurt	yogurt
+bi tane simit yedim	simit
+yarım porsiyon pilav	pirinc-pilavi
+bir buçuk porsiyon pilav	pirinc-pilavi
+iki buçuk dilim ekmek	ekmek
+yarım ekmek peynir	ekmek,beyaz-peynir
+bir buçuk su bardağı süt	sut
+iki su bardağı ayran	ayran
+yarım bardak yoğurt	yogurt
+üç yemek kaşığı pirinç pilavı	pirinc-pilavi
+beş yemek kaşığı mercimek çorbası	mercimek-corbasi
+dört yemek kaşığı kuru fasulye	kuru-fasulye
+iki kepçe kuru fasulye	kuru-fasulye
+bir kepçe nohut yemeği	nohut-yemegi
+iki avuç ceviz	ceviz
+yüz gram tavuk göğsü	tavuk-gogsu
+yüz elli gram pilav	pirinc-pilavi
+iki yüz gram kıyma	dana-kiyma-pismis
+iki yüz elli gram yoğurt	yogurt
+üç yüz gram levrek	levrek
+yüz gram beyaz peynir	beyaz-peynir
+elli gram kaşar	kasar
+otuz gram lor	lor
+kırk gram tulum peyniri	tulum
+yetmiş beş gram makarna	makarna
+sekiz adet zeytin	siyah-zeytin
+iki tane köfte	kofte
+dört dilim salam	salam
+altı dilim sucuk	sucuk
+yedi tane hamsi	hamsi-tava
+on iki midye dolma	midye-dolma
+yirmi tane midye	midye-dolma
+kırk tane mercimek köftesi	mercimek-koftesi
+yarım kilo kıyma	dana-kiyma-pismis
+bir kilo tavuk	tavuk-gogsu
+yarım kilo kuzu eti	kuzu-eti
+bir litre ayran	ayran
+yarım litre süt	sut
+500 ml ayran	ayran
+250 ml süt	sut
+200 ml yoğurt	yogurt
+100 g peynir	beyaz-peynir
+50 gr lor	lor
+1 porsiyon pilav	pirinc-pilavi
+2 dilim ekmek	ekmek
+3 adet yumurta	yumurta
+2 kase çorba	mercimek-corbasi
+1,5 porsiyon pilav	pirinc-pilavi
+0.5 porsiyon makarna	makarna
+1/2 ekmek	ekmek
+1/4 piliç	firin-pilic
+yarım piliç ızgara	firin-pilic
+bir çeyrek piliç	firin-pilic
+tavuk göğsü 200 gr	tavuk-gogsu
+makarna 100 gr	makarna
+pilav 150 gram	pirinc-pilavi
+yoğurt 200 gr	yogurt
+ekmek 2 dilim	ekmek
+yumurta 2 adet	yumurta
+çiğ kıyma 250 gram	dana-kiyma-cig
+çiğ tavuk göğsü 200 gr	tavuk-gogsu:raw
+çiğ pirinç 80 gram	pirinc-cig
+çiğ bulgur 60 gram	bulgur-cig
+çiğ makarna 75 gr	makarna-cig
+çiğ mercimek 50 gram	mercimek-haslanmis:raw
+kuru mercimek 50 gram	mercimek-haslanmis:raw
+kuru nohut 50 gram	nohut-haslanmis:raw
+kuru fasulye 100 gram çiğ	fasulye-haslanmis:raw|kuru-fasulye
+çiğ somon 150 gr	somon:raw
+pişmiş somon	somon
+pişmiş tavuk göğsü	tavuk-gogsu
+pişmiş makarna	makarna
+pişmiş bulgur	bulgur-pilavi|bulgur-cig:cooked
+pişmiş mercimek	mercimek-haslanmis
+haşlanmış nohut 100 gr	nohut-haslanmis
+haşlanmış karides	karides
+haşlanmış tavuk 200 gr	tavuk-gogsu-haslanmis
+haşlanmış et	haslama-et
+fırında tavuk	tavuk-but|firin-pilic
+ızgara tavuk	tavuk-gogsu|tavuk-sis
+ızgara köfte 150 gr	kofte
+ızgara balık	y-balik-izgara
+fırında balık	y-balik-izgara
+tava balık	y-balik-tava
+buğulama balık	y-balik-izgara
+tavuk göğsü çiğ 300 gram	tavuk-gogsu:raw
+tavuk gogsu	tavuk-gogsu
+tavuk gogus	tavuk-gogsu
+izgara tavuk gogsu	tavuk-gogsu
+haslanmis yumurta	yumurta
+iki haslanmis yumurta	yumurta
+mercimek corbasi	mercimek-corbasi
+bir kase mercimek corbasi	mercimek-corbasi
+ezogelin corbasi	ezogelin-corbasi
+yayla corbasi	yayla-corbasi
+iskembe corbasi	iskembe-corbasi
+tarhana corbasi	tarhana-corbasi
+kuru fasulye pilav	kuru-fasulye,pirinc-pilavi
+kasarli tost	tost-kasarli
+kasarli pide	pide-kasarli
+kiymali pide	pide-kiymali
+sigara boregi	sigara-boregi
+su boregi	borek-su
+ispanakli borek	borek-ispanakli
+kiymali borek	borek-kiymali
+peynirli borek	borek-peynirli
+pogaca	pogaca|y-pogaca-sade
+peynirli pogaca	pogaca
+acma	acma
+kasar peyniri	kasar
+yarim yagli sut	sut-yarim
+yagsiz sut	sut-yagsiz
+yogurt	yogurt
+suzme yogurt	suzme-yogurt
+yarim yagli yogurt	yogurt-yarim
+tam bugday ekmegi	tam-bugday-ekmegi
+cavdar ekmegi	cavdar-ekmegi
+cok tahilli ekmek	cok-tahilli-ekmek
+pirinc pilavi	pirinc-pilavi
+bulgur pilavi	bulgur-pilavi
+sehriyeli pilav	sehriyeli-pilav
+ic pilav	ic-pilav
+cig kofte	cig-kofte
+izgara kofte	kofte
+kofte	kofte
+icli kofte	ic-kofte
+mercimek koftesi	mercimek-koftesi
+kadinbudu kofte	kadinbudu-kofte
+izmir kofte	izmir-kofte
+karniyarik	karniyarik
+imam bayildi	imam-bayildi
+lahana sarmasi	lahana-sarmasi
+hunkar begendi	hunkar-begendi
+tas kebabi	tas-kebabi
+kuzu tandir	kuzu-tandir
+dana biftek	dana-biftek
+dana kiyma	dana-kiyma-pismis
+cig kiyma	dana-kiyma-cig
+az yagli kiyma	kiyma-az-yagli
+levrek izgara	levrek
+cipura	cipura
+ton baligi	ton-baligi-suda
+yagli ton baligi	ton-baligi-yagda
+pastirma	pastirma
+yumurta aki	yumurta-beyazi
+yumurta sarisi	yumurta-sarisi
+misir gevregi	misir-gevregi
+cacik	cacik
+patlican salatasi	patlican-salatasi
+coban salatasi	coban-salatasi
+gavurdagi salatasi	gavurdagi-salatasi
+rus salatasi	rus-salatasi
+kisir	kisir
+tursu	tursu
+firin makarna	firin-makarna
+manti	manti
+yogurtlu manti	c-manti-yogurtlu
+gozleme	gozleme-peynirli
+kiymali gozleme	gozleme-kiymali
+patatesli gozleme	gozleme-patatesli
+tavuk doner	doner-tavuk
+et doner	doner-et
+tavuk sis	tavuk-sis
+adana kebabi	adana-kebap
+urfa kebabi	urfa-kebap
+sis kebap	sis-kebap
+tavuk haslama	tavuk-haslama
+tavukk göğsü	tavuk-gogsu
+tavuk göğsü ızgra	tavuk-gogsu
+merimek çorbası	mercimek-corbasi
+mercimek çorbsı	mercimek-corbasi
+karnıyarık yedim	karniyarik
+patlcan dolması	dolma-patlican
+beyaz penir	beyaz-peynir
+kaşar penyiri	kasar
+yoğrt	yogurt
+ekmk	ekmek
+yumurtta	yumurta
+makrna	makarna
+mercimk çorbası	mercimek-corbasi
+lahmacn	lahmacun
+kuzu but	y-kuzu-but
+kuzu sırt	kuzu-eti
+kuzu gerdan	kuzu-eti
+dana but	y-dana-but
+dana yanak	y-dana-yanak
+dana incik	y-dana-incik
+sığır eti	dana-biftek
+tavuk fileto	tavuk-gogsu
+tavuk bonfile	tavuk-gogsu
+tavuk kıyma	y-tavuk-kiyma
+hindi kıyma	y-hindi-kiyma
+hindi but	y-hindi-but
+bıldırcın	y-bildircin
+ördek eti	y-ordek
+kaz eti	y-kaz
+tavşan eti	y-tavsan
+karışık kıyma	kiyma-yagli
+çiğ kuzu kıyma	kiyma-yagli
+çiğ tavuk but	tavuk-but
+çiğ tavuk kanat	tavuk-kanat
+çiğ kuzu eti	kuzu-eti
+çiğ dana eti	dana-biftek
+çiğ biftek	dana-biftek
+tütsülenmiş et	dana-biftek
+kuzu rosto	y-kuzu-but
+çiğ kuzu pirzola	kuzu-pirzola
+tavuk kalp	y-tavuk-yurek
+tavuk taşlık	y-tavuk-taslik
+tavuk derisi	y-tavuk-derisi
+tavuk suyu	y-tavuk-suyu
+kemik suyu	b-hazir-et-suyu
+et suyu	b-hazir-et-suyu
+tavuk bulyon	b-bulyon-tavuk
+kuru köfte	c-tava-kofte
+pilav üstü tavuk	tavuklu-pilav|c-td-pilav-ustu-tavuk
+kuzu çorbası	y-et-corbasi
+terbiyeli tavuk çorbası	tavuk-corbasi
+terbiyeli et çorbası	y-et-corbasi
+et suyu çorbası	y-et-corbasi
+dana çorbası	y-et-corbasi
+yoğurt çorbası	yayla-corbasi
+lebeniye çorbası	y-lebeniye-corbasi
+pancar çorbası	y-pancar-corbasi
+bamya çorbası	y-bamya-corbasi
+kıymalı çorba	y-et-corbasi
+keşkek	y-keskek
+yarma çorbası	y-yarma-corbasi
+haşlanmış bulgur	bulgur-cig
+mercimekli bulgur pilavı	y-mercimekli-bulgur
+etli pilav	c-kiymali-pilav
+tavuklu bulgur pilavı	y-tavuklu-bulgur
+nohutlu yahni	c-etli-nohut
+kuru fasulye yemeği	kuru-fasulye
+fasulye pilaki	barbunya-pilaki
+barbunya haşlama	d-barbunya
+börülce salatası	c-zy-borulce
+mercimek yemeği	yesil-mercimek-yemegi
+kuru börülce	d-borulce
+taze barbunya	c-zy-barbunya
+taze bakla	d-taze-bakla|d-bakla-haslanmis-taze
+tavuklu bezelye	c-etli-bezelye
+tavuklu pırasa	c-etli-pirasa
+tavuklu nohut	c-etli-nohut
+tavuklu kereviz	c-etli-kereviz
+tavuk wrap	tavuk-wrap
+etli ekmek	c-etli-ekmek
+konya etli ekmek	c-etli-ekmek
+fındıklı lahmacun	lahmacun
+yağlama	y-yaglama
+kayseri yağlaması	y-yaglama
+tavuk yumurtası	yumurta
+organik yumurta	yumurta
+kızarmış yumurta	yumurta-sahanda
+buğulama yumurta	yumurta
+yumurta kızartma	yumurta-sahanda
+kızarmış ekmek	d-ekmek-tost-beyaz-kizarmis
+ekmek kızartması	d-ekmek-tost-beyaz-kizarmis
+galeta unu	b-galeta-unu
+grissini	b-grissini|b-tuzlu-sticks
+kraker	kraker
+ay çöreği	c-ss-ay-coregi
+pirinç patlağı	pirinc-patlagi
+simit peynir	c-simit-peynir
+çay simit	cay,simit
+taze peynir	beyaz-peynir
+peynir dilimi	beyaz-peynir
+kaşar tost	tost-kasarli
+tel şehriye	d-makarna-sehriye-tel
+sebzeli tavuk	tavuk-sote
+kıymalı ıspanak	c-etli-ispanak
+ıspanaklı yumurta	d-omlet-ispanakli
+kıymalı bezelye	c-etli-bezelye
+kıymalı kabak	c-etli-kabak
+kabak musakka	y-kabak-musakka
+sucuk menemen	c-menemen-sucuklu
+tavuk ızgara	tavuk-sis
+tavuk haşlaması	tavuk-haslama
+tavuk göğsü salata	tavuk-salata
+tavuk göğsü wrap	tavuk-wrap
+tavuklu makarna salatası	d-makarna-salatasi-tavuk
+tavuk dürüm	doner-durum-tavuk
+bazlama peynir	c-bazlama-peynir
+bazlama sucuk	bazlama,sucuk
+ekmek arası peynir	c-peynir-ekmek
+ekmek arası kaşar	c-ceviz-sucuk-yagi
+domatesli yumurta	d-omlet-domatesli
+şiş tavuk	tavuk-sis
+sucuklu ekmek	sucuk-ekmek
+yumurtalı sucuk	sucuklu-yumurta
+yarım yağlı kıyma	dana-kiyma-pismis
+%10 yağlı kıyma	kiyma-az-yagli
+kuzu haşlama	haslama-et
+kuzu pirzola çiğ	kuzu-pirzola
+kuzu tandır pilav	c-kuzu-tandir-pilav
+kuzu ciğer	dana-ciger
+dana böbrek	y-bobrek
+kuzu beyin	y-beyin
+sakatat	y-sakatat
+karışık sakatat	y-sakatat
+kokoreç tabağı	kokorec
+bumbar dolması	y-bumbar
+midye pilavı	c-midye-pilav
+kalamar dolması	y-kalamar-dolma
+balık güveç	y-balik-guvec
+ızgara karides	karides
+tavada balık	y-balik-tava
+fırında levrek	levrek
+fırın çipura	cipura
+fırın alabalık	alabalik
+fırın somon	somon
+buğulama levrek	levrek
+palamut buğulama	lufer
+palamut tava	lufer
+lüfer buğulama	lufer
+çinekop	lufer
+sardalya tava	sardalya
+ton balığı salata	ton-balikli-salata
+sütlaç	sutlac
+yoğurtlu ıspanak	y-yogurtlu-ispanak
+ıspanaklı yoğurt	y-yogurtlu-ispanak
+yoğurtlu patlıcan	y-yogurtlu-patlican
+yoğurtlu semizotu	c-semizotu-salata
+cevizli yoğurt	y-cevizli-yogurt
+çikolatalı süt	kakaolu-sut
+muzlu süt	b-muzlu-sut
+bademli süt	badem-sutu
+bal süt	a-sut-sicak-bal
+yağlı süt	sut
+inek sütü	sut
+koyun yoğurdu	a-yogurt-koyun
+beyaz peynir domates	beyaz-peynir,domates
+beyaz peynir zeytin	beyaz-peynir,siyah-zeytin
+peynir ekmek	c-peynir-ekmek
+peynirli ekmek	c-peynir-ekmek
+peynirli tost	tost-kasarli
+sandviç peyniri	a-peynir-eritme-dilimli
+tost peyniri	a-peynir-kasar-dilimli
+pizza peyniri	mozzarella
+mozzarella peyniri	mozzarella
+rendelenmiş peynir	parmesan
+sürme peynir	a-peynir-surulebilir
+çerkez peyniri	y-peynir-cerkez
+kars gravyeri	a-peynir-gravyer
+kars kaşarı	a-peynir-kasar-eski
+beyaz peynir light	beyaz-peynir-light
+diyet beyaz peynir	a-peynir-beyaz-yagsiz
+yağsız peynir	a-peynir-beyaz-yagsiz
+tuzsuz beyaz peynir	a-peynir-beyaz-az-tuzlu
+yarım yağlı peynir	beyaz-peynir-light
+tam yağlı peynir	beyaz-peynir
+mıhlama	c-kuymak
+muhlama	c-kuymak
+kuymak	c-kuymak
+dilim ekmek	ekmek
+somun ekmek	ekmek
+francala	baget
+bütün buğday ekmeği	tam-bugday-ekmegi
+tam tahıl ekmeği	b-ekmek-kepekli
+kepekli tost	d-ekmek-tost-kepekli
+beyaz tost ekmeği	tost-ekmegi
+çavdar tost	cavdar-ekmegi
+kaşarlı sandviç	c-ceviz-sucuk-yagi
+peynirli sandviç	c-ceviz-sucuk-yagi
+sucuklu sandviç	sucuk-ekmek
+hamburger	hamburger
+çiftlik ekmeği	d-ekmek-koy
+ıspanaklı peynirli börek	borek-ispanakli
+peynirli maydanozlu börek	borek-peynirli
+kıymalı sigara böreği	y-sigara-kiymali
+peynirli sigara böreği	sigara-boregi
+patatesli sigara böreği	y-sigara-patatesli
+tepsi böreği peynirli	c-tepsi-boregi
+bir tepsi börek	c-tepsi-boregi
+mini poğaça	y-pogaca-mini
+poğaça peynirli	pogaca
+peynirli açma	y-acma-peynirli
+zeytinli açma	y-acma-zeytinli
+kıymalı açma	y-acma-kiymali
+çikolatalı açma	y-acma-cikolatali
+kaşarlı poğaça	y-pogaca-kasarli
+ıspanaklı poğaça	y-pogaca-ispanakli
+sade açma	acma
+cevizli çörek	y-corek-cevizli
+haşhaşlı çörek	y-corek-hashasli
+çörek peynirli	y-corek-peynirli
+fırın simit	simit
+susamlı kuru simit	c-ss-susamli-halka
+tuzlu çubuk	b-tuzlu-sticks
+tuzlu kraker	kraker
+ekmek çubuğu	b-grissini
+lavaş dürüm	b-ekmek-wrap
+tavuk lavaş	tavuk-wrap
+peynirli lavaş	y-lavas-peynirli
+sucuklu lavaş	y-lavas-sucuklu
+kıymalı lavaş	y-lavas-kiymali
+lahmacun peynirli	c-kasarli-lahmacun
+lahmacun kaşarlı	c-kasarli-lahmacun
+antep lahmacun	lahmacun
+fındık lahmacun	lahmacun
+etli pide	pide-kiymali
+sucuklu kaşarlı pide	pide-sucuklu
+kaşarlı yumurtalı pide	c-yumurtali-pide
+peynirli yumurtalı pide	c-yumurtali-pide
+pastırmalı pide	y-pide-pastirmali
+trabzon pidesi	c-karadeniz-pidesi
+samsun pidesi	pide-kasarli
+sebzeli pide	y-pide-sebzeli
+mantarlı pide	y-pide-mantarli
+patatesli pide	y-pide-patatesli
+kıymalı yumurtalı	kiymali-yumurta
+çiğ köfte lavaş	cig-kofte-durum
+çiğ köfte wrap	cig-kofte-durum
+iskender porsiyon	c-hd-iskender-tam|iskender
+yarım porsiyon kebap	sis-kebap
+döner porsiyon	doner-et
+döner pilav	pilav-ustu-doner
+pilav döner	pilav-ustu-doner
+tavuk pilav	tavuklu-pilav
+et pilav	c-kiymali-pilav
+patates pilav	patates-kizartmasi,pirinc-pilavi
+tavuk patates	tavuk-gogsu,patates-kizartmasi
+köfte patates	kofte,patates-kizartmasi
+köfte pilav	kofte,pirinc-pilavi
+köfte makarna	kofte,makarna
+köfte piyaz	y-kofte-piyaz
+kuru köfte piyaz	y-kofte-piyaz
+piyaz kuru köfte	y-kofte-piyaz
+jambon peynir	jambon,beyaz-peynir
+jambon kaşar	jambon,kasar
+et dürüm	doner-durum-et
+tavuk köftesi	tavuk-koftesi
+hindi bacon	b-bacon-pismis
+dana salam	salam
+dana sucuk	sucuk
+tavuk salam	b-salam-tavuk
+tavuk sosis	b-sosis-tavuk
+hot dog	sosisli-sandvic
+sosisli	sosisli-sandvic
+sosis yumurta	y-sosisli-yumurta
+sosisli yumurta	y-sosisli-yumurta
+sosisli omlet	y-omlet-sosisli
+kaşarlı omlet	peynirli-omlet
+omlet sucuklu	d-omlet-sucuklu
+tavuklu omlet	y-omlet-tavuklu
+kıymalı omlet	y-omlet-kiymali
+yumurtalı omlet	omlet
+yumurtalı menemen	menemen
+domatesli menemen	menemen
+biberli menemen	menemen
+sade omlet	omlet
+patates omlet	c-patatesli-yumurta
+patatesli omlet	c-patatesli-yumurta
+yumurtalı patates	c-patatesli-yumurta
+yumurtalı ıspanak	y-ispanak-yumurtali
+yumurtalı kıyma	kiymali-yumurta
+yumurta pastırma	yumurta,pastirma
+yumurta sucuk	yumurta,sucuk
+bugün öğle yemeğinde bir porsiyon etli kuru fasulye ve pilav yedim	c-etli-kuru-fasulye,pirinc-pilavi
+akşam üç tane sigara böreği ve bir bardak ayran	sigara-boregi,ayran
+bir tabak yaprak sarma yanında yoğurt	yaprak-sarma,yogurt
+iki yumurtalı sahanda ve iki dilim ekmek	yumurta-sahanda,ekmek
+bir kaşarlı tost ve bir çay	tost-kasarli,cay
+bir tabak mercimek çorbası, bir dilim ekmek, bir bardak ayran	mercimek-corbasi,ekmek,ayran
+sabah kahvaltısında yarım simit ve beyaz peynir	simit,beyaz-peynir
+250 gram çiğ kuzu kıyma	kiyma-yagli:raw
+300 gr çiğ tavuk but	tavuk-but:raw
+150 gr çiğ somon fileto	somon:raw
+100 gram çiğ karides	karides:raw
+200 gram haşlanmış tavuk göğsü	tavuk-gogsu-haslanmis
+iki yüz gram ızgara köfte	kofte
+yarım kilo hamsi	hamsi-tava
+bir buçuk porsiyon lahmacun	lahmacun
+üç adet çiğ köfte dürüm	cig-kofte-durum
+iki tane kıymalı gözleme	gozleme-kiymali
+bir su böreği ve bir ayran	borek-su,ayran
+bir dilim kıymalı börek	borek-kiymali
+yarım lahmacun	lahmacun
+sade makarna bir tabak	makarna
+iki kepçe tavuk suyu çorbası	tavuk-corbasi
+bir kase domates çorbası ve kruvasan	domates-corbasi,kruvasan
+bir porsiyon fırın makarna	firin-makarna
+yarım porsiyon mantı	manti
+bir tabak yoğurtlu mantı	c-manti-yogurtlu
+iki köfte ve bir porsiyon piyaz	kofte,piyaz
+ızgara levrek ve çoban salata	levrek,coban-salatasi|c-coban-salata-zeytinyagli
+bir dilim beyaz peynir ile bir dilim kaşar	beyaz-peynir,kasar
+yarım avuç ceviz ve bir dilim lor peyniri	ceviz,lor
+sabah yulaf ezmesi yedim süt ile	yulaf-ezmesi,sut
+bir porsiyon hünkar beğendi	hunkar-begendi
+iki dilim pastırma	pastirma
+bir porsiyon çökertme kebabı	c-cokertme-kebabi
+bir tabak etli nohut yemeği	c-etli-nohut
+kuru fasulye pilav yanında turşu	kuru-fasulye,pirinc-pilavi,tursu
+bir tabak karnıyarık ve cacık	karniyarik,cacik
+dört tane içli köfte	ic-kofte
+bir kase sütlü yulaf lapası	d-yulaf-pismis-sutlu
+bir adet haşlanmış yumurta	yumurta
+iki adet rafadan yumurta	yumurta-rafadan
+iki yumurtalı menemen	menemen
+bir bardak laktozsuz süt	a-sut-laktozsuz|b-laktozsuz-sut
+bir kase süzme yoğurt	suzme-yogurt
+iki yemek kaşığı lor peyniri	lor
+beş tane zeytin ve iki dilim peynir	siyah-zeytin,beyaz-peynir
+bir porsiyon tavuk döner pilav üstü	doner-tavuk,pilav-ustu-doner
+sabah bir poğaça yedim	pogaca|y-pogaca-sade
+iki dilim çavdar ekmeği	cavdar-ekmegi
+iki dilim kepekli ekmek ve bir dilim hindi jambon	b-ekmek-kepekli|tam-bugday-ekmegi,jambon
+bir dilim kaşar peyniri ve iki dilim domates	kasar,domates
+bir su bardağı kefir	kefir
+bir paket çiğ köfte	cig-kofte
+iki dilim pizza	pizza-karisik|pizza-margarita
+altı tane midye dolma	midye-dolma
+bir porsiyon kalamar tava	kalamar-tava
+karides güveç bir porsiyon	karides
+yarım ekmek arası köfte	kofte-ekmek
+bir kase tarhana çorbası	tarhana-corbasi
+bir kase ezogelin çorbası	ezogelin-corbasi
+iki dilim su böreği	borek-su
+bir tabak nohutlu pilav	nohutlu-pilav
+iki lahmacun bir ayran bir şalgam	lahmacun,ayran,salgam
+bir porsiyon musakka ve pilav	musakka,pirinc-pilavi
+mercimek köftesi on adet	mercimek-koftesi
+bir yumurta bir çay iki simit	yumurta,cay,simit
+yirmi gram kaşar peyniri	kasar
+yetmiş beş gram tavuk göğsü	tavuk-gogsu
+sekiz tane hamsi tava	hamsi-tava
+kırk gram beyaz peynir	beyaz-peynir
+1 adet tavuk but	tavuk-but
+2 adet tavuk but derisiz	tavuk-but-derisiz
+3 dilim sucuk 2 yumurta	sucuk,yumurta
+1 su bardağı yoğurt	yogurt
+bir kase etli nohut ve pilav	c-etli-nohut,pirinc-pilavi
+beyaz peynirli omlet	peynirli-omlet
+sebzeli omlet bir porsiyon	d-omlet-sebzeli
+bir kase çorba iki lahmacun	-
+tavuk ve pirinç	tavuk-gogsu,pirinc-cig|pirinc-pilavi
+dana kıyma ve soğan	dana-kiyma-pismis,sogan
+dana kıymalı makarna	c-makarna-kiymali
+kıymalı makarna bir tabak	c-makarna-kiymali
+patlıcanlı kebap	patlican-kebabi
+tavuklu pilav bir porsiyon	tavuklu-pilav
+tavuk sote ve makarna	tavuk-sote,makarna
+bir porsiyon kıymalı ıspanak	c-etli-ispanak
+kuzu pirzola iki adet	kuzu-pirzola
+bir kase hamsi pilavı	hamsi-bugulama
+çiğ köfte ve ayran	cig-kofte,ayran
+hamburger ekmeği ve köfte	hamburger-ekmegi,kofte
+bir dilim pide ekmeği	pide-ekmegi
+yarım lavaş	lavas
+mantarlı pide bir adet	y-pide-mantarli
+iki tane peynirli poğaça	pogaca
+bir kıymalı poğaça	y-pogaca-kiymali
+bir tahinli çörek	y-corek-tahinli
+bir açma bir çay	acma,cay
+bir sütlaç	sutlac
+bir yoğurt iki ekmek	yogurt,ekmek

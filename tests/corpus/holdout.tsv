@@ -1,0 +1,323 @@
+# Bağımsız (held-out) set: ayar sırasında hiç kullanılmadı; yalnızca raporlanır.
+sabah iki haşlanmış yumurta yedim	yumurta
+bir dilim beyaz peynir ve beş zeytin	beyaz-peynir,siyah-zeytin|yesil-zeytin
+kahvaltıda menemen	menemen
+iki dilim tam buğday ekmeği	tam-bugday-ekmegi
+bir bardak çay şekersiz	cay
+iki şekerli çay	sekerli-cay|sekerli-cay-2
+bir kase mercimek çorbası	mercimek-corbasi
+yarım ekmek döner	c-ud-yarim-ekmek-et-doner|c-td-yarim-ekmek-tavuk-doner|doner-ekmek
+bir porsiyon iskender	iskender
+lahmacun iki tane	lahmacun
+bulgur pilavı bir tabak	bulgur-pilavi
+150 gram ızgara tavuk göğsü	tavuk-gogsu
+çiğ tavuk göğsü 200 gram	tavuk-gogsu:raw
+bir avuç badem	badem
+bir avuç fındık	findik
+10 tane çiğ badem	d-badem-cig|badem
+bir kase yoğurt	yogurt
+ayran içtim	ayran
+bir kutu kola	kola
+zero kola	kola-light
+bir şişe su	su
+bir fincan türk kahvesi	turk-kahvesi
+sütlü filtre kahve	a-kahve-filtre-sutlu
+bir muz	muz
+iki elma	elma
+yarım karpuz dilimi	karpuz
+bir kase çilek	cilek
+bir salkım üzüm	uzum
+5 adet kuru kayısı	kuru-kayisi
+3 hurma	hurma
+bir avuç kuru üzüm	kuru-uzum
+domates salatalık	domates,salatalik
+çoban salata	coban-salatasi
+bir kepçe pilav	pirinc-pilavi
+makarna bir tabak	makarna
+spagetti bolonez	spagetti-bolonez
+bir dilim pizza	pizza-margarita
+hamburger	hamburger
+patates kızartması orta boy	patates-kizartmasi
+tavuk döner dürüm	doner-durum-tavuk
+köfte ekmek	kofte-ekmek
+5 köfte	kofte
+mantı bir porsiyon	manti
+karnıyarık	karniyarik
+imam bayıldı	imam-bayildi
+zeytinyağlı fasulye	taze-fasulye-yemegi
+taze fasulye	d-taze-fasulye-cig|taze-fasulye-yemegi
+ıspanak yemeği	ispanak-yemegi
+kabak mücver	mucver|d-kabak-mucver-firin
+sigara böreği üç tane	sigara-boregi
+su böreği bir dilim	borek-su
+bir simit	simit
+poğaça iki tane	pogaca
+açma	acma
+bir dilim kek	kek
+baklava üç dilim	baklava
+künefe	kunefe
+sütlaç	sutlac
+kazandibi	kazandibi
+bir top dondurma	dondurma-sutlu
+bir kare çikolata	cikolata-sutlu
+sütlü çikolata yarım paket	cikolata-sutlu
+bitter çikolata 20 gram	cikolata-bitter
+bir paket cips	cips
+bir avuç leblebi	leblebi
+bir tatlı kaşığı bal	bal
+bir yemek kaşığı tahin pekmez	tahin-pekmez
+bir yemek kaşığı zeytinyağı	zeytinyagi
+tereyağı 10 gram	tereyagi
+bir dilim kaşar	kasar
+iki dilim sucuk	sucuk
+sucuklu yumurta	sucuklu-yumurta
+pastırma 30 gram	pastirma
+bir bardak süt	sut
+yarım yağlı süt bir bardak	sut-yarim
+laktozsuz süt	b-laktozsuz-sut|a-sut-laktozsuz
+badem sütü	badem-sutu
+kefir bir şişe	kefir
+portakal suyu bir bardak	portakal-suyu
+taze sıkılmış portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+şalgam	salgam
+bir bira	bira
+bir kadeh kırmızı şarap	sarap-kirmizi
+rakı bir duble	raki|a-raki-duble
+bir kutu red bull	a-enerji-icecegi-redbull
+latte	latte
+büyük boy latte	latte
+cappuccino	cappuccino
+americano	a-kahve-americano
+nescafe 3ü1 arada	nescafe|a-kahve-3u1-hazirlanmis
+bir somon porsiyonu	somon
+ızgara levrek	levrek
+hamsi tava	hamsi-tava
+ton balığı konserve	ton-baligi-suda|b-ton-baligi-suda-konserve|ton-baligi-yagda
+karides 100 gram	karides
+midye dolma 10 tane	midye-dolma
+çiğ köfte dürüm	cig-kofte-durum
+kokoreç yarım	c-kokorec-yarim|kokorec
+tantuni	tantuni
+pide kıymalı	pide-kiymali
+kaşarlı pide	pide-kasarli
+gözleme peynirli	gozleme-peynirli
+tost kaşarlı	tost-kasarli
+karışık tost	tost-karisik
+mısır	misir-haslanmis
+haşlanmış mısır	misir-haslanmis
+patlamış mısır	patlamis-misir
+bir avuç ceviz	ceviz
+yaş ceviz	x-ceviz-yas|x-ceviz-yas-kabuklu
+yaş kuru yemiş	x-yas-kuruyemis
+tuzsuz kuru yemiş bir avuç	d-kuruyemis-tuzsuz-cig-karisik|x-kuruyemis-tuzsuz-kavrulmus
+kavrulmuş fındık	b-findik-kavrulmus
+antep fıstığı	antep-fistigi
+kaju	kaju
+çekirdek bir avuç	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+kabak çekirdeği	kabak-cekirdegi
+kuru incir 3 tane	incir-kuru
+patates	x-patates-cig
+haşlanmış patates	patates-haslama
+fırında patates	patates-firin
+havuç	havuc
+brokoli haşlanmış	d-brokoli-haslanmis|brokoli
+ıspanak	ispanak-cig
+marul	marul
+avokado yarım	avokado
+salatalık turşusu	salatalik-tursusu
+lahana turşusu	b-tursu-lahana
+yeşil zeytin	yesil-zeytin
+siyah zeytin 6 tane	siyah-zeytin
+mantar sote	d-mantar-sote
+bir kase pilav	pirinc-pilavi
+pirinç 100 gram çiğ	pirinc-cig
+yulaf ezmesi 40 gram	yulaf-ezmesi
+granola	granola
+mısır gevreği süt ile	misir-gevregi,sut
+protein tozu bir ölçek	protein-tozu
+whey	protein-tozu
+protein bar	protein-bar
+bir tane muzlu süt	b-muzlu-sut
+milkshake	milkshake
+limonata	limonata
+soda	soda|a-maden-suyu
+maden suyu	a-maden-suyu
+ice tea şeftali	a-buzlu-cay-seftali
+enerji içeceği	enerji-icecegi
+light kola	kola-light
+diyet kola	kola-light
+bir dilim karpuz ve bir dilim peynir	karpuz,beyaz-peynir
+iki yumurta bir domates bir salatalık	yumurta,domates,salatalik
+öğlen mercimek çorbası ve yarım ekmek	mercimek-corbasi,ekmek
+akşam tavuk sote ve bulgur pilavı	tavuk-sote,bulgur-pilavi
+bir tabak makarna ve yoğurt	makarna,yogurt
+kahvaltıda iki dilim ekmek bir yumurta ve çay	ekmek,yumurta,cay
+150 gr tavuk göğsü 100 gr pirinç pilavı	tavuk-gogsu,pirinc-pilavi
+bir döner bir ayran	doner-et|doner-ekmek,ayran
+bir lahmacun ve ayran	lahmacun,ayran
+iki köfte bir piyaz	kofte,piyaz
+salata ve ızgara köfte	mevsim-salata,kofte
+çorba	-
+tatlı	-
+içecek	-
+yemek	-
+sandviç	-
+kebap	-
+meyve	-
+et	-
+tuzlu	-
+yaş	-
+kavrulmuş	-
+konserve	-
+starbucks	-
+zxqwerty	-
+bir şey yedim	-
+bir tabak	-
+iki tane	-
+yarım	-
+taze	-
+kuru	-
+börek	-
+dürüm	-
+danone	-
+pişmaniye	-
+pasta	pasta-yas
+mcdonalds big mac	c-mcd-big-mac
+big mac menü	z-menu-mcd-bigmac
+whopper	c-bk-whopper
+burger king patates	c-bk-patates-orta|c-bk-patates-kucuk|c-bk-patates-buyuk
+subway tavuklu sandviç	d-sandvic-sub-tavuk|c-sub-tavuk-fajita-15
+starbucks caramel macchiato	z-sbux-karamel-makyato-tall|z-sbux-karamel-makyato-grande|z-sbux-karamel-makyato-venti
+ülker çikolatalı gofret	b-ulker-cikolatali-gofret
+eti burçak	b-eti-burcak
+albeni bir paket	b-ulker-albeni
+nutella bir yemek kaşığı	b-nutella-findik-kremasi
+biskrem	b-ulker-biskrem
+halley	b-ulker-halley
+tadelle	b-torku-tadelle
+cocostar	z-ulker-cocostar
+ruffles	b-ruffles-original
+doritos	b-doritos-nacho
+pringles	b-pringles-original
+lays klasik	b-lays-klasik
+coca cola zero	kola-light
+fanta	a-fanta
+sprite	a-sprite
+7up	a-sprite
+uludağ gazoz	a-gazoz-uludag
+cappy portakal	a-meyve-suyu-portakal-nektar|portakal-suyu
+lipton ice tea	buzlu-cay
+sütaş ayran	b-sutas-ayran|ayran
+pınar süt	a-sut-uht-tam|sut
+activia	b-activia-sade
+kuzu pirzola	kuzu-pirzola
+tavuk kanat 6 tane	tavuk-kanat|tavuk-kanat-izgara
+tavuk but	tavuk-but
+hindi füme 3 dilim	b-jambon-hindi-fume
+sosis 2 tane	sosis
+salam 3 dilim	salam
+jambon	jambon
+kavurma	kavurma
+yumurta akı 3 tane	yumurta-beyazi
+omlet peynirli	peynirli-omlet
+krep	d-krep
+pankek iki tane	pankek
+waffle	d-waffle
+humus	humus
+haydari	haydari
+cacık bir kase	cacik
+acılı ezme	acili-ezme
+babagannuş	c-babagannus
+fava	fava
+kısır	kisir
+mercimek köftesi 4 tane	mercimek-koftesi
+içli köfte 2 tane	ic-kofte
+yaprak sarma 6 tane	yaprak-sarma
+biber dolması 2 tane	dolma-biber
+ezogelin çorbası	ezogelin-corbasi
+tarhana çorbası	tarhana-corbasi
+yayla çorbası	yayla-corbasi
+domates çorbası	domates-corbasi
+tavuk suyu çorba	tavuk-corbasi
+işkembe çorbası	iskembe-corbasi
+kelle paça	paca-corbasi|y-kelle
+nohut yemeği	nohut-yemegi
+barbunya pilaki	barbunya-pilaki
+etli kuru fasulye	c-etli-kuru-fasulye
+türlü	turlu
+musakka	musakka
+hünkar beğendi	hunkar-begendi
+tas kebabı	tas-kebabi
+adana kebap	adana-kebap
+urfa kebap	urfa-kebap
+şiş kebap	sis-kebap
+tavuk şiş	tavuk-sis
+çöp şiş	cop-sis
+beyti	beyti
+ali nazik	c-ali-nazik
+kumpir	kumpir
+waffle çikolatalı	c-kd-waffle-cikolata|c-waffle-meyve-cikolata
+cheesecake bir dilim	cheesecake
+tiramisu	tiramisu
+profiterol	profiterol
+supangle	supangle
+aşure bir kase	asure
+irmik helvası	irmik-helvasi
+tahin helvası 50 gram	tahin-helvasi
+lokum 2 tane	lokum
+kurabiye 3 tane	kurabiye
+bisküvi 4 tane	biskuvi
+kraker	kraker
+galeta	b-galeta|pirinc-patlagi
+grissini	b-grissini
+pirinç patlağı 2 tane	pirinc-patlagi
+kahve kreması	a-kahve-kremasi-toz|a-kahve-kremasi-sivi
+şeker 2 küp	kup-seker|seker
+bir tatlı kaşığı şeker	seker
+reçel bir tatlı kaşığı	recel
+pekmez	pekmez
+krem peynir	krem-peynir
+lor peyniri	lor
+labne	c-labne|a-labne-peyniri
+tulum peyniri	tulum
+hellim ızgara	a-peynir-hellim-izgara|hellim
+mozzarella	mozzarella
+parmesan	parmesan
+çökelek	cokelek
+dil peyniri	dil-peyniri
+kuru yemis	karisik-kuruyemis
+tavuk gogsu izgara	tavuk-gogsu
+mercimek corbasi	mercimek-corbasi
+coban salata	coban-salatasi
+tavuk göğüsü	tavuk-gogsu
+mercimek çorbsı	mercimek-corbasi
+yumurtta	yumurta
+makarana	makarna
+iki tane haşlanmış yumurta ve bi bardak çay içtim	yumurta,cay
+bugün öğlen bir porsiyon kuru fasulye yedim	kuru-fasulye
+akşama tavuk ızgara ve salata	tavuk-gogsu|tavuk-sis,mevsim-salata
+gece bir bardak süt içtim	sut
+ara öğünde bir elma ve on badem	elma,badem
+spor sonrası protein shake	protein-shake
+bir muzlu smoothie	a-smoothie-muz
+yeşil çay	yesil-cay
+ıhlamur	a-bitki-cayi-ihlamur
+papatya çayı	a-bitki-cayi-papatya
+sahlep	sahlep
+boza	boza
+salep	sahlep
+sıcak çikolata	sicak-cikolata
+nar	nar
+kivi 2 tane	kivi
+mandalina 3 tane	mandalina
+portakal	portakal
+greyfurt yarım	greyfurt
+ananas dilim	ananas
+mango	mango
+şeftali	seftali
+kiraz bir kase	kiraz
+vişne	visne
+erik 5 tane	erik
+armut	armut
+ayva	ayva
+kavun dilimi	kavun

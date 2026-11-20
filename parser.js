@@ -35,7 +35,7 @@
 
   /** Arama / eşleştirme için: katlanmış, noktalama temizlenmiş kelimeler. */
   function foldTokens(s) {
-    return fold(s).replace(/['’`][a-z]+/g, '').replace(/[^a-z0-9%]+/g, ' ').trim().split(/\s+/).filter(Boolean);
+    return fold(normCompact(lower(s))).replace(/['’`][a-z]+/g, '').replace(/[^a-z0-9%]+/g, ' ').trim().split(/\s+/).filter(Boolean);
   }
 
   /* ------------------------------------------------------------------ */
@@ -99,7 +99,9 @@
     [['sise'], 'şişe'], [['sisesi'], 'şişe'], [['siselik'], 'şişe'],
     [['top'], 'top'], [['topu'], 'top'],
     [['parca'], 'parça'], [['parcasi'], 'parça'], [['parcacik'], 'parça'],
-    [['fincan'], 'fincan'], [['fincani'], 'fincan']
+    [['fincan'], 'fincan'], [['fincani'], 'fincan'],
+    [['olcek'], 'ölçek'], [['olcegi'], 'ölçek'], [['kare'], 'kare'], [['karesi'], 'kare'], [['salkim'], 'salkım'], [['salkimi'], 'salkım'],
+    [['sira'], 'sıra'], [['sirasi'], 'sıra'], [['tutam'], 'tutam'], [['demet'], 'demet'], [['demeti'], 'demet']
   ].sort(function (a, b) { return b[0].length - a[0].length; });
 
   var SHORT_UNITS = { g: 1, l: 1 }; // ancak bir sayıdan sonra birim sayılır
@@ -108,14 +110,16 @@
   var GENERIC_UNIT_G = {
     'bardak': 200, 'su bardağı': 200, 'çay bardağı': 100, 'kase': 250, 'tabak': 300, 'porsiyon': 200,
     'kepçe': 150, 'yemek kaşığı': 15, 'tatlı kaşığı': 8, 'çay kaşığı': 4, 'avuç': 30, 'dilim': 30,
-    'adet': 50, 'kutu': 330, 'paket': 100, 'şişe': 500, 'top': 60, 'parça': 50, 'fincan': 75
+    'adet': 50, 'kutu': 330, 'paket': 100, 'şişe': 500, 'top': 60, 'parça': 50, 'fincan': 75,
+    'ölçek': 30, 'kare': 6, 'salkım': 150, 'sıra': 25, 'tutam': 2, 'demet': 50
   };
 
   var UNIT_LABELS = {
     g: 'g', ml: 'ml', adet: 'adet', dilim: 'dilim', kase: 'kase', bardak: 'bardak', porsiyon: 'porsiyon',
     tabak: 'tabak', 'yemek kaşığı': 'yemek kaşığı', 'tatlı kaşığı': 'tatlı kaşığı', 'çay kaşığı': 'çay kaşığı',
     avuç: 'avuç', kepçe: 'kepçe', 'su bardağı': 'su bardağı', 'çay bardağı': 'çay bardağı', kutu: 'kutu',
-    paket: 'paket', şişe: 'şişe', top: 'top', parça: 'parça', fincan: 'fincan'
+    paket: 'paket', şişe: 'şişe', top: 'top', parça: 'parça', fincan: 'fincan',
+    'ölçek': 'ölçek', kare: 'kare', 'salkım': 'salkım', 'sıra': 'sıra', tutam: 'tutam', demet: 'demet'
   };
 
   function parseUnit(toks, i, afterQty) {
@@ -157,7 +161,8 @@
     'icerim ic aldim aldik aliyorum tukettim tuketiyorum tuketim atistirdim ekle ekleyin ekler misin mi mu mısın ' +
     'kaydet yaz bugun ben biz da de ta te olarak icin kadar yaklasik civari civarinda asagi yukari falan filan felan ' +
     'sey seyler ee eee eh hmm sadece tamam evet ama ise dolusu biraz azicik boy boyutunda ' +
-    'dun evde disarida iste galiba sanirim bence bugunku dunku tabii yani artik hepsi toplam toplamda su an simdi tam olarak bi sure gibi kadarini kadar yarisi').split(/\s+/)
+    'tv televizyon karsisinda once sokakta yolda iste isyerinde ofiste okulda tablet kavanoz kavanozu sachet sase shot kapsul degil ' +
+    'li lu lik luk lık '.replace(/ı/g, 'i') + 'dun evde disarida iste galiba sanirim bence bugunku dunku tabii yani artik hepsi toplam toplamda su an simdi tam olarak bi sure gibi kadarini kadar yarisi').split(/\s+/)
     .forEach(function (w) { FILLERS[w] = 1; });
   delete FILLERS['tam'];
   delete FILLERS['bi'];
@@ -211,13 +216,14 @@
     ['tursu', 'pickled'], ['tursusu', 'pickled'], ['salamura', 'brined'], ['salamurasi', 'brined'],
     ['tutsulenmis', 'smoked'], ['tutsu', 'smoked'], ['fume', 'smoked'], ['isli', 'smoked'],
     ['organik', 'organic'], ['dogal', 'organic'], ['ev yapimi', 'homemade'], ['ev usulu', 'homemade'], ['koy', 'village'], ['koy usulu', 'village'],
+    ['sikma', 'squeezed'], ['sikilmis', 'squeezed'], ['taze sikma', 'squeezed'], ['taze sikilmis', 'squeezed'],
     ['sade', 'plain'], ['karisik', 'mixed'], ['olgun', 'ripe'], ['ham', 'unripe'], ['tam yagli', 'fullfat']
   ].map(function (x) { return { toks: x[0].split(' '), key: x[0], cls: x[1] }; })
     .sort(function (a, b) { return b.toks.length - a.toks.length; });
   var STATE_FIRST = Object.create(null);
   STATE_PHRASES.forEach(function (v) { (STATE_FIRST[v.toks[0]] = STATE_FIRST[v.toks[0]] || []).push(v); });
   // besin değerini değiştirmeyen hâller: her zaman normal güvenle temel besine
-  var STATE_NEUTRAL = { organic: 1, homemade: 1, village: 1, plain: 1, mixed: 1, ripe: 1, unripe: 1, frozen: 1, fullfat: 1 };
+  var STATE_NEUTRAL = { squeezed: 1, organic: 1, homemade: 1, village: 1, plain: 1, mixed: 1, ripe: 1, unripe: 1, frozen: 1, fullfat: 1 };
   // besin karşıt hâli taşımıyorsa değeri değiştirmeyen hâller (taze elma = elma; ama taze ceviz != ceviz)
   var STATE_OPP = {
     fresh: ['dried'], dried: ['fresh'], raw: ['cooked', 'boiled', 'grilled', 'baked', 'charred', 'fried', 'roasted', 'smoked', 'double'],
@@ -258,6 +264,11 @@
     }
     return cls ? { cls: cls, base: rest.join(' ') } : null;
   }
+  // tek başına söylenince hangi çeşit olduğu belli olmayan genel sözcükler: sorulur (düşük güven + öneriler)
+  var GENERIC_WORDS = { corba: 1, sandvic: 1, kebap: 1, kebab: 1, et: 1, durum: 1, meyve: 1, pide: 1, tatli: 1, icecek: 1, 'gazli icecek': 1,
+    'soguk icecek': 1, borek: 1, menu: 1, sos: 1, atistirmalik: 1, cerez: 0 };
+  // bir besinin hemen ardından gelen tür sözcüğü ayrı kalem olmaz ("subway hindi sandviç", "aşure çorbası", "ranch sos")
+  var SWALLOW_GENERIC = { sandvic: 1, sandvici: 1, burger: 1, menu: 1, menusu: 1, sos: 1, sosu: 1, corba: 1, corbasi: 1, icecek: 1, icecegi: 1, tatli: 1, tatlisi: 1 };
   var STATE_ALIAS_TOKS = { cig: 'raw', pismemis: 'raw', kuru: 'raw', pismis: 'cooked', haslanmis: 'cooked', haslama: 'cooked', izgara: 'cooked', firinda: 'cooked', kizarmis: 'cooked', bugulama: 'cooked' };
 
   STATE_PHRASES.forEach(function (v) {
@@ -376,17 +387,32 @@
   /* ------------------------------------------------------------------ */
   /* Tokenizasyon                                                        */
   /* ------------------------------------------------------------------ */
+  // rakamla yazılan ürün adları tek parça kalır: 7up, v8, b12, c4, 3in1
+  var KEEP_TOK = /^(\d+up|\d+in\d|[a-z]\d{1,2})$/;
+  function lastWord(str, o) {
+    var a = o, b = o;
+    while (a > 0 && /[0-9a-zçğıöşüâîû]/.test(str[a - 1])) a--;
+    while (b < str.length && /[0-9a-zçğıöşüâîû]/.test(str[b])) b++;
+    return str.slice(a, b);
+  }
+  /** "3'ü 1 arada", "3ü1", "3 in 1" -> "3in1" (alias'lar ve sorgu aynı biçime gelir) */
+  function normCompact(s) {
+    return s.replace(/(^|[^0-9.,])([2-5])(?:\s*['’`]?\s*(?:ü|u|si|sı|ı|i|in)\s*1(?:\s*arada)?|\s+1\s+arada)(?=$|[^0-9a-zçğıöşü])/g, function (m, pre, n) { return pre + n + 'in1'; });
+  }
+
   function tokenize(text) {
     var s = lower(text);
     s = s.replace(/(\d+)\s*\/\s*(\d+)/g, function (m, a, b) { return (Number(b) ? String(+(a / b).toFixed(3)) : a); });
     s = s.replace(/(\d),(\d)/g, '$1.$2');
     s = s.replace(/(\d)\.(?!\d)/g, '$1 , ');
     s = s.replace(/[^\x00-\x7fçğıöşüâîûéèä]/g, function (ch) { try { return ch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); } catch (e) { return ch; } }); // piña -> pina
+    s = normCompact(s);
     s = s.replace(/['’`][a-zçğıöşüâî]+/g, '');        // Nutella'yı -> nutella
-    s = s.replace(/(\d)([a-zçğıöşüâîû%])/g, '$1 $2');  // 200gr -> 200 gr
-    s = s.replace(/([a-zçğıöşüâîû])(\d)/g, '$1 $2');
-    s = s.replace(/[,;!?\n\r+&]|(?:\.(?!\d))/g, ' , ');
-    s = s.replace(/[^0-9a-zçğıöşüâîûéè.,%\s]+/g, ' ');
+    s = s.replace(/(\d)([a-zçğıöşüâîû%])/g, function (m, a, b, o, str) { return KEEP_TOK.test(lastWord(str, o)) ? m : a + ' ' + b; });  // 200gr -> 200 gr (7up kalır)
+    s = s.replace(/([a-zçğıöşüâîû])(\d)/g, function (m, a, b, o, str) { return KEEP_TOK.test(lastWord(str, o)) ? m : a + ' ' + b; });
+    s = s.replace(/(\S)&(\S)/g, '$1 $2').replace(/\s&\s/g, ' ');   // m&m, ben & jerry's
+    s = s.replace(/[,;!?\n\r+]|(?:\.(?!\d))/g, ' , ');
+    s = s.replace(/[^0-9a-zçğıöşüâîûéèä.,%\s]+/g, ' ');
     var raw = s.split(/\s+/).filter(Boolean);
     return raw.map(function (r) { return { r: r, f: r === ',' ? ',' : fold(r).replace(/[^a-z0-9.%]/g, '') }; })
       .filter(function (t) { return t.f !== ''; });
@@ -587,7 +613,18 @@
       if (se.primary) nameSt.set(se.food, si.cls);
       if (si.base) (stateBase[si.base] = stateBase[si.base] || []).push(se);
     }
+    // 5) marka benzeri önekler: kendi başına bir besin adı olmayan, ama ≥3 besin adının başında geçen sözcükler ("kfc", "subway", "tavuk")
+    var nameSet = Object.create(null), prefixCount = Object.create(null);
+    foods.forEach(function (food) {
+      if (!food || !food.name) return;
+      var nt = foldTokens(String(food.name).replace(/\([^)]*\)/g, ' '));
+      nameSet[nt.join(' ')] = 1;
+      for (var k = 1; k <= Math.min(2, nt.length - 1); k++) { var pk = nt.slice(0, k).join(' '); prefixCount[pk] = (prefixCount[pk] || 0) + 1; }
+      // adın ortasında/sonunda geçen sözcük marka değildir ("beyaz peynir" -> "peynir")
+      for (var m = 1; m < nt.length; m++) { prefixCount[nt[m]] = -1e9; if (m + 1 < nt.length) prefixCount[nt[m] + ' ' + nt[m + 1]] = -1e9; }
+    });
     var idx = { entries: entries, byFirst: byFirst, byId: byId, byStr: byStr, foods: foods, foodEntries: foodEntries, variants: variants, foodCls: foodCls,
+      nameSet: nameSet, prefixCount: prefixCount,
       stateBase: stateBase, foodSt: foodSt, nameSt: nameSt, tri: null };
     indexCache = { foods: foods, len: foods.length, idx: idx };
     return idx;
@@ -661,9 +698,9 @@
   function isBlockingTok(t) { return !t || t.f === ','; }
 
   /** i konumundan başlayan en uzun alias eşleşmesi */
-  function matchFoodAt(toks, i, idx, boost) {
+  function matchFoodAt(toks, i, idx, boost, allowNum) {
     var t = toks[i];
-    if (isBlockingTok(t) || /^\d/.test(t.f)) return null;
+    if (isBlockingTok(t) || (!allowNum && /^\d+(\.\d+)?$/.test(t.f))) return null;
     var keys = [t.f];
     if (t.f.length >= 3) for (var s in stems(t.f)) if (s !== t.f) keys.push(s);
     var cands = [], seen = new Set();
@@ -705,15 +742,20 @@
     var m = a.length, n = b.length;
     if (!m) return n;
     if (!n) return m;
-    var prev = new Array(n + 1), cur = new Array(n + 1);
+    // komşu harf yer değiştirmesi (kyaısı, rkoa) tek hata sayılır (Damerau / OSA)
+    var pp = new Array(n + 1), prev = new Array(n + 1), cur = new Array(n + 1);
     for (var j = 0; j <= n; j++) prev[j] = j;
     for (var i = 1; i <= m; i++) {
       cur[0] = i;
+      var ca = a.charCodeAt(i - 1);
       for (j = 1; j <= n; j++) {
-        var cost = a.charCodeAt(i - 1) === b.charCodeAt(j - 1) ? 0 : 1;
-        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+        var cb = b.charCodeAt(j - 1);
+        var cost = ca === cb ? 0 : 1;
+        var v = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+        if (i > 1 && j > 1 && ca === b.charCodeAt(j - 2) && a.charCodeAt(i - 2) === cb && pp[j - 2] + 1 < v) v = pp[j - 2] + 1;
+        cur[j] = v;
       }
-      var tmp = prev; prev = cur; cur = tmp;
+      var tmp = pp; pp = prev; prev = cur; cur = tmp;
     }
     return prev[n];
   }
@@ -764,11 +806,11 @@
   }
 
   /** Eşleşmeyen metin için en yakın 3 besin önerisi (bulanık + kelime örtüşmesi). */
-  function suggestFoods(text, idx, boost, limit) {
+  function suggestFoods(text, idx, boost, limit, maxCand) {
     var words = String(text || '').split(' ').filter(function (w) { return w.length >= 3 && !readDescWord(w); });
     if (!words.length) return [];
     var full = words.join(' '), bestBy = new Map(), ents = idx.entries;
-    var cand = triCandidates(idx, words.length > 1 ? [full].concat(words) : [full], FUZZY_MAX * 2);
+    var cand = triCandidates(idx, words.length > 1 ? [full].concat(words) : [full], maxCand || FUZZY_MAX * 2);
     for (var ci = 0; ci < cand.length; ci++) {
       var e = ents[cand[ci]], hit = 0, matchedToks = {};
       for (var a = 0; a < words.length; a++) {
@@ -1047,6 +1089,8 @@
     var mods = [];                // sıradaki besine ait niteleyiciler (kemiksiz, çiğ, ızgara...)
     var modEnd = -1;              // son niteleyici dizisinin bittiği konum
     var n = toks.length;
+    var wordCache = new Map();
+    var qtyPrev = null;   // miktardan hemen önceki kalem ("güllüoğlu | iki dilim | baklava")
 
     /** Niteleyicileri çözer: varyant besin, çiğ/pişmiş durumu, boyut çarpanı. */
     function resolveMods(food, entry, ml) {
@@ -1143,13 +1187,84 @@
       return it;
     }
 
+    /** marka sözcükleri (bs) + ürün sözcükleri (ws): hepsini (ürünün başını mutlaka) içeren en kısa alias */
+    function brandRefine(bs, ws) {
+      var tri = ensureVocab(idx), sets = null;
+      function hits(w) {
+        var h = new Set(), list = tri.vocab.get(w) || [];
+        list.forEach(function (x) { h.add(x); });
+        if (w.length >= 4) tri.vocabList.forEach(function (v) { if (v !== w && v.length >= 3 && tokenScore(w, v) > 0) (tri.vocab.get(v) || []).forEach(function (x) { h.add(x); }); });
+        return h;
+      }
+      bs.forEach(function (w) { var h = hits(w); sets = sets ? new Set([...sets].filter(function (x) { return h.has(x); })) : h; });
+      if (!sets || !sets.size) return null;
+      var head = hits(ws[ws.length - 1]), best = null;
+      sets.forEach(function (x) {
+        if (!head.has(x)) return;
+        var e = idx.entries[x], matched = 0;
+        ws.forEach(function (w) { if (e.toks.some(function (t) { return t === w || (w.length >= 3 && tokenScore(w, t) > 0); })) matched++; });
+        var extra = e.toks.length - bs.length - matched;
+        var sc = matched * 2 - Math.max(0, extra) * 0.5 + (e.primary ? 0.1 : 0);
+        if (!best || sc > best.sc || (sc === best.sc && e.order < best.e.order)) best = { e: e, sc: sc, matched: matched };
+      });
+      if (!best) return null;
+      return { food: best.e.food, entry: best.e, str: best.e.str, toks: best.e.toks, score: best.matched === ws.length ? 0.95 : 0.8, cls: best.e.cls, st: best.e.st, stBase: best.e.stBase, primary: best.e.primary, order: best.e.order };
+    }
+
+    /** f besininin ad/alias/kategori sözcükleri (marka + tür sözcüğü yutmak için) */
+    function foodWords(f) {
+      var c = wordCache.get(f);
+      if (c) return c;
+      c = Object.create(null);
+      (idx.foodEntries.get(f) || []).forEach(function (e) { e.toks.forEach(function (t) { c[t] = 1; }); });
+      foldTokens(f.cat || '').forEach(function (t) { c[t] = 1; });
+      wordCache.set(f, c);
+      return c;
+    }
+    function coveredBy(rawToks, f) {
+      var w = foodWords(f);
+      return rawToks.length > 0 && rawToks.every(function (t) {
+        if (w[t.f]) return true;
+        for (var k in w) if (k.length >= 3 && tokenScore(t.f, k) > 0) return true;
+        return false;
+      });
+    }
+
     function pushItem(food, rawToks, conf, entry) {
+      if (!last && qtyPrev && pending && !qtyPrev.q && !mods.length && !unknown.length && items.indexOf(qtyPrev.item) >= 0 &&
+          rawToks.length <= 2 && (food === qtyPrev.food || coveredBy(rawToks, qtyPrev.food))) last = qtyPrev;
+      qtyPrev = null;
+      // "kfc sundae", "popeyes iki parça tavuk", "subway hindi sandviç": önceki kalem yalnızca marka/nitelik idiyse birleşik ürünü ara
+      if (last && last.span && !mods.length && items[items.length - 1] === last.item && !last.q && !unknown.length && entry) {
+        var bs = last.span.map(function (x) { return x.f; }), bstr = bs.join(' ');
+        if (!idx.nameSet[bstr] && (idx.prefixCount[bstr] || 0) >= 3) {
+          var ref = brandRefine(bs, rawToks.map(function (x) { return x.f; }));
+          if (ref) {
+            var keepQ = pending;
+            items.pop();
+            pending = keepQ;
+            var lastSpan = last.span;
+            last = null;
+            pushItem(ref.food, lastSpan.concat(rawToks), Math.min(conf, ref.score), ref);
+            return;
+          }
+        }
+      }
+      // "cappy meyve suyu", "magnum çikolata", "erikli su": aynı besin ya da onun tür sözcüğü ikinci kalem olmaz
+      if (last && (!pending || !last.q) && !mods.length && items.indexOf(last.item) >= 0 && !unknown.length &&
+          (food === last.food || food === last.baseFood || (rawToks.length <= 2 && coveredBy(rawToks, last.food)) ||
+           (!pending && rawToks.length === 1 && SWALLOW_GENERIC[rawToks[0].f]))) {
+        last.item.raw += ' ' + rawToks.map(function (t) { return t.r; }).join(' ');
+        last.rawToks = last.rawToks.concat(rawToks);
+        if (pending) applyTrailing();   // "güllüoğlu iki dilim baklava": miktar markalı kaleme
+        return;
+      }
       var q = pending, ml = mods;
       var res = resolveMods(food, entry, ml);
       var allRaw = (q ? q.raw : []).concat(modToks(ml), rawToks);
       var it = makeItem(res.food, q, allRaw, conf, res);
       items.push(it);
-      last = { item: it, food: res.food, baseFood: food, entry: entry, mods: ml.slice(), res: res, rawToks: allRaw, conf: conf, q: q };
+      last = { item: it, food: res.food, baseFood: food, entry: entry, mods: ml.slice(), res: res, rawToks: allRaw, conf: conf, q: q, span: rawToks };
       lastExplicit = !!q;
       pending = null;
       mods = [];
@@ -1157,7 +1272,10 @@
 
     /** son kalem yeniden kurulduğunda tanınmayan kelime notunu korur */
     function keepUnk(it) {
-      if (last && last.unk && !it.note) { it.note = last.unk.note; if (!it.suggestions) it.suggestions = last.unk.suggestions; }
+      if (last && last.unk) {
+        if (!it.note && last.unk.note) { it.note = last.unk.note; if (!it.suggestions) it.suggestions = last.unk.suggestions; }
+        if (last.unk.conf != null) it.confidence = Math.min(it.confidence, last.unk.conf);
+      }
       return it;
     }
 
@@ -1187,10 +1305,22 @@
           unknown = [];
           return;
         }
-        var possessive = unknown.length <= 2 && unknown.every(function (t) { return /(i|u|si|su|leri|lari)$/.test(t.f) && t.f.length > 3; });
+        var possessive = unknown.length <= 2 && unknown.every(function (t) { return /(i|u|si|su|leri|lari)$/.test(t.f) && t.f.length >= 3; });
         if (possessive) {
           last.item.raw += ' ' + unknown.map(function (t) { return t.r; }).join(' ');
           last.item.confidence = Math.round(last.item.confidence * 0.8 * 100) / 100;
+          unknown = [];
+          return;
+        }
+        // besinden sonra gelen tanınmayan sözcük ("ruffles orijinal", "protein tozu ölçek") ayrı besin değil: not + düşük güven
+        var fzA = fuzzyFind(text, idx, boost);
+        if (!fzA || fzA.score < 0.86) {
+          var uw = unknown.map(function (t) { return t.r; }).join(' ');
+          last.item.raw += ' ' + uw;
+          last.rawToks = last.rawToks.concat(unknown);
+          last.item.confidence = Math.min(last.item.confidence, 0.75);
+          if (!last.item.note) last.item.note = '“' + uw + '” kelimesini tanımadım, en yakın: ' + last.item.name;
+          last.unk = { note: last.item.note, suggestions: last.item.suggestions, conf: 0.75 };
           unknown = [];
           return;
         }
@@ -1237,7 +1367,21 @@
     function descAt(k) {
       var d = readDesc(toks, k);
       if (d && d.len === 1 && STATE_GATED[d.key] && !matchFoodAt(toks, k + 1, idx, boost)) return null;
+      if (!d) d = typoDesc(k);
       return d;
+    }
+    /** yazım hatalı niteleyici ("kruu", "tazee", "kavrulmş"): tanınmayan sözcük bir niteleyiciye tek harf uzaklıktaysa */
+    function typoDesc(k) {
+      var t = toks[k];
+      if (!t || t.f.length < 4 || /\d/.test(t.f) || FILLERS[t.f] || matchFoodAt(toks, k, idx, boost)) return null;
+      var nx = toks[k + 1];
+      if (!nx || isSepAt(toks, k + 1) || !matchFoodAt(toks, k + 1, idx, boost)) return null;   // yalnızca bir besinden önce
+      var bestK = null;
+      for (var key in DESC) {
+        if (key.length < 4 || Math.abs(key.length - t.f.length) > 1) continue;
+        if (levenshtein(t.f, key) <= 1) { bestK = key; break; }
+      }
+      return bestK ? { len: 1, key: bestK, info: DESC[bestK], toks: [t] } : null;
     }
 
     function onlyFillersUntilBoundary(k) {
@@ -1253,6 +1397,8 @@
     var i = 0;
     while (i < n) {
       var t = toks[i];
+
+      if (t.f === 'az' && toks[i + 1] && /^(once|evvel)$/.test(toks[i + 1].f)) { i += 2; continue; } // "az önce"
 
       // öğün kelimesi
       var m = matchMealAt(toks, i);
@@ -1276,8 +1422,22 @@
           else pending = null;
         }
         last = null;
+        qtyPrev = null;
         i += sep;
         continue;
+      }
+
+      // sayıyla başlayan ürün adı: "2 şekerli çay", "duble rakı", "yarım ekmek döner", "100 portakal suyu"
+      if (parseQuantity(toks, i) || /^(cift|tek|duble)$/.test(t.f)) {
+        var nmf = matchFoodAt(toks, i, idx, boost, true);
+        var nq = parseQuantity(toks, i);
+        if (nmf && nmf.len >= 2 && !parseUnit(toks, i + nmf.len - 1, true) && !(nq && parseUnit(toks, i + nq.len, true))) {
+          var nspan = toks.slice(i, i + nmf.len);
+          flushUnknown(false);
+          pushItem(nmf.food, nspan, nmf.score, nmf.entry);
+          i += nmf.len;
+          continue;
+        }
       }
 
       // miktar
@@ -1295,10 +1455,12 @@
         }
       }
       // "iki yumurtalı menemen": sayı sıfatı niteler, menemen 1 porsiyondur
-      if (q && !q.fracWord && toks[i + q.len] && /l(i|u)$/.test(toks[i + q.len].f) && !parseUnit(toks, i + q.len, true) &&
-          !matchFoodAt(toks, i + q.len, idx, boost) && matchFoodAt(toks, i + q.len + 1, idx, boost)) {
-        i += q.len + 1;
-        continue;
+      if (q && !q.fracWord && toks[i + q.len] && /l(i|u)$/.test(toks[i + q.len].f) && !parseUnit(toks, i + q.len, true)) {
+        var mA = matchFoodAt(toks, i + q.len, idx, boost), mB = matchFoodAt(toks, i + q.len + 1, idx, boost);
+        if (mB && (!mA || (mA.food === mB.food && mA.len === mB.len + 1))) {
+          i += q.len + (mA ? 0 : 1);   // "iki yumurtalı menemen" ("yumurtalı menemen" alias'ı varsa onu kullan)
+          continue;
+        }
       }
       if (q) {
         var j = i + q.len;
@@ -1319,6 +1481,7 @@
           // iki miktar art arda ("iki üç") -> sonuncuyu al
         }
         pending = { qty: q.value, unit: u ? u.unit : null, fracWord: q.fracWord, fuzzy: q.fuzzy, raw: qraw };
+        qtyPrev = last;
         last = null;
         i = j;
         continue;
@@ -1333,6 +1496,14 @@
           pending = pending && pending.unit == null ? { qty: pending.qty, unit: u2.unit, fracWord: pending.fracWord, fuzzy: pending.fuzzy, raw: pending.raw.concat(toks.slice(i, i + u2.len)) }
             : { qty: null, unit: u2.unit, raw: toks.slice(i, i + u2.len) };
           last = null;
+          i += u2.len;
+          continue;
+        }
+        // "kokoreç porsiyon", "pizza dilim": sondaki sayısız birim önceki kaleme aittir
+        if (last && !lastExplicit && !unknown.length && onlyFillersUntilBoundary(i + u2.len)) {
+          var lu = foodUnits(last.food);
+          if (lu[u2.unit]) { pending = { qty: null, unit: u2.unit, raw: toks.slice(i, i + u2.len) }; applyTrailing(); }
+          else { last.item.raw += ' ' + toks.slice(i, i + u2.len).map(function (x) { return x.r; }).join(' '); last.rawToks = last.rawToks.concat(toks.slice(i, i + u2.len)); }
           i += u2.len;
           continue;
         }
@@ -1374,6 +1545,8 @@
 
       // besin
       var fm = matchFoodAt(toks, i, idx, boost);
+      // "kıymalı poğaça", "peynirli simit": -lı sıfatı (yalnızca ek atarak bir besine benziyor) ardından gelen besini niteler
+      if (fm && fm.len === 1 && fm.score < 1 && /l(i|u)$/.test(t.f) && !isSepAt(toks, i + 1) && matchFoodAt(toks, i + 1, idx, boost)) fm = null;
       if (fm) {
         var span = toks.slice(i, i + fm.len);
         if (unknown.length) {
@@ -1395,16 +1568,33 @@
             pushItem(fm.food, unknown.concat(span), modConf, fm.entry);
             if (!last.item.note) {
               last.item.note = '“' + unkWords + '” kelimesini tanımadım, en yakın: ' + last.item.name;
-              if (!last.item.suggestions) last.item.suggestions = suggestFoods(unknown.map(function (x) { return x.f; }).concat(fm.entry.toks).join(' '), idx, boost, 4)
+              if (!last.item.suggestions) last.item.suggestions = suggestFoods(unknown.map(function (x) { return x.f; }).concat(fm.entry.toks).join(' '), idx, boost, 4, 150)
                 .filter(function (x) { return x.id !== last.item.foodId; }).slice(0, 3);
               last.unk = { note: last.item.note, suggestions: last.item.suggestions };
             }
           }
           unknown = [];
         } else {
-          pushItem(fm.food, span, fm.score, fm.entry);
+                    pushItem(fm.food, span, fm.score, fm.entry);
+          if ((GENERIC_WORDS[fm.entry.str]) && last && last.item.foodId === fm.food.id && !last.mods.length) {
+            // "çorba", "sandviç", "kebap": hangisi olduğu belli değil -> sor
+            var gw = span.map(function (x) { return x.r; }).join(' ');
+            last.item.confidence = Math.min(last.item.confidence, 0.5);
+            last.item.note = '“' + gw + '” çok genel, hangisi?';
+            last.item.suggestions = searchFoods(gw, foods, { limit: 5 }).filter(function (f) { return f.id !== fm.food.id; }).slice(0, 4)
+              .map(function (f) { return { id: f.id, name: f.name }; });
+            last.unk = { note: last.item.note, suggestions: last.item.suggestions, conf: 0.5 };
+          }
         }
         i += fm.len;
+        continue;
+      }
+      // "dondurma mı yedim": soru eki -> emin değil
+      if ((t.f === 'mi' || t.f === 'mu') && last && items.indexOf(last.item) >= 0 && toks[i - 1] && last.rawToks.indexOf(toks[i - 1]) >= 0) {
+        last.item.confidence = Math.min(last.item.confidence, 0.6);
+        last.unk = last.unk || { note: null, suggestions: null };
+        last.unk.conf = 0.6;
+        i++;
         continue;
       }
 
@@ -1430,6 +1620,33 @@
       lastExplicit = true;
       pending = null;
     }
+
+    // "big mac orta patates", "büyük boy patates", "zinger ve patates": boyla ya da fast food zinciriyle söylenen patates kızartmadır
+    var potato = idx.byStr['patates'] && idx.byStr['patates'].food;
+    if (potato) items.forEach(function (it, k) {
+      if (it.foodId !== potato.id) return;
+      var rt = tokenize(it.raw).map(function (x) { return x.f; });
+      var sized = rt.some(function (w) { return w === 'boy' || w === 'orta' || w === 'buyuk' || w === 'kucuk'; });
+      var ff = items.filter(function (o) { return o !== it && idx.byId[o.foodId] && idx.byId[o.foodId].cat === 'Fast Food'; })[0];
+      if (!sized && !ff) return;
+      if (rt.some(function (w) { return /^(cig|haslanmis|haslama|firinda|firin|kozde|kumpir)$/.test(w); })) return;
+      var size = rt.indexOf('buyuk') >= 0 ? 'buyuk' : rt.indexOf('kucuk') >= 0 ? 'kucuk' : 'orta';
+      var target = null;
+      if (ff) {
+        var bt = foldTokens(String(idx.byId[ff.foodId].name).replace(/\([^)]*\)/g, ' '))[0];
+        if (bt && (idx.prefixCount[bt] || 0) >= 3) {
+          var cand = idx.entries.filter(function (e) { return e.toks[0] === bt && e.toks.indexOf('patates') >= 0; });
+          cand.sort(function (a, b) { return (b.toks.indexOf(size) >= 0) - (a.toks.indexOf(size) >= 0) || a.toks.length - b.toks.length; });
+          if (cand[0]) target = cand[0].food;
+        }
+      }
+      if (!target && idx.byStr['patates kizartmasi']) target = idx.byStr['patates kizartmasi'].food;
+      if (!target) return;
+      var r2 = resolveUnit(target, it.unit === 'g' || it.unit === 'ml' ? it.qty : (it.qty !== 1 ? it.qty : null), it.unit === 'g' || it.unit === 'ml' ? it.unit : null, false);
+      var it2 = computeItem(target, r2.qty, r2.unit, r2.unitG, null);
+      it2.confidence = Math.min(it.confidence, 0.9); it2.raw = it.raw;
+      items[k] = it2;
+    });
 
     return { items: items, unmatched: unmatched, meal: meal, text: String(text || '') };
   }
@@ -1503,7 +1720,7 @@
   }
 
   return {
-    version: '1.3.0',
+    version: '1.5.0',
     lower: lower, fold: fold, foldTokens: foldTokens, tokenize: tokenize, stems: stems,
     wordsToNumber: wordsToNumber, parseNumberText: parseNumberText,
     levenshtein: levenshtein, similarity: similarity,

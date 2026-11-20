@@ -1,0 +1,3980 @@
+patates	x-patates-cig
+havuç	havuc|d-havuc-bebek
+domates	domates
+salatalık	salatalik
+biber	biber-sivri
+sivri biber	biber-sivri
+yeşil biber	biber-sivri
+dolmalık biber	dolmalik-biber
+kırmızı biber	kirmizi-biber
+patlıcan	patlican
+kabak	kabak
+balkabağı	balkabagi
+soğan	sogan
+kuru soğan	sogan
+kırmızı soğan	d-sogan-kirmizi
+taze soğan	taze-sogan
+sarımsak	sarimsak
+pırasa	d-pirasa
+kereviz	d-kereviz-koku
+turp	turp
+pancar	pancar
+lahana	lahana
+kırmızı lahana	d-lahana-kirmizi
+karnabahar	karnabahar
+brokoli	brokoli
+ıspanak	ispanak-cig
+ispanak	ispanak-cig
+pazı	d-pazi|d-pazi-haslanmis
+marul	marul
+roka	roka
+tere	d-tere
+maydanoz	maydanoz
+dereotu	dereotu
+nane	d-nane-taze
+fesleğen	d-feslegen
+kişniş	d-kisnis
+semizotu	d-semizotu
+bezelye	d-bezelye-taze|bezelye|d-bezelye-konserve
+bakla	d-taze-bakla|d-bakla-haslanmis-taze|d-bakla-kuru
+taze fasulye	d-taze-fasulye-cig|taze-fasulye-yemegi
+bamya	d-bamya-taze
+enginar	enginar
+kuşkonmaz	d-kuskonmaz|d-kuskonmaz-haslanmis
+mantar	mantar
+tatlı patates	tatli-patates
+zencefil	d-zencefil
+yer elması	d-yer-elmasi
+karalahana	d-karalahana
+brüksel lahanası	d-brukselkahani
+elma	elma
+armut	armut
+muz	muz
+portakal	portakal
+mandalina	mandalina
+limon	limon
+greyfurt	greyfurt
+üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+çilek	cilek
+karpuz	karpuz
+kavun	kavun
+şeftali	seftali
+kayısı	kayisi|d-kayisi-malatya
+kiraz	kiraz
+vişne	visne|d-visne-taze
+erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+incir	incir|d-incir-yesil|d-incir-mor
+nar	nar
+kivi	kivi
+ananas	ananas
+avokado	avokado
+mango	mango
+ayva	ayva
+dut	dut|d-dut-beyaz|d-dut-kara
+böğürtlen	bogurtlen
+ahududu	ahududu
+yaban mersini	yaban-mersini
+papaya	d-papaya
+nektarin	d-nektarin
+kızılcık	d-kizilcik
+alıç	d-alic
+fındık	findik
+ceviz	ceviz
+badem	badem
+antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+fıstık	yer-fistigi
+kaju	kaju
+çam fıstığı	cam-fistigi
+ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+kabak çekirdeği	kabak-cekirdegi|b-kabak-cekirdegi-tuzlu
+zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+turşu	tursu
+kuru ananas dilimi	b-kuru-ananas
+kuru ananas halkası	b-kuru-ananas
+ananas halkası kuru	b-kuru-ananas
+kuru ananas parçaları	b-kuru-ananas
+sumak	x-sumak
+toz sumak	x-sumak
+sumak baharat	x-sumak
+ekşi sumak	x-sumak
+kimyon	x-kimyon
+toz kimyon	x-kimyon
+kimyon baharat	x-kimyon
+öğütülmüş kimyon	x-kimyon
+kimyon tozu	x-kimyon
+karabiber	x-karabiber
+toz karabiber	x-karabiber
+öğütülmüş karabiber	x-karabiber
+kara biber	x-karabiber
+karabiber tozu	x-karabiber
+karabiber baharat	x-karabiber
+tarçın	x-tarcin
+toz tarçın	x-tarcin
+tarçın tozu	x-tarcin
+tarçın baharat	x-tarcin
+çubuk tarçın	x-tarcin
+tarcin	x-tarcin
+kişniş tohumu	x-kisnis-tohumu
+kişniş tozu	x-kisnis-tohumu
+toz kişniş	x-kisnis-tohumu
+coriander	x-kisnis-tohumu
+mercimek filizi	x-mercimek-filizi
+çimlendirilmiş mercimek	x-mercimek-filizi
+filizlenmiş mercimek	x-mercimek-filizi
+mercimek filiz	x-mercimek-filizi
+yonca filizi	d-yonca-filizi
+alfalfa	d-yonca-filizi
+sprouts	d-yonca-filizi
+alfalfa filizi	d-yonca-filizi
+fasulye filizi	d-fasulye-filizi
+maş fasulyesi filizi	d-fasulye-filizi
+soya filizi	d-fasulye-filizi
+dondurulmuş çilek	d-cilek-donmus
+donmuş çilek	d-cilek-donmus
+çilek dondurulmuş	d-cilek-donmus
+frozen çilek	d-cilek-donmus
+dondurulmuş yaban mersini	d-yaban-mersini-donmus
+donmuş yaban mersini	d-yaban-mersini-donmus
+dondurulmuş orman meyveleri	d-orman-meyveleri
+donmuş orman meyveleri	d-orman-meyveleri
+orman meyveleri	d-orman-meyveleri
+karışık orman meyveleri	d-orman-meyveleri
+konserve şeftali	d-seftali-konserve
+şeftali konservesi	d-seftali-konserve
+şeftali komposto	d-seftali-konserve
+konserve kayısı	d-kayisi-konserve
+kayısı konservesi	d-kayisi-konserve
+konserve ananas	d-ananas-konserve|ananas
+ananas konservesi	d-ananas-konserve|ananas
+ananas halkası	d-ananas-konserve|ananas
+konserve vişne	d-visne-konserve
+vişne konservesi	d-visne-konserve
+şurupta vişne	d-visne-konserve
+konserve meyve	d-kokteyl-meyve
+meyve konservesi	d-kokteyl-meyve
+kokteyl meyve	d-kokteyl-meyve
+karışık meyve konservesi	d-kokteyl-meyve
+komposto	komposto
+kuru meyve kompostosu	komposto
+hoşaf	komposto|a-serbet-hosaf
+kayısı hoşafı	komposto
+erik hoşafı	komposto
+vişne kompostosu	komposto
+dondurulmuş muz	d-muz-donmus
+donmuş muz	d-muz-donmus
+kayısı konserve	d-kayisi-konserve
+kuru meyve tabağı	b-kuru-karisik-meyve
+kuru meyve karışık paket	b-kuru-karisik-meyve
+domates kurusu	d-kuru-domates
+kuru domates dilimi	d-kuru-domates
+incir	incir|d-incir-yesil|d-incir-mor
+taze incir	incir|d-incir-yesil|d-incir-mor
+yaş incir	incir|d-incir-yesil|d-incir-mor
+incir yaş	incir|d-incir-yesil|d-incir-mor
+incir taze	incir|d-incir-yesil|d-incir-mor
+yas incir	incir|d-incir-yesil|d-incir-mor
+yaş incirler	incir|d-incir-yesil|d-incir-mor
+taze incirler	incir|d-incir-yesil|d-incir-mor
+bursa inciri	incir|d-incir-yesil|d-incir-mor
+yeşil incir	d-incir-yesil
+taze yeşil incir	d-incir-yesil
+yaş yeşil incir	d-incir-yesil
+mor incir	d-incir-mor
+taze mor incir	d-incir-mor
+yaş mor incir	d-incir-mor
+siyah incir	d-incir-mor
+bursa siyahı incir	d-incir-mor
+kuru incir	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+incir kurusu	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+incir kuru	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kurutulmuş incir	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru incirler	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru incir tanesi	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru incir yumuşak	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+aydın inciri	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru aydın inciri	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+sarılop kuru incir	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru incir paketi	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+yaş üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+taze üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+üzüm yaş	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+üzüm taze	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+yas uzum	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+salkım üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+üzüm tanesi	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+çekirdeksiz üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+sultaniye üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+razakı üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+beyaz üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+siyah üzüm	d-uzum-siyah
+kara üzüm	d-uzum-siyah
+yaş siyah üzüm	d-uzum-siyah
+taze siyah üzüm	d-uzum-siyah
+siyah üzüm yaş	d-uzum-siyah
+kırmızı üzüm	d-uzum-kirmizi
+yaş kırmızı üzüm	d-uzum-kirmizi
+taze kırmızı üzüm	d-uzum-kirmizi
+yeşil üzüm	d-uzum-yesil-cekirdeksiz
+yeşil çekirdeksiz üzüm	d-uzum-yesil-cekirdeksiz
+çekirdeksiz yeşil üzüm	d-uzum-yesil-cekirdeksiz
+yaş yeşil üzüm	d-uzum-yesil-cekirdeksiz
+taze yeşil üzüm	d-uzum-yesil-cekirdeksiz
+kuru üzüm	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+üzüm kurusu	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kuru üzümler	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kuş üzümü	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kuru üzüm çekirdeksiz	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+çekirdeksiz kuru üzüm	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+sultani kuru üzüm	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kurutulmuş üzüm	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kuru uzum	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+kuru üzüm tanesi	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+sarı kuru üzüm	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+siyah kuru üzüm	d-kuru-uzum-siyah
+kuru siyah üzüm	d-kuru-uzum-siyah
+kara kuru üzüm	d-kuru-uzum-siyah
+çikolata kaplı kuru üzüm	x-uzum-cikolatali
+çikolatalı kuru üzüm	x-uzum-cikolatali
+çikolatalı üzüm draje	x-uzum-cikolatali
+kuru üzüm çikolata kaplı	x-uzum-cikolatali
+yoğurt kaplı kuru üzüm	x-uzum-yogurt-kapli
+yoğurt kaplı üzüm	x-uzum-yogurt-kapli
+kuru üzüm yoğurt kaplı	x-uzum-yogurt-kapli
+yoğurtlu kuru üzüm	x-uzum-yogurt-kapli
+kayısı	kayisi|d-kayisi-malatya
+taze kayısı	kayisi|d-kayisi-malatya
+yaş kayısı	kayisi|d-kayisi-malatya
+kayısı yaş	kayisi|d-kayisi-malatya
+kayısı taze	kayisi|d-kayisi-malatya
+yas kayisi	kayisi|d-kayisi-malatya
+kayısılar	kayisi|d-kayisi-malatya
+taze kayısılar	kayisi|d-kayisi-malatya
+zerdali	kayisi|d-kayisi-malatya
+kuru kayısı	kuru-kayisi
+kayısı kurusu	kuru-kayisi
+kayısı kuru	kuru-kayisi
+kurutulmuş kayısı	kuru-kayisi
+malatya kayısısı	kuru-kayisi
+kuru kayısılar	kuru-kayisi
+kuru kayısı tanesi	kuru-kayisi
+kuru kayisi	kuru-kayisi
+yumuşak kuru kayısı	kuru-kayisi
+gün kurusu kayısı	kuru-kayisi
+kayısı pestili	d-kayisi-pestili|b-pestil
+kayısı kömesi	d-kayisi-pestili
+dut	dut|d-dut-beyaz|d-dut-kara
+yaş dut	dut|d-dut-beyaz|d-dut-kara
+taze dut	dut|d-dut-beyaz|d-dut-kara
+dut yaş	dut|d-dut-beyaz|d-dut-kara
+dut taze	dut|d-dut-beyaz|d-dut-kara
+yas dut	dut|d-dut-beyaz|d-dut-kara
+dutlar	dut|d-dut-beyaz|d-dut-kara
+beyaz dut	d-dut-beyaz
+yaş beyaz dut	d-dut-beyaz
+taze beyaz dut	d-dut-beyaz
+kara dut	d-dut-kara
+siyah dut	d-dut-kara
+yaş kara dut	d-dut-kara
+taze kara dut	d-dut-kara
+kuru dut	b-kuru-dut
+dut kurusu	b-kuru-dut
+dut kuru	b-kuru-dut
+kurutulmuş dut	b-kuru-dut
+kuru dutlar	b-kuru-dut
+beyaz dut kurusu	b-kuru-dut
+kuru beyaz dut	b-kuru-dut
+erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+yaş erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+taze erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+erik yaş	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+erik taze	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+erikler	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+yas erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+yeşil erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+mürdüm eriği	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+can eriği	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+kırmızı erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+sarı erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+kuru erik	kuru-erik|d-erik-kurusu-cekirdekli
+erik kurusu	kuru-erik|d-erik-kurusu-cekirdekli
+kurutulmuş erik	kuru-erik|d-erik-kurusu-cekirdekli
+kuru erik tanesi	kuru-erik|d-erik-kurusu-cekirdekli
+kuru erikler	kuru-erik|d-erik-kurusu-cekirdekli
+kuru erik çekirdekli	kuru-erik|d-erik-kurusu-cekirdekli
+erik kuru	kuru-erik|d-erik-kurusu-cekirdekli
+çekirdekli kuru erik	kuru-erik|d-erik-kurusu-cekirdekli
+erik pestili	d-erik-pestil
+erik kömesi	d-erik-pestil
+yenidünya	yenidunya
+malta eriği	yenidunya
+yeni dünya	yenidunya
+taze hurma	d-hurma-kurma
+yaş hurma	d-hurma-kurma
+kurma	d-hurma-kurma
+yaş hurma taze	d-hurma-kurma
+hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+kuru hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+hurmalar	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+hurma kuru	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+kurutulmuş hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+hurma tanesi	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+çekirdeksiz hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+medjool hurma	d-hurma-medjool|b-hurma-medjool
+medjul hurma	d-hurma-medjool|b-hurma-medjool
+kral hurma	d-hurma-medjool|b-hurma-medjool
+iri hurma	d-hurma-medjool|b-hurma-medjool
+hurma ezmesi	d-hurma-ezmesi
+hurma püresi	d-hurma-ezmesi
+trabzon hurması	trabzon-hurmasi
+kaki	trabzon-hurmasi
+cennet hurması	trabzon-hurmasi
+hurma meyvesi	trabzon-hurmasi
+kuru kiraz	d-kuru-kiraz
+kiraz kurusu	d-kuru-kiraz
+kuru vişne	b-kuru-visne
+vişne kurusu	b-kuru-visne
+kurutulmuş vişne	b-kuru-visne
+kuru yaban mersini	d-kuru-yaban-mersini
+kurutulmuş yaban mersini	d-kuru-yaban-mersini
+kuru kızılcık	b-kuru-kizilcik
+kuru cranberry	b-kuru-kizilcik
+cranberry	b-kuru-kizilcik
+goji berry	b-goji-berry
+goji	b-goji-berry
+kuru goji	b-goji-berry
+kuru elma	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+elma kurusu	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+kurutulmuş elma	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+elma cipsi	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+kuru elma halkası	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+kuru armut	d-armut-kuru
+armut kurusu	d-armut-kuru
+kurutulmuş armut	d-armut-kuru
+kuru şeftali	d-seftali-kuru
+şeftali kurusu	d-seftali-kuru
+kuru ayva	d-ayva-kuru
+ayva kurusu	d-ayva-kuru
+kuru ananas	b-kuru-ananas
+ananas kurusu	b-kuru-ananas
+kurutulmuş ananas	b-kuru-ananas
+kuru mango	b-kuru-mango
+mango kurusu	b-kuru-mango
+kurutulmuş mango	b-kuru-mango
+kuru papaya	b-kuru-papaya
+papaya kurusu	b-kuru-papaya
+kuru muz	b-kuru-muz|b-muz-cipsi
+muz kurusu	b-kuru-muz|b-muz-cipsi
+muz cipsi	b-kuru-muz|b-muz-cipsi
+kurutulmuş muz	b-kuru-muz|b-muz-cipsi
+kuru çilek	b-kuru-cilek
+çilek kurusu	b-kuru-cilek
+kurutulmuş çilek	b-kuru-cilek
+kuru kivi	x-kuru-kivi
+kivi kurusu	x-kuru-kivi
+kurutulmuş kivi	x-kuru-kivi
+kuru ahududu	x-kuru-ahududu
+ahududu kurusu	x-kuru-ahududu
+kurutulmuş ahududu	x-kuru-ahududu
+liyofilize ahududu	x-kuru-ahududu
+kuru böğürtlen	x-kuru-bogurtlen
+böğürtlen kurusu	x-kuru-bogurtlen
+kurutulmuş böğürtlen	x-kuru-bogurtlen
+kuru portakal	x-kuru-portakal
+portakal kurusu	x-kuru-portakal
+kurutulmuş portakal	x-kuru-portakal
+kuru portakal dilimi	x-kuru-portakal
+kuru limon	x-kuru-limon
+limon kurusu	x-kuru-limon
+kurutulmuş limon	x-kuru-limon
+meyve cipsi	x-meyve-cipsi
+kuru meyve cipsi	x-meyve-cipsi
+kurutulmuş meyve cipsi	x-meyve-cipsi
+karışık meyve cipsi	x-meyve-cipsi
+meyve chips	x-meyve-cipsi
+sebze cipsi	b-sebze-cipsi
+kurutulmuş sebze cipsi	b-sebze-cipsi
+karışık sebze cipsi	b-sebze-cipsi
+elmalar	elma
+amasya elması	elma
+armutlar	armut
+muzlar	muz
+mandalinalar	mandalina
+taze çilek	cilek
+çilekler	cilek
+karpuz dilimi	karpuz
+kavun dilimi	kavun
+taze şeftali	seftali
+taze kiraz	kiraz
+vişne	visne|d-visne-taze
+taze vişne	visne|d-visne-taze
+nar tanesi	nar
+nar taneleri	nar
+taze ayva	ayva
+taze böğürtlen	bogurtlen
+taze ahududu	ahududu
+frambuaz	ahududu
+taze yaban mersini	yaban-mersini
+blueberry	yaban-mersini
+kocayemiş	x-kocayemis
+koca yemiş	x-kocayemis
+kocayemis	x-kocayemis
+gilaburu	x-gilaburu
+gilaburu meyvesi	x-gilaburu
+taze gilaburu	x-gilaburu
+aronya	x-aronya
+aronya meyvesi	x-aronya
+aronia	x-aronya
+ahlat	x-ahlat
+ahlat armudu	x-ahlat
+yabani armut	x-ahlat
+kuşburnu	d-kusburnu|a-bitki-cayi-kusburnu
+taze kuşburnu	d-kusburnu|a-bitki-cayi-kusburnu
+gül elması	d-kusburnu|a-bitki-cayi-kusburnu
+taze alıç	d-alic
+hünnap	d-hunnap
+taze hünnap	d-hunnap
+taze kızılcık	d-kizilcik
+çağla erik	d-erik-yesil
+yeşil çağla erik	d-erik-yesil
+dut pestili	d-dut-pestil|b-pestil
+dut kömesi	d-dut-pestil
+üzüm pestili	d-bestil|b-pestil
+pestil	d-bestil|b-pestil
+kuru yemiş	karisik-kuruyemis
+kuruyemiş	karisik-kuruyemis
+kuru yemis	karisik-kuruyemis
+kuruyemis	karisik-kuruyemis
+karışık kuruyemiş	karisik-kuruyemis
+karışık kuru yemiş	karisik-kuruyemis
+karışık çerez	karisik-kuruyemis|b-cerezza-karisik
+çerez	karisik-kuruyemis
+kuruyemiş tabağı	karisik-kuruyemis
+kuru yemiş tabağı	karisik-kuruyemis
+mix nuts	karisik-kuruyemis
+nuts	karisik-kuruyemis
+karışık kuruyemis	karisik-kuruyemis
+kuruyemiş karışık	karisik-kuruyemis
+çerez tabağı	karisik-kuruyemis
+kuru yemiş karışık	karisik-kuruyemis
+yaş kuru yemiş	x-yas-kuruyemis
+yaş kuruyemiş	x-yas-kuruyemis
+yas kuru yemis	x-yas-kuruyemis
+taze kuru yemiş	x-yas-kuruyemis
+taze kuruyemiş	x-yas-kuruyemis
+yaş çerez	x-yas-kuruyemis
+taze çerez	x-yas-kuruyemis
+kuru yemiş yaş	x-yas-kuruyemis
+kuruyemiş yaş	x-yas-kuruyemis
+yaş kuruyemiş tabağı	x-yas-kuruyemis
+yaş kuru yemiş tabağı	x-yas-kuruyemis
+yaş karışık kuruyemiş	x-yas-kuruyemis
+taze karışık kuruyemiş	x-yas-kuruyemis
+yaş karışık kuru yemiş	x-yas-kuruyemis
+lüks kuruyemiş	x-kuruyemis-luks
+lüks kuru yemiş	x-kuruyemis-luks
+lüks karışık kuruyemiş	x-kuruyemis-luks
+lüks karışık kuru yemiş	x-kuruyemis-luks
+lüks çerez	x-kuruyemis-luks
+luks kuruyemis	x-kuruyemis-luks
+luks kuru yemis	x-kuruyemis-luks
+lüks karışık çerez	x-kuruyemis-luks
+kuruyemiş lüks	x-kuruyemis-luks
+kuru yemiş lüks	x-kuruyemis-luks
+premium kuruyemiş	x-kuruyemis-luks
+standart kuruyemiş	x-kuruyemis-standart
+standart kuru yemiş	x-kuruyemis-standart
+standart karışık kuruyemiş	x-kuruyemis-standart
+standart çerez	x-kuruyemis-standart
+tuzlu karışık kuruyemiş	x-kuruyemis-standart
+tuzlu kuru yemiş	x-kuruyemis-standart
+tuzlu kuruyemiş	x-kuruyemis-standart
+tuzlu çerez	x-kuruyemis-standart
+klasik kuruyemiş	x-kuruyemis-standart
+kuruyemiş standart	x-kuruyemis-standart
+kuru yemiş standart	x-kuruyemis-standart
+kavrulmuş kuru yemiş	x-kuruyemis-kavrulmus
+kavrulmuş kuruyemiş	x-kuruyemis-kavrulmus
+kavrulmus kuru yemis	x-kuruyemis-kavrulmus
+kavrulmuş karışık kuruyemiş	x-kuruyemis-kavrulmus
+kavrulmuş karışık kuru yemiş	x-kuruyemis-kavrulmus
+kavrulmuş çerez	x-kuruyemis-kavrulmus
+kuru yemiş kavrulmuş	x-kuruyemis-kavrulmus
+kuruyemiş kavrulmuş	x-kuruyemis-kavrulmus
+tuzsuz kavrulmuş kuru yemiş	x-kuruyemis-tuzsuz-kavrulmus
+tuzsuz kavrulmuş kuruyemiş	x-kuruyemis-tuzsuz-kavrulmus
+kavrulmuş tuzsuz kuru yemiş	x-kuruyemis-tuzsuz-kavrulmus
+kavrulmuş tuzsuz kuruyemiş	x-kuruyemis-tuzsuz-kavrulmus
+tuzsuz kavrulmuş karışık kuruyemiş	x-kuruyemis-tuzsuz-kavrulmus
+tuzsuz kavrulmuş çerez	x-kuruyemis-tuzsuz-kavrulmus
+kuru yemiş tuzsuz kavrulmuş	x-kuruyemis-tuzsuz-kavrulmus
+kuruyemiş tuzsuz kavrulmuş	x-kuruyemis-tuzsuz-kavrulmus
+tuzsuz kuru yemiş	d-kuruyemis-tuzsuz-cig-karisik
+tuzsuz kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+tuzsuz karışık kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+çiğ kuru yemiş	d-kuruyemis-tuzsuz-cig-karisik
+çiğ kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+çiğ karışık kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+tuzsuz çerez	d-kuruyemis-tuzsuz-cig-karisik
+çiğ çerez	d-kuruyemis-tuzsuz-cig-karisik
+kuru yemiş tuzsuz	d-kuruyemis-tuzsuz-cig-karisik
+kuru yemiş çiğ	d-kuruyemis-tuzsuz-cig-karisik
+kuruyemiş çiğ	d-kuruyemis-tuzsuz-cig-karisik
+kuruyemiş tuzsuz	d-kuruyemis-tuzsuz-cig-karisik
+tuzsuz çiğ kuru yemiş	d-kuruyemis-tuzsuz-cig-karisik
+çiğ tuzsuz kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+kabuklu kuru yemiş	x-kuruyemis-kabuklu-karisik
+kabuklu kuruyemiş	x-kuruyemis-kabuklu-karisik
+kabuklu karışık kuruyemiş	x-kuruyemis-kabuklu-karisik
+kabuklu çerez	x-kuruyemis-kabuklu-karisik
+kuru yemiş kabuklu	x-kuruyemis-kabuklu-karisik
+kuruyemiş kabuklu	x-kuruyemis-kabuklu-karisik
+trail mix	b-trail-mix
+kuruyemiş kuru meyve karışımı	b-trail-mix
+kuru yemiş kuru meyve karışımı	b-trail-mix
+enerji karışımı	b-trail-mix
+kuru meyve	b-kuru-karisik-meyve
+karışık kuru meyve	b-kuru-karisik-meyve
+kuru meyve karışık	b-kuru-karisik-meyve
+kurutulmuş meyve	b-kuru-karisik-meyve
+meyve kurusu	b-kuru-karisik-meyve
+kuru meyve paketi	b-kuru-karisik-meyve
+kuru meyve mix	b-kuru-karisik-meyve
+kurutulmuş karışık meyve	b-kuru-karisik-meyve
+kuru meyveler	b-kuru-karisik-meyve
+fındık içi	findik
+fındık içi tuzsuz	findik
+tuzsuz fındık içi	findik
+tuzsuz fındık	findik
+fındık tuzsuz	findik
+findik	findik
+findik ici	findik
+tuzsuz findik ici	findik
+findik ici tuzsuz	findik
+fındıklar	findik
+içi fındık	findik
+iç fındık	findik
+kuru fındık	findik
+fındık kuru	findik
+yaş fındık	x-findik-yas
+taze fındık	x-findik-yas
+yas findik	x-findik-yas
+taze findik	x-findik-yas
+fındık yaş	x-findik-yas
+fındık taze	x-findik-yas
+yaş fındık içi	x-findik-yas
+taze fındık içi	x-findik-yas
+yaş iç fındık	x-findik-yas
+fındık içi yaş	x-findik-yas
+fındık içi taze	x-findik-yas
+yaş kabuklu fındık	x-findik-yas-kabuklu
+taze kabuklu fındık	x-findik-yas-kabuklu
+kabuklu yaş fındık	x-findik-yas-kabuklu
+kabuklu taze fındık	x-findik-yas-kabuklu
+yaş fındık kabuklu	x-findik-yas-kabuklu
+taze fındık kabuklu	x-findik-yas-kabuklu
+çiğ fındık	d-findik-cig|findik
+ham fındık	d-findik-cig|findik
+çiğ fındık içi	d-findik-cig|findik
+fındık çiğ	d-findik-cig|findik
+cig findik	d-findik-cig|findik
+fındık içi çiğ	d-findik-cig|findik
+kavrulmuş fındık	b-findik-kavrulmus
+kavrulmuş fındık içi	b-findik-kavrulmus
+tuzsuz kavrulmuş fındık	b-findik-kavrulmus
+kavrulmuş tuzsuz fındık	b-findik-kavrulmus
+fındık kavrulmuş	b-findik-kavrulmus
+fırınlanmış fındık	b-findik-kavrulmus
+fındık içi kavrulmuş	b-findik-kavrulmus
+kavrulmus findik	b-findik-kavrulmus
+tuzsuz kavrulmus findik	b-findik-kavrulmus
+kavrulmuş fındık tuzsuz	b-findik-kavrulmus
+fındık kavrulmuş tuzsuz	b-findik-kavrulmus
+fındık tuzsuz kavrulmuş	b-findik-kavrulmus
+tuzlu fındık	d-findik-tuzlu
+tuzlu kavrulmuş fındık	d-findik-tuzlu
+kavrulmuş tuzlu fındık	d-findik-tuzlu
+fındık tuzlu	d-findik-tuzlu
+tuzlu findik	d-findik-tuzlu
+tuzlu fındık içi	d-findik-tuzlu
+kabuklu fındık	d-findik-kabuklu
+fındık kabuklu	d-findik-kabuklu
+kabuklu findik	d-findik-kabuklu
+kırılmamış fındık	d-findik-kabuklu
+çifte kavrulmuş fındık	b-findik-kavrulmus
+cifte kavrulmus findik	b-findik-kavrulmus
+fındık çifte kavrulmuş	b-findik-kavrulmus
+ballı fındık	x-findik-balli
+bal kaplı fındık	x-findik-balli
+ballı kavrulmuş fındık	x-findik-balli
+fındık ballı	x-findik-balli
+şekerli fındık	x-findik-sekerli
+karamelli fındık	x-findik-sekerli
+şekerlenmiş fındık	x-findik-sekerli
+karamelize fındık	x-findik-sekerli
+fındık şekerli	x-findik-sekerli
+çikolata kaplı fındık	d-kuruyemis-cikolatali-draje
+çikolatalı fındık	d-kuruyemis-cikolatali-draje
+draje fındık	d-kuruyemis-cikolatali-draje
+fındık draje	d-kuruyemis-cikolatali-draje
+çikolatalı draje fındık	d-kuruyemis-cikolatali-draje
+çikolatalı fındık draje	d-kuruyemis-cikolatali-draje
+fındık çikolata kaplı	d-kuruyemis-cikolatali-draje
+draje	d-kuruyemis-cikolatali-draje
+yoğurt kaplı fındık	x-findik-yogurt-kapli
+yogurt kapli findik	x-findik-yogurt-kapli
+yoğurtlu fındık draje	x-findik-yogurt-kapli
+fındık yoğurt kaplı	x-findik-yogurt-kapli
+cevizler	ceviz
+kırık ceviz	ceviz
+ceviz tuzsuz	ceviz
+tuzsuz ceviz	ceviz
+ceviz kuru	ceviz
+kuru ceviz	ceviz
+iç ceviz	ceviz
+ceviz iç	ceviz
+ceviz içi	b-ceviz-ici
+içi ceviz	b-ceviz-ici
+cevizin içi	b-ceviz-ici
+ceviz içi tuzsuz	b-ceviz-ici
+tuzsuz ceviz içi	b-ceviz-ici
+ceviz ici	b-ceviz-ici
+kabuksuz ceviz	b-ceviz-ici
+soyulmuş ceviz	b-ceviz-ici
+ceviz kabuksuz	b-ceviz-ici
+yaş ceviz	x-ceviz-yas
+taze ceviz	x-ceviz-yas
+yas ceviz	x-ceviz-yas
+ceviz yaş	x-ceviz-yas
+ceviz taze	x-ceviz-yas
+yaş ceviz içi	x-ceviz-yas
+taze ceviz içi	x-ceviz-yas
+ceviz içi yaş	x-ceviz-yas
+ceviz içi taze	x-ceviz-yas
+yaş iç ceviz	x-ceviz-yas
+yaş kabuklu ceviz	x-ceviz-yas-kabuklu
+taze kabuklu ceviz	x-ceviz-yas-kabuklu
+kabuklu yaş ceviz	x-ceviz-yas-kabuklu
+kabuklu taze ceviz	x-ceviz-yas-kabuklu
+yaş ceviz kabuklu	x-ceviz-yas-kabuklu
+taze ceviz kabuklu	x-ceviz-yas-kabuklu
+kabuklu ceviz	d-ceviz-kabuklu
+ceviz kabuklu	d-ceviz-kabuklu
+kabuklu ceviz içi yenen kısım	d-ceviz-kabuklu
+kabuklu cevizler	d-ceviz-kabuklu
+çiğ ceviz	d-ceviz-cig
+çiğ ceviz içi	d-ceviz-cig
+ceviz çiğ	d-ceviz-cig
+ham ceviz	d-ceviz-cig
+cig ceviz	d-ceviz-cig
+kavrulmuş ceviz	d-ceviz-kavrulmus
+ceviz kavrulmuş	d-ceviz-kavrulmus
+fırınlanmış ceviz	d-ceviz-kavrulmus
+kavrulmuş ceviz içi	d-ceviz-kavrulmus
+yeşil ceviz	d-ceviz-yesil
+yesil ceviz	d-ceviz-yesil
+ceviz yeşil	d-ceviz-yesil
+yeşil ceviz taze	d-ceviz-yesil
+ballı ceviz	x-ceviz-balli
+bal kaplı ceviz	x-ceviz-balli
+ceviz ballı	x-ceviz-balli
+ceviz bal	x-ceviz-balli
+ballı ceviz içi	x-ceviz-balli
+cevizli bal	x-ceviz-balli
+şekerli ceviz	x-ceviz-sekerli
+karamelli ceviz	x-ceviz-sekerli
+karamelize ceviz	x-ceviz-sekerli
+ceviz şekerli	x-ceviz-sekerli
+çikolata kaplı ceviz	x-ceviz-cikolatali
+çikolatalı ceviz	x-ceviz-cikolatali
+ceviz çikolatalı	x-ceviz-cikolatali
+bademler	badem
+badem içi	badem
+tuzsuz badem	badem
+badem tuzsuz	badem
+tuzsuz badem içi	badem
+badem içi tuzsuz	badem
+iç badem	badem
+içi badem	badem
+kuru badem	badem
+yaş badem	x-badem-yas
+yas badem	x-badem-yas
+badem yaş	x-badem-yas
+yaş badem içi	x-badem-yas
+taze badem içi	x-badem-yas
+badem içi yaş	x-badem-yas
+taze badem	d-badem-yesil-cagla
+çağla badem	d-badem-yesil-cagla
+yeşil badem	d-badem-yesil-cagla
+cagla badem	d-badem-yesil-cagla
+badem taze	d-badem-yesil-cagla
+çiğ badem	d-badem-cig
+ham badem	d-badem-cig
+badem çiğ	d-badem-cig
+çiğ badem içi	d-badem-cig
+cig badem	d-badem-cig
+kavrulmuş tuzsuz badem	b-badem-kavrulmus
+tuzsuz kavrulmuş badem	b-badem-kavrulmus
+kavrulmuş badem tuzsuz	b-badem-kavrulmus
+badem kavrulmuş tuzsuz	b-badem-kavrulmus
+tuzsuz kavrulmus badem	b-badem-kavrulmus
+fırınlanmış badem	b-badem-kavrulmus
+kavrulmuş badem	d-badem-kavrulmus
+badem kavrulmuş	d-badem-kavrulmus
+kavrulmuş badem içi	d-badem-kavrulmus
+kavrulmus badem	d-badem-kavrulmus
+tuzlu badem	d-badem-tuzlu
+tuzlu kavrulmuş badem	d-badem-tuzlu
+kavrulmuş tuzlu badem	d-badem-tuzlu
+badem tuzlu	d-badem-tuzlu
+tuzlu badem içi	d-badem-tuzlu
+haşlanmış badem	d-badem-hasli
+soyulmuş badem	d-badem-hasli
+beyaz badem	d-badem-hasli
+badem haşlanmış	d-badem-hasli
+dilimli badem	d-badem-cipsi
+badem dilim	d-badem-cipsi
+çubuk badem	d-badem-cipsi
+badem çubuk	d-badem-cipsi
+badem cipsi	d-badem-cipsi
+kabuklu badem	d-badem-kuru-kabuklu
+badem kabuklu	d-badem-kuru-kabuklu
+şekerli badem	d-badem-sekerli
+badem şekeri	d-badem-sekerli
+badem draje	d-badem-sekerli
+şekerli badem draje	d-badem-sekerli
+draje badem	d-badem-sekerli
+badem şekerli	d-badem-sekerli
+ballı badem	x-badem-balli
+bal kaplı badem	x-badem-balli
+ballı kavrulmuş badem	x-badem-balli
+badem ballı	x-badem-balli
+çikolata kaplı badem	x-badem-cikolatali
+çikolatalı badem	x-badem-cikolatali
+çikolatalı draje badem	x-badem-cikolatali
+badem çikolata kaplı	x-badem-cikolatali
+badem çikolatalı	x-badem-cikolatali
+kakao kaplı badem	x-badem-cikolatali
+kakaolu badem	x-badem-cikolatali
+yoğurt kaplı badem	x-badem-yogurt-kapli
+yogurt kapli badem	x-badem-yogurt-kapli
+yoğurtlu badem draje	x-badem-yogurt-kapli
+badem yoğurt kaplı	x-badem-yogurt-kapli
+çifte kavrulmuş badem	d-badem-kavrulmus
+cifte kavrulmus badem	d-badem-kavrulmus
+yer fıstığı	yer-fistigi
+yerfıstığı	yer-fistigi
+fistik	yer-fistigi
+yer fistigi	yer-fistigi
+tuzlu fıstık	yer-fistigi
+fıstık tuzlu	yer-fistigi
+çiğ fıstık	d-yer-fistigi-cig
+çiğ yer fıstığı	d-yer-fistigi-cig
+ham fıstık	d-yer-fistigi-cig
+fıstık çiğ	d-yer-fistigi-cig
+çiğ yer fıstığı içi	d-yer-fistigi-cig
+tuzsuz fıstık	d-yer-fistigi-kavrulmus
+tuzsuz yer fıstığı	d-yer-fistigi-kavrulmus
+kavrulmuş tuzsuz fıstık	d-yer-fistigi-kavrulmus
+tuzsuz kavrulmuş fıstık	d-yer-fistigi-kavrulmus
+kavrulmuş tuzsuz yer fıstığı	d-yer-fistigi-kavrulmus
+tuzsuz kavrulmuş yer fıstığı	d-yer-fistigi-kavrulmus
+fıstık tuzsuz	d-yer-fistigi-kavrulmus
+fıstık içi tuzsuz	d-yer-fistigi-kavrulmus
+tuzsuz fıstık içi	d-yer-fistigi-kavrulmus
+kavrulmuş yer fıstığı	d-yer-fistigi-kavrulmus
+tuzlu kavrulmuş fıstık	b-tuzlu-fistik-kavrulmus
+tuzlu kavrulmuş yer fıstığı	b-tuzlu-fistik-kavrulmus
+kavrulmuş tuzlu fıstık	b-tuzlu-fistik-kavrulmus
+çifte kavrulmuş fıstık	b-tuzlu-fistik-kavrulmus
+cifte kavrulmus fistik	b-tuzlu-fistik-kavrulmus
+çifte kavrulmuş yer fıstığı	b-tuzlu-fistik-kavrulmus
+fıstık çifte kavrulmuş	b-tuzlu-fistik-kavrulmus
+kavrulmuş fıstık	b-tuzlu-fistik-kavrulmus
+tuzlu fıstık kavrulmuş	b-tuzlu-fistik-kavrulmus
+kabuklu fıstık	d-yer-fistigi-kabuklu
+kabuklu yer fıstığı	d-yer-fistigi-kabuklu
+fıstık kabuklu	d-yer-fistigi-kabuklu
+kabuklu tuzlu fıstık	d-yer-fistigi-kabuklu
+kabuklu fistik	d-yer-fistigi-kabuklu
+yer fıstığı kabuklu	d-yer-fistigi-kabuklu
+haşlanmış fıstık	x-yer-fistigi-haslanmis
+haşlanmış yer fıstığı	x-yer-fistigi-haslanmis
+kaynamış fıstık	x-yer-fistigi-haslanmis
+haslanmis fistik	x-yer-fistigi-haslanmis
+taze yer fıstığı	x-yer-fistigi-haslanmis
+taze haşlanmış fıstık	x-yer-fistigi-haslanmis
+yaş yer fıstığı	x-yer-fistigi-haslanmis
+ballı fıstık	x-yer-fistigi-balli
+ballı yer fıstığı	x-yer-fistigi-balli
+bal kaplı fıstık	x-yer-fistigi-balli
+fıstık ballı	x-yer-fistigi-balli
+şekerli fıstık	b-draje-misir-fistik
+şekerli yer fıstığı	b-draje-misir-fistik
+karamelli fıstık	b-draje-misir-fistik
+fıstık şekeri	b-draje-misir-fistik
+fıstık şekerli	b-draje-misir-fistik
+çikolata kaplı fıstık	d-kuruyemis-cikolatali-draje
+çikolatalı yer fıstığı	d-kuruyemis-cikolatali-draje
+çikolatalı fıstık draje	d-kuruyemis-cikolatali-draje
+fıstık çikolata kaplı	d-kuruyemis-cikolatali-draje
+antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+antep fıstık	antep-fistigi|d-antep-fistigi-cig
+iç fıstık	antep-fistigi|d-antep-fistigi-cig
+antep fistigi	antep-fistigi|d-antep-fistigi-cig
+içi antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+antep fıstığı içi	antep-fistigi|d-antep-fistigi-cig
+iç antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+antep fıstığı tuzsuz	antep-fistigi|d-antep-fistigi-cig
+tuzsuz antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+yaş antep fıstığı	x-antep-fistigi-yas
+taze antep fıstığı	x-antep-fistigi-yas
+yas antep fistigi	x-antep-fistigi-yas
+taze fıstık	x-antep-fistigi-yas
+yaş fıstık	x-antep-fistigi-yas
+taze yeşil fıstık	x-antep-fistigi-yas
+yaş fıstık antep	x-antep-fistigi-yas
+antep fıstığı yaş	x-antep-fistigi-yas
+antep fıstığı taze	x-antep-fistigi-yas
+yeşil antep fıstığı	x-antep-fistigi-yas
+taze antep fıstık	x-antep-fistigi-yas
+çiğ antep fıstığı	d-antep-fistigi-cig
+ham antep fıstığı	d-antep-fistigi-cig
+antep fıstığı çiğ	d-antep-fistigi-cig
+kavrulmuş antep fıstığı	d-antep-fistigi-kavrulmus
+tuzlu antep fıstığı	d-antep-fistigi-kavrulmus
+tuzlu kavrulmuş antep fıstığı	d-antep-fistigi-kavrulmus
+kavrulmuş tuzlu antep fıstığı	d-antep-fistigi-kavrulmus
+antep fıstığı tuzlu	d-antep-fistigi-kavrulmus
+antep fıstığı kavrulmuş	d-antep-fistigi-kavrulmus
+kırmızı antep fıstığı	d-antep-fistigi-kavrulmus
+tuzsuz kavrulmuş antep fıstığı	x-antep-fistigi-tuzsuz-kavrulmus
+kavrulmuş tuzsuz antep fıstığı	x-antep-fistigi-tuzsuz-kavrulmus
+antep fıstığı kavrulmuş tuzsuz	x-antep-fistigi-tuzsuz-kavrulmus
+kavrulmuş antep fıstığı tuzsuz	x-antep-fistigi-tuzsuz-kavrulmus
+kabuklu antep fıstığı	d-antep-fistigi-kabuklu
+çatlak antep fıstığı	d-antep-fistigi-kabuklu
+antep fıstığı kabuklu	d-antep-fistigi-kabuklu
+çikolata kaplı antep fıstığı	x-antep-fistigi-cikolatali
+çikolatalı antep fıstığı	x-antep-fistigi-cikolatali
+antep fıstığı çikolatalı	x-antep-fistigi-cikolatali
+kaju fıstığı	kaju
+kaşu	kaju
+kaju içi	kaju
+tuzsuz kaju	kaju
+kaju tuzsuz	kaju
+tuzlu kaju	b-kaju-tuzlu
+kavrulmuş kaju	b-kaju-tuzlu
+tuzlu kavrulmuş kaju	b-kaju-tuzlu
+kaju tuzlu	b-kaju-tuzlu
+kaju kavrulmuş	b-kaju-tuzlu
+kavrulmuş tuzlu kaju	b-kaju-tuzlu
+tuzsuz kavrulmuş kaju	x-kaju-tuzsuz-kavrulmus
+kavrulmuş tuzsuz kaju	x-kaju-tuzsuz-kavrulmus
+kaju kavrulmuş tuzsuz	x-kaju-tuzsuz-kavrulmus
+tuzsuz kavrulmus kaju	x-kaju-tuzsuz-kavrulmus
+çiğ kaju	d-kaju-cig
+ham kaju	d-kaju-cig
+kaju çiğ	d-kaju-cig
+ballı kaju	x-kaju-balli
+bal kaplı kaju	x-kaju-balli
+kaju ballı	x-kaju-balli
+çikolata kaplı kaju	x-kaju-cikolatali
+çikolatalı kaju	x-kaju-cikolatali
+kaju çikolatalı	x-kaju-cikolatali
+çam fıstık	cam-fistigi
+cam fistigi	cam-fistigi
+kavrulmuş çam fıstığı	d-cam-fistigi-kavrulmus
+çam fıstığı kavrulmuş	d-cam-fistigi-kavrulmus
+macadamia	d-macadamia
+makadamya	d-macadamia
+makadamya cevizi	d-macadamia
+pekan cevizi	d-pekan
+pekan	d-pekan
+pecan	d-pekan
+brezilya cevizi	d-brezilya-cevizi
+brazil nut	d-brezilya-cevizi
+taze hindistan cevizi	b-hindistan-cevizi-taze
+hindistan cevizi içi	b-hindistan-cevizi-taze
+hindistan cevizi parçası	b-hindistan-cevizi-taze
+rende hindistan cevizi	b-hindistan-cevizi-rendesi
+rendelenmiş hindistan cevizi	b-hindistan-cevizi-rendesi
+kuru hindistan cevizi	b-hindistan-cevizi-rendesi
+leblebi	leblebi|b-leblebi-sari
+leblebiler	leblebi
+sarı leblebi	b-leblebi-sari|d-leblebi-sari
+çifte kavrulmuş leblebi	b-leblebi-sari|d-leblebi-sari
+cifte kavrulmus leblebi	b-leblebi-sari|d-leblebi-sari
+leblebi çifte kavrulmuş	b-leblebi-sari|d-leblebi-sari
+çifte kavrulmuş sarı leblebi	b-leblebi-sari|d-leblebi-sari
+beyaz leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+tuzsuz leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+sade leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+badem leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+tuzlu leblebi	d-leblebi-tuzlu
+leblebi tuzlu	d-leblebi-tuzlu
+baharatlı leblebi	b-leblebi-baharatli
+acılı leblebi	b-leblebi-baharatli
+çekirdek	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+ayçekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+çiğ çekirdek	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+ay çekirdeği tuzsuz	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+tuzsuz ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+ay çekirdeği içi	d-ay-cekirdegi-ic
+iç ay çekirdeği	d-ay-cekirdegi-ic
+çiğ ay çekirdeği	d-ay-cekirdegi-ic
+kabuklu çekirdek	b-ay-cekirdegi-tuzlu
+kabuklu ay çekirdeği	b-ay-cekirdegi-tuzlu
+tuzlu çekirdek	b-ay-cekirdegi-tuzlu
+tuzlu ay çekirdeği	b-ay-cekirdegi-tuzlu
+kabuklu tuzlu çekirdek	b-ay-cekirdegi-tuzlu
+çekirdek kabuklu tuzlu	b-ay-cekirdegi-tuzlu
+kabuklu tuzlu ay çekirdeği	b-ay-cekirdegi-tuzlu
+kabak çekirdek	kabak-cekirdegi
+kabak çekirdeği içi	kabak-cekirdegi
+kabuklu kabak çekirdeği	d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+tuzlu kabak çekirdeği	d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+kabak çekirdeği kabuklu	d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+kabak çekirdeği tuzlu	d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+çiğ kabak çekirdeği	d-kabak-cekirdegi-cig
+ham kabak çekirdeği	d-kabak-cekirdegi-cig
+pepita	d-kabak-cekirdegi-cig
+karpuz çekirdeği	d-karpuz-cekirdegi
+kabuklu karpuz çekirdeği	d-karpuz-cekirdegi
+karpuz çekirdeği kabuklu	d-karpuz-cekirdegi
+tuzlu karpuz çekirdeği	d-karpuz-cekirdegi
+susam	susam
+susam tohumu	susam
+beyaz susam	susam
+siyah susam	susam
+kavrulmuş susam	d-susam-kavrulmus
+susam kavrulmuş	d-susam-kavrulmus
+chia	chia
+chia tohumu	chia
+çiya tohumu	chia
+keten tohumu	d-keten-tohumu
+keten	d-keten-tohumu
+flaxseed	d-keten-tohumu
+çörek otu	d-corek-otu
+corek otu	d-corek-otu
+haşhaş	d-hashas
+haşhaş tohumu	d-hashas
+kestane	kestane-haslanmis|d-kestane-cig
+haşlanmış kestane	kestane-haslanmis
+kestane haşlanmış	kestane-haslanmis
+kavrulmuş kestane	kestane-kavrulmus
+közlenmiş kestane	kestane-kavrulmus
+kestane kebabı	kestane-kavrulmus
+kestane közlenmiş	kestane-kavrulmus
+çiğ kestane	d-kestane-cig
+taze kestane	d-kestane-cig
+yaş kestane	d-kestane-cig
+kestane çiğ	d-kestane-cig
+kestane taze	d-kestane-cig
+kuru kestane	x-kestane-kuru
+kestane kurusu	x-kestane-kuru
+kurutulmuş kestane	x-kestane-kuru
+kestane kuru	x-kestane-kuru
+kayısı çekirdeği	x-kayisi-cekirdegi-ici
+kayısı çekirdeği içi	x-kayisi-cekirdegi-ici
+kayısı içi	x-kayisi-cekirdegi-ici
+kayısı çekirdek içi	x-kayisi-cekirdegi-ici
+kayısı çekirdeği tatlı	x-kayisi-cekirdegi-ici
+kayisi cekirdegi	x-kayisi-cekirdegi-ici
+taze patates	x-patates-cig
+kuru patates	x-patates-cig
+yerli patates	x-patates-cig
+ham patates	x-patates-cig
+patates tane	x-patates-cig
+patates kabuklu	x-patates-cig
+çiğ patates	x-patates-cig|patates-haslama
+patates çiğ	x-patates-cig|patates-haslama
+patates (çiğ)	x-patates-cig|patates-haslama
+haşlanmış patates	patates-haslama
+patates haşlanmış	patates-haslama
+haşlama patates	patates-haslama
+patates haşlama	patates-haslama
+kaynamış patates	patates-haslama
+kabuklu haşlanmış patates	patates-haslama
+soyulmuş haşlanmış patates	patates-haslama
+fırında patates	patates-firin
+patates fırında	patates-firin
+fırın patates	patates-firin
+sade fırında patates	patates-firin
+fırınlanmış patates	patates-firin
+fırında sade patates	patates-firin
+yağsız fırında patates	patates-firin
+zeytinyağlı fırında patates	x-patates-firin-zeytinyagli
+fırında zeytinyağlı patates	x-patates-firin-zeytinyagli
+fırında patates zeytinyağlı	x-patates-firin-zeytinyagli
+yağlı fırında patates	x-patates-firin-zeytinyagli
+fırında yağlı patates	x-patates-firin-zeytinyagli
+baharatlı zeytinyağlı fırın patates	x-patates-firin-zeytinyagli
+közde patates	x-patates-kozde
+külde patates	x-patates-kozde
+közlenmiş patates	x-patates-kozde
+mangalda patates	x-patates-kozde
+kor patates	x-patates-kozde
+patates közde	x-patates-kozde
+közde pişmiş patates	x-patates-kozde
+kömürde patates	x-patates-kozde
+patates püresi	patates-puresi
+püre	patates-puresi
+sütlü patates püresi	patates-puresi
+tereyağlı patates püresi	patates-puresi
+sütlü tereyağlı patates püresi	patates-puresi
+patates püre	patates-puresi
+pure patates	patates-puresi
+sade patates püresi	x-patates-puresi-sade
+yağsız patates püresi	x-patates-puresi-sade
+sütsüz patates püresi	x-patates-puresi-sade
+diyet patates püresi	x-patates-puresi-sade
+patates püresi sade	x-patates-puresi-sade
+sade püre	x-patates-puresi-sade
+patates kızartması	patates-kizartmasi
+kızarmış patates	patates-kizartmasi
+kızartma patates	patates-kizartmasi
+patates kızartma	patates-kizartmasi
+french fries	patates-kizartmasi
+parmak patates	patates-kizartmasi
+çıtır patates	patates-kizartmasi
+patates kizartmasi	patates-kizartmasi
+elma dilim patates	x-patates-elma-dilim
+elma dilimi patates	x-patates-elma-dilim
+patates elma dilim	x-patates-elma-dilim
+dilim patates kızartması	x-patates-elma-dilim
+elma dilimi kızartma patates	x-patates-elma-dilim
+fırında elma dilim patates	d-patates-wedges
+baharatlı elma dilim patates	d-patates-wedges
+wedges patates	d-patates-wedges
+patates dilimleri fırında	d-patates-wedges
+fırın elma dilim patates	d-patates-wedges
+patates kavurma	x-patates-kavurma
+patates sote	x-patates-kavurma
+tavada patates	x-patates-kavurma
+kavrulmuş patates	x-patates-kavurma
+soteli patates	x-patates-kavurma
+patates tava	x-patates-kavurma|patates-kizartmasi
+yağda kavrulmuş patates	x-patates-kavurma
+patates kavurması	x-patates-kavurma
+patates salatası	c-patates-salata|d-patates-salatasi
+patates salata	c-patates-salata|d-patates-salatasi
+mayonezli patates salatası	c-patates-salata|d-patates-salatasi
+haşlanmış patates salatası	c-patates-salata|d-patates-salatasi
+patates salatasi	c-patates-salata|d-patates-salatasi
+çiğ tatlı patates	tatli-patates
+tatlı patates çiğ	tatli-patates
+fırında tatlı patates	tatli-patates
+haşlanmış tatlı patates	tatli-patates
+tatlı patates fırın	tatli-patates
+kuru tatlı patates	tatli-patates
+kumpir	kumpir
+taze domates	domates
+çiğ domates	domates
+domates çiğ	domates
+salkım domates	domates
+domates dilimi	domates
+cherry domates	d-domates-cherry
+çeri domates	d-domates-cherry
+kiraz domates	d-domates-cherry
+cherry tomato	d-domates-cherry
+közlenmiş domates	d-kozlenmis-domates
+domates közlenmiş	d-kozlenmis-domates
+közde domates	d-kozlenmis-domates
+ızgara domates	d-domates-pismis
+pişmiş domates	d-domates-pismis
+domates ızgara	d-domates-pismis
+fırında domates	d-domates-pismis
+kuru domates	d-kuru-domates
+kurutulmuş domates	d-kuru-domates
+güneşte kurutulmuş domates	d-kuru-domates
+kuru domates kurutulmuş	d-kuru-domates
+yağda kuru domates	b-kuru-domates-yagda
+zeytinyağlı kuru domates	b-kuru-domates-yagda
+kuru domates yağlı	b-kuru-domates-yagda
+kuru domates konserve	b-kuru-domates-yagda
+konserve domates	b-domates-dogranmis-konserve
+doğranmış domates konservesi	b-domates-dogranmis-konserve
+kutu domates	b-domates-dogranmis-konserve
+konserve doğranmış domates	b-domates-dogranmis-konserve
+domates konservesi	b-domates-dogranmis-konserve
+hıyar	salatalik
+taze salatalık	salatalik
+çiğ salatalık	salatalik
+salatalık dilimi	salatalik
+kabuklu salatalık	salatalik
+kabuksuz salatalık	d-salatalik-kabuksuz
+soyulmuş salatalık	d-salatalik-kabuksuz
+salatalık kabuksuz	d-salatalik-kabuksuz
+çiğ biber	biber-sivri
+taze biber	biber-sivri
+çiğ yeşil biber	biber-sivri
+yeşil sivri biber	biber-sivri
+dolmalık	dolmalik-biber
+yeşil dolmalık biber	dolmalik-biber
+çiğ dolmalık biber	dolmalik-biber
+kapya biber	kirmizi-biber
+kırmızı kapya biber	kirmizi-biber
+çiğ kırmızı biber	kirmizi-biber
+kapya	kirmizi-biber
+çarliston biber	d-biber-carliston
+carliston biber	d-biber-carliston
+acı biber	d-biber-aci
+taze acı biber	d-biber-aci
+çiğ acı biber	d-biber-aci
+acı yeşil biber	d-biber-aci
+közlenmiş biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+közlenmiş kırmızı biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+közlenmiş sivri biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+biber közlenmiş	kozlenmis-biber|d-kozlenmis-biber-kapya
+közlenmiş kapya	kozlenmis-biber|d-kozlenmis-biber-kapya
+ızgara biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+kızarmış sivri biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+fırında biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+konserve kapya biber	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+közlenmiş kapya biber	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+kapya biber konserve	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+közlenmiş kapya biber konserve	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+kuru biber	d-biber-kuru-dolmalik
+kurutulmuş biber	d-biber-kuru-dolmalik
+biber kurusu	d-biber-kuru-dolmalik
+dolmalık kuru biber	d-biber-kuru-dolmalik
+biber turşusu	d-tursu-biber
+acı biber turşusu	d-tursu-biber
+sivri biber turşusu	d-tursu-biber
+turşu biber	d-tursu-biber
+kırmızı biber turşusu	d-tursu-biber
+köy turşusu	d-aci-biber-salcali
+pazar turşusu	d-aci-biber-salcali
+çiğ patlıcan	patlican
+taze patlıcan	patlican
+kemer patlıcan	patlican
+patlıcan çiğ	patlican
+haşlanmış patlıcan	d-patlican-haslanmis
+fırında patlıcan	d-patlican-haslanmis
+fırınlanmış patlıcan	d-patlican-haslanmis
+patlıcan haşlanmış	d-patlican-haslanmis
+patlıcan fırında	d-patlican-haslanmis
+buğulama patlıcan	d-patlican-haslanmis
+ızgara patlıcan	d-patlican-izgara
+patlıcan ızgara	d-patlican-izgara
+ızgarada patlıcan	d-patlican-izgara
+közlenmiş patlıcan	d-kozlenmis-patlican|c-kozlenmis-patlican
+patlıcan közlenmiş	d-kozlenmis-patlican|c-kozlenmis-patlican
+közde patlıcan	d-kozlenmis-patlican|c-kozlenmis-patlican
+közlenmiş patlıcan soyulmuş	d-kozlenmis-patlican|c-kozlenmis-patlican
+kuru patlıcan	x-kuru-patlican
+kurutulmuş patlıcan	x-kuru-patlican
+patlıcan kurusu	x-kuru-patlican
+dolmalık kuru patlıcan	x-kuru-patlican
+kuru patlıcan dolmalık	x-kuru-patlican
+patlıcan turşusu	d-patlican-turusu
+turşu patlıcan	d-patlican-turusu
+patlıcan tursusu	d-patlican-turusu
+dolgulu patlıcan turşusu	d-patlican-turusu
+sakız kabağı	kabak
+çiğ kabak	kabak
+taze kabak	kabak
+kabak çiğ	kabak
+kabak taze	kabak
+haşlanmış kabak	d-kabak-haslanmis
+kabak haşlanmış	d-kabak-haslanmis
+haşlama kabak	d-kabak-haslanmis
+buğulama kabak	d-kabak-haslanmis
+fırında kabak	d-kabak-haslanmis
+fırınlanmış kabak	d-kabak-haslanmis
+kabak fırında	d-kabak-haslanmis
+ızgara kabak	d-kabak-izgara
+kabak ızgara	d-kabak-izgara
+ızgarada kabak	d-kabak-izgara
+közlenmiş kabak	d-kabak-izgara
+kabak közlenmiş	d-kabak-izgara
+kuru kabak	x-kuru-kabak
+kurutulmuş kabak	x-kuru-kabak
+kabak kurusu	x-kuru-kabak
+dolmalık kuru kabak	x-kuru-kabak
+bal kabağı	balkabagi
+çiğ balkabağı	balkabagi
+balkabağı çiğ	balkabagi
+haşlanmış balkabağı	d-balkabagi-haslanmis
+fırında balkabağı	d-balkabagi-haslanmis
+fırınlanmış balkabağı	d-balkabagi-haslanmis
+balkabağı fırında	d-balkabagi-haslanmis
+balkabağı haşlanmış	d-balkabagi-haslanmis
+pişmiş balkabağı	d-balkabagi-haslanmis
+balkabağı püresi	d-balkabagi-puresi
+balkabağı püre	d-balkabagi-puresi
+havuç	havuc|d-havuc-bebek
+çiğ havuç	havuc|d-havuc-bebek
+taze havuç	havuc|d-havuc-bebek
+havuç çiğ	havuc|d-havuc-bebek
+havuçlar	havuc|d-havuc-bebek
+bebek havuç	havuc|d-havuc-bebek
+haşlanmış havuç	d-havuc-haslanmis
+havuç haşlanmış	d-havuc-haslanmis
+haşlama havuç	d-havuc-haslanmis
+fırında havuç	d-havuc-haslanmis
+pişmiş havuç	d-havuc-haslanmis
+buğulama havuç	d-havuc-haslanmis
+rendelenmiş havuç	d-havuc-rende
+rende havuç	d-havuc-rende
+havuç rendesi	d-havuc-rende
+havuç rendelenmiş	d-havuc-rende
+havuçlu bezelye konservesi	b-havuc-bezelye-konserve
+konserve havuçlu bezelye	b-havuc-bezelye-konserve
+konserve bezelye havuç	b-havuc-bezelye-konserve
+havuçlu bezelye konserve	b-havuc-bezelye-konserve
+çiğ soğan	sogan
+soğan çiğ	sogan
+soğanlar	sogan
+mor soğan	d-sogan-kirmizi
+pişmiş soğan	d-sogan-pismis|d-sogan-kizarmis
+fırında soğan	d-sogan-pismis|d-sogan-kizarmis
+közlenmiş soğan	d-sogan-pismis|d-sogan-kizarmis
+ızgara soğan	d-sogan-pismis|d-sogan-kizarmis
+kavrulmuş soğan	d-sogan-pismis|d-sogan-kizarmis
+yeşil soğan	taze-sogan
+taze soğan yeşil	taze-sogan
+sarımsak dişi	sarimsak
+çiğ sarımsak	sarimsak
+taze sarımsak	sarimsak
+kuru sarımsak	sarimsak
+diş sarımsak	sarimsak
+kavrulmuş sarımsak	d-sarimsak-kizarmis
+fırında sarımsak	d-sarimsak-kizarmis
+közlenmiş sarımsak	d-sarimsak-kizarmis
+kızarmış sarımsak	d-sarimsak-kizarmis
+sarımsak turşusu	b-tursu-sarimsak
+turşu sarımsak	b-tursu-sarimsak
+çiğ brokoli	brokoli
+brokoli çiğ	brokoli
+taze brokoli	brokoli
+haşlanmış brokoli	d-brokoli-haslanmis
+brokoli haşlanmış	d-brokoli-haslanmis
+buğulama brokoli	d-brokoli-haslanmis
+fırında brokoli	d-brokoli-haslanmis
+fırınlanmış brokoli	d-brokoli-haslanmis
+dondurulmuş brokoli	d-brokoli-haslanmis
+donmuş brokoli	d-brokoli-haslanmis
+çiğ karnabahar	karnabahar
+karnabahar çiğ	karnabahar
+taze karnabahar	karnabahar
+haşlanmış karnabahar	d-karnabahar-haslanmis
+karnabahar haşlanmış	d-karnabahar-haslanmis
+fırında karnabahar	d-karnabahar-haslanmis
+fırınlanmış karnabahar	d-karnabahar-haslanmis
+dondurulmuş karnabahar	d-karnabahar-haslanmis
+donmuş karnabahar	d-karnabahar-haslanmis
+buğulama karnabahar	d-karnabahar-haslanmis
+karnabahar turşusu	d-tursu-karnabahar
+turşu karnabahar	d-tursu-karnabahar
+beyaz lahana	lahana
+çiğ lahana	lahana
+lahana çiğ	lahana
+taze lahana	lahana
+haşlanmış lahana	d-lahana-haslanmis
+lahana haşlanmış	d-lahana-haslanmis
+buğulama lahana	d-lahana-haslanmis
+mor lahana	d-lahana-kirmizi
+lahana turşusu	b-tursu-lahana
+turşu lahana	b-tursu-lahana
+kırmızı lahana turşusu	b-tursu-lahana
+beyaz lahana turşusu	b-tursu-lahana
+dondurulmuş ıspanak	d-ispanak-donmus
+donmuş ıspanak	d-ispanak-donmus
+ıspanak dondurulmuş	d-ispanak-donmus
+haşlanmış ıspanak	d-ispanak-haslanmis
+ıspanak haşlanmış	d-ispanak-haslanmis
+ıspanak haşlama	d-ispanak-haslanmis
+buğulama ıspanak	d-ispanak-haslanmis
+çiğ ıspanak	ispanak-cig|d-ispanak-bebek
+ıspanak çiğ	ispanak-cig|d-ispanak-bebek
+taze ıspanak	ispanak-cig|d-ispanak-bebek
+bebek ıspanak	ispanak-cig|d-ispanak-bebek
+baby ıspanak	ispanak-cig|d-ispanak-bebek
+pazı	d-pazi|d-pazi-haslanmis
+taze pazı	d-pazi|d-pazi-haslanmis
+haşlanmış pazı	d-pazi-haslanmis
+pazı haşlanmış	d-pazi-haslanmis
+bezelye	d-bezelye-taze|bezelye|d-bezelye-konserve
+taze bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+haşlanmış bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+bezelye haşlanmış	bezelye|d-bezelye-taze|d-bezelye-konserve
+dondurulmuş bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+donmuş bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+konserve bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+bezelye konserve	bezelye|d-bezelye-taze|d-bezelye-konserve
+bezelye konservesi	bezelye|d-bezelye-taze|d-bezelye-konserve
+çiğ bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+bezelye taze	bezelye|d-bezelye-taze|d-bezelye-konserve
+taze fasulye çiğ	d-taze-fasulye-cig
+çiğ taze fasulye	d-taze-fasulye-cig
+yeşil fasulye	d-taze-fasulye-cig
+çiğ yeşil fasulye	d-taze-fasulye-cig
+haşlanmış taze fasulye	d-taze-fasulye-haslanmis
+taze fasulye haşlanmış	d-taze-fasulye-haslanmis
+haşlanmış yeşil fasulye	d-taze-fasulye-haslanmis
+dondurulmuş taze fasulye	d-taze-fasulye-haslanmis
+donmuş taze fasulye	d-taze-fasulye-haslanmis
+buğulama taze fasulye	d-taze-fasulye-haslanmis
+haşlama taze fasulye	d-taze-fasulye-haslanmis
+taze bakla	d-taze-bakla|d-bakla-haslanmis-taze
+bakla	d-taze-bakla|d-bakla-haslanmis-taze|d-bakla-kuru
+çiğ bakla	d-taze-bakla|d-bakla-haslanmis-taze
+konserve bakla	d-taze-bakla|d-bakla-haslanmis-taze
+dondurulmuş bakla	d-taze-bakla|d-bakla-haslanmis-taze
+donmuş bakla	d-taze-bakla|d-bakla-haslanmis-taze
+haşlanmış bakla	d-bakla-haslanmis-taze
+bakla haşlanmış	d-bakla-haslanmis-taze
+haşlanmış taze bakla	d-bakla-haslanmis-taze
+haşlanmış bamya	bamya
+bamya haşlanmış	bamya
+taze bamya	d-bamya-taze
+çiğ bamya	d-bamya-taze
+bamya çiğ	d-bamya-taze
+kuru bamya	d-bamya-kurusu
+kurutulmuş bamya	d-bamya-kurusu
+bamya kurusu	d-bamya-kurusu
+dondurulmuş bamya	bamya
+donmuş bamya	bamya
+bamya dondurulmuş	bamya
+mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+haşlanmış mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+mısır haşlanmış	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+haşlama mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+mısır koçanı	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+kaynamış mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+tatlı mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+süt mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+sütlü mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+haşlanmış mısır koçanı	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+közlenmiş mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+kömürde mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+konserve mısır	b-misir-konserve
+mısır konservesi	b-misir-konserve
+kutu mısır	b-misir-konserve
+konserve tatlı mısır	b-misir-konserve
+mısır tanesi konserve	b-misir-konserve
+salata mısırı	b-misir-konserve
+dondurulmuş mısır	d-misir-donmus
+donmuş mısır	d-misir-donmus
+mısır dondurulmuş	d-misir-donmus
+taze mısır	d-misir-taze-cig
+çiğ mısır	d-misir-taze-cig
+mısır taze	d-misir-taze-cig
+mısır çiğ	d-misir-taze-cig
+haşlanmış enginar	enginar
+enginar haşlanmış	enginar
+taze enginar	enginar
+enginar kalbi	b-enginar-kalbi-konserve|d-enginar-kalbi
+enginar kalbi konserve	b-enginar-kalbi-konserve|d-enginar-kalbi
+konserve enginar	b-enginar-kalbi-konserve|d-enginar-kalbi
+konserve enginar kalbi	b-enginar-kalbi-konserve|d-enginar-kalbi
+enginar konservesi	b-enginar-kalbi-konserve|d-enginar-kalbi
+kuşkonmaz	d-kuskonmaz|d-kuskonmaz-haslanmis
+taze kuşkonmaz	d-kuskonmaz|d-kuskonmaz-haslanmis
+çiğ kuşkonmaz	d-kuskonmaz|d-kuskonmaz-haslanmis
+haşlanmış kuşkonmaz	d-kuskonmaz-haslanmis
+kuşkonmaz haşlanmış	d-kuskonmaz-haslanmis
+buğulama kuşkonmaz	d-kuskonmaz-haslanmis
+ızgara kuşkonmaz	d-kuskonmaz-izgara
+kuşkonmaz ızgara	d-kuskonmaz-izgara
+çiğ pırasa	d-pirasa
+pırasa çiğ	d-pirasa
+taze pırasa	d-pirasa
+haşlanmış pırasa	d-pirasa-haslanmis
+pırasa haşlanmış	d-pirasa-haslanmis
+kök kereviz	d-kereviz-koku
+kereviz kökü	d-kereviz-koku
+çiğ kereviz	d-kereviz-koku
+kereviz sapı	d-kereviz-sapi
+sap kereviz	d-kereviz-sapi
+çiğ pancar	pancar
+pancar çiğ	pancar
+kırmızı pancar	pancar
+taze pancar	pancar
+haşlanmış pancar	d-pancar-haslanmis
+pancar haşlanmış	d-pancar-haslanmis
+haşlama pancar	d-pancar-haslanmis
+pişmiş pancar	d-pancar-haslanmis
+pancar turşusu	b-tursu-pancar
+turşu pancar	b-tursu-pancar
+kırmızı pancar turşusu	b-tursu-pancar
+çiğ turp	turp
+taze turp	turp
+kırmızı turp	d-turp-kirmizi
+kırmızı turplar	d-turp-kirmizi
+beyaz turp	d-turp-beyaz
+daikon	d-turp-beyaz
+siyah turp	d-turp-siyah
+şalgam kökü	d-salgam-koku
+salgam kökü	d-salgam-koku
+haşlanmış şalgam	d-salgam-sebze
+şalgam haşlanmış	d-salgam-sebze
+taze marul	marul
+marul yaprağı	marul
+göbek marul	marul
+iceberg marul	d-marul-iceberg
+iceberg	d-marul-iceberg
+aysberg marul	d-marul-iceberg
+kıvırcık marul	d-marul-kivircik
+kıvırcık	d-marul-kivircik
+romaine marul	d-marul-romaine
+marul romaine	d-marul-romaine
+taze roka	roka
+bahçe teresi	d-tere
+su teresi	d-tere
+taze maydanoz	maydanoz
+maydanoz demeti	maydanoz
+kuru maydanoz	x-maydanoz-kuru
+kurutulmuş maydanoz	x-maydanoz-kuru
+maydanoz kuru	x-maydanoz-kuru
+dere otu	dereotu
+taze dereotu	dereotu
+dereotu demeti	dereotu
+kuru dereotu	x-dereotu-kuru
+kurutulmuş dereotu	x-dereotu-kuru
+dereotu kuru	x-dereotu-kuru
+taze nane	d-nane-taze
+nane yaprağı	d-nane-taze
+nane taze	d-nane-taze
+yeşil nane	d-nane-taze
+kuru nane	d-nane-kuru
+nane kuru	d-nane-kuru
+nane toz	d-nane-kuru
+kurutulmuş nane	d-nane-kuru
+taze fesleğen	d-feslegen
+reyhan	d-feslegen
+fesleğen yaprağı	d-feslegen
+basil	d-feslegen
+kuru fesleğen	x-feslegen-kuru
+kurutulmuş fesleğen	x-feslegen-kuru
+fesleğen kuru	x-feslegen-kuru
+kuru reyhan	x-feslegen-kuru
+taze kişniş	d-kisnis
+kişniş yaprağı	d-kisnis
+tarhun	d-tarhun
+taze tarhun	d-tarhun
+biberiye	d-biberiye
+taze biberiye	d-biberiye
+frenk soğanı	d-frenk-sogani
+chives	d-frenk-sogani
+kuru kekik	d-kekik-kuru
+kekik kuru	d-kekik-kuru
+kurutulmuş kekik	d-kekik-kuru
+kekik	d-kekik-kuru
+oregano	d-kekik-kuru
+kekik baharat	d-kekik-kuru
+taze kekik	x-kekik-taze
+kekik taze	x-kekik-taze
+yaş kekik	x-kekik-taze
+taze kekik yaprağı	x-kekik-taze
+defne yaprağı	x-defne-yapragi
+defne	x-defne-yapragi
+kuru defne yaprağı	x-defne-yapragi
+defne yapragi	x-defne-yapragi
+taze semizotu	d-semizotu
+çiğ semizotu	d-semizotu
+haşlanmış semizotu	d-semizotu-haslanmis
+semizotu haşlanmış	d-semizotu-haslanmis
+karışık yeşillik	d-karisik-yesillik
+yeşillik	d-karisik-yesillik
+salata yeşillik	d-karisik-yesillik
+mixed greens	d-karisik-yesillik
+ısırgan otu	d-isirgan
+ısırgan	d-isirgan
+taze ısırgan	d-isirgan
+ebegümeci	d-ebegumeci
+ebegümeci otu	d-ebegumeci
+karahindiba	d-karahindiba
+karahindiba otu	d-karahindiba
+radika	d-radika
+taze radika	d-radika
+haşlanmış radika	d-radika-haslanmis
+radika haşlanmış	d-radika-haslanmis
+hindiba	d-hindiba
+hindiba salatası	d-hindiba
+taze karalahana	d-karalahana
+haşlanmış karalahana	d-karalahana-haslanmis
+karalahana haşlanmış	d-karalahana-haslanmis
+brüksel lahana	d-brukselkahani
+asma yaprağı	d-asma-yapragi
+salamura asma yaprağı	d-asma-yapragi
+taze asma yaprağı	d-asma-yapragi
+taze zencefil	d-zencefil
+zencefil kökü	d-zencefil
+edamame	d-edamame
+haşlanmış edamame	d-edamame
+kabak çiçeği	d-kabak-cicegi
+taze kabak çiçeği	d-kabak-cicegi
+kültür mantarı	mantar
+çiğ mantar	mantar
+taze mantar	mantar
+mantar çiğ	mantar
+şampinyon	mantar
+şampinyon mantarı	mantar
+beyaz mantar	mantar
+taze kültür mantarı	mantar
+haşlanmış mantar	d-mantar-kultur-haslanmis
+mantar haşlanmış	d-mantar-kultur-haslanmis
+buğulama mantar	d-mantar-kultur-haslanmis
+kaynamış mantar	d-mantar-kultur-haslanmis
+közlenmiş mantar	x-mantar-izgara
+ızgara mantar	x-mantar-izgara
+mantar ızgara	x-mantar-izgara
+fırında mantar	x-mantar-izgara
+mantar fırında	x-mantar-izgara
+mantar közlenmiş	x-mantar-izgara
+fırınlanmış mantar	x-mantar-izgara
+izgara mantar	x-mantar-izgara
+konserve mantar	b-mantar-konserve
+mantar konservesi	b-mantar-konserve
+mantar konserve	b-mantar-konserve
+kutu mantar	b-mantar-konserve
+konserve kültür mantarı	b-mantar-konserve
+mantar sote	d-mantar-sote
+sote mantar	d-mantar-sote
+soteli mantar	d-mantar-sote
+tereyağlı mantar	d-mantar-sote
+sotelenmiş mantar	d-mantar-sote
+kuru mantar	d-mantar-kurusu
+mantar kurusu	d-mantar-kurusu
+kurutulmuş mantar	d-mantar-kurusu
+porcini	d-mantar-kurusu
+kuru porcini mantarı	d-mantar-kurusu
+istiridye mantarı	d-mantar-istiridye
+kayın mantarı	d-mantar-istiridye
+oyster mantar	d-mantar-istiridye
+shiitake mantarı	d-mantar-shiitake
+shiitake	d-mantar-shiitake
+şitake	d-mantar-shiitake
+portobello mantarı	d-mantar-portobello
+portobello	d-mantar-portobello
+portabello	d-mantar-portobello
+kuzu göbeği mantarı	d-mantar-kuzu-gobegi
+kuzu göbeği	d-mantar-kuzu-gobegi
+kuzugöbeği	d-mantar-kuzu-gobegi
+karışık turşu	tursu
+turşu karışık	tursu
+mevsim turşusu	tursu
+ev turşusu	tursu
+vişneli turşu	tursu
+kavanoz turşusu	b-tursu-kavanoz
+hazır turşu	b-tursu-kavanoz
+market turşusu	b-tursu-kavanoz
+karışık sirke turşusu	b-tursu-kavanoz
+salatalık turşusu	salatalik-tursusu
+hıyar turşusu	salatalik-tursusu
+turşu salatalık	salatalik-tursusu
+pickle	salatalik-tursusu
+salatalık turşu	salatalik-tursusu
+kırma salatalık turşusu	salatalik-tursusu
+kornişon	d-kornison
+kornişon turşusu	d-kornison
+kornişon turşu	d-kornison
+cornichon	d-kornison
+küçük salatalık turşusu	d-kornison
+domates turşusu	d-tursu-domates|b-tursu-yesil-domates
+turşu domates	d-tursu-domates|b-tursu-yesil-domates
+yeşil domates turşusu	d-tursu-domates|b-tursu-yesil-domates
+havuç turşusu	b-tursu-havuc
+turşu havuç	b-tursu-havuc
+soğan turşusu	b-tursu-sogan
+inci soğan turşusu	b-tursu-sogan
+turşu soğan	b-tursu-sogan
+küçük soğan turşusu	b-tursu-sogan
+fasulye turşusu	x-tursu-fasulye
+taze fasulye turşusu	x-tursu-fasulye
+turşu fasulye	x-tursu-fasulye
+yeşil fasulye turşusu	x-tursu-fasulye
+fasulye tursusu	x-tursu-fasulye
+turp turşusu	x-tursu-turp
+turşu turp	x-tursu-turp
+kırmızı turp turşusu	x-tursu-turp
+turp tursusu	x-tursu-turp
+kereviz turşusu	x-tursu-kereviz
+turşu kereviz	x-tursu-kereviz
+kereviz tursusu	x-tursu-kereviz
+erik turşusu	x-tursu-erik
+yeşil erik turşusu	x-tursu-erik
+çağla turşusu	x-tursu-erik
+turşu erik	x-tursu-erik
+erik tursusu	x-tursu-erik
+kavun turşusu	x-tursu-kavun
+turşu kavun	x-tursu-kavun
+karpuz kabuğu turşusu	x-tursu-kavun
+kavun tursusu	x-tursu-kavun
+lahana havuç turşusu	b-tursu-lahana|tursu
+karışık lahana turşusu	b-tursu-lahana|tursu
+turşu suyu	a-tursu-suyu
+turşu suyu bardak	a-tursu-suyu
+salamura suyu	a-tursu-suyu
+jalapeno	b-jalapeno
+jalapeno turşusu	b-jalapeno
+halapeno	b-jalapeno
+kapari	b-capari
+kapari turşusu	b-capari
+zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+gemlik zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+siyah zeytin tane	siyah-zeytin|b-zeytin-gemlik-salamura
+kahvaltılık zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+zeytin tanesi	siyah-zeytin|b-zeytin-gemlik-salamura
+zeytinler	siyah-zeytin|b-zeytin-gemlik-salamura
+salamura zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+salamura siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+tuzsuz zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+tuzsuz siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+çizik zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+kırma zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+çizik yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+salamura yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+tuzlu yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+yeşil zeytin tuzlu	yesil-zeytin|b-zeytin-cizik-yesil
+yeşil zeytin salamura	yesil-zeytin|b-zeytin-cizik-yesil
+tuzsuz yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+yağlı zeytin	b-zeytin-sele-yagli
+sele zeytin	b-zeytin-sele-yagli
+kuru zeytin	b-zeytin-sele-yagli
+yağlı sele zeytin	b-zeytin-sele-yagli
+kuru siyah zeytin	b-zeytin-sele-yagli
+yağlı siyah zeytin	b-zeytin-sele-yagli
+tuzlu yağlı zeytin	b-zeytin-sele-yagli
+yagli zeytin	b-zeytin-sele-yagli
+çekirdeksiz zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+çekirdeksiz siyah zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+çekirdeksiz yeşil zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+pizza zeytini	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+dilimli zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+halka zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+dolgulu yeşil zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+biber dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+sarımsak dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+badem dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+domates dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+kalamata zeytin	b-zeytin-kalamata
+kalamata zeytini	b-zeytin-kalamata
+kalamata	b-zeytin-kalamata
+mor zeytin	b-zeytin-kalamata
+baharatlı zeytin	b-zeytin-baharatli
+acılı zeytin	b-zeytin-baharatli
+marine zeytin	b-zeytin-baharatli
+limonlu zeytin	b-zeytin-baharatli
+kekikli zeytin	b-zeytin-baharatli
+ev yapımı marine zeytin	b-zeytin-baharatli
+zeytin ezmesi	c-zeytin-ezmesi
+zeytin ezme	c-zeytin-ezmesi
+tapenade	c-zeytin-ezmesi
+portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+taze sıkma portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+portakal sıkma	a-meyve-suyu-portakal-taze|portakal-suyu
+taze portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+portakal suyu taze sıkma	a-meyve-suyu-portakal-taze|portakal-suyu
+sıkma portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+taze nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+nar sıkma	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+taze sıkma nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+nar suyu taze sıkma	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+havuç suyu	a-meyve-suyu-havuc-taze
+taze havuç suyu	a-meyve-suyu-havuc-taze
+havuç sıkma	a-meyve-suyu-havuc-taze
+taze sıkma havuç suyu	a-meyve-suyu-havuc-taze
+greyfurt suyu	a-meyve-suyu-greyfurt
+taze greyfurt suyu	a-meyve-suyu-greyfurt
+greyfurt sıkma	a-meyve-suyu-greyfurt
+greyfurt suyu taze sıkma	a-meyve-suyu-greyfurt
+karpuz suyu	a-meyve-suyu-karpuz
+taze karpuz suyu	a-meyve-suyu-karpuz
+karpuz sıkma	a-meyve-suyu-karpuz
+limon suyu	limon-suyu
+taze limon suyu	limon-suyu
+limon sıkma	limon-suyu
+sıkılmış limon	limon-suyu
+limon suyu taze sıkma	limon-suyu
+mandalina suyu	x-mandalina-suyu-taze
+taze mandalina suyu	x-mandalina-suyu-taze
+mandalina sıkma	x-mandalina-suyu-taze
+taze sıkma mandalina suyu	x-mandalina-suyu-taze
+mandalina suyu taze sıkma	x-mandalina-suyu-taze
+taze elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+elma suyu taze sıkma	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+taze sıkma elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+elma sıkma	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+sıkma elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+doğal elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+pancar suyu	x-pancar-suyu-taze
+taze pancar suyu	x-pancar-suyu-taze
+pancar sıkma	x-pancar-suyu-taze
+taze sıkma pancar suyu	x-pancar-suyu-taze
+pancar suyu taze sıkma	x-pancar-suyu-taze
+kırmızı pancar suyu	x-pancar-suyu-taze
+kereviz suyu	x-kereviz-suyu-taze
+taze kereviz suyu	x-kereviz-suyu-taze
+kereviz sıkma	x-kereviz-suyu-taze
+taze sıkma kereviz suyu	x-kereviz-suyu-taze
+salatalık suyu	x-salatalik-suyu-taze
+taze salatalık suyu	x-salatalik-suyu-taze
+salatalık sıkma	x-salatalik-suyu-taze
+hıyar suyu	x-salatalik-suyu-taze
+üzüm suyu taze sıkma	a-meyve-suyu-uzum
+taze üzüm suyu	a-meyve-suyu-uzum
+üzüm sıkma	a-meyve-suyu-uzum
+taze sıkma üzüm suyu	a-meyve-suyu-uzum
+şeftali suyu	a-meyve-suyu-seftali
+taze şeftali suyu	a-meyve-suyu-seftali
+şeftali nektarı	a-meyve-suyu-seftali
+şeftali meyve suyu	a-meyve-suyu-seftali
+kayısı suyu	a-meyve-suyu-kayisi
+kayısı nektarı	a-meyve-suyu-kayisi
+kayısı meyve suyu	a-meyve-suyu-kayisi
+taze kayısı suyu	a-meyve-suyu-kayisi
+zencefil shot	x-limon-zencefil-shot
+limon zencefil shot	x-limon-zencefil-shot
+zencefil limon shot	x-limon-zencefil-shot
+zencefilli shot	x-limon-zencefil-shot
+ananas suyu	a-meyve-suyu-ananas
+ananas meyve suyu	a-meyve-suyu-ananas
+sebze suyu	d-sebze-suyu
+karışık sebze suyu	d-sebze-suyu
+domates suyu	a-meyve-suyu-domates
+domates meyve suyu	a-meyve-suyu-domates
+vişne suyu	a-meyve-suyu-visne-100|a-meyve-suyu-visne
+saf vişne suyu	a-meyve-suyu-visne-100|a-meyve-suyu-visne
+vişne meyve suyu	a-meyve-suyu-visne-100|a-meyve-suyu-visne
+200 gram patates	x-patates-cig
+bir patates	x-patates-cig
+iki patates	x-patates-cig
+3 tane patates	x-patates-cig
+100 gr patates	x-patates-cig
+200 gram havuç	havuc
+bir havuç	havuc
+iki havuç	havuc
+3 tane havuç	havuc
+100 gr havuç	havuc
+200 gram domates	domates
+bir domates	domates
+iki domates	domates
+3 tane domates	domates
+100 gr domates	domates
+200 gram salatalık	salatalik
+bir salatalık	salatalik
+iki salatalık	salatalik
+3 tane salatalık	salatalik
+100 gr salatalık	salatalik
+200 gram biber	biber-sivri
+bir biber	biber-sivri
+iki biber	biber-sivri
+3 tane biber	biber-sivri
+100 gr biber	biber-sivri
+200 gram sivri biber	biber-sivri
+bir sivri biber	biber-sivri
+iki sivri biber	biber-sivri
+3 tane sivri biber	biber-sivri
+100 gr sivri biber	biber-sivri
+200 gram yeşil biber	biber-sivri
+bir yeşil biber	biber-sivri
+iki yeşil biber	biber-sivri
+3 tane yeşil biber	biber-sivri
+100 gr yeşil biber	biber-sivri
+200 gram dolmalık biber	dolmalik-biber
+bir dolmalık biber	dolmalik-biber
+iki dolmalık biber	dolmalik-biber
+3 tane dolmalık biber	dolmalik-biber
+100 gr dolmalık biber	dolmalik-biber
+200 gram kırmızı biber	kirmizi-biber
+bir kırmızı biber	kirmizi-biber
+iki kırmızı biber	kirmizi-biber
+3 tane kırmızı biber	kirmizi-biber
+100 gr kırmızı biber	kirmizi-biber
+200 gram patlıcan	patlican
+bir patlıcan	patlican
+iki patlıcan	patlican
+3 tane patlıcan	patlican
+100 gr patlıcan	patlican
+200 gram kabak	kabak
+bir kabak	kabak
+iki kabak	kabak
+3 tane kabak	kabak
+100 gr kabak	kabak
+200 gram balkabağı	balkabagi
+bir balkabağı	balkabagi
+iki balkabağı	balkabagi
+3 tane balkabağı	balkabagi
+100 gr balkabağı	balkabagi
+200 gram soğan	sogan
+bir soğan	sogan
+iki soğan	sogan
+3 tane soğan	sogan
+100 gr soğan	sogan
+200 gram kuru soğan	sogan
+bir kuru soğan	sogan
+iki kuru soğan	sogan
+3 tane kuru soğan	sogan
+100 gr kuru soğan	sogan
+200 gram kırmızı soğan	d-sogan-kirmizi
+bir kırmızı soğan	d-sogan-kirmizi
+iki kırmızı soğan	d-sogan-kirmizi
+3 tane kırmızı soğan	d-sogan-kirmizi
+100 gr kırmızı soğan	d-sogan-kirmizi
+200 gram taze soğan	taze-sogan
+bir taze soğan	taze-sogan
+iki taze soğan	taze-sogan
+3 tane taze soğan	taze-sogan
+100 gr taze soğan	taze-sogan
+200 gram sarımsak	sarimsak
+bir sarımsak	sarimsak
+iki sarımsak	sarimsak
+3 tane sarımsak	sarimsak
+100 gr sarımsak	sarimsak
+200 gram pırasa	d-pirasa
+bir pırasa	d-pirasa
+iki pırasa	d-pirasa
+3 tane pırasa	d-pirasa
+100 gr pırasa	d-pirasa
+200 gram kereviz	d-kereviz-koku
+bir kereviz	d-kereviz-koku
+iki kereviz	d-kereviz-koku
+3 tane kereviz	d-kereviz-koku
+100 gr kereviz	d-kereviz-koku
+200 gram turp	turp
+bir turp	turp
+iki turp	turp
+3 tane turp	turp
+100 gr turp	turp
+200 gram pancar	pancar
+bir pancar	pancar
+iki pancar	pancar
+3 tane pancar	pancar
+100 gr pancar	pancar
+200 gram lahana	lahana
+bir lahana	lahana
+iki lahana	lahana
+3 tane lahana	lahana
+100 gr lahana	lahana
+200 gram kırmızı lahana	d-lahana-kirmizi
+bir kırmızı lahana	d-lahana-kirmizi
+iki kırmızı lahana	d-lahana-kirmizi
+3 tane kırmızı lahana	d-lahana-kirmizi
+100 gr kırmızı lahana	d-lahana-kirmizi
+200 gram karnabahar	karnabahar
+bir karnabahar	karnabahar
+iki karnabahar	karnabahar
+3 tane karnabahar	karnabahar
+100 gr karnabahar	karnabahar
+200 gram brokoli	brokoli
+bir brokoli	brokoli
+iki brokoli	brokoli
+3 tane brokoli	brokoli
+100 gr brokoli	brokoli
+200 gram ıspanak	ispanak-cig
+bir ıspanak	ispanak-cig
+iki ıspanak	ispanak-cig
+3 tane ıspanak	ispanak-cig
+100 gr ıspanak	ispanak-cig
+200 gram ispanak	ispanak-cig
+bir ispanak	ispanak-cig
+iki ispanak	ispanak-cig
+3 tane ispanak	ispanak-cig
+100 gr ispanak	ispanak-cig
+200 gram pazı	d-pazi
+bir pazı	d-pazi
+iki pazı	d-pazi
+3 tane pazı	d-pazi
+100 gr pazı	d-pazi
+200 gram marul	marul
+bir marul	marul
+iki marul	marul
+3 tane marul	marul
+100 gr marul	marul
+200 gram roka	roka
+bir roka	roka
+iki roka	roka
+3 tane roka	roka
+100 gr roka	roka
+200 gram tere	d-tere
+bir tere	d-tere
+iki tere	d-tere
+3 tane tere	d-tere
+100 gr tere	d-tere
+200 gram maydanoz	maydanoz
+bir maydanoz	maydanoz
+iki maydanoz	maydanoz
+3 tane maydanoz	maydanoz
+100 gr maydanoz	maydanoz
+200 gram dereotu	dereotu
+bir dereotu	dereotu
+iki dereotu	dereotu
+3 tane dereotu	dereotu
+100 gr dereotu	dereotu
+200 gram nane	d-nane-taze
+bir nane	d-nane-taze
+iki nane	d-nane-taze
+3 tane nane	d-nane-taze
+100 gr nane	d-nane-taze
+200 gram fesleğen	d-feslegen
+bir fesleğen	d-feslegen
+iki fesleğen	d-feslegen
+3 tane fesleğen	d-feslegen
+100 gr fesleğen	d-feslegen
+200 gram kişniş	d-kisnis
+bir kişniş	d-kisnis
+iki kişniş	d-kisnis
+3 tane kişniş	d-kisnis
+100 gr kişniş	d-kisnis
+200 gram semizotu	d-semizotu
+bir semizotu	d-semizotu
+iki semizotu	d-semizotu
+3 tane semizotu	d-semizotu
+100 gr semizotu	d-semizotu
+200 gram bezelye	d-bezelye-taze
+bir bezelye	d-bezelye-taze
+iki bezelye	d-bezelye-taze
+3 tane bezelye	d-bezelye-taze
+100 gr bezelye	d-bezelye-taze
+200 gram bakla	d-taze-bakla
+bir bakla	d-taze-bakla
+iki bakla	d-taze-bakla
+3 tane bakla	d-taze-bakla
+100 gr bakla	d-taze-bakla
+200 gram taze fasulye	d-taze-fasulye-cig
+bir taze fasulye	d-taze-fasulye-cig
+iki taze fasulye	d-taze-fasulye-cig
+3 tane taze fasulye	d-taze-fasulye-cig
+100 gr taze fasulye	d-taze-fasulye-cig
+200 gram bamya	d-bamya-taze
+bir bamya	d-bamya-taze
+iki bamya	d-bamya-taze
+3 tane bamya	d-bamya-taze
+100 gr bamya	d-bamya-taze
+200 gram enginar	enginar
+bir enginar	enginar
+iki enginar	enginar
+3 tane enginar	enginar
+100 gr enginar	enginar
+200 gram kuşkonmaz	d-kuskonmaz
+bir kuşkonmaz	d-kuskonmaz
+iki kuşkonmaz	d-kuskonmaz
+3 tane kuşkonmaz	d-kuskonmaz
+100 gr kuşkonmaz	d-kuskonmaz
+200 gram mantar	mantar
+bir mantar	mantar
+iki mantar	mantar
+3 tane mantar	mantar
+100 gr mantar	mantar
+200 gram tatlı patates	tatli-patates
+bir tatlı patates	tatli-patates
+iki tatlı patates	tatli-patates
+3 tane tatlı patates	tatli-patates
+100 gr tatlı patates	tatli-patates
+200 gram zencefil	d-zencefil
+bir zencefil	d-zencefil
+iki zencefil	d-zencefil
+3 tane zencefil	d-zencefil
+100 gr zencefil	d-zencefil
+200 gram yer elması	d-yer-elmasi
+bir yer elması	d-yer-elmasi
+iki yer elması	d-yer-elmasi
+3 tane yer elması	d-yer-elmasi
+100 gr yer elması	d-yer-elmasi
+200 gram karalahana	d-karalahana
+bir karalahana	d-karalahana
+iki karalahana	d-karalahana
+3 tane karalahana	d-karalahana
+100 gr karalahana	d-karalahana
+200 gram brüksel lahanası	d-brukselkahani
+bir brüksel lahanası	d-brukselkahani
+iki brüksel lahanası	d-brukselkahani
+3 tane brüksel lahanası	d-brukselkahani
+100 gr brüksel lahanası	d-brukselkahani
+200 gram elma	elma
+bir elma	elma
+iki elma	elma
+3 tane elma	elma
+100 gr elma	elma
+200 gram armut	armut
+bir armut	armut
+iki armut	armut
+3 tane armut	armut
+100 gr armut	armut
+200 gram muz	muz
+bir muz	muz
+iki muz	muz
+3 tane muz	muz
+100 gr muz	muz
+200 gram portakal	portakal
+bir portakal	portakal
+iki portakal	portakal
+3 tane portakal	portakal
+100 gr portakal	portakal
+200 gram mandalina	mandalina
+bir mandalina	mandalina
+iki mandalina	mandalina
+3 tane mandalina	mandalina
+100 gr mandalina	mandalina
+200 gram limon	limon
+bir limon	limon
+iki limon	limon
+3 tane limon	limon
+100 gr limon	limon
+200 gram greyfurt	greyfurt
+bir greyfurt	greyfurt
+iki greyfurt	greyfurt
+3 tane greyfurt	greyfurt
+100 gr greyfurt	greyfurt
+200 gram üzüm	uzum
+bir üzüm	uzum
+iki üzüm	uzum
+3 tane üzüm	uzum
+100 gr üzüm	uzum
+200 gram çilek	cilek
+bir çilek	cilek
+iki çilek	cilek
+3 tane çilek	cilek
+100 gr çilek	cilek
+200 gram karpuz	karpuz
+bir karpuz	karpuz
+iki karpuz	karpuz
+3 tane karpuz	karpuz
+100 gr karpuz	karpuz
+200 gram kavun	kavun
+bir kavun	kavun
+iki kavun	kavun
+3 tane kavun	kavun
+100 gr kavun	kavun
+200 gram şeftali	seftali
+bir şeftali	seftali
+iki şeftali	seftali
+3 tane şeftali	seftali
+100 gr şeftali	seftali
+200 gram kayısı	kayisi
+bir kayısı	kayisi
+iki kayısı	kayisi
+3 tane kayısı	kayisi
+100 gr kayısı	kayisi
+200 gram kiraz	kiraz
+bir kiraz	kiraz
+iki kiraz	kiraz
+3 tane kiraz	kiraz
+100 gr kiraz	kiraz
+200 gram vişne	visne
+bir vişne	visne
+iki vişne	visne
+3 tane vişne	visne
+100 gr vişne	visne
+200 gram erik	erik
+bir erik	erik
+iki erik	erik
+3 tane erik	erik
+100 gr erik	erik
+200 gram incir	incir
+bir incir	incir
+iki incir	incir
+3 tane incir	incir
+100 gr incir	incir
+200 gram nar	nar
+bir nar	nar
+iki nar	nar
+3 tane nar	nar
+100 gr nar	nar
+200 gram kivi	kivi
+bir kivi	kivi
+iki kivi	kivi
+3 tane kivi	kivi
+100 gr kivi	kivi
+200 gram ananas	ananas
+bir ananas	ananas
+iki ananas	ananas
+3 tane ananas	ananas
+100 gr ananas	ananas
+200 gram avokado	avokado
+bir avokado	avokado
+iki avokado	avokado
+3 tane avokado	avokado
+100 gr avokado	avokado
+200 gram mango	mango
+bir mango	mango
+iki mango	mango
+3 tane mango	mango
+100 gr mango	mango
+200 gram ayva	ayva
+bir ayva	ayva
+iki ayva	ayva
+3 tane ayva	ayva
+100 gr ayva	ayva
+200 gram dut	dut
+bir dut	dut
+iki dut	dut
+3 tane dut	dut
+100 gr dut	dut
+200 gram böğürtlen	bogurtlen
+bir böğürtlen	bogurtlen
+iki böğürtlen	bogurtlen
+3 tane böğürtlen	bogurtlen
+100 gr böğürtlen	bogurtlen
+200 gram ahududu	ahududu
+bir ahududu	ahududu
+iki ahududu	ahududu
+3 tane ahududu	ahududu
+100 gr ahududu	ahududu
+200 gram yaban mersini	yaban-mersini
+bir yaban mersini	yaban-mersini
+iki yaban mersini	yaban-mersini
+3 tane yaban mersini	yaban-mersini
+100 gr yaban mersini	yaban-mersini
+200 gram papaya	d-papaya
+bir papaya	d-papaya
+iki papaya	d-papaya
+3 tane papaya	d-papaya
+100 gr papaya	d-papaya
+200 gram nektarin	d-nektarin
+bir nektarin	d-nektarin
+iki nektarin	d-nektarin
+3 tane nektarin	d-nektarin
+100 gr nektarin	d-nektarin
+200 gram kızılcık	d-kizilcik
+bir kızılcık	d-kizilcik
+iki kızılcık	d-kizilcik
+3 tane kızılcık	d-kizilcik
+100 gr kızılcık	d-kizilcik
+200 gram alıç	d-alic
+bir alıç	d-alic
+iki alıç	d-alic
+3 tane alıç	d-alic
+100 gr alıç	d-alic
+200 gram fındık	findik
+bir fındık	findik
+iki fındık	findik
+3 tane fındık	findik
+100 gr fındık	findik
+200 gram ceviz	ceviz
+bir ceviz	ceviz
+iki ceviz	ceviz
+3 tane ceviz	ceviz
+100 gr ceviz	ceviz
+200 gram badem	badem
+bir badem	badem
+iki badem	badem
+3 tane badem	badem
+100 gr badem	badem
+200 gram antep fıstığı	antep-fistigi
+bir antep fıstığı	antep-fistigi
+iki antep fıstığı	antep-fistigi
+3 tane antep fıstığı	antep-fistigi
+100 gr antep fıstığı	antep-fistigi
+200 gram fıstık	yer-fistigi
+bir fıstık	yer-fistigi
+iki fıstık	yer-fistigi
+3 tane fıstık	yer-fistigi
+100 gr fıstık	yer-fistigi
+200 gram kaju	kaju
+bir kaju	kaju
+iki kaju	kaju
+3 tane kaju	kaju
+100 gr kaju	kaju
+200 gram çam fıstığı	cam-fistigi
+bir çam fıstığı	cam-fistigi
+iki çam fıstığı	cam-fistigi
+3 tane çam fıstığı	cam-fistigi
+100 gr çam fıstığı	cam-fistigi
+200 gram ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+bir ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+iki ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+3 tane ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+100 gr ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+200 gram kabak çekirdeği	kabak-cekirdegi
+bir kabak çekirdeği	kabak-cekirdegi
+iki kabak çekirdeği	kabak-cekirdegi
+3 tane kabak çekirdeği	kabak-cekirdegi
+100 gr kabak çekirdeği	kabak-cekirdegi
+200 gram zeytin	siyah-zeytin
+bir zeytin	siyah-zeytin
+iki zeytin	siyah-zeytin
+3 tane zeytin	siyah-zeytin
+100 gr zeytin	siyah-zeytin
+200 gram turşu	tursu
+bir turşu	tursu
+iki turşu	tursu
+3 tane turşu	tursu
+100 gr turşu	tursu
+patates yedim	x-patates-cig
+10 adet havuc	havuc
+domates tükettim	domates
+dün gece 50 g salatalık atıştırdım	salatalik
+sivri biber 6 tane	biber-sivri
+3 adet yeşil biber	biber-sivri
+kırmızı biber 4 adet	kirmizi-biber
+patlıcan 100 gram	patlican
+kabak 300 gram	kabak
+4 dilim balkabagi	balkabagi
+200gr kuru sogan	sogan
+200 g kırmızı soğan	d-sogan-kirmizi
+taze soğan yedim bugün	taze-sogan
+ara öğünde 150 gr sarımsak tükettim	sarimsak
+50 gr kereviz ekledim	d-kereviz-koku
+bir buçuk avuç lahana	lahana
+öğlen 200 gram karnabahar ekledim	karnabahar
+bir porsiyon brokoli	brokoli
+250gr ispanak	ispanak-cig
+yarım avuç pazı yedim	d-pazi
+1.5 avuç marul	marul
+roka tükettim	roka
+30 gram nane	d-nane-taze
+bi avuç kişniş	d-kisnis
+30 g semizotu yiyorum	d-semizotu
+2 kase bezelye	d-bezelye-taze
+bi avuç taze fasulye	d-taze-fasulye-cig
+bir kase bamya	d-bamya-taze
+iki avuç enginar	enginar
+bir buçuk tane kuşkonmaz	d-kuskonmaz
+iki avuç tatlı patates	tatli-patates
+250 gr zencefil	d-zencefil
+2 avuç karalahana	d-karalahana
+iki adet brüksel lahanası tükettim	d-brukselkahani
+3 dilim elma	elma
+75 gram armut	armut
+üç adet limon	limon
+8 tane üzüm	uzum
+kavun atıştırdım	kavun
+bi adet kayısı yedim bugün	kayisi
+bir kase kiraz	kiraz
+8 tane vişne	visne
+100 gram erik tükettim	erik
+3 tane incir aldım	incir
+dört yemek kaşığı nar	nar
+kivi iki tane	kivi
+ananas ekledim	ananas
+1 tane mango	mango
+300 gr yaban mersini aldım	yaban-mersini
+dört tane papaya	d-papaya
+300 gram nektarin	d-nektarin
+bi avuç kızılcık	d-kizilcik
+bi avuç antep fıstığı	antep-fistigi
+4 adet fıstık	yer-fistigi
+öğlen 200 gram kaju yiyorum	kaju
+5 yemek kaşığı çam fıstığı	cam-fistigi
+250g kabak çekirdeği	kabak-cekirdegi
+kuru ananas dilimi on adet	b-kuru-ananas
+bir buçuk adet kuru ananas halkasi	b-kuru-ananas
+30 gram ananas halkası kuru	b-kuru-ananas
+kahvaltıda 250 gr sumak yiyorum	x-sumak
+sumak baharat yiyorum	x-sumak
+ogutulmus kimyon yarım yemek kaşığı	x-kimyon
+kimyon tozu aldım	x-kimyon
+dün gece 150 gram toz karabiber tükettim	x-karabiber
+50 g kara biber	x-karabiber
+1.5 yemek kaşığı karabiber tozu ekledim	x-karabiber
+120 gram tarçın	x-tarcin
+bugün 300 gram tarcin tozu aldım	x-tarcin
+1.5 yemek kaşığı tarcin baharat aldım	x-tarcin
+öğlen 2 yemek kaşığı tarcin yedim	x-tarcin
+250 gram kişniş tohumu	x-kisnis-tohumu
+kişniş tozu dört yemek kaşığı	x-kisnis-tohumu
+250 gr toz kişniş	x-kisnis-tohumu
+coriander ekledim	x-kisnis-tohumu
+mercimek filizi 300 g	x-mercimek-filizi
+bir avuç çimlendirilmiş mercimek	x-mercimek-filizi
+fasulye filizi 200 gram	d-fasulye-filizi
+5 avuç maş fasulyesi filizi	d-fasulye-filizi
+bi avuç dondurulmuş çilek	d-cilek-donmus
+300 gram çilek dondurulmuş tükettim	d-cilek-donmus
+frozen çilek yiyorum	d-cilek-donmus
+200 gram dondurulmuş yaban mersini tükettim	d-yaban-mersini-donmus
+bir porsiyon donmuş yaban mersini	d-yaban-mersini-donmus
+bir avuç dondurulmus orman meyveleri	d-orman-meyveleri
+50gr donmus orman meyveleri	d-orman-meyveleri
+100 gram şeftali komposto aldım	d-seftali-konserve
+5 tane konserve ananas aldım	d-ananas-konserve|ananas
+120 gr ananas halkası	d-ananas-konserve|ananas
+yarım yemek kaşığı konserve visne ekledim	d-visne-konserve
+akşam 200 gr şurupta vişne aldım	d-visne-konserve
+100 g konserve meyve tükettim	d-kokteyl-meyve
+dört kase meyve konservesi	d-kokteyl-meyve
+komposto yedim	komposto
+dün gece iki bardak kuru meyve kompostosu yedim	komposto
+300g kayısı hoşafı	komposto
+erik hoşafı yarım bardak	komposto
+beş su bardağı vişne kompostosu	komposto
+bir buçuk adet donmuş muz	d-muz-donmus
+75 gram kayısı konserve	d-kayisi-konserve
+kuru meyve karışık paket yedim bugün	b-kuru-karisik-meyve
+3 yemek kaşığı kuru domates dilimi	d-kuru-domates
+iki adet incir	incir|d-incir-yesil|d-incir-mor
+bir kase taze incir	incir|d-incir-yesil|d-incir-mor
+incir taze 5 tane	incir|d-incir-yesil|d-incir-mor
+akşam on tane yas incir ekledim	incir|d-incir-yesil|d-incir-mor
+250gr yaş incirler	incir|d-incir-yesil|d-incir-mor
+75 g taze incirler	incir|d-incir-yesil|d-incir-mor
+bir porsiyon bursa inciri	incir|d-incir-yesil|d-incir-mor
+öğlen 1.5 adet yaş yeşil incir atıştırdım	d-incir-yesil
+bir porsiyon siyah incir	d-incir-mor
+bursa siyahı incir 150 g	d-incir-mor
+250 gr incir kurusu tükettim	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kahvaltıda bi adet incir kuru ekledim	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+dün gece 30 gram kuru incir tanesi tükettim	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+üç avuç kuru incir yumuşak	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+aydın inciri yarım tane	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+kuru aydin inciri atıştırdım	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+iki avuç sarilop kuru incir	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+75 g kuru incir paketi	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+bi avuç üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+taze üzüm 200 g	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+yas uzum üç avuç	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+bi avuç üzüm tanesi	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+120gr çekirdeksiz üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+üç tane sultaniye üzüm yedim bugün	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+300gr razakı üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+on tane siyah üzüm	d-uzum-siyah
+3 tane siyah üzüm yaş	d-uzum-siyah
+kirmizi uzum atıştırdım	d-uzum-kirmizi
+dört avuç yaş kırmızı üzüm	d-uzum-kirmizi
+ara öğünde 150 gr çekirdeksiz yeşil üzüm ekledim	d-uzum-yesil-cekirdeksiz
+dün gece 4 kase yas yesil uzum yedim	d-uzum-yesil-cekirdeksiz
+öğlen 120 g taze yeşil üzüm tükettim	d-uzum-yesil-cekirdeksiz
+200 g üzüm kurusu	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+120 gram kus uzumu tükettim	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+öğlen 300 g kuru üzüm çekirdeksiz yiyorum	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+iki yemek kaşığı kurutulmuş üzüm ekledim	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+4 yemek kaşığı siyah kuru üzüm	d-kuru-uzum-siyah
+bir avuç kuru siyah üzüm yedim bugün	d-kuru-uzum-siyah
+120 g çikolata kaplı kuru üzüm	x-uzum-cikolatali
+ara öğünde 1.5 tane cikolatali kuru uzum yedim bugün	x-uzum-cikolatali
+bir porsiyon yoğurt kaplı kuru üzüm	x-uzum-yogurt-kapli
+300 gram yogurt kapli uzum	x-uzum-yogurt-kapli
+yoğurtlu kuru üzüm beş avuç	x-uzum-yogurt-kapli
+iki adet taze kayısı	kayisi|d-kayisi-malatya
+bir kase yaş kayısı	kayisi|d-kayisi-malatya
+bi adet kayısı yaş	kayisi|d-kayisi-malatya
+6 tane yas kayisi atıştırdım	kayisi|d-kayisi-malatya
+200 gram kayısılar	kayisi|d-kayisi-malatya
+taze kayısılar tükettim	kayisi|d-kayisi-malatya
+zerdali ekledim	kayisi|d-kayisi-malatya
+bir porsiyon kuru kayısı	kuru-kayisi
+1.5 avuç kayısı kuru	kuru-kayisi
+75g kurutulmuş kayısı	kuru-kayisi
+malatya kayısısı yedim	kuru-kayisi
+5 adet kuru kayısılar	kuru-kayisi
+kuru kayisi atıştırdım	kuru-kayisi
+gün kurusu kayısı yarım adet	kuru-kayisi
+3 dilim kayisi pestili ekledim	d-kayisi-pestili
+bir porsiyon kayısı kömesi	d-kayisi-pestili
+dut yiyorum	dut|d-dut-beyaz|d-dut-kara
+iki kase yaş dut	dut|d-dut-beyaz|d-dut-kara
+taze dut bir buçuk kase	dut|d-dut-beyaz|d-dut-kara
+300 gram dut yaş tükettim	dut|d-dut-beyaz|d-dut-kara
+2 kase yas dut	dut|d-dut-beyaz|d-dut-kara
+bir porsiyon dutlar	dut|d-dut-beyaz|d-dut-kara
+beyaz dut 30 gr	d-dut-beyaz
+yaş beyaz dut yedim	d-dut-beyaz
+bi avuç kara dut	d-dut-kara
+200 gr yaş kara dut	d-dut-kara
+bi tane kuru dut	b-kuru-dut
+3 adet dut kurusu	b-kuru-dut
+5 tane kurutulmuş dut	b-kuru-dut
+erik 50 g	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+TV karşısında üç adet taze erik yiyorum	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+akşam 250 gram erik yaş atıştırdım	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+on tane yesil erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+2 adet mürdüm eriği	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+75 gr kırmızı erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+TV karşısında bir tane sarı erik tükettim	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+bi tane kuru erik	kuru-erik|d-erik-kurusu-cekirdekli
+kurutulmus erik yedim bugün	kuru-erik|d-erik-kurusu-cekirdekli
+bi tane kuru erik tanesi yedim	kuru-erik|d-erik-kurusu-cekirdekli
+200 g kuru erikler atıştırdım	kuru-erik|d-erik-kurusu-cekirdekli
+10 tane kuru erik çekirdekli	kuru-erik|d-erik-kurusu-cekirdekli
+erik kuru yedim bugün	kuru-erik|d-erik-kurusu-cekirdekli
+75g yaş hurma	d-hurma-kurma
+5 adet hurma tükettim	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+bi avuç kuru hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+hurmalar 50 gr	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+kurutulmuş hurma 300 g	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+on tane medjool hurma	d-hurma-medjool|b-hurma-medjool
+bugün 10 adet medjul hurma yiyorum	d-hurma-medjool|b-hurma-medjool
+120 g iri hurma yedim bugün	d-hurma-medjool|b-hurma-medjool
+150 g hurma ezmesi	d-hurma-ezmesi
+50 g hurma püresi	d-hurma-ezmesi
+250g trabzon hurması	trabzon-hurmasi
+iki avuç cennet hurmasi	trabzon-hurmasi
+kiraz kurusu yiyorum	d-kuru-kiraz
+visne kurusu beş paket	b-kuru-visne
+bir buçuk yemek kaşığı kuru kızılcık yiyorum	b-kuru-kizilcik
+bugün 1 paket kuru cranberry yedim bugün	b-kuru-kizilcik
+1.5 avuç goji berry	b-goji-berry
+bir buçuk avuç goji	b-goji-berry
+kuru goji atıştırdım	b-goji-berry
+4 tane kuru elma	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+6 adet elma kurusu	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+kurutulmuş elma ekledim	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+dün gece 50 g kuru elma halkası yedim	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+armut kurusu dört adet	d-armut-kuru
+3 tane kuru şeftali	d-seftali-kuru
+dün gece 300 gram ayva kurusu yedim	d-ayva-kuru
+ananas kurusu iki adet	b-kuru-ananas
+iki avuç kurutulmuş ananas	b-kuru-ananas
+mango kurusu 300 gr	b-kuru-mango
+150g kuru papaya	b-kuru-papaya
+4 tane kurutulmuş muz yedim bugün	b-kuru-muz|b-muz-cipsi
+75 gr kuru çilek ekledim	b-kuru-cilek
+120g kuru kivi	x-kuru-kivi
+1 paket kivi kurusu	x-kuru-kivi
+kurutulmuş kivi 120 gram	x-kuru-kivi
+kuru ahududu yiyorum	x-kuru-ahududu
+bir porsiyon ahududu kurusu	x-kuru-ahududu
+bir paket kuru böğürtlen	x-kuru-bogurtlen
+bir paket kurutulmuş böğürtlen	x-kuru-bogurtlen
+portakal kurusu 75 gram	x-kuru-portakal
+5 tane kuru portakal dilimi yiyorum	x-kuru-portakal
+100 gr limon kurusu yedim bugün	x-kuru-limon
+200 gr kurutulmuş limon	x-kuru-limon
+bir buçuk paket meyve cipsi	x-meyve-cipsi
+elma atıştırdım	elma
+8 adet amasya elması	elma
+5 tane armut atıştırdım	armut
+armutlar 200 gr	armut
+5 adet muz ekledim	muz
+bir avuç mandalina	mandalina
+çilek 75 gram	cilek
+karpuz 50 gram	karpuz
+karpuz dilimi 50 g	karpuz
+ara öğünde iki kase kavun ekledim	kavun
+bi avuç taze vişne	visne|d-visne-taze
+beş adet nar	nar
+nar tanesi 200 gram	nar
+üç yemek kaşığı nar taneleri	nar
+150 gram kivi	kivi
+avokado yedim	avokado
+30 gram ayva	ayva
+300 g böğürtlen	bogurtlen
+TV karşısında yarım kase ahududu yedim	ahududu
+yarım kase taze ahududu	ahududu
+iki avuç frambuaz	ahududu
+3 adet kocayemis	x-kocayemis
+dört avuç gilaburu tükettim	x-gilaburu
+120 g gilaburu meyvesi tükettim	x-gilaburu
+yarım tane taze gilaburu	x-gilaburu
+8 adet aronya	x-aronya
+beş adet ahlat armudu	x-ahlat
+30gr yabani armut	x-ahlat
+kuşburnu atıştırdım	d-kusburnu|a-bitki-cayi-kusburnu
+1 avuç taze kuşburnu	d-kusburnu|a-bitki-cayi-kusburnu
+bi avuç alıç	d-alic
+2 tane hünnap atıştırdım	d-hunnap
+bi avuç taze hünnap	d-hunnap
+300 g kizilcik	d-kizilcik
+yesil cagla erik yedim bugün	d-erik-yesil
+200g dut pestili	d-dut-pestil
+250 gram dut komesi	d-dut-pestil
+150 gram pestil	d-bestil
+3 kase kuru yemiş	karisik-kuruyemis
+kuruyemiş yedim bugün	karisik-kuruyemis
+kuru yemis tükettim	karisik-kuruyemis
+bir kase kuruyemis	karisik-kuruyemis
+beş kase karışık kuru yemiş	karisik-kuruyemis
+75 gr karışık çerez yiyorum	karisik-kuruyemis
+öğlen 100 gram çerez atıştırdım	karisik-kuruyemis
+75 g kuruyemis tabagi	karisik-kuruyemis
+kuru yemiş tabağı aldım	karisik-kuruyemis
+150 gram mix nuts	karisik-kuruyemis
+nuts tükettim	karisik-kuruyemis
+yarım avuç karışık kuruyemis	karisik-kuruyemis
+bir avuç çerez tabağı	karisik-kuruyemis
+kuru yemiş karışık 120 gr	karisik-kuruyemis
+75 g taze kuruyemiş aldım	x-yas-kuruyemis
+300 gram yaş çerez	x-yas-kuruyemis
+dört kase taze çerez	x-yas-kuruyemis
+4 porsiyon kuru yemiş yaş	x-yas-kuruyemis
+kuruyemiş yaş aldım	x-yas-kuruyemis
+yaş kuruyemiş tabağı üç avuç	x-yas-kuruyemis
+yaş karışık kuruyemiş ekledim	x-yas-kuruyemis
+taze karışık kuruyemiş atıştırdım	x-yas-kuruyemis
+150g yas karisik kuru yemis	x-yas-kuruyemis
+300 gram lüks kuru yemiş yiyorum	x-kuruyemis-luks
+dört avuç luks karisik kuruyemis	x-kuruyemis-luks
+bugün 300 g luks karisik kuru yemis yiyorum	x-kuruyemis-luks
+kahvaltıda 150 gr lüks çerez atıştırdım	x-kuruyemis-luks
+bir avuç luks kuruyemis yedim	x-kuruyemis-luks
+120 gram luks kuru yemis	x-kuruyemis-luks
+200 gram kuruyemis luks	x-kuruyemis-luks
+kuru yemiş lüks beş kase	x-kuruyemis-luks
+150 g premium kuruyemiş	x-kuruyemis-luks
+3 avuç standart kuruyemiş ekledim	x-kuruyemis-standart
+bir porsiyon standart kuru yemiş	x-kuruyemis-standart
+dün gece bi avuç standart karışık kuruyemiş yedim bugün	x-kuruyemis-standart
+yarım avuç standart çerez	x-kuruyemis-standart
+tuzlu karisik kuruyemis atıştırdım	x-kuruyemis-standart
+tuzlu kuru yemiş 30 gram	x-kuruyemis-standart
+TV karşısında 3 porsiyon tuzlu kuruyemis yedim bugün	x-kuruyemis-standart
+200 gr tuzlu cerez	x-kuruyemis-standart
+iki kase klasik kuruyemiş yiyorum	x-kuruyemis-standart
+kuruyemiş standart 150 gram	x-kuruyemis-standart
+bir buçuk avuç kuru yemiş standart	x-kuruyemis-standart
+2 kase kavrulmuş kuru yemiş	x-kuruyemis-kavrulmus
+yarım avuç kavrulmuş kuruyemiş	x-kuruyemis-kavrulmus
+300gr kavrulmuş karışık kuruyemiş	x-kuruyemis-kavrulmus
+bugün beş porsiyon kavrulmuş karışık kuru yemiş yiyorum	x-kuruyemis-kavrulmus
+kavrulmuş çerez yedim bugün	x-kuruyemis-kavrulmus
+iki avuç kuruyemiş kavrulmuş	x-kuruyemis-kavrulmus
+bi avuç kavrulmuş tuzsuz kuru yemiş	x-kuruyemis-tuzsuz-kavrulmus
+dün gece 50 g tuzsuz kavrulmuş karışık kuruyemiş aldım	x-kuruyemis-tuzsuz-kavrulmus
+250 g kuru yemiş tuzsuz kavrulmuş	x-kuruyemis-tuzsuz-kavrulmus
+tuzsuz kuru yemiş 200 gram	d-kuruyemis-tuzsuz-cig-karisik
+bugün 75 gr çiğ karışık kuruyemiş yedim bugün	d-kuruyemis-tuzsuz-cig-karisik
+tuzsuz çerez aldım	d-kuruyemis-tuzsuz-cig-karisik
+150 gram çiğ çerez	d-kuruyemis-tuzsuz-cig-karisik
+bi avuç kuruyemiş çiğ	d-kuruyemis-tuzsuz-cig-karisik
+bir buçuk avuç tuzsuz çiğ kuru yemiş	d-kuruyemis-tuzsuz-cig-karisik
+120gr çiğ tuzsuz kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+75 gr kabuklu kuru yemis	x-kuruyemis-kabuklu-karisik
+bir porsiyon kabuklu kuruyemis	x-kuruyemis-kabuklu-karisik
+az önce yarım avuç kabuklu karışık kuruyemiş atıştırdım	x-kuruyemis-kabuklu-karisik
+kabuklu çerez dört kase	x-kuruyemis-kabuklu-karisik
+bir buçuk avuç trail mix	b-trail-mix
+75 gram kuruyemiş kuru meyve karışımı	b-trail-mix
+150 g kuru yemis kuru meyve karisimi	b-trail-mix
+iki avuç kuru meyve yedim	b-kuru-karisik-meyve
+karışık kuru meyve 200 gr	b-kuru-karisik-meyve
+bugün 150 g kurutulmuş meyve yedim bugün	b-kuru-karisik-meyve
+yarım paket meyve kurusu	b-kuru-karisik-meyve
+4 paket kuru meyve mix	b-kuru-karisik-meyve
+dört avuç kurutulmus karisik meyve	b-kuru-karisik-meyve
+250 gr kuru meyveler	b-kuru-karisik-meyve
+bir avuç findik	findik
+50 gram fındık içi	findik
+tuzsuz fındık içi tükettim	findik
+tuzsuz fındık aldım	findik
+3 adet findik ici	findik
+yarım yemek kaşığı fındıklar	findik
+kuru fındık tükettim	findik
+1.5 avuç fındık kuru	findik
+taze findik yedim	x-findik-yas
+120 gram yas findik	x-findik-yas
+bir kase taze findik	x-findik-yas
+30 gram fındık yaş	x-findik-yas
+bi avuç fındık taze	x-findik-yas
+250 gram yas ic findik yiyorum	x-findik-yas
+50gr fındık içi yaş	x-findik-yas
+bir buçuk avuç yaş kabuklu fındık	x-findik-yas-kabuklu
+taze kabuklu findik 5 tane	x-findik-yas-kabuklu
+30 gram kabuklu yaş fındık ekledim	x-findik-yas-kabuklu
+100 gram kabuklu taze fındık yiyorum	x-findik-yas-kabuklu
+1 tane taze findik kabuklu	x-findik-yas-kabuklu
+çiğ fındık yedim	d-findik-cig|findik
+beş adet cig findik ici ekledim	d-findik-cig|findik
+dün gece bi avuç fındık çiğ yiyorum	d-findik-cig|findik
+iki avuç cig findik	d-findik-cig|findik
+bir porsiyon fındık içi çiğ	d-findik-cig|findik
+150 gram kavrulmus findik	b-findik-kavrulmus
+yarım tane kavrulmuş fındık içi	b-findik-kavrulmus
+2 porsiyon tuzsuz kavrulmuş fındık aldım	b-findik-kavrulmus
+4 adet kavrulmuş tuzsuz fındık	b-findik-kavrulmus
+1.5 porsiyon fırınlanmış fındık	b-findik-kavrulmus
+iki tane fındık içi kavrulmuş	b-findik-kavrulmus
+5 porsiyon tuzsuz kavrulmus findik	b-findik-kavrulmus
+ara öğünde beş tane kavrulmuş fındık tuzsuz yedim	b-findik-kavrulmus
+iki adet fındık kavrulmuş tuzsuz ekledim	b-findik-kavrulmus
+yarım adet findik tuzsuz kavrulmus	b-findik-kavrulmus
+120g tuzlu kavrulmus findik	d-findik-tuzlu
+beş yemek kaşığı fındık tuzlu yedim	d-findik-tuzlu
+150 gram tuzlu findik aldım	d-findik-tuzlu
+bir avuç kabuklu fındık yedim bugün	d-findik-kabuklu
+iki avuç findik kabuklu	d-findik-kabuklu
+75 gr kabuklu findik	d-findik-kabuklu
+1.5 avuç kırılmamış fındık	d-findik-kabuklu
+çifte kavrulmuş fındık beş tane	b-findik-kavrulmus
+kahvaltıda 300 gram fındık çifte kavrulmuş yiyorum	b-findik-kavrulmus
+dün gece 3 tane ballı fındık aldım	x-findik-balli
+öğlen yarım avuç bal kaplı fındık yedim bugün	x-findik-balli
+üç avuç ballı kavrulmuş fındık	x-findik-balli
+iki avuç fındık ballı	x-findik-balli
+bugün bi paket şekerli fındık ekledim	x-findik-sekerli
+120 gr sekerlenmis findik	x-findik-sekerli
+bir kase karamelize findik	x-findik-sekerli
+beş paket fındık şekerli	x-findik-sekerli
+100 gr cikolata kapli findik tükettim	d-kuruyemis-cikolatali-draje
+çikolatalı fındık yedim bugün	d-kuruyemis-cikolatali-draje
+beş paket çikolatalı draje fındık	d-kuruyemis-cikolatali-draje
+fındık çikolata kaplı atıştırdım	d-kuruyemis-cikolatali-draje
+dört avuç draje	d-kuruyemis-cikolatali-draje
+3 paket yogurt kapli findik	x-findik-yogurt-kapli
+yoğurtlu fındık draje yedim bugün	x-findik-yogurt-kapli
+ceviz tükettim	ceviz
+iki avuç cevizler	ceviz
+kırık ceviz tükettim	ceviz
+3 tane tuzsuz ceviz	ceviz
+beş yemek kaşığı ceviz kuru aldım	ceviz
+beş adet ceviz iç	ceviz
+iki avuç ceviz ici	b-ceviz-ici
+250 gram içi ceviz	b-ceviz-ici
+3 avuç cevizin içi	b-ceviz-ici
+ceviz içi tuzsuz yiyorum	b-ceviz-ici
+kabuksuz ceviz 300 g	b-ceviz-ici
+soyulmus ceviz 2 tane	b-ceviz-ici
+taze ceviz tükettim	x-ceviz-yas
+yas ceviz bir buçuk adet	x-ceviz-yas
+bi avuç ceviz yas	x-ceviz-yas
+dün gece 3 yemek kaşığı ceviz taze yedim bugün	x-ceviz-yas
+yaş ceviz içi yarım adet	x-ceviz-yas
+taze ceviz içi aldım	x-ceviz-yas
+beş tane ceviz ici yas	x-ceviz-yas
+bir avuç yas ic ceviz	x-ceviz-yas
+öğlen 100 gram kabuklu yaş ceviz tükettim	x-ceviz-yas-kabuklu
+bir avuç kabuklu taze ceviz	x-ceviz-yas-kabuklu
+yarım tane taze ceviz kabuklu	x-ceviz-yas-kabuklu
+kabuklu ceviz atıştırdım	d-ceviz-kabuklu
+bir avuç ceviz kabuklu	d-ceviz-kabuklu
+çiğ ceviz bir tane	d-ceviz-cig
+5 adet çiğ ceviz içi	d-ceviz-cig
+ceviz çiğ tükettim	d-ceviz-cig
+4 avuç ceviz kavrulmuş	d-ceviz-kavrulmus
+30gr kavrulmuş ceviz içi	d-ceviz-kavrulmus
+iki adet yeşil ceviz	d-ceviz-yesil
+balli ceviz 50 g	x-ceviz-balli
+bugün 200 gram bal kapli ceviz aldım	x-ceviz-balli
+250 g ceviz bal aldım	x-ceviz-balli
+200gr balli ceviz ici	x-ceviz-balli
+TV karşısında 100 g cevizli bal tükettim	x-ceviz-balli
+karamelli ceviz 4 adet	x-ceviz-sekerli
+300 gram çikolata kaplı ceviz	x-ceviz-cikolatali
+bir porsiyon çikolatalı ceviz	x-ceviz-cikolatali
+dört avuç ceviz çikolatalı	x-ceviz-cikolatali
+bi yemek kaşığı badem	badem
+bi avuç bademler	badem
+badem içi atıştırdım	badem
+öğlen 4 yemek kaşığı tuzsuz badem yedim	badem
+250 gr tuzsuz badem içi	badem
+badem içi tuzsuz üç yemek kaşığı	badem
+öğlen 4 tane içi badem yedim bugün	badem
+bi avuç yas badem	x-badem-yas
+bi avuç badem yaş	x-badem-yas
+100 gram yaş badem içi tükettim	x-badem-yas
+TV karşısında bir avuç taze badem içi tükettim	x-badem-yas
+badem içi yaş atıştırdım	x-badem-yas
+bir avuç cagla badem	d-badem-yesil-cagla
+ham badem dört avuç	d-badem-cig
+badem cig 300 g	d-badem-cig
+cig badem ici tükettim	d-badem-cig
+1.5 avuç tuzsuz kavrulmuş badem yedim	b-badem-kavrulmus
+10 adet badem kavrulmus tuzsuz	b-badem-kavrulmus
+fırınlanmış badem tükettim	b-badem-kavrulmus
+4 tane kavrulmuş badem aldım	d-badem-kavrulmus
+100g badem kavrulmuş	d-badem-kavrulmus
+bi avuç kavrulmus badem ici	d-badem-kavrulmus
+iki avuç kavrulmus badem	d-badem-kavrulmus
+tuzlu badem yedim	d-badem-tuzlu
+bugün 5 avuç tuzlu kavrulmus badem ekledim	d-badem-tuzlu
+bir avuç kavrulmus tuzlu badem	d-badem-tuzlu
+tuzlu badem ici 75 gram	d-badem-tuzlu
+bugün iki adet haşlanmış badem yiyorum	d-badem-hasli
+2 adet beyaz badem	d-badem-hasli
+badem haşlanmış 5 tane	d-badem-hasli
+TV karşısında üç yemek kaşığı dilimli badem tükettim	d-badem-cipsi
+bir porsiyon badem dilim	d-badem-cipsi
+bir avuç cubuk badem	d-badem-cipsi
+badem kabuklu yarım avuç	d-badem-kuru-kabuklu
+bir kase badem şekeri	d-badem-sekerli
+şekerli badem draje 120 gram	d-badem-sekerli
+yarım avuç draje badem	d-badem-sekerli
+2 avuç bal kaplı badem	x-badem-balli
+ballı kavrulmuş badem aldım	x-badem-balli
+cikolatali badem tükettim	x-badem-cikolatali
+çikolatalı draje badem 5 avuç	x-badem-cikolatali
+badem çikolatalı bi paket	x-badem-cikolatali
+5 paket kakao kaplı badem	x-badem-cikolatali
+4 adet kakaolu badem	x-badem-cikolatali
+1 adet yoğurt kaplı badem	x-badem-yogurt-kapli
+bugün iki paket yogurt kapli badem yiyorum	x-badem-yogurt-kapli
+3 avuç cifte kavrulmus badem	d-badem-kavrulmus
+yerfıstığı atıştırdım	yer-fistigi
+fistik 3 adet	yer-fistigi
+4 adet yer fistigi	yer-fistigi
+bi avuç tuzlu fıstık	yer-fistigi
+50 g fıstık tuzlu	yer-fistigi
+4 adet cig fistik	d-yer-fistigi-cig
+çiğ yer fıstığı yarım avuç	d-yer-fistigi-cig
+100 gr ham fıstık yiyorum	d-yer-fistigi-cig
+çiğ yer fıstığı içi 8 tane	d-yer-fistigi-cig
+ara öğünde 1 adet tuzsuz fıstık yedim bugün	d-yer-fistigi-kavrulmus
+kavrulmuş tuzsuz fıstık atıştırdım	d-yer-fistigi-kavrulmus
+tuzsuz kavrulmuş fıstık üç tane	d-yer-fistigi-kavrulmus
+tuzsuz kavrulmuş yer fıstığı 1 avuç	d-yer-fistigi-kavrulmus
+5 adet fistik ici tuzsuz	d-yer-fistigi-kavrulmus
+dün gece 1.5 tane kavrulmuş yer fıstığı aldım	d-yer-fistigi-kavrulmus
+bir tane tuzlu kavrulmuş yer fıstığı	b-tuzlu-fistik-kavrulmus
+iki avuç cifte kavrulmus fistik	b-tuzlu-fistik-kavrulmus
+fıstık çifte kavrulmuş ekledim	b-tuzlu-fistik-kavrulmus
+kavrulmuş fıstık yedim bugün	b-tuzlu-fistik-kavrulmus
+dört paket tuzlu fıstık kavrulmuş	b-tuzlu-fistik-kavrulmus
+bi avuç kabuklu fistik	d-yer-fistigi-kabuklu
+ara öğünde 250 gr kabuklu fistik yedim bugün	d-yer-fistigi-kabuklu
+yer fistigi kabuklu yiyorum	d-yer-fistigi-kabuklu
+bir adet kaynamış fıstık yiyorum	x-yer-fistigi-haslanmis
+beş avuç taze haşlanmış fıstık	x-yer-fistigi-haslanmis
+iki avuç ballı fıstık	x-yer-fistigi-balli
+5 adet ballı yer fıstığı	x-yer-fistigi-balli
+3 avuç bal kapli fistik	x-yer-fistigi-balli
+TV karşısında iki avuç karamelli fıstık atıştırdım	b-draje-misir-fistik
+8 adet cikolatali yer fistigi atıştırdım	d-kuruyemis-cikolatali-draje
+üç yemek kaşığı antep fıstık	antep-fistigi|d-antep-fistigi-cig
+iç fıstık tükettim	antep-fistigi|d-antep-fistigi-cig
+bir avuç tuzsuz antep fıstığı	antep-fistigi|d-antep-fistigi-cig
+1 yemek kaşığı yaş antep fıstığı	x-antep-fistigi-yas
+taze antep fıstığı 5 avuç	x-antep-fistigi-yas
+6 adet yas antep fistigi	x-antep-fistigi-yas
+taze fıstık yedim	x-antep-fistigi-yas
+beş tane yas fistik	x-antep-fistigi-yas
+75g taze yeşil fıstık	x-antep-fistigi-yas
+iki avuç antep fistigi yas	x-antep-fistigi-yas
+az önce 2 yemek kaşığı antep fıstığı taze yedim bugün	x-antep-fistigi-yas
+bi avuç taze antep fıstık	x-antep-fistigi-yas
+bir avuç çiğ antep fıstığı	d-antep-fistigi-cig
+200 g ham antep fistigi yedim bugün	d-antep-fistigi-cig
+antep fistigi cig 250 gr	d-antep-fistigi-cig
+200 gram tuzlu antep fıstığı	d-antep-fistigi-kavrulmus
+1.5 adet tuzlu kavrulmuş antep fıstığı	d-antep-fistigi-kavrulmus
+antep fıstığı tuzlu 5 tane	d-antep-fistigi-kavrulmus
+üç avuç kırmızı antep fıstığı tükettim	d-antep-fistigi-kavrulmus
+tuzsuz kavrulmuş antep fıstığı aldım	x-antep-fistigi-tuzsuz-kavrulmus
+kavrulmuş tuzsuz antep fıstığı üç adet	x-antep-fistigi-tuzsuz-kavrulmus
+on adet antep fıstığı kavrulmuş tuzsuz tükettim	x-antep-fistigi-tuzsuz-kavrulmus
+bir adet antep fıstığı kabuklu	d-antep-fistigi-kabuklu
+5 tane antep fıstığı çikolatalı aldım	x-antep-fistigi-cikolatali
+kaju fıstığı yedim	kaju
+120gr kasu	kaju
+kaju içi 100 gr	kaju
+iki avuç tuzsuz kaju	kaju
+3 tane tuzlu kavrulmuş kaju	b-kaju-tuzlu
+kaju kavrulmuş 1.5 paket	b-kaju-tuzlu
+bir porsiyon kavrulmuş tuzlu kaju	b-kaju-tuzlu
+1.5 avuç tuzsuz kavrulmuş kaju yiyorum	x-kaju-tuzsuz-kavrulmus
+bir kase kaju kavrulmus tuzsuz	x-kaju-tuzsuz-kavrulmus
+dün gece 120 g çiğ kaju yedim	d-kaju-cig
+bir porsiyon ham kaju	d-kaju-cig
+3 paket bal kaplı kaju yedim bugün	x-kaju-balli
+50 gram kaju çikolatalı	x-kaju-cikolatali
+çam fıstığı 75 gr	cam-fistigi
+kavrulmuş çam fıstığı 200 gr	d-cam-fistigi-kavrulmus
+300 gr çam fıstığı kavrulmuş	d-cam-fistigi-kavrulmus
+150 gr makadamya atıştırdım	d-macadamia
+4 avuç pekan cevizi	d-pekan
+pekan yedim bugün	d-pekan
+4 tane pecan tükettim	d-pekan
+1.5 adet brezilya cevizi	d-brezilya-cevizi
+dün gece dört adet brazil nut yedim bugün	d-brezilya-cevizi
+bugün 3 adet taze hindistan cevizi yedim bugün	b-hindistan-cevizi-taze
+75 g hindistan cevizi içi	b-hindistan-cevizi-taze
+beş dilim hindistan cevizi parçası	b-hindistan-cevizi-taze
+100 gr kuru hindistan cevizi	b-hindistan-cevizi-rendesi
+leblebi yedim	leblebi
+az önce 5 avuç leblebiler atıştırdım	leblebi
+sari leblebi 3 avuç	b-leblebi-sari|d-leblebi-sari
+1.5 avuç cifte kavrulmus leblebi	b-leblebi-sari|d-leblebi-sari
+leblebi çifte kavrulmuş ekledim	b-leblebi-sari|d-leblebi-sari
+2 paket çifte kavrulmuş sarı leblebi	b-leblebi-sari|d-leblebi-sari
+iki avuç beyaz leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+bir kase tuzsuz leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+bi avuç sade leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+yarım paket badem leblebi	b-leblebi-beyaz|d-leblebi-beyaz
+öğlen 300 g tuzlu leblebi yedim	d-leblebi-tuzlu
+30 g baharatlı leblebi atıştırdım	b-leblebi-baharatli
+30 gram acılı leblebi yiyorum	b-leblebi-baharatli
+çekirdek ekledim	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+4 avuç çiğ çekirdek	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+tuzsuz ay cekirdegi yedim bugün	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+120 gr ay çekirdeği içi	d-ay-cekirdegi-ic
+dört avuç iç ay çekirdeği	d-ay-cekirdegi-ic
+beş yemek kaşığı çiğ ay çekirdeği aldım	d-ay-cekirdegi-ic
+az önce 150 gr kabuklu çekirdek yedim bugün	b-ay-cekirdegi-tuzlu
+50 gram kabuklu ay cekirdegi	b-ay-cekirdegi-tuzlu
+tuzlu çekirdek 1.5 paket	b-ay-cekirdegi-tuzlu
+200 g tuzlu ay cekirdegi	b-ay-cekirdegi-tuzlu
+250 gr kabuklu tuzlu cekirdek	b-ay-cekirdegi-tuzlu
+120 gram çekirdek kabuklu tuzlu	b-ay-cekirdegi-tuzlu
+kabak çekirdek yedim	kabak-cekirdegi
+kabak çekirdeği tuzlu atıştırdım	d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+2 avuç ham kabak çekirdeği	d-kabak-cekirdegi-cig
+iki yemek kaşığı pepita	d-kabak-cekirdegi-cig
+kabuklu karpuz cekirdegi 200 gr	d-karpuz-cekirdegi
+karpuz çekirdeği kabuklu yedim	d-karpuz-cekirdegi
+öğlen 1 yemek kaşığı susam atıştırdım	susam
+250 gr susam tohumu	susam
+bugün yarım yemek kaşığı beyaz susam ekledim	susam
+bugün dört yemek kaşığı susam kavrulmus tükettim	d-susam-kavrulmus
+az önce 50 gram chia aldım	chia
+200 gr chia tohumu	chia
+haşhaş tohumu atıştırdım	d-hashas
+3 porsiyon haşlanmış kestane	kestane-haslanmis
+4 tane közlenmiş kestane ekledim	kestane-kavrulmus
+250 gram taze kestane	d-kestane-cig
+yaş kestane iki tane	d-kestane-cig
+üç tane kuru kestane	x-kestane-kuru
+az önce 250 gr kayisi cekirdegi ekledim	x-kayisi-cekirdegi-ici
+on tane kayisi ici yedim bugün	x-kayisi-cekirdegi-ici
+öğlen 2 tane kayısı çekirdek içi tükettim	x-kayisi-cekirdegi-ici
+kayısı çekirdeği tatlı tükettim	x-kayisi-cekirdegi-ici
+50 g kayisi cekirdegi	x-kayisi-cekirdegi-ici
+4 adet ham patates	x-patates-cig
+patates kabuklu beş dilim	x-patates-cig
+bugün bir porsiyon patates çiğ yedim bugün	x-patates-cig|patates-haslama
+patates haslanmis 1.5 tane	patates-haslama
+az önce dört dilim haşlama patates aldım	patates-haslama
+patates haşlama 50 gr	patates-haslama
+kabuklu haslanmis patates yedim bugün	patates-haslama
+75g soyulmuş haşlanmış patates	patates-haslama
+iki avuç fırında patates	patates-firin
+bi avuç patates firinda	patates-firin
+iki avuç sade fırında patates	patates-firin
+bi avuç fırınlanmış patates	patates-firin
+5 porsiyon yagsiz firinda patates	patates-firin
+3 tane zeytinyagli firinda patates	x-patates-firin-zeytinyagli
+bugün 30 gr firinda zeytinyagli patates atıştırdım	x-patates-firin-zeytinyagli
+dün gece 50 gr fırında patates zeytinyağlı aldım	x-patates-firin-zeytinyagli
+TV karşısında 2 tane fırında yağlı patates yedim bugün	x-patates-firin-zeytinyagli
+baharatlı zeytinyağlı fırın patates tükettim	x-patates-firin-zeytinyagli
+30g közde patates	x-patates-kozde
+dört porsiyon mangalda patates	x-patates-kozde
+kor patates üç tane	x-patates-kozde
+1.5 adet patates közde	x-patates-kozde
+yarım porsiyon patates püresi	patates-puresi
+iki yemek kaşığı püre ekledim	patates-puresi
+tereyağlı patates püresi tükettim	patates-puresi
+3 porsiyon sütlü tereyağlı patates püresi	patates-puresi
+pure patates 120 gr	patates-puresi
+üç porsiyon sade patates puresi	x-patates-puresi-sade
+sutsuz patates puresi bir buçuk yemek kaşığı	x-patates-puresi-sade
+1 yemek kaşığı diyet patates püresi	x-patates-puresi-sade
+1 porsiyon patates püresi sade	x-patates-puresi-sade
+100 g sade püre	x-patates-puresi-sade
+ara öğünde 300 gram patates kızartması yiyorum	patates-kizartmasi
+bir avuç kizartma patates	patates-kizartmasi
+bi avuç french fries	patates-kizartmasi
+bi avuç parmak patates	patates-kizartmasi
+bi avuç patates kizartmasi	patates-kizartmasi
+250 gram elma dilim patates	x-patates-elma-dilim
+patates elma dilim atıştırdım	x-patates-elma-dilim
+elma dilimi kızartma patates 1.5 porsiyon	x-patates-elma-dilim
+üç tane fırında elma dilim patates	d-patates-wedges
+beş tane baharatlı elma dilim patates	d-patates-wedges
+250gr wedges patates	d-patates-wedges
+bir tane patates dilimleri fırında	d-patates-wedges
+1.5 porsiyon fırın elma dilim patates	d-patates-wedges
+yarım porsiyon patates kavurma	x-patates-kavurma
+bir buçuk porsiyon patates sote yedim	x-patates-kavurma
+250 gram kavrulmuş patates	x-patates-kavurma
+bugün 250 gr soteli patates ekledim	x-patates-kavurma
+bir kase patates tava	x-patates-kavurma
+100 g yagda kavrulmus patates	x-patates-kavurma
+300gr patates kavurmasi	x-patates-kavurma
+öğlen bi kase haşlanmış patates salatası yedim	c-patates-salata|d-patates-salatasi
+patates salatasi 120 gr	c-patates-salata|d-patates-salatasi
+4 adet çiğ tatlı patates	tatli-patates
+30 g tatlı patates çiğ	tatli-patates
+300 gr fırında tatlı patates	tatli-patates
+tatlı patates fırın 4 adet	tatli-patates
+kumpir yiyorum	kumpir
+dört tane domates	domates
+kahvaltıda 5 dilim taze domates yiyorum	domates
+bi avuç çiğ domates	domates
+dört dilim domates çiğ	domates
+3 dilim salkım domates	domates
+akşam 3 adet cherry domates atıştırdım	d-domates-cherry
+10 tane çeri domates yedim	d-domates-cherry
+5 tane kiraz domates	d-domates-cherry
+üç kase cherry tomato	d-domates-cherry
+öğlen 300 gram közlenmiş domates yedim	d-kozlenmis-domates
+ara öğünde 3 tane közde domates yiyorum	d-kozlenmis-domates
+dört tane izgara domates	d-domates-pismis
+bir avuç pişmiş domates	d-domates-pismis
+öğlen 250 g kurutulmuş domates yedim	d-kuru-domates
+beş adet kuru domates yağlı	b-kuru-domates-yagda
+bir kase konserve domates	b-domates-dogranmis-konserve
+4 kase konserve doğranmış domates	b-domates-dogranmis-konserve
+salatalık yedim bugün	salatalik
+100 g hıyar ekledim	salatalik
+120 gram taze salatalık	salatalik
+TV karşısında iki dilim kabuksuz salatalık atıştırdım	d-salatalik-kabuksuz
+soyulmuş salatalık aldım	d-salatalik-kabuksuz
+30 g salatalık kabuksuz yedim	d-salatalik-kabuksuz
+yeşil biber 4 adet	biber-sivri
+az önce 75 gr çiğ biber tükettim	biber-sivri
+bir avuç taze biber	biber-sivri
+bir porsiyon çiğ yeşil biber	biber-sivri
+6 tane biber	biber-sivri
+50 gram dolmalık	dolmalik-biber
+kahvaltıda 300 gr yeşil dolmalık biber yiyorum	dolmalik-biber
+beş adet çiğ dolmalık biber aldım	dolmalik-biber
+bi adet kapya tükettim	kirmizi-biber
+300g acı biber	d-biber-aci
+iki adet taze aci biber	d-biber-aci
+300g çiğ acı biber	d-biber-aci
+75 gr acı yeşil biber	d-biber-aci
+300 gr közlenmiş biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+bir kase közlenmiş sivri biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+250 gram biber közlenmiş	kozlenmis-biber|d-kozlenmis-biber-kapya
+közlenmiş kapya yedim bugün	kozlenmis-biber|d-kozlenmis-biber-kapya
+ızgara biber yiyorum	kozlenmis-biber|d-kozlenmis-biber-kapya
+beş adet fırında biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+bir porsiyon közlenmiş kapya biber	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+6 tane kapya biber konserve	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+közlenmiş kapya biber konserve yedim	b-kapya-biber-konserve|d-kozlenmis-biber-kapya
+120 gram kurutulmuş biber	d-biber-kuru-dolmalik
+biber tursusu 200 g	d-tursu-biber
+akşam dört adet turşu biber yedim bugün	d-tursu-biber
+75 gr pazar turşusu	d-aci-biber-salcali
+patlıcan ekledim	patlican
+on adet taze patlıcan tükettim	patlican
+30 gr kemer patlican ekledim	patlican
+75g patlican cig	patlican
+on adet haslanmis patlican	d-patlican-haslanmis
+fırında patlıcan 3 tane	d-patlican-haslanmis
+bir porsiyon patlıcan haşlanmış	d-patlican-haslanmis
+TV karşısında 100 gr buğulama patlıcan yedim	d-patlican-haslanmis
+50 gr patlıcan ızgara yedim bugün	d-patlican-izgara
+bir porsiyon ızgarada patlıcan	d-patlican-izgara
+iki avuç közlenmiş patlıcan	d-kozlenmis-patlican|c-kozlenmis-patlican
+patlican kozlenmis yedim	d-kozlenmis-patlican|c-kozlenmis-patlican
+100 gr kozde patlican	d-kozlenmis-patlican|c-kozlenmis-patlican
+3 tane kuru patlıcan	x-kuru-patlican
+iki adet kurutulmuş patlıcan	x-kuru-patlican
+patlıcan kurusu 300 g	x-kuru-patlican
+bir porsiyon dolmalık kuru patlıcan	x-kuru-patlican
+akşam 1 tane kabak atıştırdım	kabak
+5 adet taze kabak	kabak
+1 kase haşlanmış kabak	d-kabak-haslanmis
+kabak haslanmis yedim bugün	d-kabak-haslanmis
+buğulama kabak ekledim	d-kabak-haslanmis
+akşam 200 gr fırında kabak ekledim	d-kabak-haslanmis
+fırınlanmış kabak 2 kase	d-kabak-haslanmis
+5 porsiyon kabak fırında	d-kabak-haslanmis
+bir dilim kabak izgara	d-kabak-izgara
+1 porsiyon közlenmiş kabak ekledim	d-kabak-izgara
+200 gr kabak közlenmiş	d-kabak-izgara
+100 g kuru kabak	x-kuru-kabak
+120 gr kurutulmuş kabak	x-kuru-kabak
+5 tane kabak kurusu	x-kuru-kabak
+az önce 150 gr balkabağı atıştırdım	balkabagi
+bal kabagi dört porsiyon	balkabagi
+dün gece 150 gram haslanmis balkabagi tükettim	d-balkabagi-haslanmis
+öğlen 3 dilim fırında balkabağı tükettim	d-balkabagi-haslanmis
+200 gram pismis balkabagi	d-balkabagi-haslanmis
+balkabagi puresi aldım	d-balkabagi-puresi
+4 kase balkabağı püre	d-balkabagi-puresi
+havuç tükettim	havuc|d-havuc-bebek
+300g taze havuç	havuc|d-havuc-bebek
+havuc cig 1.5 adet	havuc|d-havuc-bebek
+havuçlar 4 tane	havuc|d-havuc-bebek
+3 tane bebek havuç	havuc|d-havuc-bebek
+üç tane havuç haşlanmış tükettim	d-havuc-haslanmis
+haslama havuc 3 adet	d-havuc-haslanmis
+dört adet bugulama havuc	d-havuc-haslanmis
+100 gr rendelenmiş havuç	d-havuc-rende
+havuçlu bezelye konservesi 50 g	b-havuc-bezelye-konserve
+yarım porsiyon konserve havuclu bezelye	b-havuc-bezelye-konserve
+75 gr soğan ekledim	sogan
+2 adet kuru soğan	sogan
+çiğ soğan atıştırdım	sogan
+öğlen üç tane soğan çiğ tükettim	sogan
+bi tane kırmızı soğan	d-sogan-kirmizi
+120gr mor soğan	d-sogan-kirmizi
+pişmiş soğan 5 tane	d-sogan-pismis|d-sogan-kizarmis
+fırında soğan yiyorum	d-sogan-pismis|d-sogan-kizarmis
+bir porsiyon kavrulmuş soğan	d-sogan-pismis|d-sogan-kizarmis
+yeşil soğan beş adet	taze-sogan
+bir avuç taze soğan yeşil	taze-sogan
+2 adet çiğ sarımsak tükettim	sarimsak
+taze sarımsak yiyorum	sarimsak
+kuru sarımsak 6 tane	sarimsak
+diş sarımsak atıştırdım	sarimsak
+kavrulmuş sarımsak 120 gr	d-sarimsak-kizarmis
+az önce 30 gr közlenmiş sarımsak aldım	d-sarimsak-kizarmis
+brokoli ekledim	brokoli
+brokoli cig yedim	brokoli
+bir kase taze brokoli	brokoli
+1.5 tane haşlanmış brokoli tükettim	d-brokoli-haslanmis
+buğulama brokoli iki adet	d-brokoli-haslanmis
+kahvaltıda 1.5 tane firinda brokoli yedim bugün	d-brokoli-haslanmis
+akşam bi porsiyon fırınlanmış brokoli aldım	d-brokoli-haslanmis
+dondurulmuş brokoli bi tane	d-brokoli-haslanmis
+iki avuç donmuş brokoli	d-brokoli-haslanmis
+üç porsiyon karnabahar yedim	karnabahar
+karnabahar çiğ 50 gram	karnabahar
+250 g taze karnabahar	karnabahar
+5 kase haslanmis karnabahar ekledim	d-karnabahar-haslanmis
+firinda karnabahar atıştırdım	d-karnabahar-haslanmis
+100 g firinlanmis karnabahar atıştırdım	d-karnabahar-haslanmis
+1 kase dondurulmuş karnabahar	d-karnabahar-haslanmis
+öğlen bi porsiyon donmuş karnabahar yedim	d-karnabahar-haslanmis
+250 gr buğulama karnabahar	d-karnabahar-haslanmis
+lahana ekledim	lahana
+2 avuç cig lahana	lahana
+beş avuç taze lahana	lahana
+TV karşısında 200 gram haşlanmış lahana atıştırdım	d-lahana-haslanmis
+75 g lahana haşlanmış	d-lahana-haslanmis
+120 gr buğulama lahana tükettim	d-lahana-haslanmis
+iki kase turşu lahana	b-tursu-lahana
+yarım yemek kaşığı beyaz lahana turşusu	b-tursu-lahana
+30gr ıspanak haşlanmış	d-ispanak-haslanmis
+ıspanak haşlama yiyorum	d-ispanak-haslanmis
+75 g çiğ ıspanak	ispanak-cig|d-ispanak-bebek
+bebek ıspanak beş avuç	ispanak-cig|d-ispanak-bebek
+250 gram baby ıspanak	ispanak-cig|d-ispanak-bebek
+pazı iki avuç	d-pazi|d-pazi-haslanmis
+1 kase haşlanmış pazı	d-pazi-haslanmis
+200 gram pazi haslanmis	d-pazi-haslanmis
+akşam 1 yemek kaşığı haslanmis bezelye atıştırdım	bezelye|d-bezelye-taze|d-bezelye-konserve
+75 gr bezelye haşlanmış	bezelye|d-bezelye-taze|d-bezelye-konserve
+120g dondurulmus bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+ara öğünde 150 gram donmuş bezelye tükettim	bezelye|d-bezelye-taze|d-bezelye-konserve
+konserve bezelye aldım	bezelye|d-bezelye-taze|d-bezelye-konserve
+dün gece bir yemek kaşığı bezelye konservesi atıştırdım	bezelye|d-bezelye-taze|d-bezelye-konserve
+bi kase çiğ bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+1.5 kase bezelye taze	bezelye|d-bezelye-taze|d-bezelye-konserve
+2 avuç taze fasulye çiğ	d-taze-fasulye-cig
+çiğ yeşil fasulye yiyorum	d-taze-fasulye-cig
+300g haşlanmış taze fasulye	d-taze-fasulye-haslanmis
+taze fasulye haslanmis ekledim	d-taze-fasulye-haslanmis
+300 gr dondurulmuş taze fasulye	d-taze-fasulye-haslanmis
+4 avuç çiğ bakla	d-taze-bakla|d-bakla-haslanmis-taze
+bir porsiyon konserve bakla	d-taze-bakla|d-bakla-haslanmis-taze
+dondurulmuş bakla ekledim	d-taze-bakla|d-bakla-haslanmis-taze
+kahvaltıda 100 g haşlanmış bakla yedim	d-bakla-haslanmis-taze
+yarım kase haşlanmış taze bakla	d-bakla-haslanmis-taze
+50 gr haslanmis bamya	bamya
+bir porsiyon bamya haslanmis	bamya
+çiğ bamya ekledim	d-bamya-taze
+5 adet bamya çiğ	d-bamya-taze
+300 gr kuru bamya yiyorum	d-bamya-kurusu
+bamya kurusu 150 gr	d-bamya-kurusu
+dondurulmus bamya tükettim	bamya
+bugün 1 porsiyon donmuş bamya tükettim	bamya
+250 gram haşlanmış mısır yedim	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+5 adet haşlama mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+4 kase süt mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+75 gram sütlü mısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+bi kase haşlanmış mısır koçanı	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+akşam 10 tane kozlenmis misir yedim bugün	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+5 kase kömürde mısır tükettim	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+4 yemek kaşığı misir konservesi	b-misir-konserve
+kutu mısır bi kase	b-misir-konserve
+mısır tanesi konserve bir yemek kaşığı	b-misir-konserve
+75 gr donmuş mısır	d-misir-donmus
+150gr mısır dondurulmuş	d-misir-donmus
+taze misir 75 gram	d-misir-taze-cig
+iki avuç çiğ mısır	d-misir-taze-cig
+kahvaltıda 50 gram mısır taze yedim bugün	d-misir-taze-cig
+bir kase mısır çiğ	d-misir-taze-cig
+bir porsiyon enginar	enginar
+200g haşlanmış enginar	enginar
+120 g taze enginar atıştırdım	enginar
+6 tane enginar kalbi konserve	b-enginar-kalbi-konserve|d-enginar-kalbi
+konserve enginar dört adet	b-enginar-kalbi-konserve|d-enginar-kalbi
+100 gram konserve enginar kalbi atıştırdım	b-enginar-kalbi-konserve|d-enginar-kalbi
+ara öğünde 300 g kuşkonmaz yiyorum	d-kuskonmaz|d-kuskonmaz-haslanmis
+cig kuskonmaz tükettim	d-kuskonmaz|d-kuskonmaz-haslanmis
+dört tane kuşkonmaz haşlanmış	d-kuskonmaz-haslanmis
+4 adet çiğ pırasa	d-pirasa
+100g pırasa çiğ	d-pirasa
+bir avuç pırasa haşlanmış	d-pirasa-haslanmis
+az önce 30 gr kereviz atıştırdım	d-kereviz-koku
+kereviz sapi 4 tane	d-kereviz-sapi
+100 gr çiğ pancar	pancar
+3 tane kırmızı pancar	pancar
+1.5 porsiyon taze pancar aldım	pancar
+75 gram haslanmis pancar	d-pancar-haslanmis
+pancar haşlanmış 200 gram	d-pancar-haslanmis
+1.5 dilim pişmiş pancar	d-pancar-haslanmis
+bir porsiyon pancar turşusu	b-tursu-pancar
+bugün 100 gr kırmızı pancar turşusu aldım	b-tursu-pancar
+3 adet kırmızı turp	d-turp-kirmizi
+üç adet daikon yiyorum	d-turp-beyaz
+şalgam kökü 1.5 adet	d-salgam-koku
+bi avuç salgam kökü	d-salgam-koku
+1 kase haşlanmış şalgam	d-salgam-sebze
+5 adet şalgam haşlanmış	d-salgam-sebze
+dört avuç marul yaprağı ekledim	marul
+bir avuç iceberg marul	d-marul-iceberg
+200g iceberg	d-marul-iceberg
+iki avuç aysberg marul	d-marul-iceberg
+200g kıvırcık marul	d-marul-kivircik
+300 gr romaine marul	d-marul-romaine
+75gr taze roka	roka
+iki avuç tere	d-tere
+bahçe teresi yiyorum	d-tere
+su teresi üç avuç	d-tere
+bi avuç maydanoz	maydanoz
+dün gece 50 gram taze maydanoz ekledim	maydanoz
+75 gram maydanoz demeti tükettim	maydanoz
+kuru maydanoz 30 gram	x-maydanoz-kuru
+100gr kurutulmuş maydanoz	x-maydanoz-kuru
+300gr maydanoz kuru	x-maydanoz-kuru
+120 g dereotu demeti yedim	dereotu
+bi avuç kuru dereotu	x-dereotu-kuru
+kurutulmuş dereotu 1.5 yemek kaşığı	x-dereotu-kuru
+taze nane yiyorum	d-nane-taze
+bir avuç nane yaprağı	d-nane-taze
+nane atıştırdım	d-nane-taze
+yesil nane 3 yemek kaşığı	d-nane-taze
+30 gr nane kuru	d-nane-kuru
+50 gr nane toz	d-nane-kuru
+300 gram feslegen	d-feslegen
+bugün 30 gram taze fesleğen tükettim	d-feslegen
+bir buçuk yemek kaşığı feslegen yapragi	d-feslegen
+1 yemek kaşığı fesleğen kuru	x-feslegen-kuru
+kişniş yedim bugün	d-kisnis
+30g taze kişniş	d-kisnis
+beş yemek kaşığı taze tarhun	d-tarhun
+250 g biberiye	d-biberiye
+200 gr frenk sogani	d-frenk-sogani
+akşam 150 gr chives ekledim	d-frenk-sogani
+TV karşısında 300 gram kuru kekik aldım	d-kekik-kuru
+250 gr kekik kuru yedim	d-kekik-kuru
+dün gece 120 gr kurutulmuş kekik ekledim	d-kekik-kuru
+120 gram yaş kekik	x-kekik-taze
+defne yapragi tükettim	x-defne-yapragi
+defne yapragi yiyorum	x-defne-yapragi
+bir yemek kaşığı semizotu	d-semizotu
+5 yemek kaşığı çiğ semizotu	d-semizotu
+haslanmis semizotu bir kase	d-semizotu-haslanmis
+200gr semizotu haslanmis	d-semizotu-haslanmis
+bi avuç karışık yeşillik	d-karisik-yesillik
+yeşillik bir avuç	d-karisik-yesillik
+salata yesillik yedim	d-karisik-yesillik
+50 gr ısırgan otu	d-isirgan
+120gr taze ısırgan	d-isirgan
+ebegümeci otu yedim bugün	d-ebegumeci
+50 gr karahindiba	d-karahindiba
+karahindiba otu 75 g	d-karahindiba
+300 gr taze radika	d-radika
+radika haşlanmış tükettim	d-radika-haslanmis
+kahvaltıda üç tane hindiba salatası tükettim	d-hindiba
+bir porsiyon taze karalahana	d-karalahana
+1.5 kase karalahana haslanmis atıştırdım	d-karalahana-haslanmis
+30g brüksel lahanası	d-brukselkahani
+on adet asma yapragi	d-asma-yapragi
+bi avuç salamura asma yaprağı	d-asma-yapragi
+taze zencefil 1.5 dilim	d-zencefil
+30 gram zencefil kökü	d-zencefil
+3 adet yer elması	d-yer-elmasi
+bir avuç edamame	d-edamame
+dört kase haşlanmış edamame	d-edamame
+iki avuç kabak cicegi	d-kabak-cicegi
+mantar 50 gr	mantar
+kultur mantari atıştırdım	mantar
+bir kase şampinyon	mantar
+beyaz mantar 250 g	mantar
+mantar haşlanmış ekledim	d-mantar-kultur-haslanmis
+buğulama mantar ekledim	d-mantar-kultur-haslanmis
+yarım kase kaynamış mantar ekledim	d-mantar-kultur-haslanmis
+ızgara mantar 150 g	x-mantar-izgara
+iki porsiyon mantar fırında aldım	x-mantar-izgara
+50 gr mantar közlenmiş yiyorum	x-mantar-izgara
+100 gram kutu mantar	b-mantar-konserve
+üç avuç konserve kultur mantari	b-mantar-konserve
+bir kase mantar sote	d-mantar-sote
+bugün 50 g soteli mantar yiyorum	d-mantar-sote
+öğlen iki porsiyon tereyagli mantar ekledim	d-mantar-sote
+50 gr kuru mantar	d-mantar-kurusu
+kurutulmuş mantar tükettim	d-mantar-kurusu
+porcini atıştırdım	d-mantar-kurusu
+kuru porcini mantarı 150 gram	d-mantar-kurusu
+100 g istiridye mantarı	d-mantar-istiridye
+2 porsiyon kayın mantarı	d-mantar-istiridye
+bir porsiyon oyster mantar	d-mantar-istiridye
+2 tane shiitake mantarı	d-mantar-shiitake
+30 gr shiitake	d-mantar-shiitake
+şitake 3 tane	d-mantar-shiitake
+portobello mantarı aldım	d-mantar-portobello
+75 g portobello aldım	d-mantar-portobello
+bir avuç portabello	d-mantar-portobello
+50 g kuzugöbeği	d-mantar-kuzu-gobegi
+bir buçuk tane hazır turşu	b-tursu-kavanoz
+bugün 120 g karisik sirke tursusu yedim	b-tursu-kavanoz
+8 adet salatalik tursusu	salatalik-tursusu
+turşu salatalık aldım	salatalik-tursusu
+dört porsiyon pickle	salatalik-tursusu
+az önce 150 gr salatalık turşu yedim bugün	salatalik-tursusu
+120g kırma salatalık turşusu	salatalik-tursusu
+kornişon yiyorum	d-kornison
+kornişon turşu 4 adet	d-kornison
+bi yemek kaşığı kucuk salatalik tursusu	d-kornison
+iki avuç domates tursusu	d-tursu-domates|b-tursu-yesil-domates
+üç tane turşu domates ekledim	d-tursu-domates|b-tursu-yesil-domates
+300 g havuc tursusu	b-tursu-havuc
+bi avuç turşu havuç	b-tursu-havuc
+dün gece 250 g soğan turşusu yiyorum	b-tursu-sogan
+turşu soğan yedim	b-tursu-sogan
+kucuk sogan tursusu 2 adet	b-tursu-sogan
+fasulye turşusu tükettim	x-tursu-fasulye
+2 yemek kaşığı taze fasulye turşusu yiyorum	x-tursu-fasulye
+turşu fasulye aldım	x-tursu-fasulye
+beş porsiyon fasulye tursusu	x-tursu-fasulye
+bi avuç turp turşusu	x-tursu-turp
+turşu turp yedim bugün	x-tursu-turp
+5 tane kirmizi turp tursusu ekledim	x-tursu-turp
+kahvaltıda beş tane turp tursusu yedim	x-tursu-turp
+150 g tursu kereviz	x-tursu-kereviz
+120 gr kereviz tursusu	x-tursu-kereviz
+iki tane turşu erik	x-tursu-erik
+erik tursusu atıştırdım	x-tursu-erik
+100 gr kavun turşusu ekledim	x-tursu-kavun
+beş dilim turşu kavun	x-tursu-kavun
+250gr karpuz kabuğu turşusu	x-tursu-kavun
+beş porsiyon lahana havuç turşusu yedim bugün	b-tursu-lahana|tursu
+karisik lahana tursusu yiyorum	b-tursu-lahana|tursu
+turşu suyu yiyorum	a-tursu-suyu
+bi yemek kaşığı turşu suyu bardak	a-tursu-suyu
+2 tane jalapeno	b-jalapeno
+iki avuç kapari turşusu	b-capari
+bir tane siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+öğlen yarım avuç zeytin tanesi yiyorum	siyah-zeytin|b-zeytin-gemlik-salamura
+1 porsiyon zeytinler	siyah-zeytin|b-zeytin-gemlik-salamura
+bir adet tuzsuz zeytin yiyorum	siyah-zeytin|b-zeytin-gemlik-salamura
+çizik zeytin iki avuç	yesil-zeytin|b-zeytin-cizik-yesil
+75 g kırma zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+iki porsiyon tuzlu yeşil zeytin ekledim	yesil-zeytin|b-zeytin-cizik-yesil
+iki avuç yesil zeytin tuzlu	yesil-zeytin|b-zeytin-cizik-yesil
+dün gece 250 g yeşil zeytin salamura ekledim	yesil-zeytin|b-zeytin-cizik-yesil
+4 tane tuzsuz yesil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+akşam 1.5 tane sele zeytin yedim bugün	b-zeytin-sele-yagli
+300 g kuru zeytin	b-zeytin-sele-yagli
+yagli sele zeytin iki adet	b-zeytin-sele-yagli
+beş tane kuru siyah zeytin ekledim	b-zeytin-sele-yagli
+10 tane yağlı siyah zeytin tükettim	b-zeytin-sele-yagli
+dört tane tuzlu yagli zeytin	b-zeytin-sele-yagli
+bir tane yagli zeytin	b-zeytin-sele-yagli
+çekirdeksiz zeytin dört avuç	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+cekirdeksiz siyah zeytin 3 avuç	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+dört porsiyon çekirdeksiz yeşil zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+300 gram pizza zeytini aldım	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+dilimli zeytin bi porsiyon	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+ara öğünde 200 g dolgulu zeytin ekledim	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+iki tane dolgulu yesil zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+bi porsiyon biber dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+200 gram badem dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+4 avuç domates dolgulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+100 gram kalamata zeytini	b-zeytin-kalamata
+30 gram kalamata	b-zeytin-kalamata
+bir tane mor zeytin yedim bugün	b-zeytin-kalamata
+bugün yarım avuç baharatlı zeytin aldım	b-zeytin-baharatli
+250g acili zeytin	b-zeytin-baharatli
+bi avuç marine zeytin	b-zeytin-baharatli
+üç tane kekikli zeytin	b-zeytin-baharatli
+ev yapımı marine zeytin iki porsiyon	b-zeytin-baharatli
+300 gr zeytin ezme	c-zeytin-ezmesi
+4 bardak portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+5 su bardağı taze sıkma portakal suyu ekledim	a-meyve-suyu-portakal-taze|portakal-suyu
+dün gece 4 adet taze portakal suyu aldım	a-meyve-suyu-portakal-taze|portakal-suyu
+bir porsiyon portakal suyu taze sıkma	a-meyve-suyu-portakal-taze|portakal-suyu
+dört adet sıkma portakal suyu atıştırdım	a-meyve-suyu-portakal-taze|portakal-suyu
+75 gr nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+200 gr taze nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+iki avuç nar sıkma	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+akşam 200 gram taze sıkma nar suyu yedim bugün	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+beş su bardağı taze sıkma havuç suyu	a-meyve-suyu-havuc-taze
+bir su bardağı taze greyfurt suyu atıştırdım	a-meyve-suyu-greyfurt
+50 gr greyfurt suyu taze sikma	a-meyve-suyu-greyfurt
+karpuz suyu 75 gr	a-meyve-suyu-karpuz
+300 gr karpuz sıkma	a-meyve-suyu-karpuz
+on adet limon suyu	limon-suyu
+taze limon suyu 100 gr	limon-suyu
+150gr sıkılmış limon	limon-suyu
+250 g limon suyu taze sıkma	limon-suyu
+taze mandalina suyu üç tane	x-mandalina-suyu-taze
+mandalina sıkma 150 gr	x-mandalina-suyu-taze
+bir bardak taze sikma mandalina suyu	x-mandalina-suyu-taze
+taze sıkma elma suyu bir bardak	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+50gr sıkma elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+150 gram doğal elma suyu	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+pancar suyu 100 gram	x-pancar-suyu-taze
+200 g taze pancar suyu	x-pancar-suyu-taze
+200gr taze sıkma pancar suyu	x-pancar-suyu-taze
+kırmızı pancar suyu 50 gram	x-pancar-suyu-taze
+taze kereviz suyu 5 su bardağı	x-kereviz-suyu-taze
+kereviz sıkma aldım	x-kereviz-suyu-taze
+taze sıkma kereviz suyu atıştırdım	x-kereviz-suyu-taze
+taze salatalık suyu yedim bugün	x-salatalik-suyu-taze
+iki avuç üzüm suyu taze sıkma	a-meyve-suyu-uzum
+120 gram taze uzum suyu	a-meyve-suyu-uzum
+150 gr taze sıkma üzüm suyu atıştırdım	a-meyve-suyu-uzum
+öğlen 30 g seftali suyu atıştırdım	a-meyve-suyu-seftali
+şeftali meyve suyu 300 gr	a-meyve-suyu-seftali
+kayisi suyu 2 bardak	a-meyve-suyu-kayisi
+75g zencefil shot	x-limon-zencefil-shot
+75 g zencefil limon shot	x-limon-zencefil-shot
+az önce 10 tane zencefilli shot tükettim	x-limon-zencefil-shot
+ananas suyu atıştırdım	a-meyve-suyu-ananas
+4 su bardağı ananas meyve suyu	a-meyve-suyu-ananas
+bir porsiyon karışık sebze suyu	d-sebze-suyu
+bir buçuk bardak domates meyve suyu	a-meyve-suyu-domates
+1 yemek kaşığı yas ic ceviz, 50 g kuru armut	x-ceviz-yas,d-armut-kuru
+bir kase kabuksuz salatalık 250 gram yağsız patates püresi	d-salatalik-kabuksuz,x-patates-puresi-sade
+TV karşısında bir kase nane ve 2 yemek kaşığı yeşil antep fıstığı yedim bugün	d-nane-taze,x-antep-fistigi-yas
+1 porsiyon brokoli ve 2 dilim haşlanmış patates ve 1.5 kase kuru yemiş kabuklu ve bir avuç yaş fındık kabuklu	brokoli,patates-haslama,x-kuruyemis-kabuklu-karisik,x-findik-yas-kabuklu
+1 tane sarı erik tuzlu yeşil zeytin bir tane 4 adet çikolata kaplı ceviz	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,yesil-zeytin|b-zeytin-cizik-yesil,x-ceviz-cikolatali
+50gr romaine marul kişniş 1 avuç	d-marul-romaine,d-kisnis
+taze bakla 100 g, 4 yemek kaşığı lahana havuc tursusu	d-taze-bakla|d-bakla-haslanmis-taze,b-tursu-lahana|tursu
+1 avuç ballı yer fıstığı ve yeşil zeytin	x-yer-fistigi-balli,yesil-zeytin|b-zeytin-cizik-yesil
+kahvaltıda bi avuç ay çekirdeği ve 30 g sivri biber yedim bugün	ay-cekirdegi|b-ay-cekirdegi-tuzlu,biber-sivri
+az önce 50 gr patates kizartmasi 30 g şurupta vişne ve kestane taze yedim	patates-kizartmasi,d-visne-konserve,d-kestane-cig
+75 gr turp tursusu 2 porsiyon tuzlu yagli zeytin iki yemek kaşığı kuru siyah üzüm	x-tursu-turp,b-zeytin-sele-yagli,d-kuru-uzum-siyah
+beş adet yeşil erik, iki avuç kabuklu kuru yemis	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,x-kuruyemis-kabuklu-karisik
+akşam bir porsiyon kalamata zeytini ve bir yemek kaşığı çiğ antep fıstığı tükettim	b-zeytin-kalamata,d-antep-fistigi-cig
+taze patlıcan, 30 gr kuru tatlı patates	patlican,tatli-patates
+dün gece donmus bezelye 75 g 100 g nar sikma 3 adet çiğ yeşil biber ve 250 gr çiğ yer fıstığı içi yedim bugün	bezelye|d-bezelye-taze|d-bezelye-konserve,a-meyve-suyu-nar-taze|a-meyve-suyu-nar,biber-sivri,d-yer-fistigi-cig
+dün gece zencefil limon shot on tane ve 1 porsiyon bugulama mantar yedim	x-limon-zencefil-shot,d-mantar-kultur-haslanmis
+30g kurutulmus domates ve bi avuç haşlama mısır	d-kuru-domates,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+dün gece 1 yemek kaşığı salata misiri ve 30 gr kestane taze aldım	b-misir-konserve,d-kestane-cig
+kurutulmuş hurma çiğ acı biber	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool,d-biber-aci
+haslama misir 100 g fırında yağlı patates beş tane kral hurma 100gr kuru siyah zeytin	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,x-patates-firin-zeytinyagli,d-hurma-medjool|b-hurma-medjool,b-zeytin-sele-yagli
+kuru mantar bebek ispanak 120 g	d-mantar-kurusu,ispanak-cig|d-ispanak-bebek
+200 gram çekirdek kabuklu tuzlu 2 yemek kaşığı ceviz ici yas 2 tane badem şekeri bir buçuk avuç karalahana	b-ay-cekirdegi-tuzlu,x-ceviz-yas,d-badem-sekerli,d-karalahana
+bugün bi avuç kaju cikolatali bir porsiyon taze ceviz kabuklu 30 gram tatlı patates ve 5 tane kavrulmus tuzsuz kaju tükettim	x-kaju-cikolatali,x-ceviz-yas-kabuklu,tatli-patates,x-kaju-tuzsuz-kavrulmus
+ceviz 1 adet, 2 avuç findik tuzsuz kavrulmus	ceviz,b-findik-kavrulmus
+300 g kurutulmus patlican bir buçuk tane yas erik	x-kuru-patlican,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+kurutulmus cilek bi avuç çikolatalı fındık draje	b-kuru-cilek,d-kuruyemis-cikolatali-draje
+300 g turşu kavun, 250 gram fırın elma dilim patates	x-tursu-kavun,d-patates-wedges
+akşam 150 gr kuruyemis tuzsuz ve 4 kase taze dut tükettim	d-kuruyemis-tuzsuz-cig-karisik,dut|d-dut-beyaz|d-dut-kara
+3 avuç findik ici iki tane kestane közlenmiş 1 yemek kaşığı leblebi	findik,kestane-kavrulmus,leblebi
+kahvaltıda yarım adet acılı zeytin ve 5 adet kirmizi antep fistigi yiyorum	b-zeytin-baharatli,d-antep-fistigi-kavrulmus
+beş porsiyon yerli patates taze antep fistigi 5 kase taze mantar	x-patates-cig,x-antep-fistigi-yas,mantar
+bir avuç soyulmuş salatalık, fırında patlıcan 200 gram	d-salatalik-kabuksuz,d-patlican-haslanmis
+kavrulmuş patates 30 gram ve 100 gr kekik	x-patates-kavurma,d-kekik-kuru
+kahvaltıda havuç suyu beş su bardağı ve bir porsiyon kuru ananas dilimi atıştırdım	a-meyve-suyu-havuc-taze,b-kuru-ananas
+bir adet haşlama patates, üç porsiyon pancar tursusu	patates-haslama,b-tursu-pancar
+120gr domates çiğ 120g tereyağlı mantar 50 g kırmızı turp	domates,d-mantar-sote,d-turp-kirmizi
+TV karşısında 120gr yenidünya ve bir buçuk avuç salkım üzüm ekledim	yenidunya,uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+ara öğünde 50 gr havuc rendesi ve lüks karışık çerez yedim	d-havuc-rende,x-kuruyemis-luks
+az önce dört su bardağı taze sıkma elma suyu tuzsuz ceviz 50 gram ve taze yeşil üzüm tükettim	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar,ceviz,d-uzum-yesil-cekirdeksiz
+4 adet badem yaş, haslama misir bi tane, 300 gr enerji karışımı, 1 yemek kaşığı küçük salatalık turşusu	x-badem-yas,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,b-trail-mix,d-kornison
+akşam bir avuç luks kuru yemis ve 120 gr yeşil domates turşusu yedim bugün	x-kuruyemis-luks,d-tursu-domates|b-tursu-yesil-domates
+patates kızartması, 150 gr taze soğan yeşil, 50 g yogurt kapli uzum	patates-kizartmasi,taze-sogan,x-uzum-yogurt-kapli
+akşam 300 gram toz karabiber bir kase kurutulmuş böğürtlen 150 gr çam fıstığı kavrulmuş ve 75 gram aci biber yiyorum	x-karabiber,x-kuru-bogurtlen,d-cam-fistigi-kavrulmus,d-biber-aci
+2 avuç badem çikolata kaplı ve 30 g firinlanmis mantar ve 4 porsiyon ızgarada kabak ve sütlü mısır 1.5 kase	x-badem-cikolatali,x-mantar-izgara,d-kabak-izgara,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+75gr cig pirasa, iki kase haşlanmış taze fasulye	d-pirasa,d-taze-fasulye-haslanmis
+bir kase balkabağı fırında ve üç dilim kavun tursusu	d-balkabagi-haslanmis,x-tursu-kavun
+balkabagi cig, iki tane yeni dünya	balkabagi,yenidunya
+bir buçuk yemek kaşığı goji berry yarım adet fındık taze	b-goji-berry,x-findik-yas
+ara öğünde 1 avuç kuru kivi ve bir avuç dondurulmuş bakla ekledim	x-kuru-kivi,d-taze-bakla|d-bakla-haslanmis-taze
+bugün 3 paket vişne kurusu 200 gr sumak ve bir porsiyon cig cerez yiyorum	b-kuru-visne,x-sumak,d-kuruyemis-tuzsuz-cig-karisik
+iki avuç kuru uzum, bi adet kuru incirler, ham ceviz bir tane	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah,incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,d-ceviz-cig
+bir porsiyon taze karalahana ve visne kompostosu 2 bardak	d-karalahana,komposto
+100 g bugulama lahana ve üç avuç kurutulmuş portakal	d-lahana-haslanmis,x-kuru-portakal
+3 porsiyon kavrulmuş kuruyemiş ve domates izgara ve 3 adet antep fistigi	x-kuruyemis-kavrulmus,d-domates-pismis,antep-fistigi|d-antep-fistigi-cig
+kahvaltıda iki avuç konserve kapya biber beş tane kaju tuzsuz ve 120 gr taze yeşil üzüm atıştırdım	b-kapya-biber-konserve|d-kozlenmis-biber-kapya,kaju,d-uzum-yesil-cekirdeksiz
+3 paket kuru ahududu ve bi porsiyon çiğ tatlı patates ve dereotu demeti 100 gram	x-kuru-ahududu,tatli-patates,dereotu
+mayonezli patates salatası ve 3 yemek kaşığı kornison	c-patates-salata|d-patates-salatasi,d-kornison
+iki avuç bal kaplı badem, 300 gr cubuk badem	x-badem-balli,d-badem-cipsi
+akşam kavrulmuş sarımsak ve beş adet badem dolgulu zeytin ekledim	d-sarimsak-kizarmis,b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+kavrulmuş kuru yemiş 1 kase ve bi avuç shiitake mantarı ve bir avuç konserve enginar kalbi	x-kuruyemis-kavrulmus,d-mantar-shiitake,b-enginar-kalbi-konserve|d-enginar-kalbi
+taze antep fıstık yarım adet sütsüz patates püresi bi avuç közlenmiş mısır	x-antep-fistigi-yas,x-patates-puresi-sade,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+iki avuç lüks karışık kuruyemiş sütlü mısır iki adet iki avuç ceviz tuzsuz 150 gr yesil sogan	x-kuruyemis-luks,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,ceviz,taze-sogan
+akşam mor lahana 30 gr ve beş avuç ananas halkasi kuru yiyorum	d-lahana-kirmizi,b-kuru-ananas
+akşam bi avuç kuşkonmaz 100 gram ceviz içi taze bir kase tuzlu yağlı zeytin ve 100 gr kurutulmus visne aldım	d-kuskonmaz|d-kuskonmaz-haslanmis,x-ceviz-yas,b-zeytin-sele-yagli,b-kuru-visne
+taze dereotu 120 g ve çikolata kaplı fındık 10 adet ve 250 gr kurutulmus biber ve iki avuç tuzsuz kaju	dereotu,d-kuruyemis-cikolatali-draje,d-biber-kuru-dolmalik,kaju
+erik 150 gr, kayın mantarı, taze dereotu 75 g, bir buçuk avuç tuzlu findik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,d-mantar-istiridye,dereotu,d-findik-tuzlu
+mor lahana ve iki adet kavrulmuş badem ve 50 g tuzlu fındık içi	d-lahana-kirmizi,d-badem-kavrulmus,d-findik-tuzlu
+yaş kestane 150 g ve bir porsiyon siyah kuru üzüm ve findik ici tuzsuz 2 yemek kaşığı ve beş yemek kaşığı sultani kuru üzüm	d-kestane-cig,d-kuru-uzum-siyah,findik,kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+öğlen bir kase cam fistigi ve 30 g nane yaprağı tükettim	cam-fistigi,d-nane-taze
+1 kase pazı ve 50 g kara kuru üzüm ve 250gr hindiba	d-pazi,d-kuru-uzum-siyah,d-hindiba
+3 yemek kaşığı kavrulmuş fındık tuzsuz, 30 gram taze biberiye, dört porsiyon patates tava	b-findik-kavrulmus,d-biberiye,x-patates-kavurma
+50 gram ekşi sumak ve 2 porsiyon dondurulmuş bamya ve badem 250 gr	x-sumak,bamya,badem
+50 gr çekirdek kabuklu tuzlu ve bir avuç çikolatalı kaju ve beş su bardağı turşu suyu bardak ve 100 gr kavrulmus badem	b-ay-cekirdegi-tuzlu,x-kaju-cikolatali,a-tursu-suyu,d-badem-kavrulmus
+bir porsiyon tuzlu ay çekirdeği bir buçuk porsiyon haslanmis pirasa	b-ay-cekirdegi-tuzlu,d-pirasa-haslanmis
+bi avuç taze kişniş, 100 gram kuru bamya	d-kisnis,d-bamya-kurusu
+bebek havuç ve siyah turp ve mısır taze 1.5 tane ve fırında balkabağı	havuc|d-havuc-bebek,d-turp-siyah,d-misir-taze-cig,d-balkabagi-haslanmis
+100 g tatlı patates fırın kırmızı erik 150g incir beş yemek kaşığı yonca filizi	tatli-patates,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,incir|d-incir-yesil|d-incir-mor,d-yonca-filizi
+az önce beş paket badem yoğurt kaplı iki tane patates közde ve bir kase kuru sarımsak atıştırdım	x-badem-yogurt-kapli,x-patates-kozde,sarimsak
+100 g kabuklu kuru yemis, erik tursusu 1 porsiyon, 3 avuç haslanmis edamame	x-kuruyemis-kabuklu-karisik,x-tursu-erik,d-edamame
+bugün 6 tane fırınlanmış badem 50 gr haşlama taze fasulye ve bi tane kuru incir paketi atıştırdım	b-badem-kavrulmus,d-taze-fasulye-haslanmis,incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+bi avuç taze badem ve 200g kutu domates ve bi porsiyon turşu	d-badem-yesil-cagla,b-domates-dogranmis-konserve,tursu
+kavrulmuş kuru yemiş bir kase ve ananas suyu	x-kuruyemis-kavrulmus,a-meyve-suyu-ananas
+3 porsiyon kozde patlican ve patates (çiğ) 50 gram	d-kozlenmis-patlican|c-kozlenmis-patlican,x-patates-cig|patates-haslama
+100 gram yaş kuruyemiş tabağı ve bir porsiyon bakla ve 2 yemek kaşığı konserve bezelye	x-yas-kuruyemis,d-taze-bakla,bezelye|d-bezelye-taze|d-bezelye-konserve
+120 gr mor lahana dört adet yesil ceviz taze makadamya bir kase kabuklu karpuz çekirdeği	d-lahana-kirmizi,d-ceviz-yesil,d-macadamia,d-karpuz-cekirdegi
+100g taze kabak, 5 su bardağı taze greyfurt suyu, bir kase kavun, 150 gr murdum erigi	kabak,a-meyve-suyu-greyfurt,kavun,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+TV karşısında 200 gr badem şekeri ve bir avuç çekirdekli kuru erik aldım	d-badem-sekerli,kuru-erik|d-erik-kurusu-cekirdekli
+on adet domates üzüm kurusu bi yemek kaşığı	domates,kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+5 porsiyon mor zeytin yeşil soğan 150 g	b-zeytin-kalamata,taze-sogan
+beş tane baharatli zeytin findik 1 tane 250 gr gilaburu meyvesi	b-zeytin-baharatli,findik,x-gilaburu
+250g maydanoz demeti bir kase badem şekerli 3 bardak elma sıkma kahvaltılık zeytin	maydanoz,d-badem-sekerli,elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar,siyah-zeytin|b-zeytin-gemlik-salamura
+on adet sogan tursusu 5 adet domates kurusu 250 gr domates kuru yemiş lüks bir buçuk porsiyon	b-tursu-sogan,d-kuru-domates,domates,x-kuruyemis-luks
+ara öğünde 200 gram keten tohumu 150 g kurutulmuş yaban mersini bi tane tuzsuz kavrulmuş yer fıstığı ve bir buçuk porsiyon biber dolgulu zeytin yedim	d-keten-tohumu,d-kuru-yaban-mersini,d-yer-fistigi-kavrulmus,b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+150 g hünnap 200 g ahlat armudu	d-hunnap,x-ahlat
+120 gr badem dolgulu zeytin bi avuç tuzsuz badem malatya kayısısı	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu,badem,kuru-kayisi
+az önce bir buçuk kase haslanmis karalahana on tane şeftali 75 g sprouts ve aycekirdegi 4 yemek kaşığı aldım	d-karalahana-haslanmis,seftali,d-yonca-filizi,ay-cekirdegi|b-ay-cekirdegi-tuzlu
+iki porsiyon tursu pancar ve 75 gram leblebi tuzlu ve bir buçuk adet baharatlı elma dilim patates ve bi avuç kuru patates	b-tursu-pancar,d-leblebi-tuzlu,d-patates-wedges,x-patates-cig
+dün gece 250 gram lahana haşlanmış ve 3 paket ballı badem yedim bugün	d-lahana-haslanmis,x-badem-balli
+üç dilim balkabağı haşlanmış ve zencefil shot 50 gr ve bir porsiyon misir taze	d-balkabagi-haslanmis,x-limon-zencefil-shot,d-misir-taze-cig
+4 adet kabuklu ceviz, 150g roka, standart kuruyemiş 3 kase	d-ceviz-kabuklu,roka,x-kuruyemis-standart
+4 paket acılı leblebi, bir porsiyon dut	b-leblebi-baharatli,dut
+öğlen iki avuç patates elma dilim 8 tane taze kabak 250 gram yaban mersini ve incir aldım	x-patates-elma-dilim,kabak,yaban-mersini,incir|d-incir-yesil|d-incir-mor
+akşam 1.5 kase balkabağı püresi taze sıkma mandalina suyu ve cikolata kapli kuru uzum yiyorum	d-balkabagi-puresi,x-mandalina-suyu-taze,x-uzum-cikolatali
+200 gr dondurulmuş muz ve bir porsiyon haşlanmış bezelye ve bir su bardağı sıkma elma suyu ve 120 gram kuru yemiş tuzsuz kavrulmuş	d-muz-donmus,bezelye|d-bezelye-taze|d-bezelye-konserve,elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar,x-kuruyemis-tuzsuz-kavrulmus
+dün gece 6 tane kırmızı soğan ve iki avuç fırında balkabağı atıştırdım	d-sogan-kirmizi,d-balkabagi-haslanmis
+dün gece 50 gram yağsız patates püresi bir kase haşlanmış kabak ve bir avuç patlıcan yedim	x-patates-puresi-sade,d-kabak-haslanmis,patlican
+10 tane kabuklu cevizler, 75 gram kavrulmuş tuzsuz antep fıstığı, iki avuç kaynamış mısır	d-ceviz-kabuklu,x-antep-fistigi-tuzsuz-kavrulmus,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+kahvaltıda 200 gr meyve cipsi ve 1.5 avuç leblebi yedim	x-meyve-cipsi,leblebi
+120 gr domates suyu 300 gr kiraz 250g kuru patlıcan dolmalık	a-meyve-suyu-domates,kiraz,x-kuru-patlican
+100g mantar közlenmiş, 50 g pekan cevizi	x-mantar-izgara,d-pekan
+bi avuç çikolatalı yer fıstığı, 120 gram portakal suyu	d-kuruyemis-cikolatali-draje,a-meyve-suyu-portakal-taze|portakal-suyu
+üç avuç kuru uzumler, yarım adet shiitake mantari	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah,d-mantar-shiitake
+bir kase yaş kabuklu fındık bi avuç kuru ananas parcalari bir kase kuru patlican	x-findik-yas-kabuklu,b-kuru-ananas,x-kuru-patlican
+bir avuç pişmiş pancar ve iki tane tuzsuz ceviz	d-pancar-haslanmis,ceviz
+200g kavrulmuş kuru yemiş ve bir kase taze incir	x-kuruyemis-kavrulmus,incir|d-incir-yesil|d-incir-mor
+iki avuç yas ceviz limon zencefil shot	x-ceviz-yas,x-limon-zencefil-shot
+75 gram haslanmis kuskonmaz beş adet muz kurusu	d-kuskonmaz-haslanmis,b-kuru-muz|b-muz-cipsi
+200 gr mantar konserve iki dilim çiğ balkabağı	b-mantar-konserve,balkabagi
+4 avuç kurutulmus sebze cipsi iki avuç findik ici tuzsuz bir kase küçük salatalık turşusu	b-sebze-cipsi,findik,d-kornison
+bir avuç kekik baharat, 50 gram kuru domates konserve, üç kase konserve bezelye havuç	d-kekik-kuru,b-kuru-domates-yagda,b-havuc-bezelye-konserve
+beş porsiyon bamya dondurulmuş, 250g portobello mantarı	bamya,d-mantar-portobello
+120 gram tavada patates, beş avuç ceviz içi yaş, yeşil üzüm üç tane	x-patates-kavurma,x-ceviz-yas,d-uzum-yesil-cekirdeksiz
+6 adet çikolata kaplı ceviz ve 300 g çam fıstığı kavrulmuş	x-ceviz-cikolatali,d-cam-fistigi-kavrulmus
+patates (çiğ) beş adet, bursa inciri	x-patates-cig|patates-haslama,incir|d-incir-yesil|d-incir-mor
+dün gece haşlanmış ıspanak 100 g hurma püresi ve 30 gr kırma zeytin ekledim	d-ispanak-haslanmis,d-hurma-ezmesi,yesil-zeytin|b-zeytin-cizik-yesil
+kuru portakal, 100 gram frozen çilek	x-kuru-portakal,d-cilek-donmus
+3 yemek kaşığı ay çekirdeği tuzsuz ve armut kurusu ve üç avuç fesleğen yaprağı	ay-cekirdegi|b-ay-cekirdegi-tuzlu,d-armut-kuru,d-feslegen
+30 g kabuksuz ceviz nar 50 g	b-ceviz-ici,nar
+muz on adet, 75 gr yaş kara dut	muz,d-dut-kara
+300 gr çiğ badem 120 gram baby ıspanak	d-badem-cig,ispanak-cig|d-ispanak-bebek
+4 adet cevizli bal, 100 g kornison	x-ceviz-balli,d-kornison
+iki avuç hıyar turşusu ve erik pestili ve 250 gram bursa siyahı incir	salatalik-tursusu,d-erik-pestil,d-incir-mor
+150 g taze havuç, iki avuç kavrulmuş tuzsuz antep fıstığı, 300 gr findik ici taze, 200 gram kabak çekirdeği içi	havuc|d-havuc-bebek,x-antep-fistigi-tuzsuz-kavrulmus,x-findik-yas,kabak-cekirdegi
+150 gram kereviz tursusu ve bir kase haslama kabak	x-tursu-kereviz,d-kabak-haslanmis
+TV karşısında taze beyaz dut ve 3 yemek kaşığı coriander yedim bugün	d-dut-beyaz,x-kisnis-tohumu
+bi tane taze mısır ve bir kase hurma kuru	d-misir-taze-cig,hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+6 adet balli ceviz ici 150 g taze aci biber bir adet taze gilaburu	x-ceviz-balli,d-biber-aci,x-gilaburu
+TV karşısında 4 porsiyon istiridye mantari ananas ve 75 g kavrulmuş kestane aldım	d-mantar-istiridye,ananas,kestane-kavrulmus
+incir taze kereviz sıkma	incir|d-incir-yesil|d-incir-mor,x-kereviz-suyu-taze
+acı biber turşusu, 4 porsiyon fırınlanmış patates	d-tursu-biber,patates-firin
+üç avuç kavrulmus findik ve üç porsiyon haşlanmış bamya	b-findik-kavrulmus,bamya
+250 g kavrulmus badem, 1 tane badem, roka 75 gram, dereotu demeti 200 g	d-badem-kavrulmus,badem,roka,dereotu
+taze biberiye bir buçuk avuç kayısı kuru bir kase gül elması	d-biberiye,kuru-kayisi,d-kusburnu|a-bitki-cayi-kusburnu
+3 tane nar ve 120 gr pancar çiğ	nar,pancar
+kereviz, 50 g kızarmış patates	d-kereviz-koku,patates-kizartmasi
+250 gram cam fistigi, 2 paket balli kavrulmus findik, kocayemiş, diş sarımsak 1 tane	cam-fistigi,x-findik-balli,x-kocayemis,sarimsak
+bugün 100 gram çiğ ay çekirdeği ve kabak cekirdegi tuzlu 50 gr atıştırdım	d-ay-cekirdegi-ic,d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+ara öğünde 4 porsiyon biber dolgulu zeytin ve cifte kavrulmus findik yedim bugün	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu,b-findik-kavrulmus
+taze gilaburu, yarım avuç taze cerez	x-gilaburu,x-yas-kuruyemis
+bugün 4 adet kabuklu fistik ve bi avuç kuru incir yumuşak yedim bugün	d-yer-fistigi-kabuklu,incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+TV karşısında brezilya cevizi iki adet 1.5 avuç luks kuru yemis ve taze mısır yedim bugün	d-brezilya-cevizi,x-kuruyemis-luks,d-misir-taze-cig
+iki porsiyon kavrulmus kuruyemis tuzsuz ceviz	x-kuruyemis-kavrulmus,ceviz
+kahvaltıda 30 g kestane kuru iki tane ceviz kuru ve 30 gr kabak çekirdeği içi aldım	x-kestane-kuru,ceviz,kabak-cekirdegi
+4 avuç tuzsuz kavrulmuş kuru yemiş ve 200 gram taze kızılcık	x-kuruyemis-tuzsuz-kavrulmus,d-kizilcik
+ara öğünde bir buçuk avuç goji berry ve 120 g donmuş çilek ekledim	b-goji-berry,d-cilek-donmus
+dün gece 120 g çikolata kaplı kaju 30 g mantar kurusu ve 200gr konserve bezelye havuc aldım	x-kaju-cikolatali,d-mantar-kurusu,b-havuc-bezelye-konserve
+bir porsiyon kurutulmuş mantar ve 30 gram tuzlu yağlı zeytin	d-mantar-kurusu,b-zeytin-sele-yagli
+bir porsiyon kuru erikler ve 120 gr taze biber ve bi avuç sarimsak	kuru-erik|d-erik-kurusu-cekirdekli,biber-sivri,sarimsak
+3 tane fındık çikolata kaplı bir buçuk avuç dondurulmuş bakla	d-kuruyemis-cikolatali-draje,d-taze-bakla|d-bakla-haslanmis-taze
+150 gram kızarmış sarımsak yarım avuç tere	d-sarimsak-kizarmis,d-tere
+50 g taze ayva ve kızartma patates ve 1.5 yemek kaşığı kuru maydanoz ve 3 avuç kaju içi	ayva,patates-kizartmasi,x-maydanoz-kuru,kaju
+beş tane közlenmiş soğan, kaynamış patates beş tane, iki avuç uzum sikma	d-sogan-pismis|d-sogan-kizarmis,patates-haslama,a-meyve-suyu-uzum
+3 kase tatlı mısır ve bi avuç taze kabuklu ceviz ve beş yemek kaşığı kapari ve üç avuç siyah üzüm yaş	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,x-ceviz-yas-kabuklu,b-capari,d-uzum-siyah
+TV karşısında bi porsiyon közde patlıcan bi avuç şampinyon bir yemek kaşığı karabiber ve 100 gr sivri biber yedim	d-kozlenmis-patlican|c-kozlenmis-patlican,mantar,x-karabiber,biber-sivri
+bir buçuk avuç ebegümeci otu 75 gr semizotu	d-ebegumeci,d-semizotu
+kaju çiğ, 3 adet taze kabak çiçeği, bir porsiyon kabuklu tuzlu ay çekirdeği	d-kaju-cig,d-kabak-cicegi,b-ay-cekirdegi-tuzlu
+ara öğünde 100 gr kayisi taze 1 yemek kaşığı findik ici tuzsuz ve 100 gram sade leblebi ekledim	kayisi|d-kayisi-malatya,findik,b-leblebi-beyaz|d-leblebi-beyaz
+2 dilim salatalık dilimi, 100 gram soteli mantar	salatalik,d-mantar-sote
+az önce bi avuç corek otu bi avuç çiğ patates ve sütlü patates püresi 120 gr yedim bugün	d-corek-otu,x-patates-cig|patates-haslama,patates-puresi
+4 avuç kavrulmuş tuzsuz kuruyemiş ve 1.5 avuç soya filizi ve 30 gram kekik baharat	x-kuruyemis-tuzsuz-kavrulmus,d-fasulye-filizi,d-kekik-kuru
+bir avuç lüks çerez, kavrulmuş tuzlu fıstık, komposto 300 gram	x-kuruyemis-luks,b-tuzlu-fistik-kavrulmus,komposto
+200 gr tuzsuz badem ici ve 250 g taze maydanoz	badem,maydanoz
+4 adet kurutulmuş kabak bir kase beyaz dut iki avuç corek otu	x-kuru-kabak,d-dut-beyaz,d-corek-otu
+kahvaltıda bi porsiyon pazı haşlanmış konserve mantar 3 avuç bi porsiyon kavrulmuş kuruyemiş ve bir avuç çam fıstığı yedim bugün	d-pazi-haslanmis,b-mantar-konserve,x-kuruyemis-kavrulmus,cam-fistigi
+kahvaltıda 200g dut ve 30 gr kayısı nektarı yedim	dut|d-dut-beyaz|d-dut-kara,a-meyve-suyu-kayisi
+badem ballı soyulmus salatalik yarım tane	x-badem-balli,d-salatalik-kabuksuz
+75g kurutulmuş domates, kuru üzüm çikolata kaplı	d-kuru-domates,x-uzum-cikolatali
+5 tane soğan çiğ, 200 gram sade patates püresi, iki porsiyon pazar tursusu	sogan,x-patates-puresi-sade,d-aci-biber-salcali
+öğlen dört adet elma dilimi kızartma patates bir porsiyon dondurulmuş orman meyveleri ve tuzsuz kaju 30 gr atıştırdım	x-patates-elma-dilim,d-orman-meyveleri,kaju
+kurutulmus cilek, 200 gr mixed greens	b-kuru-cilek,d-karisik-yesillik
+yarım adet incir ve üzüm tanesi 1 adet	incir,uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+TV karşısında 75 gr acılı zeytin üç kase taze kırmızı üzüm ve 300 g pazı yedim	b-zeytin-baharatli,d-uzum-kirmizi,d-pazi|d-pazi-haslanmis
+beş avuç kayısı çekirdeği içi ve üç tane karisik sirke tursusu ve alıç 100 g	x-kayisi-cekirdegi-ici,b-tursu-kavanoz,d-alic
+150g kuş üzümü 200 gram erik tursusu	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah,x-tursu-erik
+3 adet karamelli fıstık ve iki avuç nar tanesi ve 150 g defne yaprağı	b-draje-misir-fistik,nar,x-defne-yapragi
+100 gr salatalık sıkma, kivi 4 tane	x-salatalik-suyu-taze,kivi
+150gr alfalfa filizi marul romaine 1.5 kase 50gr zeytin tanesi	d-yonca-filizi,d-marul-romaine,siyah-zeytin|b-zeytin-gemlik-salamura
+50 gram dondurulmuş muz, 1 adet antep fıstığı taze	d-muz-donmus,x-antep-fistigi-yas
+dün gece bi tane kuşkonmaz 30 gram yaş yeşil üzüm ve üç tane kuru kabak ekledim	d-kuskonmaz,d-uzum-yesil-cekirdeksiz,x-kuru-kabak
+200 gr karnabahar taze fasulye çiğ 75 gram pestil taze fesleğen 3 yemek kaşığı	karnabahar,d-taze-fasulye-cig,d-bestil,d-feslegen
+bir kase karamelli fındık iki avuç kuru meyve tabağı	x-findik-sekerli,b-kuru-karisik-meyve
+bir avuç tuzsuz siyah zeytin, 1 avuç kuzu gobegi mantari	siyah-zeytin|b-zeytin-gemlik-salamura,d-mantar-kuzu-gobegi
+bi avuç cilek, 3 porsiyon haşlanmış yeşil fasulye	cilek,d-taze-fasulye-haslanmis
+öğlen bir kase kuruyemis tabagi iki tane zeytin tanesi ve bugulama ispanak tükettim	karisik-kuruyemis,siyah-zeytin|b-zeytin-gemlik-salamura,d-ispanak-haslanmis
+kutu domates, bir avuç yas erik, 2 paket kurutulmuş ahududu	b-domates-dogranmis-konserve,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,x-kuru-ahududu
+akşam haşlanmış ıspanak 4 kase 250gr izgarada kabak ve 30 g chia tohumu tükettim	d-ispanak-haslanmis,d-kabak-izgara,chia
+dün gece kuzu göbeği mantarı 150 g ve bir tane fırında zeytinyağlı patates ekledim	d-mantar-kuzu-gobegi,x-patates-firin-zeytinyagli
+bugün iki avuç kuru incir yumuşak ve ic findik 30 gr yedim bugün	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,findik
+100 gram can eriği, on adet turşu	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum,tursu
+yaş hurma yarım avuç konserve tatli misir 75 gram misir kocani 5 tane kuru elma halkası	d-hurma-kurma,b-misir-konserve,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+muzlar 120 g ve kuru vişne	muz,b-kuru-visne
+250 gram salamura suyu ve 300gr istiridye mantarı	a-tursu-suyu,d-mantar-istiridye
+akşam 100 g frenk soğanı iki yemek kaşığı goji berry 3 yemek kaşığı beyaz dut kurusu ve 250 g yas kayisi tükettim	d-frenk-sogani,b-goji-berry,b-kuru-dut,kayisi|d-kayisi-malatya
+üç adet buğulama havuç ve kuru yemiş standart 1 porsiyon	d-havuc-haslanmis,x-kuruyemis-standart
+bi avuç çarliston biber 300 g ahududu	d-biber-carliston,ahududu
+75 gr tarçın tozu ve dört yemek kaşığı fasulye tursusu ve çiğ salatalık ve 250 gr taze bamya	x-tarcin,x-tursu-fasulye,salatalik,d-bamya-taze
+1.5 porsiyon çizik zeytin 120 g kekik kuru	yesil-zeytin|b-zeytin-cizik-yesil,d-kekik-kuru
+tuzsuz kuru yemiş ve karamelize ceviz 200 gram	d-kuruyemis-tuzsuz-cig-karisik,x-ceviz-sekerli
+250 gram karamelize ceviz, 30 g patlıcan kurusu	x-ceviz-sekerli,x-kuru-patlican
+50 gr patates pure bir avuç karışık lahana turşusu susam kavrulmuş	patates-puresi,b-tursu-lahana|tursu,d-susam-kavrulmus
+bir buçuk tane kivi kurusu ve bi avuç fırın patates ve elma dilim patates	x-kuru-kivi,patates-firin,x-patates-elma-dilim
+75 gr badem ici tuzsuz iki avuç erik yaş	badem,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+dün gece marine zeytin ve haşlama kabak yiyorum	b-zeytin-baharatli,d-kabak-haslanmis
+120 gr yoğurtlu kuru üzüm 75 gr kuruyemiş çiğ 75 gram çikolatalı fıstık draje	x-uzum-yogurt-kapli,d-kuruyemis-tuzsuz-cig-karisik,d-kuruyemis-cikolatali-draje
+8 adet yağda kavrulmuş patates, fındık tuzsuz 30 gr	x-patates-kavurma,findik
+4 yemek kaşığı fındık kavrulmuş tuzsuz ve 150 gram kabuklu ceviz içi yenen kısım ve 1.5 kase taze kuruyemiş	b-findik-kavrulmus,d-ceviz-kabuklu,x-yas-kuruyemis
+4 yemek kaşığı kurutulmuş mantar 250 gr kaki	d-mantar-kurusu,trabzon-hurmasi
+bugün elma dilimi kizartma patates üç tane 2 avuç tuzlu kavrulmuş antep fıstığı ve taze soğan 4 adet tükettim	x-patates-elma-dilim,d-antep-fistigi-kavrulmus,taze-sogan
+greyfurt suyu, lüks karışık kuruyemiş	a-meyve-suyu-greyfurt,x-kuruyemis-luks
+az önce 120 g yeşil fasulye turşusu ve brezilya cevizi 75 gram tükettim	x-tursu-fasulye,d-brezilya-cevizi
+yaş ceviz içi, 2 avuç isirgan	x-ceviz-yas,d-isirgan
+az önce 50 g frozen çilek ve 100 g kuru ahududu yedim	d-cilek-donmus,x-kuru-ahududu
+bi kase semizotu kayısı içi bir kase taze üzüm	d-semizotu,x-kayisi-cekirdegi-ici,uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+TV karşısında 2 dilim kayısı kömesi on adet kabak taze 3 yemek kaşığı coriander ve yaş siyah üzüm atıştırdım	d-kayisi-pestili,kabak,x-kisnis-tohumu,d-uzum-siyah
+1 porsiyon yerli patates, 5 adet ceviz kabuksuz	x-patates-cig,b-ceviz-ici
+300g kurutulmuş üzüm ve çiğ ay çekirdeği bir buçuk yemek kaşığı ve erik hosafi beş bardak	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah,d-ay-cekirdegi-ic,komposto
+bi porsiyon sitake, 2 avuç üzüm yaş, 300 g tereyağlı mantar	d-mantar-shiitake,uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi,d-mantar-sote
+5 porsiyon lüks kuruyemiş, 100 g fındık tuzsuz, 2 porsiyon soteli mantar, tuzsuz ceviz içi bir buçuk avuç	x-kuruyemis-luks,findik,d-mantar-sote,b-ceviz-ici
+incir kurusu, 120 gr kuru ananas halkası	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,b-kuru-ananas
+taze badem içi ve 1 avuç fıstık çiğ ve bir porsiyon közlenmiş mantar ve 300 gram taze kayısı	x-badem-yas,d-yer-fistigi-cig,x-mantar-izgara,kayisi|d-kayisi-malatya
+akşam bir avuç havuç çiğ 1.5 porsiyon tuzlu antep fıstığı ve 75 gr maydanoz aldım	havuc|d-havuc-bebek,d-antep-fistigi-kavrulmus,maydanoz
+karışık kuru meyve üç paket ve çiğ kuruyemiş yarım avuç	b-kuru-karisik-meyve,d-kuruyemis-tuzsuz-cig-karisik
+dün gece bir buçuk avuç kabuklu cevizler ve bir buçuk adet çiğ kabak aldım	d-ceviz-kabuklu,kabak
+öğlen 2 avuç çam fıstığı 1.5 avuç bademler ve bi adet çiğ sarımsak yiyorum	cam-fistigi,badem,sarimsak
+öğlen 120 g cig yesil fasulye ve üç adet kemer patlican yedim	d-taze-fasulye-cig,patlican
+akşam pancar 8 tane 50 gram taze havuç suyu 5 avuç kavrulmuş kuruyemiş ve 3 porsiyon kabak fırında yiyorum	pancar,a-meyve-suyu-havuc-taze,x-kuruyemis-kavrulmus,d-kabak-haslanmis
+yarım porsiyon kavrulmuş badem tuzsuz ve bir kase dolmalık kuru kabak	b-badem-kavrulmus,x-kuru-kabak
+tuzlu kaju üç kase yesil fasulye	b-kaju-tuzlu,d-taze-fasulye-cig
+3 adet yogurt kapli uzum karışık turşu iki yemek kaşığı	x-uzum-yogurt-kapli,tursu
+dün gece 1.5 kase mix nuts üç adet pirasa haslanmis ve 300 g mandalina tükettim	karisik-kuruyemis,d-pirasa-haslanmis,mandalina
+chia tohumu 150 g patlıcan közlenmiş karnabahar turşusu	chia,d-kozlenmis-patlican|c-kozlenmis-patlican,d-tursu-karnabahar
+30 gr konserve kayısı, 120 gram tuzlu antep fıstığı	d-kayisi-konserve,d-antep-fistigi-kavrulmus
+30 gram buğulama lahana ve üç yemek kaşığı antep fistigi	d-lahana-haslanmis,antep-fistigi|d-antep-fistigi-cig
+fıstık 30 gram bir kase taze üzüm bugulama brokoli 5 adet	yer-fistigi,uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi,d-brokoli-haslanmis
+akşam 4 tane armut 120 gram kabuklu cekirdek ve dört kase yas dut ekledim	armut,b-ay-cekirdegi-tuzlu,dut|d-dut-beyaz|d-dut-kara
+150 g erik pestili, üç avuç marul, 120gr taze kayısı	d-erik-pestil,marul,kayisi|d-kayisi-malatya
+100 gram soğan turşusu ve bir buçuk kase semizotu ve mandalina suyu taze sikma yarım bardak ve dört adet yesil erik	b-tursu-sogan,d-semizotu,x-mandalina-suyu-taze,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+iki avuç zencefil ve 100 gr ızgara mantar	d-zencefil,x-mantar-izgara
+3 adet vişne 30 g yogurt kapli badem kabuklu karisik kuruyemis iki tane kozlenmis kirmizi biber	visne|d-visne-taze,x-badem-yogurt-kapli,x-kuruyemis-kabuklu-karisik,kozlenmis-biber|d-kozlenmis-biber-kapya
+bi avuç kavrulmuş ceviz içi ve üç avuç kabak cekirdegi kabuklu	d-ceviz-kavrulmus,d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+bi avuç kozlenmis misir ve bir kase balkabağı püre ve dört tane fındık ballı	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis,d-balkabagi-puresi,x-findik-balli
+5 kase kuruyemis karisik, bir buçuk avuç taze hunnap, 3 porsiyon pancar çiğ	karisik-kuruyemis,d-hunnap,pancar
+30 gr baharatlı leblebi taze semizotu	b-leblebi-baharatli,d-semizotu
+300 gr kuru meyve paketi ve 50 gram tuzsuz kaju	b-kuru-karisik-meyve,kaju
+bir avuç cevizler ve tatlı mısır	ceviz,misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+trabzon hurması iki tane, bir kase kuş üzümü, haşlanmış pazı bir buçuk porsiyon	trabzon-hurmasi,kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah,d-pazi-haslanmis
+75g kurutulmuş erik 50 gram kuru kekik 4 adet elma	kuru-erik|d-erik-kurusu-cekirdekli,d-kekik-kuru,elma
+yoğurtlu kuru üzüm 3 avuç beş kase konserve doğranmış domates	x-uzum-yogurt-kapli,b-domates-dogranmis-konserve
+ara öğünde dört paket kuruyemiş kuru meyve karışımı ve 200 gr gilaburu meyvesi tükettim	b-trail-mix,x-gilaburu
+siyah turp 10 tane, 6 adet bal kaplı fıstık, bir porsiyon ceviz kabuklu	d-turp-siyah,x-yer-fistigi-balli,d-ceviz-kabuklu
+dün gece 2 kase kuru yemis karisik ve közlenmiş patlıcan soyulmuş 150 gr yiyorum	karisik-kuruyemis,d-kozlenmis-patlican|c-kozlenmis-patlican
+1.5 tane yogurt kapli badem ve yeşil fasulye 300 g	x-badem-yogurt-kapli,d-taze-fasulye-cig
+5 avuç patates kizartmasi ve 3 adet kayısı kurusu	patates-kizartmasi,kuru-kayisi
+30 gram papaya kurusu beyaz susam 120 gr karnabahar tursusu	b-kuru-papaya,susam,d-tursu-karnabahar
+bir avuç havuclar, nane taze bir avuç	havuc|d-havuc-bebek,d-nane-taze
+bahce teresi üç avuç, iki avuç haslanmis edamame	d-tere,d-edamame
+mercimek filizi, bir kase findik, 1.5 adet çatlak antep fıstığı	x-mercimek-filizi,findik,d-antep-fistigi-kabuklu
+75 gr tatlı patates üç adet erik yaş	tatli-patates,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+5 yemek kaşığı tereyağlı patates püresi 1 avuç kurutulmuş kivi	patates-puresi,x-kuru-kivi
+kabuklu karışık kuruyemiş iki porsiyon ve 3 kase kabak firinda ve 120 gr tuzlu fındık içi ve 100 g tuzlu kuruyemiş	x-kuruyemis-kabuklu-karisik,d-kabak-haslanmis,d-findik-tuzlu,x-kuruyemis-standart
+50 gram kuru meyve karışık ve beş su bardağı nar sıkma ve bir kase karışık sirke turşusu	b-kuru-karisik-meyve,a-meyve-suyu-nar-taze|a-meyve-suyu-nar,b-tursu-kavanoz
+300g sarı leblebi 75 gr karpuz sıkma 100 gram yaş antep fıstığı	b-leblebi-sari|d-leblebi-sari,a-meyve-suyu-karpuz,x-antep-fistigi-yas
+bi kase kuruyemis ve yaş kabuklu ceviz 200 gram	karisik-kuruyemis,x-ceviz-yas-kabuklu
+bir buçuk avuç erik kuru, 5 adet kaju, 100 gr kişniş tozu	kuru-erik|d-erik-kurusu-cekirdekli,kaju,x-kisnis-tohumu
+bir porsiyon karışık sebze suyu ve 50g haslanmis patlican	d-sebze-suyu,d-patlican-haslanmis
+antep fıstığı kavrulmus sarimsak	antep-fistigi,d-sarimsak-kizarmis
+5 kase meyve konservesi üç avuç kuru incir kırmızı turp turşusu 3 porsiyon	d-kokteyl-meyve,incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,x-tursu-turp
+200 g uzum ve 4 adet badem	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi,badem
+ara öğünde 3 tane mantar közlenmiş ve taze bamya tükettim	x-mantar-izgara,d-bamya-taze
+100 g fındık kuru ve bir buçuk avuç tuzsuz kuru yemis ve 2 tane fırında patates zeytinyağlı	findik,d-kuruyemis-tuzsuz-cig-karisik,x-patates-firin-zeytinyagli
+beş adet kuru incir paketi, 250gr tuzlu antep fıstığı	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,d-antep-fistigi-kavrulmus
+kuru patlican dolmalik 5 tane 30 gram taze bakla	x-kuru-patlican,d-taze-bakla|d-bakla-haslanmis-taze
+yarım avuç lahana çiğ, yarım adet kereviz sapı	lahana,d-kereviz-sapi
+30 gram karamelize ceviz bir kase kirilmamis findik	x-ceviz-sekerli,d-findik-kabuklu
+yarım su bardağı karpuz suyu ve haşlanmış yeşil fasulye bir buçuk porsiyon ve bir porsiyon kavrulmus tuzlu fistik ve cevizli bal 120 gram	a-meyve-suyu-karpuz,d-taze-fasulye-haslanmis,b-tuzlu-fistik-kavrulmus,x-ceviz-balli
+TV karşısında 150 gram balli kavrulmus badem 30 gr yas mor incir ve beş kase nar tanesi yedim	x-badem-balli,d-incir-mor,nar
+beş tane siyah zeytin tane ve bir buçuk porsiyon çizik yeşil zeytin	siyah-zeytin|b-zeytin-gemlik-salamura,yesil-zeytin|b-zeytin-cizik-yesil
+200 gram kuru aydin inciri ve haslanmis patates salatasi üç kase	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,c-patates-salata|d-patates-salatasi
+az önce bir tane tuzsuz ceviz ici bir avuç kirmizi uzum ve közlenmiş sarımsak 75 g yiyorum	b-ceviz-ici,d-uzum-kirmizi,d-sarimsak-kizarmis
+300 gr zeytin tanesi ve 150g ananas	siyah-zeytin|b-zeytin-gemlik-salamura,ananas
+dün gece beş adet domates dilimi 30g kabuklu tuzlu fıstık ve 6 adet yesil zeytin tuzlu atıştırdım	domates,d-yer-fistigi-kabuklu,yesil-zeytin|b-zeytin-cizik-yesil
+tuzsuz kuru yemiş, bi avuç porcini, 4 tane kavrulmus sogan	d-kuruyemis-tuzsuz-cig-karisik,d-mantar-kurusu,d-sogan-pismis|d-sogan-kizarmis
+fırınlanmış badem beş avuç ve bi yemek kaşığı leblebiler	b-badem-kavrulmus,leblebi
+öğlen iki adet yas ceviz ve bir avuç kuruyemiş çiğ yiyorum	x-ceviz-yas,d-kuruyemis-tuzsuz-cig-karisik
+30gr sivri biber, 30 g murdum erigi	biber-sivri,erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+az önce mango kurusu ve bir porsiyon ananas konservesi yiyorum	b-kuru-mango,d-ananas-konserve|ananas
+50 gram firin patates badem taze yarım avuç 3 adet taze soğan	patates-firin,d-badem-yesil-cagla,taze-sogan
+50 g yeşil fasulye ve iki avuç pazar tursusu	d-taze-fasulye-cig,d-aci-biber-salcali
+akşam 1 avuç yeşil zeytin tuzlu ve taze bamya ekledim	yesil-zeytin|b-zeytin-cizik-yesil,d-bamya-taze
+yarım tane kakao kaplı badem, 300 g çiğ yeşil biber, luks kuru yemis	x-badem-cikolatali,biber-sivri,x-kuruyemis-luks
+2 soğannlar	sogan
+kırmızı soğn	d-sogan-kirmizi
+3 tane yeil soğan	taze-sogan
+mercimek filzii	x-mercimek-filizi
+kavun turssu	x-tursu-kavun
+bir avuç yaş iç fıdık	x-findik-yas
+errik kurusu	kuru-erik|d-erik-kurusu-cekirdekli
+çeerz tabağı	karisik-kuruyemis
+yeşil sivvri biber	biber-sivri
+konserrve ananas	d-ananas-konserve|ananas
+közlenmiş mıısır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+2 buğulama hauç	d-havuc-haslanmis
+çikolatalı üzüm drajee	x-uzum-cikolatali
+100 gram haşlanmış kabaak	d-kabak-haslanmis
+eriik kömesi	d-erik-pestil
+yenidüya	yenidunya
+kurutumluş meyve	b-kuru-karisik-meyve
+2 çiğ balkabagiı	balkabagi
+100 gram domatess	domates
+3 tane mayonezli patatess salatası	c-patates-salata|d-patates-salatasi
+tuzlu kruu yemiş	x-kuruyemis-standart
+bir avuç antpe fıstığı	antep-fistigi
+3 tane çilk dondurulmuş	d-cilek-donmus
+100 gram kestane tazee	d-kestane-cig
+kırmızı sogann	d-sogan-kirmizi
+3 tane taze sımka nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+fırn patates	patates-firin
+visne meyve suyu	a-meyve-suyu-visne-100|a-meyve-suyu-visne
+haşlanmış paatates	patates-haslama
+sariı leblebi	b-leblebi-sari|d-leblebi-sari
+pişşmiş soğan	d-sogan-pismis|d-sogan-kizarmis
+1 pekkan cevizi	d-pekan
+2 tuzsuz kavrulmus kuruyemiş	x-kuruyemis-tuzsuz-kavrulmus
+1 denfe yaprağı	x-defne-yapragi
+taaze soğan	taze-sogan
+bir avuç taze sıkma portkal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+bir avuç kurru soğan	sogan
+100 gram kuruyemiş kavrulmş	x-kuruyemis-kavrulmus
+1 çifte kavrulmuş findikk	b-findik-kavrulmus
+fındık kavruluş	b-findik-kavrulmus
+1 tzulu yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+2 su tersei	d-tere
+kurutulmuş patlıcaan	x-kuru-patlican
+2 yaş hurma tazee	d-hurma-kurma
+raazakı üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+domates kurusuu	d-kuru-domates
+tazze kabak	kabak
+kırmızı tupr turşusu	x-tursu-turp
+pattes közde	x-patates-kozde
+öğütülmüş karabiebr	x-karabiber
+kurutulmuş myeve	b-kuru-karisik-meyve
+patates közdde	x-patates-kozde
+yeşil zeyitn salamura	yesil-zeytin|b-zeytin-cizik-yesil
+bir avuç liimon sıkma	limon-suyu
+3 tane şiatke	d-mantar-shiitake
+gilbauru	x-gilaburu
+100 gram çikolatalı draje fndık	d-kuruyemis-cikolatali-draje
+2 kurutulmusş mantar	d-mantar-kurusu
+2 tursuu soğan	b-tursu-sogan
+flaxseeed	d-keten-tohumu
+1 beeyaz lahana	lahana
+antep fııstığı	antep-fistigi|d-antep-fistigi-cig
+tuzul antep fıstığı	d-antep-fistigi-kavrulmus
+çikolata kapli ceviz	x-ceviz-cikolatali
+bir avuç tuzszu kavrulmuş yer fıstığı	d-yer-fistigi-kavrulmus
+hünnaap	d-hunnap
+100 gram beyaaz mantar	mantar
+1 tzae pancar	pancar
+1 kaparri	b-capari
+dolmmalık	dolmalik-biber
+100 gram fistikk	yer-fistigi
+haşlanmış taze bkala	d-bakla-haslanmis-taze
+şekerli yer fistigiı	b-draje-misir-fistik
+bir avuç baharatlı leblebii	b-leblebi-baharatli
+bir avuç kavrulmuş karisikk kuruyemiş	x-kuruyemis-kavrulmus
+kabaak çekirdeği	kabak-cekirdegi
+2 gilabburu	x-gilaburu
+2 haşlanmış msır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+bir avuç yeişl badem	d-badem-yesil-cagla
+pıraa	d-pirasa
+salatalık tursusu	salatalik-tursusu
+2 tuzsuz karışıık kuruyemiş	d-kuruyemis-tuzsuz-cig-karisik
+1 taze skma mandalina suyu	x-mandalina-suyu-taze
+taltı patates çiğ	tatli-patates
+1 taze fındıık kabuklu	x-findik-yas-kabuklu
+böğürrtlen	bogurtlen
+bir avuç beeyaz lahana	lahana
+100 gram eik yaş	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+patlıccan haşlanmış	d-patlican-haslanmis
+kurutulmuş kyaısı	kuru-kayisi
+3 tane tazee pırasa	d-pirasa
+bursaa inciri	incir|d-incir-yesil|d-incir-mor
+bir avuç pure patats	patates-puresi
+1 fırınlamnış patates	patates-firin
+1 kaaju çikolatalı	x-kaju-cikolatali
+çifte kavrumuş fındık	b-findik-kavrulmus
+taze rkoa	roka
+yeşlilik	d-karisik-yesillik
+kocayeemis	x-kocayemis
+bir avuç vişne suyuu	a-meyve-suyu-visne-100|a-meyve-suyu-visne
+bir avuç karışık yesillikk	d-karisik-yesillik
+100 gram sarımsak dşi	sarimsak
+pattes kavurması	x-patates-kavurma
+3 tane sebze suyyu	d-sebze-suyu
+salgamm haşlanmış	d-salgam-sebze
+denfe yapragi	x-defne-yapragi
+kayısı suu	a-meyve-suyu-kayisi
+2 tazee incir	incir|d-incir-yesil|d-incir-mor
+dolmalık kruu biber	d-biber-kuru-dolmalik
+3 tane kuru üzüm taneis	kuru-uzum|b-kuru-uzum-paket|d-kuru-uzum-sultani|d-kuru-uzum-siyah
+2 pikle	salatalik-tursusu
+limon syuu taze sıkma	limon-suyu
+kuru kayısı tanessi	kuru-kayisi
+kruu ananas parçaları	b-kuru-ananas
+elma dilimi kzıartma patates	x-patates-elma-dilim
+1 çiğ brkoli	brokoli
+cviz iç	ceviz
+ananas konservsi	d-ananas-konserve|ananas
+gül elmasiı	d-kusburnu|a-bitki-cayi-kusburnu
+bir avuç şeekrli fındık	x-findik-sekerli
+bir avuç çiğ domaes	domates
+3 tane yğalı sele zeytin	b-zeytin-sele-yagli
+tze brokoli	brokoli
+bir avuç aronai	x-aronya
+taze haşlanmış fistikk	x-yer-fistigi-haslanmis
+3 tane portakal sıkam	a-meyve-suyu-portakal-taze|portakal-suyu
+bir avuç taze kayısılr	kayisi|d-kayisi-malatya
+2 patates közed	x-patates-kozde
+bir avuç dmates	domates
+bir avuç yumusakk kuru kayısı	kuru-kayisi
+3 tane tae şeftali	seftali
+kuru yemis karışık	karisik-kuruyemis
+tze fındık kabuklu	x-findik-yas-kabuklu
+1 hurmaa meyvesi	trabzon-hurmasi
+1 kuuru meyve cipsi	x-meyve-cipsi
+1 kök kereivz	d-kereviz-koku
+3 tane badeem kabuklu	d-badem-kuru-kabuklu
+cherry toomato	d-domates-cherry
+sampinyon mantarı	mantar
+1 kuuru üzüm çikolata kaplı	x-uzum-cikolatali
+3 tane soyulmmuş badem	d-badem-hasli
+3 tane tapenadee	c-zeytin-ezmesi
+yağsız firinda patates	patates-firin
+sooteli patates	x-patates-kavurma
+taaze çerez	x-yas-kuruyemis
+kestane kozlenmis	kestane-kavrulmus
+100 gram lahana havucç turşusu	b-tursu-lahana|tursu
+1 patatse salatasi	c-patates-salata|d-patates-salatasi
+tae kabak	kabak
+2 fndik	findik
+bir avuç beyaz turrp	d-turp-beyaz
+kuru kekikk	d-kekik-kuru
+bir avuç pekann cevizi	d-pekan
+2 hşalanmış enginar	enginar
+dilimli zeytn	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+1 kavrulmuş tuzzlu fıstık	b-tuzlu-fistik-kavrulmus
+badem dogulu zeytin	b-zeytin-dolgulu|d-yesil-zeytin-salamura-dolgulu
+kavrulmuş ketsane	kestane-kavrulmus
+tazze kuru yemiş	x-yas-kuruyemis
+bir avuç kynamış fıstık	x-yer-fistigi-haslanmis
+taaze çilek	cilek
+3 tane badeem tuzlu	d-badem-tuzlu
+2 inncir taze	incir|d-incir-yesil|d-incir-mor
+taze kuruyemiiş	x-yas-kuruyemis
+100 gram ev yapımı marine zeytinn	b-zeytin-baharatli
+tze hurma	d-hurma-kurma
+2 turşu karisikk	tursu
+tuuzsuz kavrulmuş fıstık	d-yer-fistigi-kavrulmus
+halaeno	b-jalapeno
+kavrulmuş tulu fındık	d-findik-tuzlu
+2 yaabni armut	x-ahlat
+100 gram portobello manntarı	d-mantar-portobello
+3 tane süt mıssır	misir-haslanmis|d-misir-koceni|c-misir-kozlenmis
+bir avuç kızarmış paattes	patates-kizartmasi
+bir avuç standaart çerez	x-kuruyemis-standart
+staandart çerez	x-kuruyemis-standart
+yaş	-
+taze	-
+kuru	-
+tuzsuz	-
+kavrulmuş	-
+çiğ	-
+kabuklu	-
+tuzlu	-
+iç	-
+kaplı	-
+haşlanmış	-
+konserve	-
+dondurulmuş	-
+közlenmiş	-
+turşu suyu şişe	-
+yarım kilo	-
+bir avuç	-
+iki tane	-
+üç tane	-
+bir kase	-
+bir avuç yaş ceviz yedim	x-ceviz-yas
+bugün 100 gram taze ceviz içi yedim	x-ceviz-yas
+yaş fındıktan bir avuç	x-findik-yas
+iki avuç taze fındık	x-findik-yas
+yarım kilo yaş badem aldım	x-badem-yas
+bir avuç yaş fıstık antep	x-antep-fistigi-yas
+yaş kuru yemiş yedim	x-yas-kuruyemis
+bir tabak yaş kuru yemiş	x-yas-kuruyemis
+yaş kuruyemiş 100 gram	x-yas-kuruyemis
+bi avuç tuzsuz kavrulmuş fındık	b-findik-kavrulmus
+bir avuç tuzsuz kavrulmuş fındık	b-findik-kavrulmus
+100 gram tuzsuz fındık içi	findik
+iki yemek kaşığı kavrulmuş fındık	b-findik-kavrulmus
+tuzlu fıstıktan bir avuç	yer-fistigi
+bir avuç tuzsuz badem	badem
+kavrulmuş tuzsuz badem 30 gram	b-badem-kavrulmus
+tuzlu badem 20 gram	d-badem-tuzlu
+5 tane çiğ badem	d-badem-cig
+3 adet kuru kayısı	kuru-kayisi
+bir avuç kuru kayısı	kuru-kayisi
+yirmi gram kuru üzüm	kuru-uzum|d-kuru-uzum-sultani|b-kuru-uzum-paket
+iki tane kuru incir	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket
+üç tane taze incir	incir|d-incir-yesil|d-incir-mor
+iki yaş incir	incir|d-incir-yesil|d-incir-mor
+bir salkım yaş üzüm	uzum|d-uzum-yesil-cekirdeksiz|d-uzum-siyah|d-uzum-kirmizi
+bir kase yaş dut	dut|d-dut-beyaz|d-dut-kara
+bir avuç kuru dut	b-kuru-dut
+5 tane yaş erik	erik|d-erik-kirmizi|d-erik-can|d-erik-yesil|d-erik-murdum
+beş adet kuru erik	kuru-erik|d-erik-kurusu-cekirdekli
+2 adet taze kayısı	kayisi|d-kayisi-malatya
+çifte kavrulmuş leblebi bir avuç	b-leblebi-sari|d-leblebi-sari
+bir avuç çifte kavrulmuş fıstık	b-tuzlu-fistik-kavrulmus
+çikolata kaplı fındıktan 5 tane	d-kuruyemis-cikolatali-draje
+bir avuç çikolatalı draje badem	x-badem-cikolatali
+yoğurt kaplı kuru üzüm 30 gram	x-uzum-yogurt-kapli
+ballı ceviz bir tatlı kaşığı	x-ceviz-balli
+bal kaplı fındık bir avuç	x-findik-balli
+şekerli badem 3 tane	d-badem-sekerli
+çikolata kaplı kuru üzüm bir avuç	x-uzum-cikolatali
+lüks kuruyemiş bir avuç	x-kuruyemis-luks
+bir kase lüks karışık kuruyemiş	x-kuruyemis-luks
+standart kuruyemiş yarım avuç	x-kuruyemis-standart
+tuzsuz kuruyemiş bir avuç	d-kuruyemis-tuzsuz-cig-karisik
+kavrulmuş kuruyemiş 30 gram	x-kuruyemis-kavrulmus
+tuzsuz kavrulmuş kuruyemiş bir avuç	x-kuruyemis-tuzsuz-kavrulmus
+kuru yemiş yedim	karisik-kuruyemis
+kuru yemiş bir avuç	karisik-kuruyemis
+bir kase kuru yemiş	karisik-kuruyemis
+kabuklu fıstık 100 gram	d-yer-fistigi-kabuklu
+kabuklu ceviz 3 tane	d-ceviz-kabuklu
+kabuklu fındık bir avuç	d-findik-kabuklu
+kabuklu antep fıstığı 50 gram	d-antep-fistigi-kabuklu
+kuru kayısı ve ceviz	kuru-kayisi,ceviz
+iki kuru incir ve üç ceviz	incir-kuru|d-incir-kuru-yumusak|b-kuru-incir-paket,ceviz
+bir avuç fındık bir avuç badem	findik,badem
+kuru üzüm, fındık, ceviz	kuru-uzum|d-kuru-uzum-sultani|b-kuru-uzum-paket,findik,ceviz
+yaş ceviz ve taze incir	x-ceviz-yas,incir|d-incir-yesil|d-incir-mor
+bir avuç yaş fındık ve bir avuç yaş badem	x-findik-yas,x-badem-yas
+yaş ceviz yaş fındık	x-ceviz-yas,x-findik-yas
+tuzsuz fındık içi ve kuru kayısı	findik,kuru-kayisi
+50 gr tuzlu kaju	b-kaju-tuzlu
+tuzsuz kavrulmuş kaju 30 gram	x-kaju-tuzsuz-kavrulmus
+çiğ kaju bir avuç	d-kaju-cig
+çam fıstığı bir yemek kaşığı	cam-fistigi
+bir avuç ay çekirdeği	ay-cekirdegi|b-ay-cekirdegi-tuzlu
+kabak çekirdeği iki yemek kaşığı	kabak-cekirdegi|d-kabak-cekirdegi-kabuklu|b-kabak-cekirdegi-tuzlu
+karpuz çekirdeği bir avuç	d-karpuz-cekirdegi
+bir tatlı kaşığı susam	susam
+iki yemek kaşığı chia tohumu	chia
+kestane yedim 5 tane	kestane-haslanmis|d-kestane-cig
+kavrulmuş kestane iki tane	kestane-kavrulmus
+kuru kestane bir avuç	x-kestane-kuru
+bir avuç kuru hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+3 tane hurma	hurma|d-hurma-deglet|b-hurma-kuru-kucuk|b-hurma-medjool
+iki tane medjool hurma	d-hurma-medjool|b-hurma-medjool
+bir tane trabzon hurması	trabzon-hurmasi
+bir avuç kuru elma	d-elma-kuru|b-elma-cipsi|d-elma-cipsi
+bir kuru ananas dilimi	b-kuru-ananas
+bir avuç kuru mango	b-kuru-mango
+muz cipsi 30 gram	b-kuru-muz|b-muz-cipsi
+bir paket meyve cipsi	x-meyve-cipsi
+bir avuç kuru meyve	b-kuru-karisik-meyve
+kuru meyve karışımı bir kase	b-kuru-karisik-meyve
+ceviz içi 5 tane	b-ceviz-ici|ceviz
+100 gr haşlanmış brokoli	d-brokoli-haslanmis
+bir porsiyon haşlanmış karnabahar	d-karnabahar-haslanmis
+200 gram fırında kabak	d-kabak-haslanmis
+bir tabak ızgara patlıcan	d-patlican-izgara
+2 adet közlenmiş biber	kozlenmis-biber|d-kozlenmis-biber-kapya
+bir kase közlenmiş patlıcan	d-kozlenmis-patlican|c-kozlenmis-patlican
+bir avuç dondurulmuş bezelye	bezelye|d-bezelye-taze|d-bezelye-konserve
+yarım kase konserve mısır	b-misir-konserve
+bir kutu konserve mısır	b-misir-konserve
+dondurulmuş mısır bir kase	d-misir-donmus
+donmuş ıspanak 100 gram	d-ispanak-donmus
+iki dilim kuru domates	d-kuru-domates
+5 adet yağda kuru domates	b-kuru-domates-yagda
+konserve mantar bir kutu	b-mantar-konserve
+bir kase çiğ mantar	mantar
+iki yemek kaşığı rendelenmiş havuç	d-havuc-rende
+bir havuç yedim	havuc|d-havuc-bebek
+iki salatalık yedim	salatalik
+üç tane domates	domates
+bir avuç roka	roka
+iki yemek kaşığı kıyılmış maydanoz	maydanoz
+bir demet dereotu	dereotu
+bir tutam taze nane	d-nane-taze
+bir çay kaşığı kuru nane	d-nane-kuru
+bir çay kaşığı kekik	d-kekik-kuru
+bir tatlı kaşığı kuru kekik	d-kekik-kuru
+bir tane defne yaprağı	x-defne-yapragi
+bir avuç ıspanak çiğ	ispanak-cig
+iki sap kereviz	d-kereviz-sapi
+bir pancar haşlanmış	d-pancar-haslanmis
+bir kase kırmızı lahana	d-lahana-kirmizi
+yarım kase lahana turşusu	b-tursu-lahana
+5 tane salatalık turşusu	salatalik-tursusu
+iki tane kornişon turşusu	d-kornison
+bir porsiyon karışık turşu	tursu|b-tursu-kavanoz
+dört tane biber turşusu	d-tursu-biber
+bir tane fasulye turşusu	x-tursu-fasulye
+turp turşusu iki tane	x-tursu-turp
+bir bardak turşu suyu	a-tursu-suyu
+on tane siyah zeytin	siyah-zeytin|b-zeytin-gemlik-salamura
+beş tane yeşil zeytin	yesil-zeytin|b-zeytin-cizik-yesil
+6 adet çekirdeksiz zeytin	b-zeytin-cekirdeksiz|d-zeytin-yesil-cekirdeksiz
+dört adet kalamata zeytini	b-zeytin-kalamata
+beş tane yağlı sele zeytin	b-zeytin-sele-yagli
+tuzsuz zeytin 5 tane	siyah-zeytin|b-zeytin-gemlik-salamura
+bir bardak taze sıkma portakal suyu	a-meyve-suyu-portakal-taze|portakal-suyu
+bir bardak nar suyu	a-meyve-suyu-nar-taze|a-meyve-suyu-nar
+bir su bardağı taze havuç suyu	a-meyve-suyu-havuc-taze
+bir bardak mandalina suyu	x-mandalina-suyu-taze
+pancar suyu bir bardak	x-pancar-suyu-taze
+bir bardak kereviz suyu	x-kereviz-suyu-taze
+bir shot zencefil limon	x-limon-zencefil-shot
+yarım limon suyu	limon-suyu
+bir bardak elma suyu taze sıkılmış	elma-suyu|a-meyve-suyu-elma-100|a-meyve-suyu-elma-nektar
+bir avuç yaban mersini	yaban-mersini
+bir kase böğürtlen	bogurtlen
+bir avuç ahududu	ahududu
+bir kuşburnu çayı	a-bitki-cayi-kusburnu
+iki tane kocayemiş	x-kocayemis
+bir avuç gilaburu	x-gilaburu
+bir avuç aronya	x-aronya
+bir dilim karpuz	karpuz
+iki dilim kavun	kavun
+bir kase çilek	cilek
+yarım nar	nar
+üç kivi	kivi
+üç tane kayısı	kayisi|d-kayisi-malatya
+10 tane kiraz	kiraz
+bir avuç vişne	visne|d-visne-taze
+5 adet incir	incir|d-incir-yesil|d-incir-mor
+bir grup üzüm	uzum
+bir dilim ananas	ananas
+bir dilim ayva	ayva|ayva-tatlisi
+bir mısır haşlanmış	misir-haslanmis|d-misir-koceni
+iki yemek kaşığı bezelye konservesi	bezelye|d-bezelye-taze|d-bezelye-konserve
+bir tane haşlanmış patlıcan	d-patlican-haslanmis
+iki tane ızgara kabak	d-kabak-izgara
+bir avuç taze fasulye çiğ	d-taze-fasulye-cig
+bir tabak haşlanmış taze fasulye	d-taze-fasulye-haslanmis
+bir tabak haşlanmış ıspanak	d-ispanak-haslanmis
+iki tane haşlanmış havuç	d-havuc-haslanmis
+bir fırında balkabağı dilimi	d-balkabagi-haslanmis
+bir avuç kuru bamya	d-bamya-kurusu
+kuru patlıcan 100 gram	x-kuru-patlican
+iki tane kuru biber	d-biber-kuru-dolmalik
+kuru mantar bir avuç	d-mantar-kurusu
+bir avuç ızgara mantar	x-mantar-izgara
+bir tabak kuzu göbeği mantarı	d-mantar-kuzu-gobegi
+shiitake mantarı yedim	d-mantar-shiitake
+bir avuç istiridye mantarı	d-mantar-istiridye
