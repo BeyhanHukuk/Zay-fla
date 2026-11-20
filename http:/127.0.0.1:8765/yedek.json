@@ -1,0 +1,1818 @@
+{
+  "app": "zayifla",
+  "exportedAt": "2026-11-20T18:12:42.035Z",
+  "v": 2,
+  "createdAt": 1795198326515,
+  "profile": {
+    "sex": "e",
+    "age": 46,
+    "height": 178,
+    "weight": 95.5,
+    "goal": 80,
+    "activity": "orta",
+    "pace": 0.75,
+    "startDate": "2026-11-20"
+  },
+  "targets": {
+    "bmr": 1843,
+    "tdee": 2856,
+    "deficit": 1056,
+    "floorApplied": false,
+    "manual": true,
+    "kcal": 1800,
+    "p": 153,
+    "c": 162,
+    "f": 60
+  },
+  "manual": {
+    "on": true,
+    "kcal": 1800
+  },
+  "settings": {
+    "theme": "light",
+    "wUnit": "kg",
+    "glassMl": 330,
+    "waterGoal": 2
+  },
+  "days": {
+    "2026-11-20": {
+      "entries": [
+        {
+          "id": "mwpaqfspxfssq",
+          "foodId": "yumurta",
+          "name": "Yumurta (haşlanmış)",
+          "qty": 3.5,
+          "unit": "adet",
+          "unitG": 50,
+          "grams": 175,
+          "kcal": 271,
+          "p": 22.8,
+          "c": 1.9,
+          "f": 19.3,
+          "meal": "ogle",
+          "ts": 1795198328953,
+          "quick": false
+        },
+        {
+          "id": "mwpaqfspux4nm",
+          "foodId": "beyaz-peynir",
+          "name": "Beyaz peynir",
+          "qty": 2,
+          "unit": "dilim",
+          "unitG": 30,
+          "grams": 60,
+          "kcal": 158,
+          "p": 10.2,
+          "c": 0.9,
+          "f": 12.6,
+          "meal": "kahvalti",
+          "ts": 1795198328953,
+          "quick": false
+        },
+        {
+          "id": "mwpaqfsp37w4g",
+          "foodId": "siyah-zeytin",
+          "name": "Siyah zeytin",
+          "qty": 5,
+          "unit": "adet",
+          "unitG": 4,
+          "grams": 20,
+          "kcal": 23,
+          "p": 0.2,
+          "c": 1.2,
+          "f": 2.2,
+          "meal": "kahvalti",
+          "ts": 1795198328953,
+          "quick": false
+        },
+        {
+          "id": "mwpaqiuehsa33",
+          "foodId": "c_mwpaqiflvmopp",
+          "name": "annemin zxqmantısı",
+          "qty": 2,
+          "unit": "tabak",
+          "unitG": 300,
+          "grams": 600,
+          "kcal": 900,
+          "p": 40.2,
+          "c": 0,
+          "f": 0,
+          "meal": "aksam",
+          "ts": 1795198332902,
+          "quick": false
+        },
+        {
+          "id": "mwpaqk02f8ku3",
+          "foodId": null,
+          "name": "Restoran çorbası",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 400,
+          "p": 0,
+          "c": 0,
+          "f": 0,
+          "meal": "aksam",
+          "ts": 1795198334402,
+          "quick": true
+        },
+        {
+          "id": "mwpaqn7dfpife",
+          "foodId": "ayran",
+          "name": "Ayran",
+          "qty": 1,
+          "unit": "su bardağı",
+          "unitG": 200,
+          "grams": 200,
+          "kcal": 70,
+          "p": 3.4,
+          "c": 5,
+          "f": 3.6,
+          "meal": "aksam",
+          "ts": 1795198338553,
+          "quick": false
+        },
+        {
+          "id": "mwpaqqf1qu0sc",
+          "foodId": "kuru-fasulye",
+          "name": "Kuru fasulye (yemek)",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 200,
+          "grams": 200,
+          "kcal": 210,
+          "p": 11,
+          "c": 26,
+          "f": 7,
+          "meal": "ogle",
+          "ts": 1795198342717,
+          "quick": false
+        },
+        {
+          "id": "mwpaqqf1mpkek",
+          "foodId": "pirinc-pilavi",
+          "name": "Pirinç pilavı (pişmiş)",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 150,
+          "grams": 150,
+          "kcal": 225,
+          "p": 4.2,
+          "c": 42,
+          "f": 4.5,
+          "meal": "ogle",
+          "ts": 1795198342717,
+          "quick": false,
+          "state": "cooked"
+        }
+      ],
+      "water": 25
+    },
+    "2026-11-19": {
+      "entries": [
+        {
+          "id": "mwpaqq0cckhim",
+          "foodId": "kuru-fasulye",
+          "name": "Kuru fasulye (yemek)",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 200,
+          "grams": 200,
+          "kcal": 210,
+          "p": 11,
+          "c": 26,
+          "f": 7,
+          "meal": "ogle",
+          "ts": 1795198342188,
+          "quick": false
+        },
+        {
+          "id": "mwpaqq0c4zx1l",
+          "foodId": "pirinc-pilavi",
+          "name": "Pirinç pilavı (pişmiş)",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 150,
+          "grams": 150,
+          "kcal": 225,
+          "p": 4.2,
+          "c": 42,
+          "f": 4.5,
+          "meal": "ogle",
+          "ts": 1795198342188,
+          "quick": false,
+          "state": "cooked"
+        }
+      ],
+      "water": 0
+    },
+    "2026-09-22": {
+      "entries": [
+        {
+          "id": "h59",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-23": {
+      "entries": [
+        {
+          "id": "h58",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-24": {
+      "entries": [
+        {
+          "id": "h57",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-25": {
+      "entries": [
+        {
+          "id": "h56",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-26": {
+      "entries": [
+        {
+          "id": "h55",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-27": {
+      "entries": [
+        {
+          "id": "h54",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-28": {
+      "entries": [
+        {
+          "id": "h53",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-29": {
+      "entries": [
+        {
+          "id": "h52",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-09-30": {
+      "entries": [
+        {
+          "id": "h51",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-01": {
+      "entries": [
+        {
+          "id": "h50",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-02": {
+      "entries": [
+        {
+          "id": "h49",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-03": {
+      "entries": [
+        {
+          "id": "h48",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-04": {
+      "entries": [
+        {
+          "id": "h47",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-05": {
+      "entries": [
+        {
+          "id": "h46",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-06": {
+      "entries": [
+        {
+          "id": "h45",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-07": {
+      "entries": [
+        {
+          "id": "h44",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-08": {
+      "entries": [
+        {
+          "id": "h43",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-09": {
+      "entries": [
+        {
+          "id": "h42",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-10": {
+      "entries": [
+        {
+          "id": "h41",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-11": {
+      "entries": [
+        {
+          "id": "h40",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-12": {
+      "entries": [
+        {
+          "id": "h39",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-13": {
+      "entries": [
+        {
+          "id": "h38",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-14": {
+      "entries": [
+        {
+          "id": "h37",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-15": {
+      "entries": [
+        {
+          "id": "h36",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-16": {
+      "entries": [
+        {
+          "id": "h35",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-17": {
+      "entries": [
+        {
+          "id": "h34",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-18": {
+      "entries": [
+        {
+          "id": "h33",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-19": {
+      "entries": [
+        {
+          "id": "h32",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-20": {
+      "entries": [
+        {
+          "id": "h31",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-21": {
+      "entries": [
+        {
+          "id": "h30",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-22": {
+      "entries": [
+        {
+          "id": "h29",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-23": {
+      "entries": [
+        {
+          "id": "h28",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-24": {
+      "entries": [
+        {
+          "id": "h27",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-25": {
+      "entries": [
+        {
+          "id": "h26",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-26": {
+      "entries": [
+        {
+          "id": "h25",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-27": {
+      "entries": [
+        {
+          "id": "h24",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-28": {
+      "entries": [
+        {
+          "id": "h23",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-29": {
+      "entries": [
+        {
+          "id": "h22",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-30": {
+      "entries": [
+        {
+          "id": "h21",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-10-31": {
+      "entries": [
+        {
+          "id": "h20",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-01": {
+      "entries": [
+        {
+          "id": "h19",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-02": {
+      "entries": [
+        {
+          "id": "h18",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-03": {
+      "entries": [
+        {
+          "id": "h17",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-04": {
+      "entries": [
+        {
+          "id": "h16",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-05": {
+      "entries": [
+        {
+          "id": "h15",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-06": {
+      "entries": [
+        {
+          "id": "h14",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-07": {
+      "entries": [
+        {
+          "id": "h13",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-08": {
+      "entries": [
+        {
+          "id": "h12",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-09": {
+      "entries": [
+        {
+          "id": "h11",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-10": {
+      "entries": [
+        {
+          "id": "h10",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-11": {
+      "entries": [
+        {
+          "id": "h9",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-12": {
+      "entries": [
+        {
+          "id": "h8",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-13": {
+      "entries": [
+        {
+          "id": "h7",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-14": {
+      "entries": [
+        {
+          "id": "h6",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2060,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-15": {
+      "entries": [
+        {
+          "id": "h5",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2000,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-16": {
+      "entries": [
+        {
+          "id": "h4",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2240,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-17": {
+      "entries": [
+        {
+          "id": "h3",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2180,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    },
+    "2026-11-18": {
+      "entries": [
+        {
+          "id": "h2",
+          "foodId": null,
+          "name": "Geçmiş",
+          "qty": 1,
+          "unit": "porsiyon",
+          "unitG": 0,
+          "grams": 0,
+          "kcal": 2120,
+          "p": 90,
+          "c": 220,
+          "f": 70,
+          "meal": "aksam",
+          "ts": 0,
+          "quick": true
+        }
+      ],
+      "water": 5
+    }
+  },
+  "weights": [
+    {
+      "date": "2026-09-22",
+      "kg": 98.4
+    },
+    {
+      "date": "2026-09-23",
+      "kg": 98.5
+    },
+    {
+      "date": "2026-09-24",
+      "kg": 98.2
+    },
+    {
+      "date": "2026-09-25",
+      "kg": 97.5
+    },
+    {
+      "date": "2026-09-26",
+      "kg": 97.2
+    },
+    {
+      "date": "2026-09-27",
+      "kg": 97.4
+    },
+    {
+      "date": "2026-09-28",
+      "kg": 97.9
+    },
+    {
+      "date": "2026-09-29",
+      "kg": 98.2
+    },
+    {
+      "date": "2026-09-30",
+      "kg": 98
+    },
+    {
+      "date": "2026-10-01",
+      "kg": 97.4
+    },
+    {
+      "date": "2026-10-02",
+      "kg": 96.9
+    },
+    {
+      "date": "2026-10-03",
+      "kg": 97
+    },
+    {
+      "date": "2026-10-04",
+      "kg": 97.5
+    },
+    {
+      "date": "2026-10-05",
+      "kg": 97.9
+    },
+    {
+      "date": "2026-10-06",
+      "kg": 97.8
+    },
+    {
+      "date": "2026-10-07",
+      "kg": 97.3
+    },
+    {
+      "date": "2026-10-08",
+      "kg": 96.7
+    },
+    {
+      "date": "2026-10-09",
+      "kg": 96.6
+    },
+    {
+      "date": "2026-10-10",
+      "kg": 97
+    },
+    {
+      "date": "2026-10-11",
+      "kg": 97.5
+    },
+    {
+      "date": "2026-10-12",
+      "kg": 97.6
+    },
+    {
+      "date": "2026-10-13",
+      "kg": 97.1
+    },
+    {
+      "date": "2026-10-14",
+      "kg": 96.5
+    },
+    {
+      "date": "2026-10-15",
+      "kg": 96.3
+    },
+    {
+      "date": "2026-10-16",
+      "kg": 96.5
+    },
+    {
+      "date": "2026-10-17",
+      "kg": 97.1
+    },
+    {
+      "date": "2026-10-18",
+      "kg": 97.3
+    },
+    {
+      "date": "2026-10-19",
+      "kg": 97
+    },
+    {
+      "date": "2026-10-20",
+      "kg": 96.4
+    },
+    {
+      "date": "2026-10-21",
+      "kg": 96
+    },
+    {
+      "date": "2026-10-22",
+      "kg": 96.1
+    },
+    {
+      "date": "2026-10-23",
+      "kg": 96.6
+    },
+    {
+      "date": "2026-10-24",
+      "kg": 97
+    },
+    {
+      "date": "2026-10-25",
+      "kg": 96.8
+    },
+    {
+      "date": "2026-10-26",
+      "kg": 96.2
+    },
+    {
+      "date": "2026-10-27",
+      "kg": 95.7
+    },
+    {
+      "date": "2026-10-28",
+      "kg": 95.7
+    },
+    {
+      "date": "2026-10-29",
+      "kg": 96.1
+    },
+    {
+      "date": "2026-10-30",
+      "kg": 96.6
+    },
+    {
+      "date": "2026-10-31",
+      "kg": 96.6
+    },
+    {
+      "date": "2026-11-01",
+      "kg": 96.1
+    },
+    {
+      "date": "2026-11-02",
+      "kg": 95.5
+    },
+    {
+      "date": "2026-11-03",
+      "kg": 95.3
+    },
+    {
+      "date": "2026-11-04",
+      "kg": 95.7
+    },
+    {
+      "date": "2026-11-05",
+      "kg": 96.2
+    },
+    {
+      "date": "2026-11-06",
+      "kg": 96.3
+    },
+    {
+      "date": "2026-11-07",
+      "kg": 96
+    },
+    {
+      "date": "2026-11-08",
+      "kg": 95.3
+    },
+    {
+      "date": "2026-11-09",
+      "kg": 95
+    },
+    {
+      "date": "2026-11-10",
+      "kg": 95.2
+    },
+    {
+      "date": "2026-11-11",
+      "kg": 95.7
+    },
+    {
+      "date": "2026-11-12",
+      "kg": 96
+    },
+    {
+      "date": "2026-11-13",
+      "kg": 95.8
+    },
+    {
+      "date": "2026-11-14",
+      "kg": 95.2
+    },
+    {
+      "date": "2026-11-15",
+      "kg": 94.7
+    },
+    {
+      "date": "2026-11-16",
+      "kg": 94.8
+    },
+    {
+      "date": "2026-11-17",
+      "kg": 95.3
+    },
+    {
+      "date": "2026-11-18",
+      "kg": 95.7
+    },
+    {
+      "date": "2026-11-19",
+      "kg": 95.6
+    },
+    {
+      "date": "2026-11-20",
+      "kg": 94.8
+    }
+  ],
+  "waists": [
+    {
+      "date": "2026-11-20",
+      "cm": 101
+    }
+  ],
+  "custom": [
+    {
+      "id": "c_mwpaqiflvmopp",
+      "name": "annemin zxqmantısı",
+      "aliases": [],
+      "cat": "Özel",
+      "kcal": 150,
+      "p": 6.7,
+      "c": 0,
+      "f": 0,
+      "units": {
+        "porsiyon": 300
+      },
+      "def": "porsiyon",
+      "custom": true
+    }
+  ],
+  "favs": [
+    "ayran"
+  ],
+  "recents": [
+    {
+      "id": "pirinc-pilavi",
+      "qty": 1,
+      "unit": "porsiyon",
+      "ts": 1795198342717
+    },
+    {
+      "id": "kuru-fasulye",
+      "qty": 1,
+      "unit": "porsiyon",
+      "ts": 1795198342717
+    },
+    {
+      "id": "ayran",
+      "qty": 1,
+      "unit": "su bardağı",
+      "ts": 1795198338553
+    },
+    {
+      "id": "c_mwpaqiflvmopp",
+      "qty": 2,
+      "unit": "tabak",
+      "ts": 1795198332902
+    },
+    {
+      "id": "yumurta",
+      "qty": 3.5,
+      "unit": "adet",
+      "ts": 1795198329953
+    },
+    {
+      "id": "siyah-zeytin",
+      "qty": 5,
+      "unit": "adet",
+      "ts": 1795198328953
+    },
+    {
+      "id": "beyaz-peynir",
+      "qty": 2,
+      "unit": "dilim",
+      "ts": 1795198328953
+    }
+  ],
+  "meals": [
+    {
+      "id": "mwpaql9wv6bad",
+      "name": "Benim kahvaltım",
+      "items": [
+        {
+          "id": "mwpaql9wrmhr3",
+          "foodId": "beyaz-peynir",
+          "name": "Beyaz peynir",
+          "qty": 2,
+          "unit": "dilim",
+          "unitG": 30,
+          "grams": 60,
+          "kcal": 158,
+          "p": 10.2,
+          "c": 0.9,
+          "f": 12.6,
+          "meal": "kahvalti",
+          "ts": 1795198328953,
+          "quick": false
+        },
+        {
+          "id": "mwpaql9wk7r3v",
+          "foodId": "siyah-zeytin",
+          "name": "Siyah zeytin",
+          "qty": 5,
+          "unit": "adet",
+          "unitG": 4,
+          "grams": 20,
+          "kcal": 23,
+          "p": 0.2,
+          "c": 1.2,
+          "f": 2.2,
+          "meal": "kahvalti",
+          "ts": 1795198328953,
+          "quick": false
+        }
+      ]
+    }
+  ],
+  "reminders": {
+    "breakfast": {
+      "on": true,
+      "time": "09:15"
+    },
+    "lunch": {
+      "on": false,
+      "time": "12:30"
+    },
+    "dinner": {
+      "on": false,
+      "time": "19:00"
+    },
+    "water": {
+      "on": true,
+      "every": 90,
+      "from": "09:00",
+      "to": "21:00"
+    },
+    "weigh": {
+      "on": false,
+      "time": "07:30"
+    },
+    "evening": {
+      "on": false,
+      "time": "21:30"
+    }
+  },
+  "remLog": {},
+  "adaptive": {
+    "dismissedAt": 0
+  },
+  "ui": {
+    "installDismissed": false,
+    "wRange": "1H",
+    "calRange": 30
+  }
+}

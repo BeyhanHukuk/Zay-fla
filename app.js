@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.4.0';
+  var APP_VERSION = '1.4.1';
 
   /* ======================================================================
      Yardımcılar
@@ -1796,62 +1796,155 @@
     'network': 'Sesli giriş için internet gerekiyor (tarayıcının konuşma tanıma servisi). Çevrimdışıyken yazarak ekleyebilirsin.',
     'language-not-supported': 'Türkçe konuşma tanıma bu cihazda desteklenmiyor.'
   };
+  function buzz(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) { /* */ } }
+  /**
+   * Dokunmalı sesli giriş (Today ve Koç için ortak). Mikrofon yalnızca kullanıcı tekrar dokununca kapanır:
+   * Android Chrome sessizlikte/zaman aşımında oturumu bitirirse kendiliğinden yeniden başlatılır ve metin korunur.
+   * cb: onStart(), onUpdate(finalText, interim), onFinish(text, reason, errCode), onCancel()
+   * reason: 'tap' | 'idle' (işlenir) · 'hidden' | 'error' (metin yalnızca korunur)
+   */
+  function createVoiceSession(cb) {
+    var IDLE_MS = 180000, STOP_WAIT = 1500;
+    var rec = null, active = false, stopping = false, stopReason = '', errCode = '', segs = [], interim = '', seen = {};
+    var restartT = null, stopT = null, idleT = null, startedAt = 0, gotResult = false, quickFails = 0, netFails = 0, lastErr = '', startedOnce = false;
+    function norm(t) { return String(t || '').toLocaleLowerCase('tr-TR').replace(/\s+/g, ' ').trim(); }
+    function addFinal(t) {
+      t = String(t || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+      var nt = norm(t), n = segs.length;
+      if (n) {
+        var nl = norm(segs[n - 1]);
+        if (nt === nl) return;                                   // aynı cümle tekrar geldi
+        if (nl && nt.indexOf(nl) === 0) { segs[n - 1] = t; return; } // öncekinin uzantısı: değiştir
+        if (n > 1 && nt === norm(segs[n - 2])) return;           // bir önceki cümlenin tekrarı
+      }
+      segs.push(t);
+    }
+    function text() { return segs.join(' ').trim(); }
+    function commitInterim() { if (interim.trim()) addFinal(interim); interim = ''; }
+    function emit() { if (cb.onUpdate) cb.onUpdate(text(), interim.trim()); }
+    function clearTimers() { clearTimeout(restartT); clearTimeout(stopT); clearTimeout(idleT); restartT = stopT = idleT = null; }
+    function resetIdle() { clearTimeout(idleT); idleT = setTimeout(function () { stop('idle'); }, IDLE_MS); }
+    function detachRec() { var r = rec; rec = null; if (r) { try { r.abort(); } catch (e) { /* */ } } }
+    function onVis() { if (document.hidden) stop('hidden'); }
+    function teardown() { active = false; clearTimers(); document.removeEventListener('visibilitychange', onVis); }
+    function finishNow() {
+      if (!active) return;
+      commitInterim(); teardown(); detachRec();
+      buzz(stopReason === 'tap' || stopReason === 'idle' ? [18, 40, 18] : 0);
+      if (cb.onFinish) cb.onFinish(text(), stopReason || 'tap', errCode);
+    }
+    function failNow(code) { stopping = true; stopReason = 'error'; errCode = code; finishNow(); }
+    function handle(e) {
+      var res = e.results || [], ri = e.resultIndex || 0, any = false;
+      interim = '';
+      for (var i = 0; i < res.length; i++) {
+        var r = res[i]; if (!r || !r[0]) continue;
+        if (r.isFinal) { if (!seen[i]) { seen[i] = true; addFinal(r[0].transcript); any = true; } }
+        else if (i >= ri || !seen[i]) interim += (interim ? ' ' : '') + String(r[0].transcript || '').trim();
+      }
+      if (any || interim) { gotResult = true; quickFails = 0; netFails = 0; if (!stopping) resetIdle(); }
+      emit();
+    }
+    function begin() {
+      restartT = null; if (!active || stopping) return;
+      var r;
+      try { r = new SR(); } catch (er) { failNow('start-failed'); return; }
+      rec = r; seen = {}; interim = ''; gotResult = false; lastErr = ''; startedAt = Date.now();
+      r.lang = 'tr-TR'; r.continuous = true; r.interimResults = true; r.maxAlternatives = 1;
+      r.onstart = function () { if (r !== rec) return; if (!startedOnce) { startedOnce = true; buzz(25); if (cb.onStart) cb.onStart(); } };
+      r.onresult = function (e) { if (r === rec) handle(e); };
+      r.onerror = function (e) {
+        if (r !== rec) return;
+        var c = e && e.error; lastErr = c || '';
+        if (c === 'not-allowed' || c === 'service-not-allowed' || c === 'audio-capture' || c === 'language-not-supported') failNow(c);
+      };
+      r.onend = function () {
+        if (r !== rec) return;
+        if (stopping) { finishNow(); return; }
+        commitInterim(); emit(); rec = null;
+        var lived = Date.now() - startedAt;
+        if (!gotResult) {
+          if (lastErr === 'network') { if (++netFails >= 5) { failNow('network'); return; } }
+          else if (lived < 700) { if (++quickFails >= 8) { failNow(lastErr || 'start-failed'); return; } }
+        }
+        var delay = Math.min(3000, 200 * Math.pow(2, Math.min(4, quickFails + netFails)));
+        restartT = setTimeout(begin, delay);
+      };
+      try { r.start(); }
+      catch (er) { rec = null; if (++quickFails >= 8) { failNow('start-failed'); return; } restartT = setTimeout(begin, 400); }
+    }
+    function start() {
+      if (active) return;
+      active = true; stopping = false; stopReason = ''; errCode = ''; segs = []; interim = ''; startedOnce = false; quickFails = 0; netFails = 0;
+      document.addEventListener('visibilitychange', onVis);
+      resetIdle(); begin();
+    }
+    function stop(reason) {
+      if (!active || stopping) return;
+      stopping = true; stopReason = reason || 'tap'; clearTimeout(restartT); clearTimeout(idleT);
+      if (!rec) { finishNow(); return; }
+      try { rec.stop(); } catch (er) { finishNow(); return; }
+      stopT = setTimeout(finishNow, STOP_WAIT);
+    }
+    function cancel() {
+      if (!active) return;
+      teardown(); detachRec(); segs = []; interim = '';
+      if (cb.onCancel) cb.onCancel();
+    }
+    return { start: start, stop: stop, cancel: cancel, active: function () { return active; } };
+  }
+
   function openVoice(o) {
     o = o || {};
-    var rec = null, listening = false, finalText = '', interim = '', autoGo = true, done = false;
-    var s = openSheet({ title: 'Sesle ekle', onClose: function () { done = true; try { if (rec) rec.abort(); } catch (e) { /* */ } } });
+    var vs = null, listening = false, edited = false, base = '', done = false;
+    var s = openSheet({ title: 'Sesle ekle', onClose: function () { done = true; if (vs) vs.cancel(); } });
     var examples = ['3 yumurta ve 2 dilim peynir', 'bir kase mercimek çorbası', 'iki dilim ekmek bir de ayran', '150 gram tavuk göğsü', 'bir buçuk bardak süt'];
     s.setBody('<div class="voice-stage"><button type="button" class="mic-big" data-mic aria-label="Dinlemeyi başlat/durdur">' + icon('mic') + '</button>' +
-      '<div class="voice-status js-st"></div><div class="live-text js-live"></div></div>' +
+      '<div class="voice-status js-st" role="status" aria-live="polite"></div><div class="live-text js-live"></div>' +
+      '<button type="button" class="voice-cancel" data-cancel hidden>İptal</button></div>' +
       '<label class="field"><span>Ya da yaz</span><textarea class="input js-txt" rows="2" placeholder="örn. 2 dilim ekmek, 1 bardak çay ve 5 zeytin"></textarea></label>' +
       '<div class="examples">' + examples.map(function (x) { return '<button type="button" class="chip" data-ex="' + esc(x) + '">' + esc(x) + '</button>'; }).join('') + '</div>');
     s.setFoot('<button type="button" class="btn btn-primary btn-lg btn-block" data-go>' + icon('sparkle') + 'Çözümle</button>');
-    var st = s.body.querySelector('.js-st'), live = s.body.querySelector('.js-live'), txt = s.body.querySelector('.js-txt'), mic = s.body.querySelector('[data-mic]');
+    var st = s.body.querySelector('.js-st'), live = s.body.querySelector('.js-live'), txt = s.body.querySelector('.js-txt'), mic = s.body.querySelector('[data-mic]'), cancelBtn = s.body.querySelector('[data-cancel]');
     function setStatus(h) { st.innerHTML = h; }
+    function setListening(on) { listening = on; mic.classList.toggle('listening', on); mic.setAttribute('aria-pressed', on ? 'true' : 'false'); cancelBtn.hidden = !on; }
     function go() {
-      var t = (txt.value || finalText || interim).trim();
+      if (vs && vs.active()) { vs.stop('tap'); return; } // dinlerken: önce kapat, metin gelince işlenir
+      var t = (txt.value || '').trim();
       if (!t) { toast('Önce ne yediğini söyle ya da yaz.'); return; }
       done = true; s.close(); handleText(t, o.meal);
     }
     function start() {
-      if (!SR) return;
-      finalText = ''; interim = ''; live.innerHTML = '';
-      try {
-        rec = new SR();
-        rec.lang = 'tr-TR'; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
-        rec.onstart = function () { listening = true; mic.classList.add('listening'); setStatus('Dinliyorum… ne yedin?'); };
-        rec.onresult = function (e) {
-          interim = '';
-          for (var i = e.resultIndex; i < e.results.length; i++) {
-            var r = e.results[i];
-            if (r.isFinal) finalText += (finalText ? ' ' : '') + r[0].transcript.trim();
-            else interim += r[0].transcript;
-          }
-          live.innerHTML = esc(finalText) + (interim ? ' <span class="interim">' + esc(interim) + '</span>' : '');
-          txt.value = (finalText + ' ' + interim).trim();
-        };
-        rec.onerror = function (e) {
-          autoGo = false;
-          var m = SR_ERRORS[e.error];
-          if (e.error !== 'aborted') setStatus(m || 'Bir sorun oldu (' + esc(e.error) + '). Tekrar dene ya da yaz.');
-        };
-        rec.onend = function () {
-          listening = false; mic.classList.remove('listening');
+      if (!SR || (vs && vs.active())) return;
+      base = txt.value.trim(); edited = false; live.innerHTML = '';
+      vs = createVoiceSession({
+        onStart: function () { setListening(true); setStatus('Dinliyorum… bitirince dokun'); },
+        onUpdate: function (f, i) {
+          live.innerHTML = esc(f) + (i ? ' <span class="interim">' + esc(i) + '</span>' : '');
+          if (!edited) txt.value = (base + ' ' + f + ' ' + i).replace(/\s+/g, ' ').trim();
+        },
+        onFinish: function (t, reason, err) {
+          setListening(false);
           if (done) return;
-          var t = (finalText || interim).trim();
-          if (t) { txt.value = t; setStatus('Anlaşıldı ✓'); if (autoGo) setTimeout(function () { if (!done) go(); }, 450); }
-          else if (!/izin|internet|bulunamadı|desteklenmiyor|kullanılamıyor|sorun/.test(st.textContent)) setStatus('Mikrofona dokun ve konuş.');
-          autoGo = true;
-        };
-        rec.start();
-      } catch (err) { setStatus('Sesli giriş başlatılamadı. Yazarak ekleyebilirsin.'); }
+          if (!edited) txt.value = (base + ' ' + t).replace(/\s+/g, ' ').trim();
+          live.innerHTML = esc(t);
+          if (reason === 'error') { setStatus(SR_ERRORS[err] || 'Bir sorun oldu (' + esc(err) + '). Tekrar dene ya da yaz.'); return; }
+          if (reason === 'hidden') { setStatus('Dinleme durdu, metin korundu. Çözümle’ye dokunabilirsin.'); return; }
+          if (!txt.value.trim()) { setStatus('Ses algılanamadı. Mikrofona dokun ve konuş.'); return; }
+          setStatus('Anlaşıldı ✓'); go();
+        },
+        onCancel: function () { setListening(false); live.innerHTML = ''; txt.value = base; setStatus('İptal edildi. Mikrofona dokun ve konuş.'); }
+      });
+      setStatus('Mikrofon açılıyor…');
+      try { vs.start(); } catch (err) { setStatus('Sesli giriş başlatılamadı. Yazarak ekleyebilirsin.'); }
     }
     mic.addEventListener('click', function () {
       if (!SR) { txt.focus(); return; }
-      if (listening) { try { rec.stop(); } catch (e) { /* */ } } else start();
+      if (vs && vs.active()) vs.stop('tap'); else start();
     });
-    s.body.addEventListener('click', function (e) { var ex = e.target.closest('[data-ex]'); if (ex) { txt.value = ex.getAttribute('data-ex'); autoGo = false; try { if (rec) rec.abort(); } catch (er) { /* */ } } });
-    txt.addEventListener('input', function () { autoGo = false; });
+    cancelBtn.addEventListener('click', function () { if (vs) vs.cancel(); });
+    s.body.addEventListener('click', function (e) { var ex = e.target.closest('[data-ex]'); if (ex) { if (vs) vs.cancel(); txt.value = ex.getAttribute('data-ex'); edited = true; } });
+    txt.addEventListener('input', function () { edited = true; });
     txt.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); go(); } });
     s.foot.querySelector('[data-go]').addEventListener('click', go);
     if (!SR) {
@@ -1859,7 +1952,7 @@
       setStatus('Bu tarayıcı sesli girişi desteklemiyor.<br><span class="small">Klavyedeki 🎤 dikte tuşuyla konuşarak yazabilirsin.</span>');
       setTimeout(function () { try { txt.focus(); } catch (e) { /* */ } }, 320);
     } else {
-      setStatus('Mikrofona dokun ve konuş.');
+      setStatus('Mikrofona dokun ve konuş. Bitirince tekrar dokun.');
       if (o.autostart !== false) start();
     }
   }
@@ -2167,7 +2260,7 @@
   // Koç mesaj çubuğu (yazı + mikrofon; konuşma tanıma openVoice ile aynı tr-TR ayarlarını kullanır)
   (function initCoachbar() {
     var form = $('#coachbar'); if (!form) return;
-    var input = $('#coach-input'), mic = $('.qb-mic', form), send = $('.qb-send', form), rec = null, listening = false;
+    var input = $('#coach-input'), mic = $('.qb-mic', form), send = $('.qb-send', form), cancelBtn = $('.qb-cancel', form), listening = false;
     mic.innerHTML = icon('mic');
     send.innerHTML = icon('send');
     function sync() { var has = !!input.value.trim(); mic.hidden = has && !listening; send.hidden = !has || listening; }
@@ -2179,34 +2272,31 @@
       coachSend(v);
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+    var vs = null, DEF_PH = input.placeholder;
+    function setListening(on) {
+      listening = on; mic.classList.toggle('listening', on); mic.setAttribute('aria-pressed', on ? 'true' : 'false');
+      cancelBtn.hidden = !on; input.placeholder = on ? 'Dinliyorum… bitirince dokun' : DEF_PH; sync();
+    }
     mic.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
       if (!SR) { toast('Bu tarayıcı sesli girişi desteklemiyor. Klavyedeki 🎤 tuşuyla dikte edebilirsin.', { ms: 4500 }); input.focus(); return; }
-      if (listening) { try { rec.stop(); } catch (er) { /* */ } return; }
-      var finalText = '', interim = '', failed = false;
-      try {
-        rec = new SR();
-        rec.lang = 'tr-TR'; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
-        rec.onstart = function () { listening = true; mic.classList.add('listening'); input.placeholder = 'Dinliyorum…'; sync(); };
-        rec.onresult = function (ev) {
-          interim = '';
-          for (var i = ev.resultIndex; i < ev.results.length; i++) {
-            var r = ev.results[i];
-            if (r.isFinal) finalText += (finalText ? ' ' : '') + r[0].transcript.trim(); else interim += r[0].transcript;
-          }
-          input.value = (finalText + ' ' + interim).trim();
-        };
-        rec.onerror = function (ev) { failed = true; if (ev.error !== 'aborted') toast(esc(SR_ERRORS[ev.error] || 'Sesli giriş başarısız oldu. Yazarak devam edebilirsin.'), { ms: 4500 }); };
-        rec.onend = function () {
-          listening = false; mic.classList.remove('listening'); input.placeholder = 'Koça sor ya da ne yediğini yaz…';
-          var t = (finalText || interim).trim();
-          if (t) input.value = t;
-          sync();
-          if (t && !failed) setTimeout(submit, 350);
-        };
-        rec.start();
-      } catch (er) { toast('Sesli giriş başlatılamadı. Yazarak devam edebilirsin.'); }
+      if (vs && vs.active()) { vs.stop('tap'); return; }
+      var base = input.value.trim();
+      vs = createVoiceSession({
+        onStart: function () { setListening(true); },
+        onUpdate: function (f, i) { input.value = (base + ' ' + f + ' ' + i).replace(/\s+/g, ' ').trim(); },
+        onFinish: function (t, reason, err) {
+          input.value = (base + ' ' + t).replace(/\s+/g, ' ').trim();
+          setListening(false);
+          if (reason === 'error') { toast(esc(SR_ERRORS[err] || 'Sesli giriş başarısız oldu. Yazarak devam edebilirsin.'), { ms: 4500 }); return; }
+          if (reason === 'hidden') return; // metin kutuda kalır
+          if (input.value.trim()) submit(); else toast(SR_ERRORS['no-speech']);
+        },
+        onCancel: function () { input.value = base; setListening(false); }
+      });
+      try { vs.start(); } catch (er) { toast('Sesli giriş başlatılamadı. Yazarak devam edebilirsin.'); }
     });
+    cancelBtn.addEventListener('click', function (e) { e.preventDefault(); if (vs) vs.cancel(); });
     sync();
   })();
 

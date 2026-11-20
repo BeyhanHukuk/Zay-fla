@@ -378,6 +378,9 @@ button.list-row:active, .list-row.tap:active { background: var(--surface-2); bor
 .voice-status { margin-top: 16px; font-weight: 650; color: var(--text-2); min-height: 22px; text-align: center; }
 .live-text { margin-top: 10px; font-size: 20px; font-weight: 650; text-align: center; min-height: 56px; line-height: 1.35; padding: 0 8px; }
 .live-text .interim { color: var(--text-3); }
+.voice-cancel { margin-top: 6px; padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--border); color: var(--text-2); font-weight: 650; font-size: 14px; }
+.voice-cancel[hidden], .qb-cancel[hidden] { display: none; }
+.qb-cancel { flex: none; height: 40px; padding: 0 12px; border-radius: 20px; color: var(--text-2); font-weight: 650; font-size: 14px; }
 .examples { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
 /* Ekle merkezi */
