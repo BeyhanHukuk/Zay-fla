@@ -1380,9 +1380,10 @@
     /** Düşük güvenli kalemde (ör. "light simit" yok) önerilen benzer besinler */
     function lowSugHtml(it, low) {
       var sug = low ? (it.suggestions || []).filter(function (x) { return x.id !== it.foodId && foodById(x.id); }) : [];
-      if (!sug.length) return '';
-      var note = it.variantMissing ? 'Bu çeşidi bulamadım, normalini yazdım. Bunlardan biri mi?' : 'Bunlardan biri mi?';
-      return '<div class="small muted" style="margin-top:8px">' + note + '</div><div class="chips sug-chips" style="flex-wrap:wrap;overflow:visible">' +
+      // ayrıştırıcının notu ("“yaş” hâli listede yok, en yakın: ...") her zaman gösterilir
+      if (!sug.length) return low && it.note ? '<div class="small muted js-note" style="margin-top:8px">' + esc(it.note) + '</div>' : '';
+      var note = it.note ? esc(it.note) + '. Bunlardan biri mi?' : it.variantMissing ? 'Bu çeşidi bulamadım, normalini yazdım. Bunlardan biri mi?' : 'Bunlardan biri mi?';
+      return '<div class="small muted js-note" style="margin-top:8px">' + note + '</div><div class="chips sug-chips" style="flex-wrap:wrap;overflow:visible">' +
         sug.map(function (x) { return '<button type="button" class="chip soft" data-act="swap" data-fid="' + esc(x.id) + '">' + esc(x.name) + '</button>'; }).join('') + '</div>';
     }
     function unmatchedHtml(u, i) {
