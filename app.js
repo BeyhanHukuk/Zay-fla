@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.7.1';
+  var APP_VERSION = '1.7.2';
 
   /* ======================================================================
      Yardımcılar
@@ -2357,7 +2357,7 @@
   // Service worker ve otomatik güncelleme
   // Yeni sürüm: sw.js değişince tarayıcı yeni SW'yi kurar (skipWaiting + clients.claim), controllerchange tetiklenir,
   // sayfa bir kez yenilenir. Veriler localStorage'dadır; yenileme onları silmez. Açık form/sohbet varken yenileme ertelenir.
-  var swReg = null, lastUpdateCheck = 0, UPDATE_EVERY = 30 * 60 * 1000, reloading = false, updateWaiters = [];
+  var swReg = null, lastUpdateCheck = 0, UPDATE_EVERY = 2 * 60 * 1000, reloading = false, updateWaiters = [];
   var swSupported = 'serviceWorker' in navigator && /^https?:$/.test(location.protocol);
   function setUpdStatus(t) { var el = $('#upd-status'); if (el) el.textContent = t; }
   function checkForUpdate(manual) {
@@ -2410,9 +2410,11 @@
       var d = e.data || {};
       if (d.type === 'navigate' && d.url) { var h = d.url.split('#')[1]; if (h) location.hash = '#' + h; }
     });
-    document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible' && Date.now() - lastUpdateCheck > UPDATE_EVERY) checkForUpdate(false);
-    });
+    // Android'de uygulama çoğu zaman tam kapanmaz, arka plandan geri gelir: her dönüşte (en fazla 2 dakikada bir) yeni sürüm sorulur.
+    var onResume = function () { if (document.visibilityState === 'visible' && Date.now() - lastUpdateCheck > UPDATE_EVERY) checkForUpdate(false); };
+    document.addEventListener('visibilitychange', onResume);
+    window.addEventListener('pageshow', function (e) { if (e.persisted) onResume(); });
+    window.addEventListener('online', onResume);
   }
 
   /* ======================================================================
