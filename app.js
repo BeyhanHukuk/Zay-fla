@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.7.2';
+  var APP_VERSION = '1.7.3';
 
   /* ======================================================================
      Yardımcılar
