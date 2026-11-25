@@ -10,3 +10,7 @@ Zayıfla, Türkçe kalori ve kilo takip uygulamasıdır. Yediklerinizi yazarak v
 2. Sağ üstteki üç noktaya dokunun.
 3. "Ana ekrana ekle" veya "Uygulamayı yükle" seçeneğini seçin.
 4. İlk açılışta mikrofon ve bildirim izinlerine "İzin ver" deyin.
+
+## Güncelleme
+
+Uygulama yeni sürümü kendiliğinden alır (arka plandan her dönüşte, en fazla 2 dakikada bir denetler). Hemen almak için: **Ayarlar → Güncellemeleri denetle**. Geçerli sürüm Ayarlar sayfasının altında yazar.
