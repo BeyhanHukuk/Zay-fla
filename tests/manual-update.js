@@ -250,7 +250,7 @@ function seed(over) {
   const swSrc = fs.readFileSync(path.join(root2, 'sw.js'), 'utf8');
   const appSrc = fs.readFileSync(path.join(root2, 'app.js'), 'utf8');
   check(/skipWaiting\(\)/.test(swSrc) && /clients\.claim\(\)/.test(swSrc) && /caches\.delete/.test(swSrc), 'sw: skipWaiting + clients.claim + eski önbellek silme');
-  check(/zayifla-v1\.7\.2/.test(swSrc) && /APP_VERSION = '1\.7\.2'/.test(appSrc), 'sürüm 1.7.2 (uygulama ve SW önbelleği)');
+  check(/zayifla-v1\.7\.3/.test(swSrc) && /APP_VERSION = '1\.7\.3'/.test(appSrc), 'sürüm 1.7.3 (uygulama ve SW önbelleği)');
   const publish = ver => {
     fs.writeFileSync(path.join(root2, 'app.js'), fs.readFileSync(path.join(root2, 'app.js'), 'utf8').replace(/APP_VERSION = '[\d.]+'/, `APP_VERSION = '${ver}'`));
     fs.writeFileSync(path.join(root2, 'sw.js'), fs.readFileSync(path.join(root2, 'sw.js'), 'utf8').replace(/zayifla-v[\d.]+'/, `zayifla-v${ver}'`));
@@ -271,10 +271,10 @@ function seed(over) {
   await pu.reload({ waitUntil: 'load' });
   await pu.waitForFunction(() => !!navigator.serviceWorker.controller);
   navs = 0;
-  check(await pu.evaluate(() => window.Zayifla.version) === '1.7.2', 'v1: sayfa 1.7.2 açıldı');
+  check(await pu.evaluate(() => window.Zayifla.version) === '1.7.3', 'v1: sayfa 1.7.3 açıldı');
   await pu.click('a[data-tab="ayarlar"]');
   await pu.waitForSelector('[data-action="check-update"]');
-  check(/Sürüm 1\.7\.2/.test(await pu.textContent('#view')), 'Ayarlar "Sürüm 1.7.2" gösterir');
+  check(/Sürüm 1\.7\.3/.test(await pu.textContent('#view')), 'Ayarlar "Sürüm 1.7.3" gösterir');
   const before = await pu.evaluate(() => localStorage.getItem('zayifla.data'));
   // güncelleme yokken: "güncel" der, yenilemez
   await pu.click('[data-action="check-update"]');
@@ -282,29 +282,29 @@ function seed(over) {
   await sleep(2500);
   check(navs === 0, 'yeni sürüm yokken sayfa yenilenmez');
 
-  publish('1.7.3');
+  publish('1.7.4');
   await pu.click('[data-action="check-update"]');
-  await pu.waitForFunction(() => window.Zayifla.version === '1.7.3', null, { timeout: 20000 });
+  await pu.waitForFunction(() => window.Zayifla.version === '1.7.4', null, { timeout: 20000 });
   await sleep(4000);
-  check(await pu.evaluate(() => window.Zayifla.version) === '1.7.3', 'sunucuda yeni sürüm → sayfa 1.7.3 oldu');
+  check(await pu.evaluate(() => window.Zayifla.version) === '1.7.4', 'sunucuda yeni sürüm → sayfa 1.7.4 oldu');
   check(navs === 1, 'tam olarak bir kez yenilendi, döngü yok (yönlendirme: ' + navs + ')');
   const toasts = await pu.evaluate(() => JSON.parse(sessionStorage.getItem('__toasts') || '[]'));
   check(toasts.some(t => t.includes('Uygulama güncellendi ✓')), '"Uygulama güncellendi ✓" bildirimi gösterildi');
   check((await pu.evaluate(() => localStorage.getItem('zayifla.data'))) === before, 'kullanıcı verisi aynen korundu');
-  check(/zayifla-v1\.7\.3/.test((await pu.evaluate(() => caches.keys())).join(',')) && !(await pu.evaluate(() => caches.keys())).some(k => /zayifla-v1\.7\.2/.test(k)), 'eski önbellek silindi, yenisi var');
+  check(/zayifla-v1\.7\.4/.test((await pu.evaluate(() => caches.keys())).join(',')) && !(await pu.evaluate(() => caches.keys())).some(k => /zayifla-v1\.7\.3/.test(k)), 'eski önbellek silindi, yenisi var');
   await pu.click('a[data-tab="ayarlar"]');
-  check(/Sürüm 1\.7\.3/.test(await pu.textContent('#view')), 'Ayarlar yeni sürümü gösterir');
+  check(/Sürüm 1\.7\.4/.test(await pu.textContent('#view')), 'Ayarlar yeni sürümü gösterir');
 
   // görünür olunca denetim: 2 dk sınırı
   publish('1.4.3');
   const navs1 = navs;
   await pu.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
   await sleep(2500);
-  check(navs === navs1 && await pu.evaluate(() => window.Zayifla.version) === '1.7.3', 'visibilitychange: 2 dakika dolmadan sunucuya sorulmaz');
+  check(navs === navs1 && await pu.evaluate(() => window.Zayifla.version) === '1.7.4', 'visibilitychange: 2 dakika dolmadan sunucuya sorulmaz');
   await pu.evaluate(() => { const real = Date.now; Date.now = () => real() + 3 * 60 * 1000; document.dispatchEvent(new Event('visibilitychange')); Date.now = real; });
   await pu.waitForFunction(() => /Yenile/.test(document.querySelector('#toasts').textContent) || window.Zayifla.version === '1.4.3', null, { timeout: 20000 });
   await sleep(2500);
-  check(navs === navs1 && await pu.evaluate(() => window.Zayifla.version) === '1.7.3', 'döngü koruması: 60 sn içinde ikinci otomatik yenileme yapılmaz, "Yenile" düğmesi sunulur');
+  check(navs === navs1 && await pu.evaluate(() => window.Zayifla.version) === '1.7.4', 'döngü koruması: 60 sn içinde ikinci otomatik yenileme yapılmaz, "Yenile" düğmesi sunulur');
   await pu.click('#toasts button');
   await pu.waitForFunction(() => window.Zayifla.version === '1.4.3');
   check(navs === navs1 + 1, 'Yenile düğmesi ile 1.4.3');
