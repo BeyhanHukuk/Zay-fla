@@ -1,5 +1,5 @@
 // Turkish food nutrition database. Values per 100 g (per 100 ml for drinks). units = grams per 1 unit. alc = g alcohol per 100 ml (7 kcal/g).
-// 2919 items. One item per line; ids are stable (saved entries/favorites reference them).
+// 2924 items. One item per line; ids are stable (saved entries/favorites reference them).
 window.FOODS = [
 {id:"yumurta",name:"Yumurta (haşlanmış)",aliases:["yumurta","haşlanmış yumurta","haslanmis yumurta","yumurta (haşlanmış)","yumurta (haslanmis)","katı yumurta","kati yumurta","sert yumurta","tavuk yumurtası","organik yumurta","köy yumurtası","gezen tavuk yumurtası"],cat:"Kahvaltılık",kcal:155,p:13,c:1.1,f:11,units:{"adet":50},def:"adet"},
 {id:"yumurta-rafadan",name:"Rafadan yumurta",aliases:["rafadan yumurta","rafadan"],cat:"Kahvaltılık",kcal:143,p:12.6,c:0.7,f:9.5,units:{"adet":50},def:"adet"},
@@ -2919,5 +2919,10 @@ window.FOODS = [
 {id:"z-whey-cilek",name:"Whey protein (çilek aromalı)",aliases:["çilekli whey","çilek aromalı whey protein","çilekli protein tozu","whey çilekli","whey protein çilek","çilek aromalı protein tozu","çilekli whey protein","strawberry whey","whey çilek aroma","muzlu whey","cilek aroma whey"],cat:"Diğer",kcal:395,p:78,c:9,f:6.5,units:{"adet":30,"yemek kaşığı":15},def:"adet"},
 {id:"z-barebells",name:"Barebells protein bar",aliases:["barebells","barebells protein bar","barebells bar","barebells çikolatalı","barebells cookies cream","bare bells","barebells protein barı"],cat:"Atıştırmalık",kcal:364,p:36,c:33,f:14.5,units:{"adet":55},def:"adet"},
 {id:"z-quest-bar",name:"Quest protein bar",aliases:["quest bar","quest protein bar","quest protein barı","quest","quest cookies cream bar"],cat:"Atıştırmalık",kcal:317,p:35,c:28,f:13,units:{"adet":60},def:"adet"},
-{id:"z-protein-gofret",name:"Protein gofret (proteinli wafer)",aliases:["protein gofret","proteinli gofret","protein wafer","proteinli wafer","protein gofreti"],cat:"Atıştırmalık",kcal:480,p:30,c:45,f:20,units:{"adet":40,"paket":40},def:"adet"}
+{id:"z-protein-gofret",name:"Protein gofret (proteinli wafer)",aliases:["protein gofret","proteinli gofret","protein wafer","proteinli wafer","protein gofreti"],cat:"Atıştırmalık",kcal:480,p:30,c:45,f:20,units:{"adet":40,"paket":40},def:"adet"},
+{id:"tavuk-eti-derisiz",name:"Tavuk eti (derisiz, karışık)",aliases:["derisiz tavuk eti","tavuk eti derisiz","kemiksiz derisiz tavuk eti","derisiz piliç eti","pilic eti derisiz"],cat:"Et ve Tavuk",kcal:190,p:28.9,c:0,f:7.4,units:{"porsiyon":150,"dilim":30},def:"porsiyon",raw:{"kcal":119,"p":21.4,"c":0,"f":3.1}},
+{id:"tavuk-eti-derili",name:"Tavuk eti (derili, karışık)",aliases:["derili tavuk eti","tavuk eti derili","derili piliç eti","pilic eti derili"],cat:"Et ve Tavuk",kcal:239,p:27.3,c:0,f:13.6,units:{"porsiyon":150,"dilim":30},def:"porsiyon",raw:{"kcal":215,"p":18.6,"c":0,"f":15.1}},
+{id:"tavuk-gogsu-derili",name:"Tavuk göğsü (derili)",aliases:["derili tavuk göğsü","derili tavuk gogsu","tavuk göğsü derili","tavuk gogsu derili"],cat:"Et ve Tavuk",kcal:197,p:29.8,c:0,f:7.8,units:{"porsiyon":150,"adet":180},def:"porsiyon",raw:{"kcal":172,"p":20.9,"c":0,"f":9.3}},
+{id:"kuzu-eti-yagsiz",name:"Kuzu eti (yağsız)",aliases:["yağsız kuzu eti","yagsiz kuzu eti","kuzu eti yağsız","kuzu eti yagsiz","yağı ayıklanmış kuzu eti","yagi ayiklanmis kuzu eti"],cat:"Et ve Tavuk",kcal:206,p:28.4,c:0,f:9.5,units:{"porsiyon":100,"dilim":30},def:"porsiyon",raw:{"kcal":134,"p":20.3,"c":0,"f":5.3}},
+{id:"hindi-eti-derili",name:"Hindi eti (derili)",aliases:["derili hindi eti","hindi eti derili","derili hindi"],cat:"Et ve Tavuk",kcal:208,p:28,c:0,f:10,units:{"porsiyon":150,"dilim":30},def:"porsiyon",raw:{"kcal":160,"p":20,"c":0,"f":8.5}}
 ];

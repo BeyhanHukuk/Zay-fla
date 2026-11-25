@@ -1072,11 +1072,328 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Kemikli / derili / bütün alımlar: brüt ağırlıktan yenen net ete      */
+  /* ------------------------------------------------------------------ */
+  /*
+   * "1,5 kiloluk bütün tavuk yedim, kemiğini ve derisini yemedim", "1 kilo kemikli pirzola, kemiğini ve yağını yemedim":
+   * kullanıcı brüt (satın alınan) ağırlığı söyler; kemik / deri / yağ / kılçık / kafa payı düşülür ve yalnızca yenen
+   * net et, o etin besin kaydıyla yazılır. Notta varsayım açıkça gösterilir, gram onay ekranında düzeltilebilir.
+   *
+   * Yalnızca bağlam açıksa uygulanır: "kemikli", "kemiğiyle", "kemik dahil", "bütün/tüm (tavuk, balık...)",
+   * "brüt", "temizlenmemiş", "...kiloluk" (bütün hayvan: tavuk, hindi, balık) ya da "kemiğini/derisini/yağını/
+   * kılçığını ... yemedim / ayıkladım / çıkardım / attım" gibi bir ayıklama cümlesi. "200 gram tavuk göğsü" değişmez.
+   *
+   * Varsayım: söylenen ağırlık ÇİĞ (satın alma / kasap) ağırlığıdır; net et çiğ değerlerle hesaplanır (besin çiğ/pişmiş
+   * değer taşıyorsa). "pişmiş ağırlığı/hali" denirse oran aynı kalır, pişmiş değerler kullanılır.
+   * Adet / porsiyon ile söylenen kalemlerin birim ağırlıkları zaten yenen kısımdır: oran uygulanmaz, yalnızca
+   * "derisini yemedim" / "derisiyle" tercihi (derili / derisiz besin) uygulanır.
+   *
+   * Oranlar = yenen kısım / brüt çiğ ağırlık (yaklaşık, ev mutfağına yuvarlanmış):
+   *  - Bütün tavuk: USDA SR 05006 / 05011 (broiler, pişirmeye hazır karkas): kemik artığı %32 -> derili et 0,68;
+   *    derisiz et 0,48 (artık %52 = %32 kemik + %12 deri + %8 ayrılabilir yağ).
+   *  - Tavuk parçaları: FAO "Food Composition Table for Use in East Asia" (1972) kemik/atık: göğüs %21, baget %40,
+   *    kalça %25, kanat %51; deri payları USDA SR parça kayıtlarından (göğüs ~%9, baget ~%10, kalça ~%13, kanat ~%16).
+   *  - Hindi: USDA SR hindi parçalarına göre yaklaşık (tavuğa benzer, kemik payı biraz düşük).
+   *  - Kuzu / dana: USDA SR perakende kesim artıkları (pirzola ~%25, kaburga %30-40, incik %30-40 kemik; ayrılabilir
+   *    yağ da ayıklanınca yalnız yağsız et) ve FAO (koyun eti: kemik + kesilen yağ atığı %22-31).
+   *  - Bütün balık (temizlenmemiş): FAO balık işleme verimleri; kafa, iç, kılçık, yüzgeç çıkınca yenen et tipik olarak
+   *    %40-60 (yassı balıklarda düşük, hamsi / sardalyada yüksek).
+   */
+  // b: yalnız kemik çıkar (deri / yağ yenir) · s: kemik + deri çıkar (kanatlı) · y: kemik + yağ çıkar (kırmızı et)
+  // on / off: yenen kısım hangi besinle kaydedilir (deri ya da yağ yendi / yenmedi)
+  var YIELD = {
+    'tavuk-butun': { k: 'kanatli', label: 'bütün tavuk', b: 0.68, s: 0.48, on: 'tavuk-eti-derili', off: 'tavuk-eti-derisiz', whole: 1, unitG: 1300 },
+    'tavuk-gogus': { k: 'kanatli', label: 'kemikli tavuk göğsü', short: 'tavuk göğsü', b: 0.79, s: 0.70, on: 'tavuk-gogsu-derili', off: 'tavuk-gogsu' },
+    'tavuk-but': { k: 'kanatli', label: 'kemikli tavuk but', short: 'tavuk but', b: 0.70, s: 0.58, on: 'tavuk-but', off: 'tavuk-but-derisiz' },
+    'tavuk-baget': { k: 'kanatli', label: 'kemikli tavuk baget', short: 'tavuk baget', b: 0.60, s: 0.50, on: 'tavuk-but', off: 'tavuk-baget' },
+    'tavuk-kalca': { k: 'kanatli', label: 'kemikli tavuk kalça', short: 'tavuk kalça', b: 0.75, s: 0.62, on: 'tavuk-but', off: 'tavuk-kalca' },
+    'tavuk-kanat': { k: 'kanatli', label: 'tavuk kanat', b: 0.49, s: 0.33, on: 'tavuk-kanat', off: 'tavuk-eti-derisiz' },
+    'hindi-butun': { k: 'kanatli', label: 'bütün hindi', b: 0.70, s: 0.55, on: 'hindi-eti-derili', off: 'y-hindi-but', whole: 1, unitG: 5000 },
+    'hindi-gogus': { k: 'kanatli', label: 'kemikli hindi göğsü', short: 'hindi göğsü', b: 0.82, s: 0.74, on: 'hindi-eti-derili', off: 'hindi-gogus' },
+    'hindi-but': { k: 'kanatli', label: 'kemikli hindi but', short: 'hindi but', b: 0.70, s: 0.60, on: 'hindi-eti-derili', off: 'y-hindi-but' },
+    'hindi-kanat': { k: 'kanatli', label: 'hindi kanat', b: 0.52, s: 0.38, on: 'hindi-eti-derili', off: 'y-hindi-but' },
+    'kuzu-pirzola': { k: 'kirmizi', label: 'kemikli kuzu pirzola', short: 'kuzu pirzola', b: 0.75, y: 0.55, on: 'kuzu-pirzola', off: 'kuzu-eti-yagsiz' },
+    'kuzu-kaburga': { k: 'kirmizi', label: 'kuzu kaburga', b: 0.68, y: 0.45, on: 'kuzu-kaburga', off: 'kuzu-eti-yagsiz' },
+    'kuzu-incik': { k: 'kirmizi', label: 'kuzu incik', b: 0.60, y: 0.52, on: 'kuzu-eti', off: 'kuzu-eti-yagsiz' },
+    'kuzu-but': { k: 'kirmizi', label: 'kemikli kuzu but', short: 'kuzu but', b: 0.80, y: 0.68, on: 'y-kuzu-but', off: 'kuzu-eti-yagsiz' },
+    'kuzu-kemikli': { k: 'kirmizi', label: 'kemikli kuzu eti', short: 'kuzu eti', b: 0.72, y: 0.58, on: 'kuzu-eti', off: 'kuzu-eti-yagsiz' },
+    'dana-pirzola': { k: 'kirmizi', label: 'kemikli dana pirzola', short: 'dana pirzola', b: 0.82, y: 0.70, on: 'dana-pirzola', off: 'y-dana-but' },
+    'dana-kaburga': { k: 'kirmizi', label: 'dana kaburga', b: 0.58, y: 0.45, on: 'dana-kaburga', off: 'y-dana-but' },
+    'dana-incik': { k: 'kirmizi', label: 'dana incik', b: 0.68, y: 0.62, on: 'dana-kusbasi', off: 'y-dana-but' },
+    'dana-kemikli': { k: 'kirmizi', label: 'kemikli dana eti', short: 'dana eti', b: 0.78, y: 0.66, on: 'dana-kusbasi', off: 'y-dana-but' }
+  };
+  // bütün balık: [deri yenir, deri de çıkar, ad] (kafa, iç ve kılçık her durumda çıkar)
+  var FISH_YIELD = {
+    'cipura': [0.50, 0.45, 'çipura'], 'levrek': [0.50, 0.45, 'levrek'], 'hamsi-tava': [0.62, 0.58, 'hamsi'], 'hamsi-bugulama': [0.62, 0.58, 'hamsi'],
+    'sardalya': [0.60, 0.55, 'sardalya'], 'alabalik': [0.55, 0.50, 'alabalık'], 'uskumru': [0.58, 0.53, 'uskumru'], 'lufer': [0.55, 0.50, 'lüfer'],
+    'istavrit': [0.52, 0.48, 'istavrit'], 'mezgit': [0.50, 0.45, 'mezgit'], 'kalkan': [0.40, 0.36, 'kalkan'], 'somon': [0.62, 0.57, 'somon'],
+    'y-barbun': [0.50, 0.45, 'barbun'], 'y-mercan': [0.45, 0.41, 'mercan'], 'y-kefal': [0.55, 0.50, 'kefal'], 'y-dil-baligi': [0.45, 0.41, 'dil balığı'],
+    'y-sazan': [0.45, 0.41, 'sazan'], 'y-balik-izgara': [0.50, 0.45, 'balık'], 'y-balik-tava': [0.50, 0.45, 'balık']
+  };
+  // yalnızca bu besinler (çiğ/pişmiş et, parça) brüt ağırlıktan hesaplanır; döner, sote, köfte vb. hazır yemekler değil.
+  // "tavuk pirzola" kemiksiz bir üründür ("kemikli tavuk pirzola" ayrı bir kayıt): kapsam dışı.
+  var YIELD_FAMILY = {};
+  ('tavuk-gogsu tavuk-gogsu-haslanmis tavuk-gogsu-derili tavuk-but tavuk-but-derisiz tavuk-kanat tavuk-kanat-izgara tavuk-baget tavuk-kalca ' +
+    'tavuk-incik tavuk-haslama firin-pilic tavuk-eti-derisiz tavuk-eti-derili').split(' ').forEach(function (id) { YIELD_FAMILY[id] = 'tavuk'; });
+  'hindi-gogus y-hindi-but hindi-eti-derili'.split(' ').forEach(function (id) { YIELD_FAMILY[id] = 'hindi'; });
+  'kuzu-pirzola kuzu-eti kuzu-eti-yagsiz y-kuzu-but kuzu-kaburga c-kuzu-incik'.split(' ').forEach(function (id) { YIELD_FAMILY[id] = 'kuzu'; });
+  'dana-pirzola dana-kaburga y-dana-incik dana-kusbasi dana-biftek y-dana-but'.split(' ').forEach(function (id) { YIELD_FAMILY[id] = 'dana'; });
+
+  // "kemiğini ... yemedim / ayıkladım / çıkardım / attım / hariç"
+  var Y_REMOVE = /^(yeme(d|m|y|z|den)|yemiyor|yenme|at(t|d)i|atip|atarak|atil|ayikla|cikar|ayir|birak|siyir|soy(d|u|a)|temizle|haric|disinda|olmadan|sayma)/;
+  // "derisini de yedim"
+  var Y_EAT = /^(yedim|yedik|yedi|yiyorum|yiyoruz|yerim|yemistim|yemisim|yenildi|yendi)$/;
+  // "bütün / tüm" + bütün hayvan adı
+  var Y_WHOLE_WORD = /^(tavu|pilic|hindi|cipura|levrek|hamsi|sardalya|alabalik|uskumru|lufer|palamut|cinekop|istavrit|mezgit|kalkan|barbun|mercan|kefal|sazan|somon|balik)/;
+  // "tavuk derisi", "zeytin yağı": besin adının parçası, ayıklanan parça değil
+  var Y_OWNER = /^(tavu|pilic|hindi|balik|kuzu|dana|et|zeytin|tere|aycicek|misir|findik|susam|kanola|palm|kuyruk|sivi|bitkisel|hindistan|ordek|kaz)/;
+
+  /** i konumunda ayıklanan parça sözcüğü: kemik / kılçık / deri / yağ / kafa -> {kind, len, w (…-iyle), acc (belirtme hâli)} */
+  function yPart(toks, i) {
+    var t = toks[i];
+    if (!t || t.f === ',') return null;
+    var f = t.f, prev = toks[i - 1] && toks[i - 1].f, kind = null, len = 1;
+    if (/^kemi(k|g)/.test(f)) { if (/^kemik(li|siz|lik)/.test(f)) return null; kind = 'bone'; }
+    else if (/^kilci(k|g)/.test(f)) { if (/^kilcik(li|siz)/.test(f)) return null; kind = 'bone'; }
+    else if (/^deri(si|leri)?(ni|nden|ne|yi|yle|yla|ile)?$/.test(f)) kind = 'skin';
+    else if (/^yag(i|lari)(ni|ndan|yla)?$/.test(f)) kind = 'fat';
+    else if (f === 'yagli' && toks[i + 1] && /^(kism|kisim|yer|taraf|parca)/.test(toks[i + 1].f)) { kind = 'fat'; len = 2; f = toks[i + 1].f; }
+    else if (/^kafa(si|lari)?(ni|yla)?$/.test(f)) kind = 'head';
+    if (!kind) return null;
+    var w = /(yla|yle|ile)$/.test(f), acc = /(ni|nu|yi|yu|nden|ndan)$/.test(f);
+    // iyelikli yalın hâl ("tavuk derisi", "zeytin yağı") besin adının parçasıdır
+    if (!w && !acc && prev && Y_OWNER.test(prev)) return null;
+    return { kind: kind, len: len, w: w, acc: acc };
+  }
+
+  /**
+   * Cümledeki brüt / ayıklama ifadelerini bulur. Ayıklama cümleleri ("kemiğini ve derisini yemedim") metinden çıkarılır
+   * (ayrı besin sanılmasınlar); "kemikli", "bütün", "kiloluk" yerinde kalır, yalnızca işaret olarak okunur.
+   * -> null | {marks:[{pos, gross|whole|wholeHint|clean|cooked|boneOff|skinOff|fatOff|headOff|skinOn|fatOn}], removed, toks, text}
+   */
+  function yieldScan(toks) {
+    var keep = [], marks = [], removed = false;
+    function mark(fl, pos) { fl.pos = pos == null ? keep.length : pos; marks.push(fl); }
+    for (var i = 0; i < toks.length;) {
+      var t = toks[i], f = t.f;
+      if (yPart(toks, i)) {
+        var j = i, parts = [], withs = 0, accs = 0;
+        for (;;) {
+          if (toks[j] && toks[j].f === 'hem') j++;
+          var q = yPart(toks, j);
+          if (!q) break;
+          parts.push(q); if (q.w) withs++; if (q.acc) accs++;
+          j += q.len;
+          var c = toks[j];
+          if (c && /^(ve|ile|veya|,|hem)$/.test(c.f) && yPart(toks, j + 1 + (toks[j + 1] && toks[j + 1].f === 'hem' ? 1 : 0))) { j++; continue; }
+          if (c && /^(de|da)$/.test(c.f) && yPart(toks, j + 1)) { j++; continue; }   // "derisini de kemiğini de yemedim"
+          break;
+        }
+        var fl = null;
+        if (parts.length && withs === parts.length) {
+          // "kemiğiyle 1 kilo", "derisiyle (birlikte) yedim"
+          fl = {};
+          parts.forEach(function (p) { if (p.kind === 'skin') fl.skinOn = 1; else if (p.kind === 'fat') fl.fatOn = 1; else fl.gross = 1; });
+          if (toks[j] && /^(birlikte|beraber)$/.test(toks[j].f)) j++;
+        } else if (parts.length && !withs) {
+          var k = j, de = false;
+          if (toks[k] && /^(de|da)$/.test(toks[k].f)) { de = true; k++; }
+          if (toks[k] && toks[k].f === 'hic') k++;
+          var v = toks[k] && toks[k].f;
+          if (v && /^dahil/.test(v)) {
+            fl = {};
+            parts.forEach(function (p) { if (p.kind === 'skin') fl.skinOn = 1; else if (p.kind === 'fat') fl.fatOn = 1; else fl.gross = 1; });
+          } else if (v && Y_REMOVE.test(v)) {
+            fl = {};
+            parts.forEach(function (p) { fl[p.kind + 'Off'] = 1; });
+          } else if (v && Y_EAT.test(v) && (de || accs === parts.length)) {
+            fl = {};
+            parts.forEach(function (p) { if (p.kind === 'skin') fl.skinOn = 1; else if (p.kind === 'fat') fl.fatOn = 1; });
+          }
+          if (fl) j = k + 1;
+        }
+        if (fl) {
+          // "tavuğun derisini yemedim": iyelik sözcüğü önceki besinin tekrarıdır, o da çıkar
+          var pv = keep[keep.length - 1];
+          if (pv && /(nin|nun|in|un)$/.test(pv.f) && pv.f.length >= 5 && keep.slice(0, -1).some(function (x) { return x.f.slice(0, 4) === pv.f.slice(0, 4); })) keep.pop();
+          mark(fl); removed = true; i = j;
+          continue;
+        }
+      }
+      // "1,5 kg brüt tavuk", "brüt 1 kilo kuzu" (ama "köpüklü şarap brüt" değil)
+      if (f === 'brut' && ((keep.length && /^(\d+(\.\d+)?|kg|kilo|kiloluk|gram|gr|g|gramlik)$/.test(keep[keep.length - 1].f)) ||
+          (toks[i + 1] && (/^(\d|agirlik)/.test(toks[i + 1].f) || isNumWord(toks[i + 1].f) || Y_WHOLE_WORD.test(toks[i + 1].f) || /^(kuzu|dana|et|pirzola|kaburga|incik)/.test(toks[i + 1].f))))) {
+        mark({ gross: 1 }); removed = true; i++;
+        if (toks[i] && /^agirlik/.test(toks[i].f)) i++;
+        continue;
+      }
+      if (/^temizlenmemis/.test(f)) { mark({ gross: 1 }); removed = true; i++; continue; }
+      if (/^temizle(dim|dik|yip|yerek|nince|ndikten|yince|nip|ndi)$/.test(f)) { mark({ clean: 1 }); removed = true; i++; continue; }
+      if (f === 'pismis' && toks[i + 1] && /^(agirlig|agirlik|hali|haliyle|tartim)/.test(toks[i + 1].f)) {
+        mark({ cooked: 1 }); keep.push(t); i += 2; removed = true;
+        continue;
+      }
+      if ((f === 'butun' || f === 'tum') && toks[i + 1] && Y_WHOLE_WORD.test((toks[i + 1].f === 'bir' && toks[i + 2] ? toks[i + 2] : toks[i + 1]).f)) {
+        mark({ whole: 1, gross: 1 });
+        // "bütün bir tavuk": "bütün" miktardan önce kalınca ayrı bir sözcük sanılır, çıkar
+        if (toks[i + 1].f === 'bir') { removed = true; i++; continue; }
+      }
+      else if (f === 'kemikli' || f === 'kilcikli') mark({ gross: 1 });
+      else if (f === 'kiloluk' || f === 'gramlik') mark({ wholeHint: 1 });
+      keep.push(t); i++;
+    }
+    if (!marks.length) return null;
+    return { marks: marks, removed: removed, toks: keep, text: keep.map(function (x) { return x.r; }).join(' ') };
+  }
+
+  /** Kalemin brüt hesap profili: {row, fish, key} ya da null */
+  function yieldProfile(it) {
+    var id = it.foodId, w = ' ' + foldTokens(it.raw || '').join(' ') + ' ';
+    if (FISH_YIELD[id]) {
+      var fy = FISH_YIELD[id].slice();
+      if (/ (palamut|cinekop|kofana)/.test(w)) fy[2] = / palamut/.test(w) ? 'palamut' : 'çinekop';
+      return { key: 'fish', fish: fy, w: w };
+    }
+    var fam = YIELD_FAMILY[id];
+    if (!fam) return null;
+    if (fam === 'tavuk' && / hindi/.test(w)) fam = 'hindi';
+    var part;
+    if (fam === 'tavuk' || fam === 'hindi') {
+      part = /gog(u|s)/.test(w) ? 'gogus' : /(baget|incik)/.test(w) ? 'baget' : /kalca/.test(w) ? 'kalca' : /kana(t|d)/.test(w) ? 'kanat'
+        : / but(u|lar|lari)? /.test(w) ? 'but' : 'butun';
+      if (fam === 'hindi' && (part === 'baget' || part === 'kalca')) part = 'but';
+    } else {
+      if (fam === 'kuzu' && / (dana|sigir|biftek)/.test(w)) fam = 'dana';
+      else if (fam === 'dana' && / kuzu/.test(w)) fam = 'kuzu';
+      part = /pirzola/.test(w) ? 'pirzola' : /kaburga/.test(w) ? 'kaburga' : /incik/.test(w) ? 'incik'
+        : fam === 'kuzu' && / but(u)? /.test(w) ? 'but' : 'kemikli';
+    }
+    var key = fam + '-' + part;
+    return YIELD[key] ? { key: key, row: YIELD[key], w: w } : null;
+  }
+
+  function fmtDec(x) { return String(Math.round(x * 100) / 100).replace('.', ','); }
+  function fmtMass(g) { return g >= 1000 ? fmtDec(g / 1000) + ' kg' : Math.round(g) + ' g'; }
+  function joinTr(list) { return list.length <= 1 ? list.join('') : list.slice(0, -1).join(', ') + ' ve ' + list[list.length - 1]; }
+
+  /** Tek kaleme brüt -> net hesabını uygular; değişiklik yoksa null */
+  function yieldItem(it, prof, fl, idx) {
+    var row = prof.row, fish = prof.fish, w = prof.w;
+    var poultry = !!(row && row.k === 'kanatli'), whole = !!(fish || (row && row.whole));
+    var mass = it.unit === 'g' || it.unit === 'ml';
+    var boneCtx = !!(fl.gross || fl.boneOff || fl.headOff || fl.clean || (fl.wholeHint && whole));
+    var stripStated = !!(row && !poultry ? fl.fatOff : fl.skinOff);
+    var strip;
+    if (row && !poultry) strip = !fl.fatOn && !!(fl.fatOff || fl.clean || / yagsiz /.test(w));
+    else strip = !fl.skinOn && !!(fl.skinOff || (fl.clean && poultry) || / derisiz /.test(w));
+    var ratio = 1;
+    if (boneCtx) ratio = fish ? (strip ? fish[1] : fish[0]) : (strip ? (poultry ? row.s : row.y) : row.b);
+    else if (stripStated) ratio = fish ? fish[1] / fish[0] : (poultry ? row.s : row.y) / row.b;
+    // ne kemik bağlamı ne de deri/yağ cümlesi var ("500 gramlık tavuk göğsü"): dokunma
+    if (!boneCtx && !stripStated && !fl.skinOn && !fl.fatOn) return null;
+    var target = fish ? idx.byId[it.foodId] : idx.byId[strip ? row.off : row.on];
+    if (!target) return null;
+
+    // adet / porsiyon: birim ağırlığı zaten yenen kısım; yalnızca derili / derisiz (yağlı / yağsız) tercihi
+    var gross, assumed = false;
+    if (!mass) {
+      if (boneCtx && whole && row && fl.whole && (fl.boneOff || fl.skinOff || fl.clean || fl.headOff)) {
+        gross = (it.qty > 0 ? it.qty : 1) * row.unitG; assumed = true;
+      } else {
+        if (fish || target.id === it.foodId) return null;
+        if (!(fl.skinOff || fl.skinOn || fl.fatOff || fl.fatOn || fl.clean)) return null;
+        var tu = foodUnits(target);
+        if (!tu[it.unit]) return null;
+        var sw = computeItem(target, it.qty, it.unit, tu[it.unit], { state: it.state, scale: it.scale });
+        sw.confidence = it.confidence; sw.raw = it.raw;
+        sw.yieldNote = poultry ? (strip ? 'Deri yenmedi: derisiz değerler' : 'Derisiyle yendi: derili değerler') : (strip ? 'Yağı ayıklandı: yağsız değerler' : 'Yağıyla yendi');
+        return sw;
+      }
+    } else gross = it.grams;
+    if (ratio === 1 && target.id === it.foodId) return null;
+    if (!(gross > 0)) return null;
+
+    var cooked = !!fl.cooked || / pismis /.test(w);
+    var net = ratio === 1 ? gross : Math.max(5, Math.round(gross * ratio / 5) * 5);
+    var state = hasStates(target) ? (ratio === 1 ? it.state : (cooked ? 'cooked' : 'raw')) : null;
+    var out = computeItem(target, net, 'g', 1, { state: state });
+    out.raw = it.raw;
+    out.confidence = it.confidence;
+    if (target.id === it.foodId && it.note) { out.note = it.note; if (it.suggestions) out.suggestions = it.suggestions; }
+    // "bütün" kelimesi tanınmadığı için düşen güven geri gelir
+    if (it.note && /^“(bütün|butun|tüm|tum)” kelimesini tanımadım/.test(it.note)) {
+      delete out.note; delete out.suggestions;
+      out.confidence = Math.min(1, Math.round(it.confidence / 0.75 * 100) / 100);
+    }
+    if (ratio === 1) {
+      out.yieldNote = poultry ? (strip ? 'Deri yenmedi: derisiz değerler' : 'Derisiyle yendi: derili değerler') : (strip ? 'Yağı ayıklandı: yağsız değerler' : 'Yağıyla yendi');
+      return out;
+    }
+    var removed = [], kept = '';
+    if (boneCtx) {
+      if (fish) { removed.push('kılçık', 'kafa'); if (strip) removed.push('deri'); }
+      else {
+        removed.push('kemik');
+        if (strip) removed.push(poultry ? 'deri' : 'yağ'); else kept = poultry ? 'deri dahil' : 'yağ dahil';
+      }
+    } else removed.push(fish || poultry ? 'deri' : 'yağ');
+    var label = fish ? (boneCtx ? 'bütün ' + fish[2] : fish[2]) : (boneCtx ? row.label : (row.short || row.label));
+    var from = assumed ? fmtDec(it.qty > 0 ? it.qty : 1) + ' ' + label + ' (ort. ' + fmtMass(row.unitG) + ' varsaydım)' : fmtMass(gross) + ' ' + label;
+    out.yield = { gross: Math.round(gross), net: net, ratio: Math.round(ratio * 100) / 100, removed: removed, from: label, basis: state === 'cooked' || (!state && cooked) ? 'cooked' : 'raw', assumed: assumed };
+    out.yieldNote = from + ' → ≈ ' + net + ' g net et (' + joinTr(removed) + ' çıkarıldı' + (kept ? '; ' + kept : '') + ')' + (cooked ? ', pişmiş ağırlık' : '');
+    // kayıt listesinde gösterilecek kısa not ("720 g · brüt 1,5 kg bütün tavuk")
+    out.yieldShort = assumed ? fmtDec(it.qty > 0 ? it.qty : 1) + ' ' + label + ' (ort. ' + fmtMass(row.unitG) + ')' : 'brüt ' + fmtMass(gross) + ' ' + label;
+    if (assumed) out.confidence = Math.min(out.confidence, 0.75);
+    return out;
+  }
+
+  /** Ayrıştırılmış kalemlere işaretleri dağıtır ve brüt -> net hesabını uygular */
+  function applyYield(res, ys, idx) {
+    var items = res.items;
+    if (!items.length) return;
+    // kalemlerin cümledeki başlangıç konumları (raw'ın ilk sözcüğü, sırayla)
+    var starts = [], cur = 0;
+    items.forEach(function (it) {
+      var first = String(it.raw || '').split(' ')[0], pos = -1;
+      for (var k = cur; k < ys.toks.length; k++) if (ys.toks[k].r === first) { pos = k; break; }
+      if (pos < 0) pos = cur; else cur = pos + 1;
+      starts.push(pos);
+    });
+    var prof = items.map(yieldProfile), flags = items.map(function () { return null; });
+    ys.marks.forEach(function (m) {
+      // işaret, kendinden önce başlayan son uygun kaleme; yoksa sonraki ilk uygun kaleme aittir
+      var best = -1, k;
+      for (k = 0; k < items.length; k++) if (prof[k] && starts[k] <= m.pos) best = k;
+      if (best < 0) for (k = 0; k < items.length; k++) if (prof[k]) { best = k; break; }
+      if (best < 0) return;
+      var fl = flags[best] || (flags[best] = {});
+      for (var key in m) if (key !== 'pos') fl[key] = 1;
+    });
+    items.forEach(function (it, k) {
+      if (!flags[k]) return;
+      var n = yieldItem(it, prof[k], flags[k], idx);
+      if (n) items[k] = n;
+    });
+  }
+
+  /**
+   * Ana giriş: brüt / ayıklama ifadesi yoksa parseCore ile birebir aynıdır.
+   */
+  function parse(text, foods, opts) {
+    var ys = yieldScan(tokenize(text));
+    if (!ys) return parseCore(text, foods, opts);
+    var res = parseCore(ys.removed ? ys.text : text, foods, opts);
+    res.text = String(text || '');
+    applyYield(res, ys, buildIndex(foods || []));
+    return res;
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Ana ayrıştırıcı                                                     */
   /* ------------------------------------------------------------------ */
   var FUZZY_ACCEPT = 0.72;
 
-  function parse(text, foods, opts) {
+  function parseCore(text, foods, opts) {
     opts = opts || {};
     var idx = buildIndex(foods || []);
     var boost = opts.boost || null;
@@ -1720,7 +2037,7 @@
   }
 
   return {
-    version: '1.5.0',
+    version: '1.6.0',
     lower: lower, fold: fold, foldTokens: foldTokens, tokenize: tokenize, stems: stems,
     wordsToNumber: wordsToNumber, parseNumberText: parseNumberText,
     levenshtein: levenshtein, similarity: similarity,

@@ -4,7 +4,7 @@
 
   var P = window.ZParser, C = window.ZCharts, N = window.ZNotify, NC = window.ZNotifyCore;
   var FOODS = Array.isArray(window.FOODS) ? window.FOODS : [];
-  var APP_VERSION = '1.5.0';
+  var APP_VERSION = '1.6.0';
 
   /* ======================================================================
      Yardımcılar
@@ -141,6 +141,8 @@
     if (e.state === 'raw' || e.state === 'cooked') out.state = e.state;   // çiğ / pişmiş tartı
     var sc = num(e.scale, 1);
     if (sc > 0 && sc !== 1 && sc <= 3) out.scale = sc;                    // büyük / küçük boy çarpanı
+    var yn = typeof e.ynote === 'string' ? e.ynote : typeof e.yieldShort === 'string' ? e.yieldShort : '';
+    if (yn.trim()) out.ynote = yn.trim().slice(0, 120);                   // kemikli/bütün alım: "brüt 1,5 kg bütün tavuk"
     return out;
   }
   function cleanFood(f) {
@@ -335,7 +337,7 @@
   function hasLog(k) { var d = state.days[k]; return !!(d && d.entries.length); }
 
   function toEntry(it, meal) {
-    return cleanEntry({ id: uid(), foodId: it.foodId, name: it.name, qty: it.qty, unit: it.unit, unitG: it.unitG, grams: it.grams, kcal: it.kcal, p: it.p, c: it.c, f: it.f, meal: meal, ts: Date.now(), quick: it.quick, state: it.state, scale: it.scale });
+    return cleanEntry({ id: uid(), foodId: it.foodId, name: it.name, qty: it.qty, unit: it.unit, unitG: it.unitG, grams: it.grams, kcal: it.kcal, p: it.p, c: it.c, f: it.f, meal: meal, ts: Date.now(), quick: it.quick, state: it.state, scale: it.scale, ynote: it.yieldShort || it.ynote });
   }
   function pushRecent(it) {
     if (!it.foodId) return;
@@ -740,7 +742,7 @@
         '<button type="button" class="icon-btn filled" data-action="meal-add" data-meal="' + m.id + '" aria-label="' + m.label + ' için ekle">' + icon('plus') + '</button></div>';
       if (list.length) {
         html += '<ul class="meal-entries">' + list.map(function (e) {
-          return '<li><button type="button" class="entry" data-action="entry" data-id="' + e.id + '"><div class="e-main"><div class="e-name">' + esc(e.name) + '</div><div class="e-sub">' + esc(portionText(e)) + '</div></div><div class="e-kcal">' + fmt(e.kcal) + '</div></button></li>';
+          return '<li><button type="button" class="entry" data-action="entry" data-id="' + e.id + '"><div class="e-main"><div class="e-name">' + esc(e.name) + '</div><div class="e-sub">' + esc(portionText(e) + (e.ynote ? ' · ' + e.ynote : '')) + '</div></div><div class="e-kcal">' + fmt(e.kcal) + '</div></button></li>';
         }).join('') + '</ul>';
       }
       var acts = '';
@@ -1371,6 +1373,7 @@
       return '<div class="pitem' + (low ? ' low' : '') + '" data-i="' + i + '"><div class="pitem-top"><div class="pitem-name"><b>' + esc(it.name) + '</b>' +
         '<small class="js-sub">' + (it.raw ? '“' + esc(it.raw) + '” · ' : '') + (it.grams ? fmt(it.grams) + ' g' : '') + '</small>' +
         (low ? ' <span class="badge warn">Emin değilim — kontrol et</span>' : '') + '</div><div class="pitem-kcal js-kcal">' + fmt(it.kcal) + ' kcal</div></div>' +
+        (it.yieldNote ? '<div class="yield-note js-ynote">' + esc(it.yieldNote) + (it.yield ? '. Gramı değiştirebilirsin.' : '') + '</div>' : '') +
         '<div class="pitem-ctl"><div class="stepper"><button type="button" data-act="dec" aria-label="Azalt">−</button><input data-act="qty" inputmode="decimal" value="' + fmtQty(it.qty) + '" aria-label="Miktar"><button type="button" data-act="inc" aria-label="Artır">+</button></div>' +
         '<select class="select" data-act="unit" aria-label="Birim"' + (food ? '' : ' disabled') + '>' + opts.map(function (u) { return '<option value="' + esc(u.v) + '"' + (u.v === it.unit ? ' selected' : '') + '>' + esc(u.label) + '</option>'; }).join('') + '</select></div>' +
         stateSeg(food, it.state) +

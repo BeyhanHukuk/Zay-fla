@@ -353,6 +353,7 @@ button.list-row:active, .list-row.tap:active { background: var(--surface-2); bor
 .stepper input { width: 62px; text-align: center; border: 0; background: transparent; height: 44px; outline: none; font-weight: 700; font-variant-numeric: tabular-nums; padding: 0; }
 .pitem-ctl .select { min-height: 44px; flex: 1; min-width: 0; padding-top: 8px; padding-bottom: 8px; }
 @media (max-width: 400px) { .pitem-ctl .stepper button { width: 34px; } .pitem-ctl .stepper input { width: 46px; } .pitem-ctl .select { font-size: 15px; padding-left: 10px; padding-right: 26px; background-position: calc(100% - 14px) 52%, calc(100% - 9px) 52%; } }
+.yield-note { margin-top: 8px; font-size: 12.5px; line-height: 1.4; color: var(--text-2); padding: 6px 9px; border-radius: 10px; background: color-mix(in srgb, var(--protein) 10%, transparent); }
 .pitem-actions { display: flex; gap: 4px; margin-top: 6px; }
 .unmatched { border: 1.5px dashed var(--surface-3); border-radius: 16px; padding: 12px; margin-bottom: 10px; }
 .totals { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
